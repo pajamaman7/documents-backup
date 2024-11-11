@@ -18,35 +18,53 @@
             u^2+2u&= \sqrt[3]{2}  \\
             (u^2+2u)^3&= 2 \\
             u^6 + 6 u^5 + 12 u^4 + 8 u^3&= 2 \\
-            u^6 + 6 u^5 + 12 u^4 + 8 u^3-2&= 0 \\
+            u^6 + 6 u^5 + 12 u^4 + 8 u^3-2&= 0 
         .\end{align*}
         So we have found a polynomial $f(x)= x^6 + 6 x^5 + 12 x^4 + 8 x^3-2$ so that $f(u)=0$.
 
 \item Exercise 6.2 \#7 Find the minimal polynomial of $u=\sqrt{3}-i$ over $\mathbb{Q}$ and also over
 $\mathbb{R}.$
 
-\paragraph{Solution: }Use the same strategy as above:
+\paragraph{Solution: }
+Use a similar strategy as above for $\mathbb{Q}$ :
 \begin{align*}
-    u&= \sqrt{3}-i  \\
-    u^2&= 3-1-2\sqrt{3} i \\
-    u^2-2&= -2\sqrt{3} i \\
-    u^{4}-4u^2+4&= -12 \\
+    u&= \sqrt{3} -i \\
+    u^2&= 3-2\sqrt{3} i-1 \\
+    (u^2-2)^2&= 12 \\
+    u^{4}-4u^2+4&= 12 \\
     u^{4}-4u^2+16&= 0 
 .\end{align*}
+We can use the Modular Irreducibility test (Nicholson Theorem 4.2.7), with $p=3$, to reduce our polynomial
+to $f(x)=x^4-x^2+1=0$. Then $f(0)=f(1)=f(2)=1$ so the polynomial has no roots in  $\mathbb{Z}_3$ and by the theorem, 
+it is irreducible over $\mathbb{Q}$. Now since it is monic and has $u$ as a root, we can say it is minimal.
 
-%TODO show irreducibility over Q and reduce over R then show that it is irreducible there.
+In $\mathbb{R},$ we find a mininmal polynomial in $\mathbb{R}$ by attempting to eliminate the imaginary components to a polynomial with a root $u$.
+\begin{align*}
+    u&= \sqrt{3}-i  \\
+    u-\sqrt{3} &= i \\
+    u^2-2u\sqrt{3} +3&= -1 \\
+    u^2-2u\sqrt{3} +4&=0
+.\end{align*}
+
+Then we can see the discriminant of the polynomial $g(x)=x^2-2\sqrt{3} x+4$ is $2\sqrt{3} -16$ which is negative,
+so the polynomial is irreducible over $\mathbb{R}$. And since it is monic, and has $u$ as a root, it is minimal.
+\newpage
 
 \item Exercise 6.2 \#20 Let $\mathbb{K}$ be a field extension of $\mathbb{E}$ which is a field extension of F,
     and let $[\mathbb{E}:\mathbb{F}]$ be finite. Let $u\in\mathbb{K}$ be algebraic over E.
 \begin{enumerate}              
     \item Show that [E($u):\mathbb{E}]\leq[\mathbb{F}(u):\mathbb{F}].$
         \paragraph{Solution:} Let $\mathbb{K}\supseteq \mathbb{E}\supseteq \mathbb{F}$, and $[\mathbb{E}:\mathbb{F}]=n$ be finite. Then let $u$ be algebraic over $\mathbb{K}$ with 
-        minimal polynomial $m(x)\in \mathbb{F}[x]$. Now we proceed by cases. If $m$ is irreducible in $\mathbb{E}$, then
+        minimal polynomial $m(x)\in \mathbb{F}[x]$. Now we proceed by cases.
+
+        If $m$ is irreducible in $\mathbb{E}$, then
         it remains the minimal polynomial for $u$ in $\mathbb{E}$, and the degrees of the two extensions are equal.
 
-        Now, if $m$ is reducible in $\mathbb{E}$, then there exists $f,g\in \mathbb{E}[x]$, both with degree less than $m$, and $m=fg$.
-        We take the one which has $u$ as a root and repeat the process until we reach an irreducible polynomial $h\in  \mathbb{E}(u)$ with $u$ as a root.
-        If this is not monic, we factor out the leading coefficient, and we will have a $h'\in \mathbb{E}(u)$ with $h'(u)=0$ that is monic and irreducible. This has degree
+        Now, if $m$ is reducible in $\mathbb{E}$, then there exists $f,g\in \mathbb{E}[x]$, both with degree less than $m$,
+        and $m=fg$. We take the one which has $u$ as a root and repeat the process until we reach an irreducible polynomial 
+        $h\in  \mathbb{E}(u)$ with $u$ as a root.
+        If this is not monic, we factor out the leading coefficient, and we will have a $h'\in \mathbb{E}(u)$ with 
+        $h'(u)=0$ that is monic and irreducible. This has degree
         strictly less than $m$, and is minimal for $u$.
 
         After all this we have $[\mathbb{E}(u):\mathbb{E}]=\deg  h' \leq\deg m=[\mathbb{F}(u):\mathbb{F}]$.
