@@ -1,0 +1,206 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Homework 3 - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+
+    \item Consider the function of complex variable
+        \[
+        u(z)= \frac{\mathrm{Re}\,z}{|z|^2}
+        .\] 
+
+\begin{enumerate}[label= (\alph*)] 
+    \item  Is $u (z)$ holomorphic in its domain?
+
+        Begin by writing $z=x+iy$, so that $u(z)=\frac{x}{x^2+y^2}$.
+
+        We check the Cauchy-Reimann equations:
+
+        $$\frac{\partial u}{\partial x} =\frac{y^2-x^2}{(x^2+y^2)^2}$$
+        $$\frac{\partial u}{\partial y} =-\frac{2xy}{(x^2+y^2)^2}$$
+        And so we can see that these are not necessarily equal for the domain of $u$, so 
+        $u$ is not differentiable in its domain and therefore not holomorphic in its domain.
+
+    \item We know that $u (z)$ is the real part of a holomorphic function
+        $f (z)$. Determine $f (z)$ as a function of the complex variable $z$.
+
+        \begin{align*}
+        \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}  \\
+                                      &=\frac{y^2-x^2}{(x^2+y^2)^2}\\
+                        v&=\int  \frac{y^2-x^2}{(x^2+y^2)^2} \, dy\\
+                        &= -\frac{y}{x^2+y^2}+g(x)
+        .\end{align*}
+        And we take the partial derivative w.r.t $x$, hoping to find $g(x)$
+        \begin{align*}
+                \frac{\partial v}{\partial x} &= -\frac{0-2xy}{x^2+y^2}+g'(x) \\
+                &= \frac{2xy}{x^2+y^2} +g'(x)
+        .\end{align*}
+        But we already found 
+        $\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y} =\frac{2xy}{x^2+y^2}$.
+        So we equate
+        \begin{align*}
+            \frac{2xy}{x^2+y^2}&= \frac{2xy}{x^2+y^2} +g'(x)\\
+            g'(x)&= 0 \\
+            g(x)&= c \\
+        .\end{align*}
+        So $g$ is some real constant. This gives $v(z)=-\frac{y}{x^2+y^2}+c$
+        And so:
+        $$f(z)=\frac{\bar{z}}{|z|^2}+ic$$
+
+    \item Determine the singularities of $f (z)$. Which are isolated? Which
+        are non-isolated? Classify the isolated singularities of $f (z)$ if
+        they exist.
+
+        We can see that this function only has trouble when the denominator is zero, which happens
+        only when $|z|=0$ and therefore when $z=0$. Since this is the only singularity,
+        it must be an isolated singularity.
+
+        So we check the modulus of $f$ as $z\to 0$. 
+
+        \begin{align*}
+            \lim_{z \to 0} |f(z)|&= \lim_{z \to 0} \left| \frac{\bar{z}}{z^2} \right|  \\
+            &= \lim_{z \to 0} \frac{1}{|z|} \\
+            &= \infty_{\mathbb{C}} 
+        .\end{align*}
+        And so this singularity is a pole.
+
+\end{enumerate}
+\item Classify the singularities of the following functions.
+    \begin{enumerate}[label= (\alph*)] 
+        \item \[ f(z)=\frac{1}{\sin z} .\]
+            
+            We know that this function is not defined when $\sin z=0$, so let us find all such points.
+
+            Suppose $\sin z =0$. Then:
+            \begin{align*}
+                0&=\frac{e^{iz}-e^{-iz}}{2i}\\
+                &= e^{iz}-e^{-iz} \\
+                &= e^{i 2z}-1 \\
+                1&= e^{2iz} \\
+                 &= e^{2ix}e^{-2y}&\text{Writing }z=x+iy\\
+            .\end{align*}
+            And checking the modulus, we see that $|1|=|e^{2y}e^{2ix}|=|e^{2y}|$ So 
+            $y=\mathrm{Re}\,z=0$.
+
+            Now we have:
+            \begin{align*}
+                1&= e^{2ix} \\
+                &= \cos 2x+ i\sin 2x \\
+                &= \cos 2x 
+            .\end{align*}
+
+            And this is true for any $x=\pi k$ where $k\in \mathbb{Z}$.
+
+            These singularities are isolated points along the real axis. We check the limit
+            \[
+            \lim_{z \to \pi n} \frac{1}{\sin z}
+            .\] 
+            With the change of variable $w(z)=\sin z$, $w(\pi n)=0$. So our limit becomes
+            \[
+            \lim_{w \to 0} \frac{1}{w}=\infty_{\mathbb{C}}
+            .\] 
+            And so this singularity is a pole.
+
+        \item \[ f(z)=e^{\frac{1}{\sin z}} .\] 
+
+            This function has the same singularities as in part a), since it has the same points 
+            excluded from its domain. However the type of singularity may change. We examine the same
+            limit,
+            \[
+            \lim_{z \to \pi n} e^{\frac{1}{\sin z}}
+            .\] 
+            Again, using the same change of variable $w(z)=\sin z$.
+
+            \[
+                \lim_{z \to \pi n} e^{\frac{1}{\sin z}}=\lim_{w \to 0} e^{\frac{1}{w}}
+            .\] 
+            We restrict along the real axis and examine the positive and negative limits. 
+            \begin{align*}
+                \lim_{t \to 0^{-}} e^{\frac{1}{t}}&= 0 \\
+                \lim_{t \to 0^{+}} e^{\frac{1}{t}}&= \infty_{\mathbb{C}} 
+            .\end{align*}
+            And since we have found two limits upon which our function disagrees, the limit does
+            not exist and we have an essential singulrity.
+
+
+        \item \[ f(z)=\ln(\sin z) .\] 
+
+            We know that $\ln z$ has problems with continuity when $z\leq 0$. So we find the points 
+            where $\sin z$ is real and negative, since in part a) we already found its zeroes.
+
+            First we set $\mathrm{Im}\,\sin z=0$.
+            \begin{align*}
+                \sin z &= \sin x\cosh y+i\cos x \sinh y\\
+                \mathrm{Im}\,\sin z&= \cos x\sinh y 
+            .\end{align*}
+            This gives us two cases. Either $\sinh y=0$ or $\cos x = 0$
+
+            Suppose $\sinh y=0$. In this case we must have $y=0$.
+            This means our original function becomes
+            \[
+            \sin z= \sin(x+i0)=\sin x
+            .\] 
+            And in this case our function is real and negative in the set:
+            $$S=\{\pi<x+2k\pi<2\pi\}.$$
+            All the points contained in this are cluster points, so they are non-isolated singularities.
+
+            I ran out of time to write an argument for the case $\cos x=0$ :(
+    \end{enumerate}
+\item Consider the power series
+    \[
+    \sum_{n=1}^{\infty} \frac{e^{\alpha n}}{n} z^n
+    .\] 
+where $\alpha \in  \mathbb{C}$.
+\begin{enumerate}[label= (\alph*)] 
+    \item Discuss its radius of convergence.
+
+        We use the ratio test for absolute convergence:
+        \begin{align*}
+            \lim_{n \to \infty} \left| \frac{e^{\alpha(n+1)}z^{n+1}}{n+1}\frac{n}{z^{n}e^{\alpha n}} \right| &= \lim_{n \to \infty} \frac{n}{n+1}\left| e^{\alpha}z \right|  \\
+            &= e^{\mathrm{Re}\,\alpha}|z|\lim_{n \to \infty} \frac{1}{\frac{1}{n}+1} \\
+            &= e^{\mathrm{Re}\,\alpha}|z|
+        .\end{align*}
+        Since we want this to converge we must set this $<1$. With $e^{\mathrm{Re}\,\alpha}|z|<1$ we 
+        see that $|z|<e^{-\mathrm{Re}\,\alpha}$, so our radius of convergence is $R=e^{-\mathrm{Re}\,\alpha}$.
+
+    \item Identify the function $f (z) = \sum_{n=1}^{\infty} \frac{e^{\alpha n}}{n} z^n$
+    for $\alpha\in \mathbb{C}$, inside the open disk of convergence.
+
+    We begin by reindexing our sum, $k=n-1$:
+    \[
+    f(z)=\sum_{n=1}^{\infty} \frac{e^{\alpha n}}{n}z^{n}=\sum_{k=0}^{\infty} \frac{e^{\alpha(k+1)}}{k+1}z^{k+1}
+    .\] 
+    Now we take the formal derivative since the sum starts at 0.
+    \[
+    f'(z)=e^{\alpha}\sum_{k=1}^{\infty} e^{\alpha k}z^{k}=e^{\alpha}\sum_{k=1}^{\infty} (e^{\alpha}z)^{k}
+    .\] 
+    And we can see that this series is geometric, convergent when $|z|<e^{-\mathrm{Re}\,\alpha}$.
+    When it does converge:
+    \[
+    f'(z)=\frac{e^{\alpha }}{1-e^{\alpha}z}
+    .\] 
+    Now consider the function:
+    \[
+    g(z)=-\ln(1-e^{\alpha}z).\]
+
+    So
+    \[
+    g'(z)=\frac{e^{\alpha }}{1-e^{\alpha}z}
+    .\] 
+    We want to show $f=g$, so take $h(z)=g(z)-f(z)$. Then $h'(z)=f'(z)-g'(z)$ which is 0, giving us that $h'(z)=0$ and $h(z)=c$ for some constant $c\in \mathbb{C}$. Now we test at $0$:
+    \begin{align*}
+        c&= g(0)-f(0) \\
+         &= -\ln(1-e^{\alpha}0)-\sum_{n=1}^{\infty} e^{\alpha n}\frac{0^{n}}{n}\\
+         &= 0-0
+    .\end{align*}
+
+    So $c=0$ and $f=g$.
+    Therefore:
+    \[
+         -\ln(1-e^{\alpha}z)=\sum_{n=1}^{\infty} e^{\alpha n}\frac{z^{n}}{n}
+    .\] 
+\end{enumerate}
+\end{enumerate}
+\end{document}

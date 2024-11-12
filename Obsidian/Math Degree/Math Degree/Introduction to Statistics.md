@@ -1,0 +1,1 @@
+Introduction to Statistic has several topics: [[Counting]], [[Discrete Probability Distributions]], [[Continuous Probability Distributions]]. Frequent topics include [[Expected Value]], [[Variance and Standard Deviation]],

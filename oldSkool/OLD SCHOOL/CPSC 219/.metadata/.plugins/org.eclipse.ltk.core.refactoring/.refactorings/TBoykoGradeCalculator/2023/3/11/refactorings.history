@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;TBoykoGradeCalculator&apos;&#x0D;&#x0A;- Original project: &apos;TBoykoGradeCalculator&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     basicjava.FileExercises.java&#x0D;&#x0A;     basicjava.FileExercisesTest.java" description="Delete elements" element1="/src&lt;basicjava{FileExercises.java" element2="/src&lt;basicjava{FileExercisesTest.java" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1679092544854" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,161 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Title - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+\item 1
+
+    We must find the bias of each estimator. Begin with $\hat{\lambda}_1$.
+    \begin{align*}
+        B(\hat{\lambda}_1)&= E\left[ \frac{Y_1+Y_2}{2} \right] -\lambda \\
+                         &= \frac{E[Y_1]+E[Y_2]}{2}-\lambda \\
+                         &= \lambda-\lambda \\
+                         &= 0
+    .\end{align*}
+    So $\hat{\lambda}_1$ is unbiased, so its MSE is simply its variance.
+    Now for $\hat{\lambda}_2$.
+    \begin{align*}
+        B(\hat{\lambda}_2)&= E[\bar{Y}]-\lambda \\
+                          &= \frac{1}{25}E[\sum_{i=1}^{25} Y_i]-\lambda \\
+                          &= \frac{1}{25}\sum_{i=1}^{25}E[ Y_i]-\lambda \\
+                          &= E[ Y_i] -\lambda\\
+                          &= \lambda-\lambda\\
+                          &= 0
+    .\end{align*}
+    And the efficiency of these two random variables is simply the ratio of their variances.
+    \begin{align*}
+        eff(\hat{\lambda}_1,\hat{\lambda}_2)&=\frac{V\left[ \frac{Y_1+Y_2}{2} \right] }{V[\bar{Y}]}\\
+                                            & =\frac{\frac{1}{4}V\left[ Y_1+Y_2 \right] }{\frac{1}{25^2}V[\sum_{i=1}^{25}Y_i]}\\
+        & =\frac{\frac{\lambda}{2} }{\frac{1}{25}V[\sum_{i=1}^{25}Y_i]}& \text{By independence}\\
+        & =\frac{\frac{\lambda}{2} }{\frac{1}{25}\lambda}\\
+        &= \frac{25}{2} 
+    .\end{align*}
+    So $\hat{\lambda}_2$ is more efficient than $\hat{\lambda}_1$.
+\item 2
+\item 3
+    \begin{align*}
+        \frac{\sum_{i =1}^{n} (X_i -\bar{X})^2+\sum_{i=1}^{n} (Y_i-\bar{Y}^2}{2(n-1)}&= 
+        \frac{(n-1)S_X^2+(n-1)S_Y^2}{2(n-1)}\\
+            &=\frac{S_X^2+S_Y^2}{2}
+    .\end{align*}
+    And since we know $S_X^2\to^p \sigma^2$ and $S_Y^2\to^p\sigma^2$, using summation and constant
+    properties of consistency we know that $\frac{S_X^2+S_Y^2}{2}\to^p\sigma^2$, and our above 
+    expression converges in probability to $\sigma^2$.
+\item 4
+\item 5 
+
+    We start with a probability statement. Let $\epsilon>0$.
+    \begin{align*}
+        P(|Y_{(1)}-\beta|\leq\epsilon)&=P(\beta-\epsilon\leq Y_{(1)}\leq\beta+\epsilon)\\
+        &= F_{(Y_1}(\beta+\epsilon)-F_{(Y_1)}(\beta-\epsilon) 
+    .\end{align*}
+    We can see that the second term of this must be zero since $\beta-\epsilon<\beta$, $\epsilon$ is 
+    positive. So our expression becomes:
+    \[
+        P(|Y_{(1)}-\beta|\leq\epsilon)=1-\left( \frac{\beta}{\beta+\epsilon} \right) ^{\alpha n}
+    .\] 
+    And we apply the limit to find
+    \[
+        \lim_{n \to \infty} P(|Y_{(1)}-\beta|\leq\epsilon)=\lim_{A \to \infty} 1-\left( \frac{\beta}{\beta+\epsilon} \right) ^{\alpha n}=1-0=1
+    .\] 
+    (The second last equality comes from $\beta+\epsilon>\beta$, so the fraction is less than 1, and its limit tends to 0.
+    So $Y_{(1)} $ is consistent for $\beta$
+\item 6
+\item 7
+
+    \begin{enumerate}[label= (\alph*)] 
+        \item We find an MoM estimator for $\beta$, by equating our first sample and theoretical 
+            moments.
+            \[
+                \bar{X}=E[X]=\int_{\beta}^{\infty} xe^{\beta-x} \, d x =\beta+1
+            .\] 
+            So we have $\bar{X}=\beta+1$, and this gives $\hat{\beta}_{MoM}=\beta+1$.
+
+        \item We begin with our likelihood function:
+            \begin{align*}
+                L(\beta)&=\prod_{i=1}^{n}e^{b-x_i}\\
+                &= e^{\beta n}e^{\sum_{i=1}^{n} x_i} \\
+                &= e^{\beta n}e^{-n\bar{x}} 
+            .\end{align*}
+
+            And from this our log-likelihood function:
+            \begin{align*}
+                l(\beta)&= \ln(e^{\beta n- n \bar{x}} \\
+                &= n(\beta-\bar{x}) 
+            .\end{align*}
+            Setting this equal to zero,
+            \begin{align*}
+                0&=n(\beta-\bar{x})\\
+                \hat{\beta}_{MLE}&=\bar{x} 
+            .\end{align*}
+    \end{enumerate}
+\item 8
+\item 9
+
+    We begin with our likelihood function for $\theta$.
+    \begin{align*}
+        L(\theta)&= \prod_{i=1}^{n} (\theta+1)y^{\theta}  \\
+        &= (\theta+1)^{n}\prod_{i=1}^{\infty} y^{\theta} \\
+        &= (\theta+1)^{n}\left(\prod_{i=1}^{\infty} y\right)^{\theta} 
+    .\end{align*}
+    Taking $\ln$ for our log-likelihood,
+    \begin{align*}
+        l(\theta)&=\ln\left( (\theta+1)^{n}\prod_{i=1}^{n} y^{\theta}  \right) \\
+        &= n\ln(\theta+1)+\sum_{i=1}^{n} n\ln\theta \\
+        &= n\ln(\theta+1)+\theta\sum_{i=1}^{n} \ln y 
+    .\end{align*}
+    And now we differentiate w.r.t $\theta$,
+    \begin{align*}
+        \frac{\partial l}{\partial \theta} &= \frac{n}{\theta+1}+ \sum_{i=1}^{n} \ln y \\
+        0&= \frac{n}{\theta+1}+ \sum_{i=1}^{n} \ln y \\
+        \frac{n}{\theta+1}&= - \sum_{i=1}^{n} \ln y \\
+        \frac{\theta+1}{n}  &= - \frac{1}{\sum_{i=1}^{n} \ln y} \\
+        \theta+1&= - \frac{n}{\sum_{i=1}^{n} \ln y} \\
+        \hat{\theta}_{MLE}&= - \frac{n}{\sum_{i=1}^{n} \ln y}-1 
+    .\end{align*}
+
+\item 10
+\item 11
+
+    Our null hypothesis $H_0$ is that the true population proportion of overweight children is
+    $p\geq 0.15$, and our alternative $H_a$ is that the true population proportion $p<0.15$.
+
+We can do this with \verb|prop.test| in R
+\begin{verbatim}
+    prop.test(13,100,.15,alternative="less",conf.level=.95,correct=F)
+\end{verbatim}
+Our test gives us a p-value of $.02877$, so we reject the null hypothesis and conclude the true value
+of $p$ is less than 15\%.
+\item 12
+\item 13
+
+    \begin{enumerate}[label= (\alph*)] 
+        \item 
+            %\includegraphics{img}
+            We can say by looking at the histogram, that the average internet usage of the Canadians
+            surveyed appears normally distributed.
+        \item 
+            Our null hypothesis $H_0$ is that the mean personal time spent online by the average 
+            Canadian in a week is less than or equal to 12.7 hours, the amount observed in 2005.
+            This means our alternative $H_a$ is that the average Canadian spends strictly more than 
+            12.7 hours a week online in their personal time.
+
+            For this we use the R code: 
+        \begin{verbatim}
+            > t.test(data,alternative="less",mean=12.7)
+        \end{verbatim}
+            Which gives us the p-value of 0.9973, a test statistic of 2.8548, and since the p-value
+            is much higher than our $\alpha=.05$, we fail to reject the null hypothesis and cannot say
+            that the true mean is less than 12.7.
+
+        \item R gives us our confidence interval from \verb|t.test|, -Inf 20.69673. Of course we cannot
+            have any negative hours of time spent on the Internet, so our 95\% CI for the true mean
+            is:
+            \[ (0, 20.69673) .\] 
+    \end{enumerate}
+\item 14
+
+\end{enumerate}
+\end{document}

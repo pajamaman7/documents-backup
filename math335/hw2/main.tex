@@ -1,0 +1,116 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $2$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+\usepackage{halloweenmath}
+\renewcommand\qedsymbol{$\mathbat$}
+
+\begin{document}
+\begin{enumerate} 
+
+\item A sequence $\{a_n\}_{n=1}^{\infty}$ of real numbers is said to be Cesàro convergent or Cesàro summable
+if the sequence of means
+\[\alpha_n=\frac{1}{n}\sum_{k=1}^na_k\]
+converges in $\mathbb{R}.$
+
+\begin{enumerate}
+    \item Prove that if $a_n$ is convergent to a limit $a\in \mathbb{R}$, then $\alpha _n$ also converges to $a.$ 
+        \begin{proof} 
+            Let $\varepsilon>0$, since $a_n$ is convergent to $a$, there exists some $N\in \mathbb{N}$ so that for any $n>\mathbb{N}$, $|a_n-a|<\varepsilon'$ 
+            (We choose $\varepsilon$ below).
+
+            Consider: 
+            \begin{align*}
+                |\alpha_n-a|&=\left|\sum_{k=1}^{n} \frac{a_k}{n} -a\right| \\
+                            &= \frac{1}{n}\left| \sum_{k=1}^{n} a_k -an \right| &\text{Since $n$ is positive, $\frac{1}{n}$ must also be} \\
+                            &= \frac{1}{n}\left| \sum_{k=1}^{n} (a_k -a) \right| \\
+                            &\leq \frac{1}{n}\sum_{k=1}^{n} \left| a_k-a \right| &\text{By the triangle inequality}
+                            &= \frac{1}{n}\left( \sum_{k=1}^{N-1} |a_k-a| +\sum_{k=N}^{n} |a_k-a|\right)  \\
+            .\end{align*}
+            Since $a_n$ is convergent, $|a_n|<M$, it is bounded, and so $|a|<M$. Then $|a_n-a|<2M$ for any $n$.
+            We use this, choose $\varepsilon'=\max \left\{\frac{n}{n-N+1}\left( \varepsilon- \frac{2(N-1)M}{n}, 1-\frac{2(N-1)M}{n} \right)\right\}$,
+            so that $\varepsilon'>0$ and $\varepsilon'\leq\varepsilon- \frac{2(N-1)M}{n}$. Now we have
+            \begin{align*}
+                            \frac{1}{n}\left( \sum_{k=1}^{N-1} |a_k-a| +\sum_{k=N}^{n} |a_k-a|\right) &\leq \frac{2(N-1)M}{n}+\varepsilon' \frac{n-N+1}{n}  \\
+                            &\leq \frac{2(N-1)M}{n}+ \frac{n}{n-N+1}\left( \varepsilon- \frac{2(N-1)M}{n} \right)\\
+                            &= \frac{2(N-1)M}{n}+ \varepsilon- \frac{2(N-1)M}{n}\\
+                            &= \varepsilon
+            .\end{align*}
+            
+            And $|\alpha_n-a|<\varepsilon$ as desired.
+        \end{proof}
+    \item Show an example (no need for proof) that the converse is not true. That is, provide a sequence $\{a_n\}$ such that $\{\alpha_n\}$ converges, but $\{a_n\}$ diverges.
+        
+        \paragraph{Solution: }Take the sequence $\{(-1)^n\} _{n=1}^{\infty}$, which does not converge ($\liminf a_n=-1\neq 1=\limsup a_n$. Then our sum becomes $\sum_{k=1}^{\infty} \frac{(-1)^n}{k}$. We know this to be the alternating harmonic series, a convergent series.
+
+\end{enumerate}
+\newpage
+
+\item Let $\{u_{n}\}_{n=1}^{\infty}$ be a sequence of positive real numbers. We define the sequence of products 
+\[p_1=u_1,\quad p_2=u_1u_2,\quad p_n=u_1u_2\cdots u_n=\prod_{k=1}^nu_k.\]
+We say that the infinite product $\prod_{k=1}^{\infty}u_k$ is convergent if and only if there exists a positive
+real number $p$ such that $\lim_{n\to\infty}p_n=p.$
+
+\begin{enumerate}
+    \item Prove that if $\{u_n\}_{n=1}^\infty$ is a sequence of positive real numbers such that
+$$\text{for all }\varepsilon>0\quad\exists N\in\mathbb{N}:m\ge n\ge N\quad\implies\quad\left|\prod_{k=n}^mu_k-1\right|<\varepsilon,$$
+then $\prod u_k$ is convergent. This is called the $\textit{Cauchy condition for products}.$
+
+\begin{proof} 
+    
+    Let $N_1$ be such that if $m\geq n\geq N_1$, then $\left|\prod_{k=n}^mu_k-1\right|<1$.
+
+    Then let $N_2$ be such that if $m\geq n\geq N_2$, then $\left|\prod_{k=n}^mu_k-1\right|<\varepsilon$.
+
+    Take $N=\max \{N_1,N_2\} $
+    \begin{align*}
+        \left| \prod_{k=N}^{m} u_k \right| &=\left| \prod_{k=N}^{m} u_k+1-1 \right| \\
+                                           &\leq  \left| \prod_{k=N}^{m} u_k-1\right|+1 &\text{By the triangle inequality}\\
+                                           &< \varepsilon+1 =2&\text{By the Cauchy condition}
+    .\end{align*}
+    Now we use this to find an upper bound for partial products.
+    \begin{align*}
+        \left|   \prod_{k=1}^{m} u_k \right|&=\left| \frac{\prod_{k=N}^{m} u_k }{\prod_{k=1}^{N-1} u_k } \right| \\
+                                            &= \frac{\prod_{k=N}^{m} u_k }{\prod_{k=1}^{N-1} u_k }&\text{Since each term is positive, partial products must be positive.} \\
+                                            &<\frac{2}{\prod_{k=1}^{N-1} u_k} &\text{See above :)}
+    .\end{align*}
+    Then let $M= \prod_{k=1}^{N-1} u_k $, which is dependent on neither $m,n$, so our above inequality becomes $\frac{\prod_{k=N}^{m} u_k }{M}<2$, and we get
+    that $\prod_{k=N}^{m} u_k <2M $.
+
+    By the Cauchy condition, 
+    \[ \left|   \prod_{k=n}^{m} u_k -1\right|<\frac{\varepsilon}{M} .\] 
+    Combining this inequality with our above boundedness statement, 
+\[
+    |p_n-p_m|=\left| \prod_{k=1}^{n} u_k +\prod_{k=1}^{m} u_k  \right|  =\left|\prod_{k=n}^{m} u_k -1 \right| \prod_{k=1}^{n-1}u_k <\frac{\varepsilon M}{M}=\varepsilon
+    .\] 
+    So we have shown that $p_n$ is a Cauchy sequence, and since it is a real sequence, it must converge thanks to the completeness of the reals.
+\end{proof}
+\newpage
+
+\item Let $\{ a_{n}\} _{n= 1}^{\infty }$ be a sequence of nonnegative real numbers, and let $u_{n}= 1+ a_{n}. \textbf{ Prove}$
+$\textbf{that if}\sum a_n$ is convergent then $\prod u_n$ is convergent . $Hint:$ Apply the inequality $\ln{(1+x)}\leq x$, valid for all $x>-1.$ Prove that the partial products are increasing and bounded. You can use that $e^x\to1$ as $x\to0$ (only if needed).
+
+\begin{proof} 
+    Suppose that $\sum_{k=1}^{\infty} a_k$ of nonnegative terms is convergent to $a\in \mathbb{R}$.
+
+    Since each $a_i$ is bounded below by zero, $u_i=a_i+1$ is bounded below by $1$.
+
+    Then  $u_i>1\implies u_{i+1} \prod_{k=1}^{i} u_k =\prod_{k=1}^{i+1} u_k>\prod_{k=1}^{i} u_k $, so the partial products are increasing.
+
+    Likewise, $a_i>0\implies a_{i+1}+\sum_{k=1}^{i} a_k=\sum_{k=1}^{i+1} a_k>\sum_{k=1}^{i} a_i$ so our partial sums are increasing. As a result, since $\sum_{}^{} a_k$ is convergent,
+    we know that it must be bounded. So there exists some $M$ so that $0<\sum_{k=1}^{i} a_k<M$ for any $i$.
+
+    \begin{align*}
+        \prod_{k=1}^{n}  u_k&=\exp\left( \ln\left( \prod_{k=1}^{n} u_n  \right)  \right) \\
+                &=\exp\left( \sum_{k=1}^{n}\ln\left(  a_n+1  \right)  \right)\\
+                &\leq\exp\left( \sum_{k=1}^{n}a_n \right)&\text{$e^{x}$ is increasing, and $\ln(1+x)\leq x$}\\
+                &<\exp (M)&\text{Again since $e^x$ is increasing}
+    .\end{align*}       
+    So any partial product is less than $e^M$, which is finite since $M$ is finite. and since the sequence of partial products is increasing and bounded, it must be convergent.
+
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,2 @@
+An [[Ordered Set]] $X$ is said to have the least upper bound property if any non-empty subset $A\subseteq X$ that has an upper bound must have a [[Least Upper Bound]] in $X$.
+Notably, $\mathbb{Q}$ does not have this property, and $\mathbb{R}$ does.

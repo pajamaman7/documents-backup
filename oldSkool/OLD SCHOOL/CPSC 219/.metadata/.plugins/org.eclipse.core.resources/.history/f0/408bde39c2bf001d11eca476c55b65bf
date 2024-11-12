@@ -1,0 +1,9 @@
+package basicjava;
+
+public class FileExercises {
+	 public static int counting(String seek) {
+		
+		return 0;
+	}
+
+}

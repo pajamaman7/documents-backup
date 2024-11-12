@@ -1,0 +1,23 @@
+\item  \begin{enumerate}[label= (\alph*)] 
+        \item We find an MoM estimator for $\beta$, by equating our first sample and theoretical 
+            moments.
+            \[
+                \bar{X}=E[X]=\int_{\beta}^{\infty} xe^{\beta-x} \, d x =\beta+1
+            .\] 
+            So we have $\bar{X}=\beta+1$, and this gives $\hat{\beta}_{MoM}=\bar{X}-1$.
+
+        \item We begin with our likelihood function:
+            \begin{align*}
+                L(\beta)&=\prod_{i=1}^{n}e^{\beta-x_i}I(x_{(1)}>\beta)\\
+                &= e^{\beta n}\exp{\left(\sum_{i=1}^{n} -x_i\right)} I(x_{(1)}>\beta)\\
+                &= \exp(\beta n- \bar{x}n)I(x_{(1)}>\beta)
+            .\end{align*}
+
+            And from this our log-likelihood function:
+            \begin{align*}
+                l(\beta)&= \ln(e^{\beta n- n \bar{x}}I(x_{(1)}>\beta)) \\
+                &= n(\beta-\bar{x})+\ln I(x_{(1)}>\beta) 
+            .\end{align*}
+            We can see that the only term dependent on $\beta$ is $n\beta$, and this is maximised by the highest possible 
+            value of $\beta$ is $x_{(1)}$. So $\hat{\beta}_{MLE}=x_(1)$ 
+    \end{enumerate}

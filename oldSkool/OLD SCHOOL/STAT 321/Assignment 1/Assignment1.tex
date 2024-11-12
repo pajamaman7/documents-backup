@@ -1,0 +1,298 @@
+\documentclass{article}
+\input{preamble}
+
+\begin{document}
+\huge Assignment 1 - Thomas Boyko - 30191728
+
+\normalsize 
+
+\begin{enumerate} 
+\item Two fair four-sided dice are tossed simeltaneously and the product
+    of the two uppermost faces is recorded.
+    \begin{enumerate}[label= (\alph*)] 
+        \item What is the probability that the product is even?
+
+            For the product of the dice to be even, one or more of the dice
+            must be even. The probability of a single dice being even is $\frac{1}{2}$,
+            since there are $4$ possible outcomes, $2$ of which are even.
+
+            Let $A$ represent the event of the first dice rolling an even number,
+            and $B$ the event of the second rolling an even number.
+
+            So the statement we are interested in is $P(A\cup B)$, or either die 
+            rolling even.
+
+            It will also prove helpful to know that the probability of $A$ and $B$ 
+            occuring is simply their product $0.5\times0.5=0.25$.
+
+            \begin{align*} 
+                P(A\cup B)&=P(A)+P(B)-P(A\cap B)\\
+                &=0.5+0.5-0.25\\
+                &=\frac{3}{4}
+            \end{align*}
+            So the probability of rolling an even product is $\frac{3}{4}=0.75$.
+        \item What is the probability that the product is even and less than 5?
+
+        To find the probability of rolling a product that is both even and less
+        than 5, it might be simplest to list the sample space.
+
+        \[S=\{(1,1),(1,2),(1,3),(1,4),(2,1),(2,2),(2,3),(2,4),\]
+        \[(3,1),(3,2),(3,3),(3,4),(4,1),(4,2),(4,3),(4,4)\}\]
+
+        The subset of the sample space that satisfies both conditions is 
+
+        \[S_0=\{(1,2),(1,4),(2,1),(2,2)\}\]
+
+        Since the size of the sample space is 16, and the size of our desired
+        outcome is 4, the probability of rolling an even product less than 5
+        is $\frac{4}{16}=\frac{1}{4}$.
+
+    \end{enumerate}
+
+\item Let $P(A)=0.83$, $P(B|A)=0.22$, and $P(A^c\cap B^c)=0.05$.
+    \begin{enumerate}[label= (\alph*)] 
+        \item Find $P(A\cap B)$.
+            \begin{align*} 
+                P(B|A)&=\frac{P(A\cap B)}{P(A)}\\
+                P(A)P(B|A)&=P(A\cap B)\\
+                0.83\times0.22&=P(A\cap B)\\
+                P(A\cap B)&=0.1826
+            \end{align*}
+        \item Find $P(B)$.
+            \begin{align*} 
+                P(A^c\cap B^c)&=P(A\cup B)^c\\
+                0.05&=1-P(A\cup B)\\
+                0.05&=1-(P(A)+P(B)-P(A\cap B))\\
+                0.05&=1-0.83-P(B)+0.1826\\
+                P(B)&=0.3026
+            \end{align*}
+        \item Find $P(B|A^c)$.
+            \begin{align*} 
+                P(B|A^c)&=\frac{P(B\cap A^c)}{P(A^c)}\\
+                &=\frac{P(B)-P(B\cap A)}{1-P(A)}\\
+                &=\frac{0.3026-0.1826}{1-0.83}\\
+                P(B|A^c)&=\frac{12}{17}\approx0.7059
+            \end{align*}
+    \end{enumerate}
+
+    \item A fair six-sided die is rolled at the same time a fair coin is tossed. The number on the
+    die (1, 2, 3, 4, 5, or 6) and the side of the coin (heads or tails) are recorded.
+        \begin{enumerate}[label= (\alph*)] 
+            \item List out the sample space, S, for this experiment.
+            \[S=\{1H,2H,3H,4H,5H,6H,1T,2T,3T,4T,5T,6T\}\]
+
+            \item You perform this experiment once. What is the probability that your coin landed
+            “tails” if you rolled an even number on the die?
+
+            \[P(\text{tails}|\text{even})=\frac{P(\text{tails and even})}{P(\text{even})}\]
+
+            Looking at our sample space, we can see that there are $3$ outcomes
+            that have tails and an even roll, and that there are $6$ outcomes
+            with an even roll. So:
+
+            \[P(\text{tails}|\text{even})=\frac{3}{6}=\frac{1}{2}\]
+
+            \item Let A be the event that you roll a 6 on your die and let B be the event that your coin
+            landed “tails.” Show that A and B are independent.
+
+            Through looking at our sample space, we can see the following:
+            \begin{align*} 
+                P(\text{tails})&=\frac{1}{2}\\
+                P(6)&=\frac{1}{6}\\
+                P(\text{tails and 6})&= \frac{1}{12}\\
+                P(\text{tails given a 6 was rolled})&=\frac{P(\text{tails and 6})}{P(6)}\\
+                &=\frac{1/12}{1/6}\\
+                &=\frac{1}{2}=P(\text{tails})
+            \end{align*}
+            So the events are independent since 
+            $P(\text{tails given a 6 was rolled})=P(\text{tails})$.
+
+        \end{enumerate}
+        \newpage
+    \item Color vision deficiency, commonly known as colorblindness, is a decreased ability to
+        see color or to distinguish amongst colors. Since most genes responsible for
+        colorblindness are found on the X chromosome, males are more likely to be colorblind
+        than females. Suppose in a particular population that if a person is male, they have an
+        $8\%$ chance of also being colorblind. If a person is female, they have a $1\%$ chance of
+        also being colorblind. Suppose also that females make up $53\%$ of this particular
+        population.
+
+        For the following questions, let $M$ be the event that a person is male,
+        $F$ be the event that a person is female, and $C$ the event that a person
+        is colorblind.
+        
+        Also note that  $F=M^c$.
+            \begin{enumerate}[label= (\alph*)] 
+            \item A person is randomly selected from this population. What is the probability that they
+            are colorblind?
+            \begin{align*} 
+                0.01=P(C|F)&=\frac{P(C\cap F)}{P(F)}\\
+                0.01&=\frac{P(C\cap F)}{0.53}\\
+                0.0053&=P(C\cap F)\\
+                0.08=P(C|M)&=\frac{P(C\cap F^c)}{P(M)}\\
+                0.08&=\frac{P(C\cap F^c)}{0.47}\\
+                0.0376&=P(C\cap F^c)\\
+                P(C)&=P(C\cap F^c)+P(C\cap F)\\
+                &=0.0376+0.0053\\
+                &=0.0429
+            \end{align*}
+            So the probability of a person having colorblindness is $0.0429$.
+
+            \item  A person is randomly selected from this population. What is the probability that they
+            are male or colorblind?
+
+            Using our information from above we know that $P(M)=0.47$, $P(C\cap M)=0.0376$,
+            and $P(C)=0.0429$.
+
+            \begin{align*} 
+                P(C\cup M)&=P(C)+P(M)-P(C\cap M)\\
+                &=0.0429+0.47-0.0376\\
+                &=0.4753
+            \end{align*}
+
+            So the probability of a person having colorblindness or being male
+            is $0.4753$.
+
+            \item Assuming that a randomly-selected person from this population is not colorblind,
+            what is the probability that they are female?
+
+            \begin{align*} 
+                P(F|C^c)&=\frac{P(F\cap C^c)}{P(C^c)}\\
+                &=\frac{P(F)-P(F\cap C)}{1-P(C)}\\
+                &=\frac{0.53-0.0053}{0.9571}\\
+                &\approx0.5482185
+            \end{align*}
+
+            So the probability of a person being female given that they are colorblind 
+            is about $0.5482$.
+            \end{enumerate}
+            \newpage
+    \item Alice and Bonnie are practicing archery. The probability that Alice hits a given target is $x$, while the probability that Bonnie hits a given target is $y$. Assume these probabilities are independent. Alice and Bonnie aim at a single target and fire at the same time.
+        
+        For the following, suppose $A$ is the event of Alice hitting the target, and 
+        $B$ is the event of Bonnie hitting the target.
+        So $P(A)=x$ and $P(B)=y$.
+
+        As well, since the probabilities are independent, we know that $P(A\cap B)=xy$,
+        and $P(A\cup B)=x+y$.
+
+        \begin{enumerate}[label= (\alph*)] 
+        \item If the target was hit, what is the probability that it was hit by both Alice and Bonnie?
+
+        We want to find $P(A\cap B|A\cup B)$.
+        \begin{align*} 
+            P(A\cap B|A\cup B)&=\frac{P((A\cup B)\cap(A\cap B))}{P(A\cup B)}\\
+            &=\frac{P(A\cap B)}{P(A\cup B)}\\
+            &=\frac{xy}{x+y}
+        \end{align*}
+
+        So, given that the target was hit, the probability that both Alice and Bonnie hit it is $\frac{xy}{x+y}$.
+
+        \item If the target was hit, what is the probability that it was hit by Bonnie?
+
+        We want to find $P(B|B\cup A)$.
+
+        \begin{align*} 
+            P(B|B\cup A)&=\frac{P(B\cap(B\cup A))}{P(B\cup A)}\\
+            &=\frac{P(B)}{P(B\cup A)}\\
+            &=\frac{y}{x+y}
+        \end{align*}
+
+        So, given that the target was hit, the probability that it was hit by Bonnie is $\frac{y}{x+y}$.
+        \end{enumerate}
+    \item Consider the letters in the word “ALBERTA.”
+        \begin{enumerate}[label= (\alph*)] 
+        \item How many ways can you rearrange the letters if you treat the two A's as distinct?
+        (ALBERTA)
+        
+            To create a permutation of the letters in "ALBERTA," we can choose a 
+            letter 7 times, adding it to the end of our permutation, and discarding it.
+
+            So there are $7\times6\times5\times4\times3\times2\times1=7!=5040$ permutations of these
+            letters.
+
+        \item How many ways can you rearrange the letters if you do not treat the two A's as
+        distinct? (ALBERTA)
+
+        To create a permutation under these conditions, we must first choose
+        two spots for the A's, ignoring order. There are $7\choose2$ ways to do this.
+
+        Then, we can choose a spot for the remaining 5 letters. There are $5\times4
+        \times3\times2\times1=5\!$ ways to do this.
+
+        So the total number of ways to permute the letters in "ALBERTA," treating
+        the A's as the same, is ${7\choose2} 5!=2520$.
+        \end{enumerate}
+        \newpage 
+        \item An urn contains three red balls, five green balls, and eight blue balls. You draw five balls
+        from this urn (without replacement) and record their colors.
+
+        \begin{enumerate}[label= (\alph*)] 
+            \item What is the probability that all selected balls are blue?
+            
+            There are $8\choose5$ ways to choose a set of $5$ blue balls from that set of $8$ blue balls that are in the urn.
+
+            And there are $16\choose5$ ways to choose a set of $5$ balls from the urn.
+            
+            So the probability of choosing $5$ blue balls at random from the urn is $\frac{{8\choose5}}{{16\choose5}}=\frac{56}{4368}=0.01282$.
+
+            \item What is the probability that your selection consists of one red ball, two green balls,
+            and two blue balls?
+
+            First, we will choose the red ball from the urn. Since we are only choosing one from the three in the urn, there are $3$ ways to do this.
+
+            Next, we choose $2$ green balls from the $5$ in the urn. There are $5\choose2$ ways to do this.
+
+            Finally, we choose $2$ blue balls from the $8$ in the urn. There are $8\choose2$ ways to do this.
+
+            And as we know, there are $16\choose5$ ways to choose any group of $5$ balls from the urn.
+
+            So the probability of choosing the balls as above is $\frac{3{5\choose2}{8\choose2}}{{16\choose2}}=\frac{840}{4368}=0.19231$.
+
+            \item What is the probability your selection consists of two red balls and three blue balls
+            or consists of three red balls and two blue balls?
+
+            To solve for the probability of either of these events happening, we can sum their probability since they are mutually exclusive.
+
+            First, three red and two blue balls. There is only one way to choose three red balls from the three in the urn. And there are $8\choose2$ ways to pick two blue balls from the eight in the urn. So there are $8\choose2$ ways to pick two blue and three red balls from the urn.
+
+            Next, three blue balls and two red balls. There are three ways to choose our red balls since we are simply choosing which ball of the three to leave out. And since we are choosing $3$ from $8$ of the blue balls in the urn, there are $8\choose3$ ways to choose our blue balls. So there are $3{8\choose3}$ ways to pick three blue and two red balls from the urn.
+
+            Summing these numbers above the common denominator of $16\choose5$, we get our probability $\frac{{8\choose2}+3{8\choose3}}{{16\choose5}}=\frac{196}{4368}=0.44872$.
+
+            \item What is the probability that your selection contains at most four blue balls?
+
+            For this, note that $P(\text{at most 4})=1-P(5)$. Luckily we already know the probability of choosing exactly $5$ balls from part (a).
+
+            So our probability becomes $1-0.01282=0.98718$.
+
+        \end{enumerate}
+        \newpage
+        \item A poker hand is a hand of five cards dealt from a standard deck of 52 cards. Suppose
+        you are dealt a poker hand.
+            \begin{enumerate}[label= (\alph*)] 
+                \item What is the probability that your hand is a flush?
+
+                The total number of hands we can draw from 52 cards is $5\choose2$, 
+                this will be our sample space.
+
+                To make a hand which is a flush, first we will pick the suit that the flush
+                will be. There are 4 ways to do this.
+
+                Next, we choose 5 cards from the 13 in this suit. There are $13\choose5$ ways to 
+                do this.
+
+                So the probabilty of getting a flush is $\frac{4{13\choose5}}{{52\choose5}}=\frac{5148}{2598960}=0.001981$
+
+                \item What is the probability that your hand contains three-of-a-kind?
+                
+                The total number of ways to choose a hand of 5 cards remains the same as the previous example, $52\choose5$.
+
+                To create a hand containing a three-of-a-kind, first we must choose the card that we will have three of. There are 13 ways to do this. Then, out of the 4 cards in the deck that match that value, we will choose 3: $4\choose3$. 
+
+                Finally, we must select two more cards from the deck that are a different value than our three-of-a-kind. There are 48 cards after we take out those four, so we have $48\choose2$ ways to pick the last two cards.
+
+                So, the probability of drawing a poker hand containing a three-of-a-kind is $\frac{13{4\choose3}{48\choose2}}{{52\choose5}}=\frac{58656}{2598960}=0.006944$.
+            \end{enumerate}
+\end{enumerate}
+\end{document}

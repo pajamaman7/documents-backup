@@ -1,0 +1,33 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Thomas "Buckets" Practice Final
+    \normalsize
+\begin{enumerate} 
+    \item Prove whether each set is a subspace of $\mathbb{M}_{22}$.
+        \begin{enumerate}[label= (\alph*)] 
+            \item $\mathbb{D}$, the set of all diagonal $2\times 2$ matrices.
+            \item $SL_2(\mathbb{R})=\{ A\in \mathbb{M}_{22}: \det A=1 \} $
+            \item $\left\{\begin{bmatrix} 0&0\\0&0 \end{bmatrix} \right\} $
+            \item $\{(1,2,0)\} ^{\perp}$.
+        \end{enumerate}
+
+    \item Expand the set $\{1+x^2\} $to an orthogonal basis for $\mathbb{P}_2$. Show that it is in fact a basis, and that it is orthogonal.
+
+    \item Given a linear transformation $T:\mathbb{M}_{22}\to \mathbb{P}_3$, where $\ker T=\{\vec{0}\} $,
+        solve the following. Justify your answers.
+
+        \begin{enumerate}[label= (\alph*)] 
+            \item Is $T$ an isomorphism? Prove your answer.
+
+            \item Explicitly write a linear transformation $T$ satisfying the above, and give its matrix $M_{DB}(T)$,
+                using the bases:
+                \[
+                    B=\left\{\begin{bmatrix} 1&1\\0&0 \end{bmatrix} \begin{bmatrix} 1&1\\0&0 \end{bmatrix} \begin{bmatrix} 0&0\\1&0 \end{bmatrix} \begin{bmatrix} 0&0\\0&1 \end{bmatrix} \right\}, \quad
+                    D=\{1,x,x^2,x^3\} 
+                .\] 
+            \item Is your matrix invertible?
+        \end{enumerate}
+\end{enumerate}
+\end{document}

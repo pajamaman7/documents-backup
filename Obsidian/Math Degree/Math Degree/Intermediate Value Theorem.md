@@ -1,0 +1,1 @@
+If $f$ is [[Limits and Continuity in Metric Spaces|Continuous]] from $[a,b]\to \mathbb{R}$ and $f(a)<f(b)$, then for any $f(a)<\gamma<f(b)$, there exists $c\in(a,b)$ such that $f(c)=\gamma$. 

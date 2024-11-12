@@ -1,0 +1,22 @@
+{
+  "moveIntoMath_toggle": true,
+  "autoCloseMath_toggle": true,
+  "autoCloseRound_toggle": false,
+  "autoCloseSquare_toggle": false,
+  "autoCloseCurly_toggle": false,
+  "addAlignBlock_toggle": false,
+  "addAlignBlock_parameter": "align*",
+  "autoAlignSymbols": "= > < \\le \\ge \\neq \\approx",
+  "addCasesBlock_toggle": false,
+  "shiftEnter_toggle": false,
+  "addMatrixBlock_toggle": false,
+  "addMatrixBlock_parameter": "pmatrix",
+  "autoFraction_toggle": false,
+  "autoLargeBracket_toggle": false,
+  "autoSumLimit_toggle": false,
+  "autoEncloseSup_toggle": false,
+  "autoEncloseSub_toggle": false,
+  "encloseSelection_toggle": false,
+  "customShorthand_toggle": false,
+  "customShorthand_parameter": "\n"
+}

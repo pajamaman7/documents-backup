@@ -1,0 +1,91 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Problem Set 2 - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+\item Consider the subset of $\mathbb{R}$ defined by
+\[
+\mathbb{Q}(\sqrt{2})=\{a+\sqrt{2} b:a,b\in \mathbb{Q}\} 
+,\] 
+with the usual addition and multiplication. Show that this is a field.
+\paragraph{Solution} 
+
+Begin with the axioms for addition. For all the following, let 
+$a+b\sqrt{2},c+d\sqrt{2} \in \mathbb{Q}(\sqrt{2} )$.
+(
+\begin{enumerate}[label= (\roman*)] 
+    \item Closure: $a+b\sqrt{2} +c+d\sqrt{2} =(a+c)+(b+d)\sqrt{2}$, and since 
+        $a+c, b+d\in \mathbb{Q}$, $\mathbb{Q}(\sqrt{2} )$ is closed under $+$.
+    \item Identity: Clearly $0=0+0\sqrt{2} $ is identity.
+    \item Commutativity: $a+b\sqrt{2} +c+d\sqrt{2} =(a+b) +(c+d)\sqrt{2}$ by commutativity of 
+        addition in $\mathbb{R}$.
+    \item Inverses: $a+b\sqrt{2} +(-a-b\sqrt{2} )=0$
+\end{enumerate}
+Then the multiplication axioms:
+\begin{enumerate}[label= (\roman*)] 
+    \item Closure: $(a+b\sqrt{2} )(c+d\sqrt{2} )=ab+ad\sqrt{2} +bc\sqrt{2} +2bd=(ab+2bd)+(ad+bc)\sqrt{2} $
+    \item Identity: we inherit $1=1+0\sqrt{2} $, the identity from $\mathbb{R}$.
+    \item Commutativity: Follows from commutativity of addition and multiplication in $\mathbb{R}$.
+    \item Inverses: $\frac{1}{a+b\sqrt{2} }=\frac{a-b\sqrt{2} }{a^2-2b^2}=\frac{a}{a^2-2b^2}+\frac{-b}{a^2-2b^2}\sqrt{2} $.
+        Clearly this is a multiplicative inverse for $a+b\sqrt{2} $.
+\end{enumerate}
+
+\item If $z$ is a complex number prove that there exists a unique $r\geq 0$ and a complex $|w|=1$ so that
+    $z=rw$.
+
+    \begin{proof} 
+        Let $r=|z|$. We know already that this is real and $\ge 0$. Then let $w=\frac{z}{|z|}$. So clearly this is complex
+        and $z=rw$. Now we must show uniqueness of these two variables.
+
+        TODO is this the right process?
+        Suppose $z=z'=x+iy$, then clearly $|z|=\sqrt{x^2+y^2}= |z'|$, so $r$ is unique, and since $r$ is unique $w$ is.????
+    \end{proof}
+
+\item Let $E^{\circ}$ be the set of all interior points for a set $E$; $E^{\circ}$ is the \textit{interior} of $E$. Prove:
+\begin{enumerate}[label= (\alph*)] 
+    \item $E^{\circ}$ is open
+
+        \begin{proof} 
+            $E^{\circ}$ is clearly open, every point must be an interior point.
+        \end{proof}
+
+    \item $E$ is open $\iff E^{\circ}=E$.
+        \begin{proof} 
+            $\implies$: Suppose $E$ is open. Then every point of $E$ is an interior point.
+            By definition, $E^{\circ}\subseteq E$ Take $p \in E$. Since $E$ is open, $p$ is
+            an interior point and must be in $E^{\circ}$. So $E=E^{\circ}$.
+
+            $\impliedby$: Easy; $E^{\circ}$ is open, so if $E^\circ=E$, then $E$ must be open.
+        \end{proof}
+    \item If $G\subseteq E$ and $G$ is open, $G\subseteq E^{\circ}$.
+        \begin{proof} 
+            Let $G\subseteq E$ be open, and take $g\in G$. $g$ must be an interior point of $G$, which
+            is a subset of $E$. Therefore $g$ is an interior point in $E$; and $g\in E^{\circ}$.
+            So $G\subseteq E^{\circ}$.
+        \end{proof}
+    \item The complement of $E^{\circ}$ is the closure of the complement of $E$.
+
+        \begin{proof} 
+            The complement of $E^{\circ}$ is the set of all points in $X$ which are not interior points of $E$.
+
+            So a open ball about any point $x$ in $(E^{\circ})^{c}$ contains some point not in $E$. So either $x$ is a limit point of $E$, or $x$ is not in $E$. And we have described all points in the closure of $E^{c}$.
+        \end{proof}
+
+    \item Do $E$ and $E^{\circ}$ have the same interiors?
+        
+
+        Yes, any interior point of $E^{circ}$ is an interior point of $E$ and vice versa.
+
+    \item Do $E$ and $E^{\circ}$ have the same closures?
+
+        Yes, any closure point of $E^{circ}$ is an closure point of $E$ and vice versa.
+
+\end{enumerate}
+
+\item Prove that every open set in $\mathbb{R}$ is the union of at most countable collection of disjoint segments. 
+    (Use ex.22)
+
+\end{enumerate}
+\end{document}

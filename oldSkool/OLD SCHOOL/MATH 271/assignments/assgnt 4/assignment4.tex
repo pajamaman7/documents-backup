@@ -1,0 +1,420 @@
+\documentclass[]{article}
+\input{preamble}
+\begin{document}
+    \huge Thomas Boyko - Math 271 Assignment 4 - 30191728
+    \normalsize 
+    \begin{enumerate} 
+        \item Let $A=\{1,2,3,4,5,6,7,8,9\}$. Let $\mathcal{P}=\mathcal{P}(A)$ be the power set of $A$
+
+        Let $\mathrel{R}$ be the relation on $A$ defined by:
+        \[\text{For all } X,Y\in\mathcal{P}, X\mathrel{R}Y\iff|X\cup Y|\leq|X\cup\{1,2\}|.\]
+        \begin{enumerate}[label= (\alph*)]
+        \item Is $R$:
+        \begin{enumerate}[label= (\roman*)] 
+            \item Reflexive?
+                $\mathrel{R}$ is reflexive. We must prove that for all $X\in \mathcal{P}, X\mathrel{R}X$.
+                \begin{proof}
+                    Suppose $X\in \mathcal{P}$ and that $X$ has $x$ elements.
+
+                    So $|X\cup X|=|X|=x$.
+
+                    Note that $|X\cup \{1,2\}| = x+2-|X\cap \{1,2\}|$. We can see this through summing
+                    the size of both sets, and then subtracting their intersection since it will be 
+                    counted twice.
+
+                    For an element to be in $|X\cap \{1,2\}|$, it must be $1$ or $2$. So the set $X\cap \{1,2\}$
+                    has between $0$ and $2$ elements.
+
+                    Since $0\leq|X\cap \{1,2\}|\leq2$, we can say that 
+                    $|X\cup \{1,2\}| = x+n$ where $n\in\mathbb{Z}, 0\leq n\leq2$.
+
+                    $|X\cup X|=x\leq x+n=|X\cup \{1,2\}|$
+
+                    Therefore, for all $X\in\mathcal{P},X\mathrel{R}X$
+                \end{proof}
+            \item Symmetric?
+            
+            $R$ is not symmetric. Or, there exist $X,Y\in \mathcal{P}$ so that $X\mathrel{R}Y$ but $Y\not\mathrel{R} X$.
+            \begin{proof}
+
+                Choose the following sets $X,Y\in\mathcal{P}$.
+
+                \begin{align*} 
+                    X&=\{1,2,3\}\\
+                    Y&=\varnothing
+                \end{align*}
+
+                Note the following:
+
+                \begin{align*} 
+                    X\cup Y &= \{1,2,3\}\\
+                    X\cup \{1,2\}&=\{1,2,3\}\\
+                    Y\cup \{1,2\}&=\{1,2\}\\
+                    |X\cup Y| =3&\leq3=|X\cup \{1,2\}|
+                \end{align*}
+                So, $X\mathrel{R}Y$.
+                However, 
+                
+                \[|X\cup Y|=3>2=|Y\cup\{1,2\}|\] 
+                
+                So, $Y\not\mathrel{R}X$.
+                Therefore, there exist $X,Y\in \mathcal{P}$ so that 
+                $X\mathrel{R}Y$ but $Y\not\mathrel{R} X$, and $\mathrel{R}$ is not symmetric.
+            \end{proof}
+            \item Antisymmetric?
+
+                $\mathrel{R}$ is not antisymmetric. We must prove that there exist 
+                $X,Y\in\mathcal{P}$ so that $X\mathrel{R}Y$ and $Y\mathrel{R}X$ but
+                $Y\neq X$.
+
+                \begin{proof}
+                    Choose the following sets $X,Y\in\mathcal{P}$:
+
+                    \begin{align*} 
+                        X&=\{1\}\\
+                        Y&=\varnothing
+                    \end{align*}
+
+                    So, 
+                    \begin{align*} 
+                        X\cup Y &= \{1\}\\
+                        X \cup \{1,2\}&=\{1,2\}\\
+                        Y \cup \{1,2\}&=\{1,2\}\\
+                        |X\cup Y| = 1&\leq2=X \cup \{1,2\}\\
+                        |X\cup Y| = 1&\leq2=Y \cup \{1,2\}
+                    \end{align*}
+                    So $Y\mathrel{R}X$ and $X\mathrel{R}Y$.
+
+                    But since $1\in X$ and $1\not\in Y$, $Y\neq X$.
+
+                Therefore, there exist $X,Y\in\mathcal{P}$ so that $X\mathrel{R}Y$ and $Y\mathrel{R}X$ but
+                $Y\neq X$, and $\mathrel{R}$ is not antisymmetric.
+
+                \end{proof}
+            \item Transitive?
+
+            $\mathrel{R}$ is not transitive. So we must find some $X,Y,Z\in\mathcal{P}$ so that 
+            $X\mathrel{R}Y$ and $ Y\mathrel{R}Z, $ but $X\not\mathrel{R}Z$.
+
+            \begin{proof}
+                Choose the following sets $X,Y,Z\in\mathcal{P}$.
+
+                \begin{align*} 
+                    X&=\varnothing\\
+                    Y&=\{3,4\}\\
+                    Z&=\{3,4,5\}
+                \end{align*}
+
+                Therefore we can see that:
+                \begin{align*} 
+                    X\cup Y &= \{3,4\}\\
+                    Y\cup Z &= \{3,4,5\}\\
+                    X\cup Z &= \{3,4,5\}\\
+                    X\cup\{1,2\}&=\{1,2\}\\
+                    Y\cup\{1,2\}&=\{1,2,3,4\}\\
+                    |X\cup Y|=2&\leq 2 =|X\cup \{1,2\}|\\
+                    |Y\cup Z|=3&\leq 4 =|Y\cup \{1,2\}|
+                \end{align*}
+                So $X\mathrel{R}Y$ and $Y\mathrel{R} Z$.
+
+                    \[|X\cup Z| = 3>2=|X\cup\{1,2\}|\]
+                So we know that $X\not\mathrel{R}Z$.
+                
+                Therefore there exist sets $X,Y,Z\in\mathcal{P}$ so that 
+                $X\mathrel{R}Y$ and $ Y\mathrel{R}Z, $ but $X\not\mathrel{R}Z$.
+
+            \end{proof}
+
+
+        \end{enumerate}
+        \item How many $S\in \mathcal{P}$ are there so $\{3\}RS$?
+
+            Note that $|\{3\}\cup\{1,2\}|=3$, so:
+            \[\{3\}\mathrel{R}S\iff|\{3\}\cup S|\leq3\]
+            To create a set $S$ so that $\{3\}\mathrel{R}S$, we first can select whether 
+            or not $3\in S$. Whether this is the case or not will not change if $\{3\}\mathrel{R}S$
+            There are $2$ ways to do this.
+
+            Then, we choose $2$ elements from $A$ excluding $3$, without replacement. There are $9\choose2$
+            ways to do this. (We cannot choose $3$, but we can choose to not add anything to $S$).
+
+            So there are $2 {9\choose2 }=72$ ways to choose a set $S\in\mathcal{P}$ so that $\{3\}\mathrel{R}S$.
+        \item How many $S\in \mathcal{P}$ are there so $S\mathrel{R}\{3\}$?
+
+        To count the number of sets $S$ so that $S\mathrel{R}\{3\}$, first we must
+        separate into two cases.
+        
+        Case 1: $3\in S$.
+
+        If $3$ is in $S$, then we can choose any elements from $A$ to put in $S$ 
+        and it will still be related to $\{3\}$.
+
+        So, if $3\in S$, there are $2^8$ ways to choose the rest of $S$ so that
+        $S\mathrel{R}\{3\}$.
+
+        Case 2: $3\not\in S$. 
+
+        If $3$ is not in $S$, then at most one of $\{1,2\}$ can be in $S$.
+
+        So first we choose whether $1\in S$, $2\in S$, or neither. There are 3 ways to do this.
+
+        Then for each remaining element of $A$, we can choose if it is in or out.
+        There are $2^6$ ways to do this.
+
+        Therefore, there are $3(2^6)$ ways to choose a set $S$ so that $S\mathrel{R}\{3\}$ when $3\not\in S$.
+
+        So the total number of ways to choose a set $S\in\mathcal{P}$ so that $S\mathrel{R}\{3\}$
+        is $2^8+3(2^6)=448$.
+
+        \end{enumerate}
+
+        \newpage 
+    
+        \item Let $A=\{1,2,3,4,5\}$. Let $\mathcal{F}$ be the set of all functions
+        from $A$ to $A$. Define a relation $R$ on $\mathcal{F}$ as follows:
+        \[ \forall f,g\in\mathcal{F},fRg\iff  \forall i\in A, f(i)\leq g(i)\]
+        \begin{enumerate}[label= (\alph*)] 
+        \item Is R:
+            \begin{enumerate}[label=(\roman*)] 
+                \item Reflexive?
+
+                $\mathrel{R}$ is reflexive.
+                \begin{proof}
+                    Suppose $f\in\mathcal{F}$.
+
+                    Notice that $\forall i\in A, \: f(i)=f(i)$ since $f$ is a function.
+
+                    So $f(i)\leq f(i)$.
+
+                    So $f\mathrel{R}f$ and $\mathrel{R}$ is reflexive.
+                \end{proof}
+                \item Symmetric?
+                
+                $\mathrel{R}$ is not symmetric. So, there exist $f,g\in\mathcal{F}$ so that
+                $f\mathrel{R}g$ but $g\not\mathrel{R}f$.
+
+                \begin{proof}
+                    Choose $f=\{(x,1):x\in A\}$ and $g=\{(x,2):x\in A\}$
+
+                    So, $\forall i\in A, f(i)=1$ and $g(i)=2$.
+
+                    \[f(i)=1\leq2=g(i)\]
+
+                    So $f\mathrel{R}g$
+
+                    But, $\forall i\in A, $
+                
+                    \[g(i)=2>1=f(i)\]
+
+                    So $f\not\mathrel{R}g$.
+
+                    Therefore, there exist $f,g\in\mathcal{F}$ so that
+                $f\mathrel{R}g$ but $g\not\mathrel{R}f$, and $\mathrel{R}$ is not symmetric.
+
+                \end{proof}
+
+                \item Antisymmetric?
+
+                $\mathrel{R}$ is antisymmetric. So, $\forall f,g\in\mathcal{F}$ and $i\in A$,
+                if $f\mathrel{R}g$ and $g\mathrel{R}f$, then $g=f$.
+
+                \begin{proof}
+                    Suppose that $g,f\in\mathcal{F}$ and that $f\mathrel{R}g$ and $g\mathrel{R}f$.
+
+                    So, for all $i\in A,\: f(i)\leq g(i), \: g(i)\leq f(i)$
+
+                    So we have: 
+                    \[f(i)\leq g(i)\leq f(i)\]
+
+                    So $f(i)=g(i)$ and $f=g$.
+
+                    Therefore, $\mathrel{R}$ is antisymmetric.
+                \end{proof}
+
+                \item Transitive?
+
+                $\mathrel{R}$ is transitive. So, for all $f,g,h\in\mathcal{F}$, 
+                if $f\mathrel{R}g$ and $g\mathrel{R}h$, then $f\mathrel{R}h$.
+
+                \begin{proof}
+                    Suppose that $f,g,h\in\mathcal{F}$.
+
+                    Further suppose that $f\mathrel{R}g$ and $g\mathrel{R}h$.
+
+                    So for all $i\in A$, $f(i)\leq g(i)$ and $g(i)\leq h(i)$
+
+                    \[f(i)\leq g(i)\leq h(i)\]
+                    \[f(i)\leq h(i)\]
+
+                    So $f\mathrel{R}h$.
+
+                    Therefore, for all $f,g,h\in\mathcal{F}$, if $f\mathrel{R}g$ and $g\mathrel{R}h$, 
+                    $f\mathrel{R}h$ and $\mathrel{R}$ is transitive.
+                \end{proof}
+
+
+            \end{enumerate}
+
+
+        \item Prove or disprove: For all $f\in\mathcal{F}$, there exists $g\in \mathcal{F}$ so that $f\mathrel{R}g$
+        \begin{proof}
+            Suppose $f\in\mathcal{F}$. 
+
+            Choose $g=f$.
+
+            So, for all $i\in A$, $f(i)=g(i)$.
+
+            This satisfies the condition for the relation, so $f\mathrel{R}g$.
+        \end{proof}
+        \newpage
+        \item Prove or disprove: There exists $g\in\mathcal{F}$ so that for all $f\in\mathcal{F}$, $f\mathrel{R}g$.
+
+        \begin{proof}
+            Choose $g=\{(a,5):a\in A\}$
+            
+            Suppose $f\in\mathcal{F}$.
+
+            So, for all $i\in A$, $g(i)=5$.
+
+            Note that since all values in $A$ are between $0$ and $5$, 
+            $0\leq f(i)\leq 5$.
+
+            Since $g(i)=5$, $f(i)\leq g(i)$.
+
+            So, $f\mathrel{R}g$.
+
+            Therefore, there exists $g\in\mathcal{F}$ so that for all $f\in\mathcal{F}$, $f\mathrel{R}g$.
+
+        \end{proof}
+        
+        \end{enumerate}
+        Let $F\in\mathcal{F}$ be the function $f=\{(1,3),(2,3),(3,3),(4,1),(5,5)\}$.
+        \begin{enumerate}[resume*]
+        \item How many functions $g\in\mathcal{F}$ are there so that $fRg$? Explain.
+        
+        We can count the number of functions $g$ so that $f\mathrel{R}g$ by counting
+        the number of functions where $g(i)$ is greater than or equal $f(i)$ for each $i\in A$.
+
+        First, $f(1)=3\leq g(1)$. So $g$ must equal 3, 4, or 5. (3 ways to choose
+        g(1)).
+
+        The same applies for $2,3$ since $3=f(3)=f(2)$ so there are 3 ways 
+        each to choose $g(2), \: g(3)$.
+
+        There are $5$ ways to choose $g(4)$ since $f(4)=1\leq g(4)$ so $g(4)$ can be 
+        any element of $A$.
+
+        Finally, there is only one way to choose $g(5)$ since it must equal 5
+        in order for it to be greater than or equal to $f(5)=5$.
+
+        So there are $3^3\times4=108$ ways to choose a function $g$ so that $f\mathrel{R}g$.
+
+
+
+        \item How many functions $g\in\mathcal{F}$ are there so that $gRf$? Explain.
+
+        We can count the number of functions $g$ so that $g\mathrel{R}f$ by counting
+        the number of functions where $g(i)\leq f(i)$ for each $i\in A$.
+        
+        First we choose values for $g(1),g(2)$, and $g(3)$. (Like in the last
+        case, these all have the same number of options since $f(1)=f(2)=f(3)=3$).
+        There are 3 ways to choose all of these since each can equal $1,2$, or $3$.
+
+        There is only one way to choose $g(4)$ since it must equal 1 in order to 
+        be less than or equal to $f(4)=1$.
+
+        Finally, there are $5$ ways to choose $g(5)$ since all $5$ elements of 
+        $A$ are less than or equal to $5=f(5)$.
+
+        So there are $3^3\times4=108$ ways to choose a function $g$ so that $f\mathrel{R}g$.
+
+        \end{enumerate}
+        
+        \newpage
+        \item Prove or disprove the following statements by using the definitions of “congruence modulo
+        n” and “divides.”
+
+        \begin{enumerate}[label= (\alph*)]
+        \item For all positive integers $a,x$ and $y$, if $(a+x)\equiv (a+y)\pmod{12}$,
+        then $x\equiv y\pmod {12}$
+
+        \begin{proof}
+            Suppose $x,y,a\in\mathbb{Z}$, and that $a+x\equiv a+y\pmod{12}$.
+
+            Then $12k=(a+x)-(a+y)$ for some $k\in\mathbb{Z}$.
+
+            So $12k=a-y$
+
+            Therefore, $x\equiv y\pmod{12}$.
+        \end{proof}
+
+        \item For all positive integers $a,x$ and $y$, if $ax\equiv ay\pmod{12}$,
+        then $x\equiv y\pmod{12}$
+
+        The statement is false. The negation is: "There exist positive integers
+        $a,x$ and $y$ so that $ax\equiv ay\pmod{12}$,
+        but $x \not\equiv y\pmod{12}$"
+
+        \begin{proof}
+            Choose $a=12$, $x=2$, $y=1$.
+
+            Note that $12(2)\equiv12(1)\pmod{12}$ since 
+            $12|24-12$ because $12=(1)(12)$.
+
+            However, $1\not\equiv2\pmod{12}$ since $12\nmid2-1$, because $12>1$.
+
+            Therefore, there exist positive integers
+            $a,x$ and $y$ so that $ax\equiv ay\pmod{12}$,
+            but $x \not\equiv y\pmod{12}$
+        \end{proof}
+
+        \item There exists a positive integer $a>1$ so that for all $x,y\in\mathbb{Z}$, 
+        if $ax\equiv ay\pmod{12}$, then \\$x\equiv y\pmod{12}$
+
+        \begin{proof}
+            Choose $a=7$, and suppose that $7x\equiv 7y\pmod{12}$.
+
+            So $12|7x-7y$.
+
+            It will prove helpful to check that $\gcd(12,7)=1$.
+            \begin{align*} 
+                \gcd(12,7)&=\gcd(7,5)\\
+                &=\gcd(5,2)\\
+                &=\gcd(2,1)\\
+                &=\gcd(1,0)\\
+                &=1
+            \end{align*}
+
+            By Euclid's Lemma, since $\gcd(12,7)=1$ and $12|7(x-y)$, we know that
+            $12|x-y$ and $x\equiv y\pmod{12}$.
+
+            Therefore, there exists a positive integer $a>1$ so that for all $x,y\in\mathbb{Z}$, 
+            if $ax\equiv ay\pmod{12}$, then \\$x\equiv y\pmod{12}$.
+        \end{proof}
+        
+        \item For all positive integers $a$ and $b$, if $a^2\equiv b^2\pmod{12}$,
+        then $a\equiv b\pmod{12}$.
+
+        The statement is false. The negation is: 
+        "There exist positive integers $a$ and $b$ so that \\ $a^2\equiv b^2\pmod{12}$
+        but $a\not\equiv b\pmod{12}$."
+
+        \begin{proof}
+            Choose $a=12$, $b=6$.
+
+            Then $144\equiv36\pmod{12}$ since $12|144-36$, because
+            $12(9)=108$.
+
+            However, $12$ is not congruent to $6$ modulo $12$ because
+            $12\nmid12-6$ since $12>6$.
+            
+            Therefore, there exist positive integers $a$ and $b$ so that \\ $a^2\equiv b^2\pmod{12}$
+            but $a\not\equiv b\pmod{12}$.
+        \end{proof}
+
+        \end{enumerate}
+
+
+    \end{enumerate}
+
+\end{document}

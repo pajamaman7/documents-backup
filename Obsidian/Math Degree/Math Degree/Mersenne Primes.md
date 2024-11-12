@@ -1,0 +1,1 @@
+Mersenne [[Primes]] are ones of the form $2^n-1$. If $2^n-1$ is prime, then $n$ must be prime. The converse does not necessarily hold.

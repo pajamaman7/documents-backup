@@ -1,0 +1,107 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Take Home Midterm - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+\item Let $m, n$ be positive, coprime integers i.e. $GCD(m, n) = 1$. Show that if $k|mn$ then there
+exists integers $a, b$ such that $k = ab$ with $a|m$ and $b|n$.
+\begin{proof} 
+Let $m,n\in\mathbb{Z}$ and $GCD(m,n)=1$. Let $k\in\mathbb{Z}$ so that $k|mn$. 
+Write $m$ and $n$ according to the Fundamental Theorem of Arithmetic.
+
+\begin{align*}
+    m&=p_1^{\alpha_1}p_2^{\alpha_2}\ldots p_i^{\alpha_i}\\
+    n&=q_1^{\beta_1}q_2^{\beta_2}\ldots q_j^{\beta_j}  
+.\end{align*}
+
+With $\alpha,\beta\in 0,1,2\ldots$ and all $p\neq q$ (since $GCD(m,n)=1$. Now we can write:
+
+\[
+mn=p_1^{\alpha_1}p_2^{\alpha_2}\ldots p_i^{\alpha_i}q_1^{\beta_1}q_2^{\beta_2}\ldots q_j^{\beta_j}  
+   .\] 
+   And since $k|mn$:
+   \[
+   k=p_1^{\gamma_1}p_2^{\gamma_2}\ldots p_i^{\gamma_i}q_1^{\delta_1}q_2^{\delta_2}\ldots q_j^{\delta_j} 
+   .\] 
+   With $0\le \gamma\le \alpha$ and $0\le \delta\le\beta$.
+
+   If we choose $a=p_1^{\gamma_1}p_2^{\gamma_2}\ldots p_i^{\gamma_i}$ and 
+   $b=q_1^{\delta_1}q_2^{\delta_2}\ldots q_j^{\delta_j}$, then 
+   $ab=p_1^{\gamma_1}p_2^{\gamma_2}\ldots p_i^{\gamma_i}q_1^{\delta_1}q_2^{\delta_2}\ldots q_j^{\delta_j}
+   = k$, with both $a|m$ and $b|n$.
+
+   So there exist $a,b\in \mathbb{Z}$ so that $ab=k$ and $a|m$, $b|n$.
+\end{proof}
+\item  Sam-I-am wants exactly 600 of his daily calories to come from green eggs and ham. Each slice
+of ham has 102 calories, and each green egg has 18 calories. Find all combinations of green
+eggs and ham, through which this can be done?
+
+To begin we find $GCD(102,18)$ and checking that it divides $600$.
+\begin{align*}
+    102&=5\times 18+12\\
+    18&= 12\times 1+6 \\
+    12&=6\times 2+0  
+.\end{align*}
+
+So $GCD(102,18)=6$, and $6|600$. Now we can setup the Diophantine Equation: 
+\[
+18e+102h=600
+.\] 
+We obtain $(e_0,h_0)=(600,-100)$ by reversing the steps we used to find $GCD$, 
+and from this we can find general solutions:
+\[
+h=-100+3n,\quad e=600-17n
+.\] 
+
+Now we should check which values of $n$ give us positive numbers of both eggs and ham. 
+If $n\le 33$, we have negative $h$. And if $n\ge 36$ we have 
+negative $e$. So the only valid solutions are when $n=35$ and $n=34$. Substituting this back into our formula for $h$ and
+$e$, we find that either $e=22$ and $h=2$ or $e=5$ and $h=5$.
+
+So Sam-I-am can have either 22 eggs and two slices of ham, or he can have 5 eggs and 5 slices of ham.
+
+\item Find all integers $n$ such that $106n$ and $n$ has the same last two digits.
+\begin{proof} 
+    We can create an equivalence which considers only the last two digits of $106n$ and $n$:
+    $106n\equiv n\pmod{100}$. Note that $106\equiv 6\pmod{100}$. So we are given the new equivalence:
+    $6n\equiv n\pmod{100}\implies5n\equiv 0\pmod{100}$. Converting this to a divisibility statement, we get:
+    $100|5n$. So $100k=5n$ for some $k\in\mathbb{Z}$.
+
+    Finally, we obtain $n=20k$. So for any $n$ of the form $n=20k$, $n\equiv 106n\pmod{100}$. 
+\end{proof}
+\newpage
+\item Let $a, b$ and $n$ be positive integers. Prove that if $a^n|b^n$ then $a|b$.
+\begin{proof} 
+    Let $a,b,n\in \mathbb{Z}^{+}$, and $a^n|b^n$.
+
+    Write the prime decomposition of $a,b$:
+    \begin{align*}
+        a&=p_1^{\alpha_1}p_2^{\alpha_2}\ldots p_i^{\alpha_i}\\
+        b&=p_1^{\beta_1}p_2^{\beta_2}\ldots p_i^{\beta_i} \\ 
+        a^{n}&=p_1^{n\alpha_1}p_2^{n\alpha_2}\ldots p_i^{n\alpha_i}\\
+        b^{n}&=p_1^{n\beta_1}p_2^{n\beta_2}\ldots p_i^{n\beta_i}  
+    .\end{align*}
+    Where all $p$ are primes, and all $\alpha,\beta\in \{0,1,2,\ldots\} $. Since $a^{n}|b^{n}$,
+    $n\alpha_j\le n\beta_j$ for all $1\le j\le i$. Dividing by $n$ we can see that $\alpha_j\le \beta_j$,
+    which means $a|b$.
+    
+    So for positive integers $a,b,n$, if $a^{n}|b^{n}$ then $a|n$.
+
+\end{proof}
+
+\item Show that $x^{10} + y^{10} - 11z^{10} = 5$ has no integer solution.
+\begin{proof} 
+    Let the equation above be $E$.
+    To show that our equation has no integer solutions, we must find a modulus $m$ so that $E\pmod{m}$ has 
+    no solutions.
+
+    Choose $m=11$. Then our equation becomes $x^{10}+y^{10}\equiv 5\pmod{11}$. Using Fermat's little
+    Theorem, we can say that $x^{10}\equiv 1\pmod{11}$ and we obtain $1+1\equiv 2\equiv 5\pmod{11}$. So no
+    matter our choices for $(x,y,z)$, our left hand side of our equation $E$ will be equivalent to $2$
+    while the right is $5$. So the equation has no solution $\pmod{11}$ and therefore no solutions in 
+    $\mathbb{Z}$.
+\end{proof}
+\end{enumerate}
+\end{document}

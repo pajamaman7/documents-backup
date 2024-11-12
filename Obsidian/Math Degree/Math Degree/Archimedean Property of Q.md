@@ -1,0 +1,1 @@
+If $r\in \mathbb{Q}, r>0, s \in\mathbb{Q}$, there exists $n\in\mathbb{N}$ so that $nr>s$.

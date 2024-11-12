@@ -1,0 +1,10 @@
+{
+  "vimMode": true,
+  "alwaysUpdateLinks": true,
+  "useTab": false,
+  "showLineNumber": false,
+  "promptDelete": false,
+  "propertiesInDocument": "hidden",
+  "showIndentGuide": false,
+  "autoPairBrackets": false
+}

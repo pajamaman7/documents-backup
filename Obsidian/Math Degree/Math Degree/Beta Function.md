@@ -1,0 +1,1 @@
+The Beta Function is an extension of the [[Gamma Function]], 

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;GradeCalculatorView.fxml&apos; to &apos;TBoykoGradeCalculator/src/application&apos;&#x0D;&#x0A;- Original project: &apos;ThomasBoykoGradeCalculator&apos;&#x0D;&#x0A;- Destination element: &apos;TBoykoGradeCalculator/src/application&apos;&#x0D;&#x0A;- Original element: &apos;GradeCalculatorView.fxml&apos;" description="Copy file" destination="=TBoykoGradeCalculator/src&lt;application" element1="src/application/GradeCalculatorView.fxml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1674692603637" units="0" version="1.0"/>
+</session>

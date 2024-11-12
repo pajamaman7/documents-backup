@@ -1,0 +1,209 @@
+\documentclass{article}
+\input{preamble.tex}
+\usepackage{amsthm}
+\usepackage{scsnowman}
+
+\renewcommand{\qedsymbol}{\scsnowman[hat,snow]}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+    \huge Homework Set 2 - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+\item Define a parametric curve $\vec r(t) = (2t, \frac{t^2}{2}, 2 \ln t)^{T}$ where $t > 0$.
+    \begin{enumerate}[label= (\alph*)] 
+        \item Compute the arclength of the curve between the points $(2, 0.5, 0)$ and
+        $(8, 8, 2 \ln 4)$.
+
+        First we begin by calculating $\vec{v}(t)=D\vec{r}(t)=(2,t,\frac{2}{t})^{T}$.
+
+        We can normalize this to find $v(t)=\sqrt{4+t^2+\frac{4}{t^2}}$, which we can simplify to 
+        $\frac{t^2+2}{t}$ since $t>0$.
+
+        Notice that $\vec{r}(1)=(2,0.5,0)$ and $\vec{r}(4)=(8,8,2\ln 4)^{T}$.
+        So the arc length between the two points is given by:
+        \[
+        \int_{1}^{4} t+\frac{2}{t} dt=\left(\frac{t^2}{2}+2\ln t \right)_1^{4}=\frac{15}{2}+2\ln 4
+        .\] 
+
+        \item Compute the velocity, speed, acceleration, tangent vector, normal vector, binormal vector,
+        curvature, torsion, and the tangential and normal components of acceleration for the curve at
+        an arbitrary $t > 0$.
+
+        With the functions of $t$ we already have.
+        \[
+        \vec{T}(t)=\frac{\vec{v}(t)}{v(t)}=\frac{t}{t^2+2}
+        \begin{pmatrix} 2 \\t\\\frac{2}{t}\end{pmatrix} 
+        .\] 
+        Above we calculated $\vec{v}(t)$, and we will use this now to calculate 
+        $\vec{a}(t)=(0,1,-\frac{2}{t^{2}})^{T}$.
+
+        Now we find $\|\vec a(t)\|=\sqrt{1+\frac{4}{t^4}} = \frac{t^4+4}{t^2}$.
+
+        Another necessary calculation will be $\vec{v}\times \vec{a}$.
+        \[
+            \vec{v}\times \vec{a}=
+            \det\begin{bmatrix} 
+                i&j&k\\
+                2&t&\frac{2}{t}\\
+                0&1&-\frac{2}{t^2}
+            \end{bmatrix} 
+            =\begin{pmatrix} 
+                -\frac{4}{t}\\
+                \frac{4}{t^2}\\
+                2
+            \end{pmatrix} 
+        .\] 
+
+        And normalizing this vector gives us:
+        \[
+        \|\vec{v}\times \vec{a}\|=\sqrt{\frac{16}{t^2}+\frac{16}{t^4}+4}
+        =\frac{2(t^2+2)}{t^2}
+        .\] 
+        With these two quantities we can find:
+        \[
+            \vec{B}=\frac{\vec{v}\times \vec{a}}{\|\vec{v}\times \vec{a}\|}
+            =
+            \frac{1}{t^2+2}
+            \begin{pmatrix} 
+                -2t\\
+                2\\
+                t^2
+            \end{pmatrix} 
+        .\]     
+        And we can use $\vec{B}\times \vec{T}=\vec{N}$.
+        \[
+            \vec{N}=\frac{t}{(t^2+2)^2}
+            \det\begin{bmatrix} 
+                i&j&k\\
+                -2t&2&t^2\\
+                2&t&\frac{2}{t}\\
+            \end{bmatrix}
+            =\frac{1}{t^2+2}\begin{pmatrix} 2-t^2\\2t\\-2t \end{pmatrix}  
+        .\] 
+        Now we find $\tau$ with $\tau= \frac{(\vec{v}\times \vec{a})\cdot \vec{a}'}{\|\vec{v}\times \vec{a}\|^{2}}$.
+        \[
+            \tau=\frac{t^4}{4(t^2+2)^2}\begin{pmatrix} -\frac{4}{t}\\\frac{4}{t^2}\\2 \end{pmatrix} 
+            \cdot \begin{pmatrix} 0\\0\\ \frac{4}{t^3} \end{pmatrix} 
+            =\frac{2t}{(t^2+2)^2}
+        .\] 
+        Using $\kappa =\frac{1}{v^3}\|\vec v \times \vec a\|$:
+        \[
+            \kappa=\left( \frac{t}{t^2+2} \right)^{3}2\frac{t^2+2}{t^2}=\frac{2t}{(t^2+2)^{2}} 
+        .\] 
+        We can now also find $a_T$, $a_N$.
+        \[
+        a_T=v'=\frac{t^2-2}{t^2}
+        \] 
+        \[
+        a_N=\kappa v^2=\frac{2t}{(t^2+2)^{2}}\left(\frac{t^2+2}{t}  \right) ^2=\frac{2}{t}
+        .\]            
+
+
+    \end{enumerate}
+\item
+    \begin{enumerate}[label= (\alph*)] 
+        \item Suppose $y = f (x)$ is a planar curve where $f$ is twice differentiable.
+        Show that $f$ has zero curvature everywhere if and only if $f$ is a line.
+        \begin{proof} 
+            Let $f$ be twice differentiable as above.
+
+            $\implies$: Suppose $f$ has zero curvature. That is,
+            \[
+                \kappa=\frac{f''(x)}{{ (1+f'(x)^{2} })^\frac{3}{2}}=0.
+            .\] 
+            So $f''(x)=0$. Then $f'(x)=c$ for some $c\in\mathbb{R}$, and $f(x)=cx+d$, for some 
+            $d\in \mathbb{R}$. This is the equation of a line.
+
+            So if $f$ has zero curvature, $f$ must be a  line!
+
+            $\impliedby$: Suppose $f$ is a line. That is $f(x)=ax+b$ for some $a,b\in\mathbb{R}$.
+            Then $f'(x)=a$ and $f''(x)=0$. Using our formula:
+            $$\kappa=\frac{f''(x)}{{ (1+f'(x)^{2} })^\frac{3}{2}}
+            =\frac{0}{{ (1+a^{2} })^\frac{3}{2}}=0.$$
+            We can see that if $f$ is a line, then $\kappa=0$. 
+
+            Therefore, curvature is zero $\iff$ $f$ is a line.
+        \end{proof}
+
+        \item Suppose $C$ is a parametric curve with parametrization $\vec{r}(t)$. If $C$ has
+        zero curvature at all points, is it the case that $\vec{r}$ is a line? Provide a proof or a
+        counterexample
+
+        It is not the case that if $C$ has zero curvature that $\vec{r}$ is a line. Consider the example 
+        $\vec{r}=\begin{pmatrix} e^{t}&e^{t}&0 \end{pmatrix}$. Note that $\vec{r}$ is not a line.
+
+        We can find that $\vec{r}=\vec{v}=\vec{a}$. So, calculating $\vec{v}\times \vec{a}$, we see:
+        \[
+            \vec{v}\times \vec{a}=\det\begin{bmatrix} \vec{i}&\vec{j}&\vec{k}\\
+                e^{t}&e^{t}&0\\
+                e^{t}&e^{t}&0\\
+            \end{bmatrix} = \begin{pmatrix} 0\\0\\0 \end{pmatrix} 
+        .\] 
+        And so $\|\vec{v}\times \vec{a}\|=0$. Since $\kappa=\frac{1}{v^3}\|\vec{v}\times \vec{a}\|$, 
+        $\kappa=\frac{0}{2e^{2t}}=0$. So $C$ has zero curvature but $\vec{r}$ is not a line.
+
+        \item Suppose $C$ is a parametric curve with parametrization $\vec{r} (t)$. If $C$ has
+        zero torsion at all points, is it the case that $\vec{r}$ is a line? Provide proof or a
+        counterexample.
+
+        Choose $\vec{r}=\begin{pmatrix} t^2&t&3t^2 \end{pmatrix}^{T}$.
+
+        Then we have:
+        \begin{align*}
+            \vec{v}(t)&=\begin{pmatrix} 2t&1&6t \end{pmatrix} ^{T}\\
+            \vec{a}(t)&= \begin{pmatrix} 2&0&6 \end{pmatrix}^{T}  \\
+            \vec{a'}(t)&= 0 
+        .\end{align*}
+
+        Now we find $\vec{v}\times \vec{a}$.
+        \[
+            \vec{v}\times \vec{a}=
+            \det\begin{bmatrix} 
+                \vec{i}&\vec{j}&\vec{k}\\
+                2t&1&6t\\
+                2&0&6
+            \end{bmatrix} 
+            =\begin{pmatrix} 6&0&2 \end{pmatrix} ^{T}.
+        \] 
+        And from this we find $\|\vec{v}\times \vec{a}\|=2\sqrt{10} $. From our formula for $\tau$:
+        \[
+            \tau=\frac{(\vec{v}\times \vec{a})\cdot\vec{a}'}{\|\vec{v}\times \vec{a}\|^2}
+            =\frac{0}{2\sqrt{10} }=0
+        .\] 
+        So $C$ has zero torsion but $r$ is not a line.
+        \newpage
+    \end{enumerate}
+\item
+    \begin{enumerate}[label= (\alph*)] 
+        \item Suppose $C$ is a curve parametrized at by $r (t)$. Suppose we know that
+        $\vec a = (4, -2, 6)^T$ ,  $\vec T = \frac{1}{\sqrt{3} } (1, -1, 1)^T$ 
+        and  $\vec N = \frac{1}{\sqrt{5} } (1, 0, 2)^T$ at some point on the
+        curve. Determine ${a}_T$ and ${a}_N$ there.
+
+            We can find $a_T$ by taking $\vec{a}\cdot\vec{T}$ at our point. So:
+            \[
+            a_T=\frac{4}{\sqrt{3} }+\frac{2}{\sqrt{3} }+\frac{6}{\sqrt{3} }=\frac{12}{\sqrt{3} }=4\sqrt{3} 
+            .\] 
+
+            Likewise, we can find $a_N$ by taking $\vec{a}\cdot\vec{N}$ at our point:
+            \[
+            a_N=\frac{4}{\sqrt{5} }+\frac{12}{\sqrt{5} }=\frac{16}{\sqrt{5} }
+            .\] 
+
+        \item Suppose $C$ is a curve parametrized at by $\vec r (t)$. Is it possible for $a_T = 0$
+        at all points? If so, what kind of curve is $C$?
+
+        $a_T$ can equal $0$ for all $t$. If so, we can see $v'(t)=0$ which implies that $v(t)=c$ for some
+        $c\in\mathbb{R}$. That is, the speed is constant (we have zero acceleration).
+
+        \item Suppose $C$ is a curve parametrized at by $\vec r (t)$. Is it possible for $a_N = 0$
+        at all points? If so, what kind of curve is C?
+
+        If $a_N=0$, $v^2\kappa=0$. This means that either $v=0$ or $\kappa=0$. 
+
+        Intuitively, we know that normal acceleration represents the change in direction of velocity. So 
+        in the case where we have zero normal acceleration we have no change in the direction of velocity.
+\end{enumerate}
+\end{enumerate}
+\end{document}

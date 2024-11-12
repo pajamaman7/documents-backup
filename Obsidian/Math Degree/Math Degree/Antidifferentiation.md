@@ -1,0 +1,2 @@
+The Antiderivative of a function $f(x)$ is often notated as $F(x)$. For $F(x)$ to be an antiderivative of $f(x)$, $\frac{d}{dx}F(X) = f(x)$
+Antiderivatives serve an important function in [[Integration]], and it is important to note that there are an infinite number of antiderivatives for a function $f(x)$. This can be shown with $\frac{d}{dx} F(X)+C=f(x)$, where $C$ is any real number.

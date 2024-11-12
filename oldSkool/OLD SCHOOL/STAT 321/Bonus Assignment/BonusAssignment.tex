@@ -1,0 +1,107 @@
+\documentclass{article}
+\input{preamble}
+\begin{document}
+\huge Bonus Assignment - Thomas Boyko - 30191728
+\normalsize
+\begin{enumerate} 
+
+\item Let $X$ and $Y$ be continuous random variables and let
+\[f(x,y)=\begin{cases} 
+\frac{x}{5}+cy&0\leq x\leq 1, 0\leq y \leq5\\
+0 & elsewhere
+ \end{cases}\]
+Find the value of the constant $c$ that makes $f(x, y)$ a valid pdf.
+
+For $f$ to be a valid pdf, the double integral over all nonzero values of $x,y$ must equal $1$.
+
+\begin{align*} 
+1&=\int_{0}^{1}\int_{0}^{5}\frac{x}{5}+cy dydx\\
+&=\int_{0}^{1}\frac{25c}{2}dx\\
+&=\frac{25cx}{2}|^{1}_{0}\\
+&=\frac{25c}{2}\\
+\frac{2}{25}&=c
+\end{align*}
+
+\item Let $X$ and $Y$ be continuous random variables with a joint probability density function
+defined as follows:
+\[f(x, y) =\begin{cases} 
+2e^{-(x+y)} & 0\leq x, 0\leq y, x\leq y\\
+0 & elsewhere
+\end{cases}\]
+Are $X$ and $Y$ independent random variables? Show why/why not.
+
+$X,Y$ are independent $\iff f(x,y)=f(x)f(y)$.
+
+\begin{align*} 
+f(x)f(y)&=\int_{0}^{\infty}f(x,y)dy \cdot\int_{0}^{y}f(x,y)dx\\
+&=\int_{0}^{\infty}2e^{-(x+y)}dy \cdot\int_{0}^{y}2e^{-(x+y)}dx\\
+&=2e^{-x}\cdot(2e^{-y} -2e^{-2y})\neq2e^{-(x+y)}=f(x,y)
+\end{align*}
+
+Since $f(x,y)\neq f(x)f(y)$, the variables are not independent.
+
+\item Let $X$ and $Y$ be continuous random variables with a joint probability density function
+defined as follows:
+\[f(x, y) = \begin{cases} 
+xy &0 \leq x \leq 1, 0 \leq y \leq 2\\
+0 & elsewhere
+\end{cases}\]
+Find $P(X \leq Y).$
+
+\begin{align*} 
+    P(X\leq Y) &= \int_{0}^{2}\int_{0}^{y}xydxdy\\
+    &= \int_{0}^{2}\frac{yx^2}{2}|^{y}_{0}dy\\
+    &=\int_{0}^{2}\frac{y^3}{2}dy\\
+    &=\frac{y^4}{8}|^{1}_{0}\\
+    &=\frac{1}{8}
+\end{align*}
+
+So $P(X\leq Y)=\frac{1}{8}$.
+
+\item Suppose a game consists of rolling two fair four-sided die (a red one and a blue one)
+and observing the number on the uppermost face of each die. In this game, you win \$2
+if the blue die shows the same number as the red die, you win nothing (\$0) if the blue
+die shows a higher number than the red die, and you lose \$1 on any other outcome.
+
+Define two random variables as follows:
+\begin{itemize}
+\item Let $X$ be the number shown on the uppermost face of the blue die.
+\item Let $Y$ be the amount of money you win (or lose) playing this game once.
+\end{itemize}
+\begin{enumerate}[label= (\alph*)] 
+ \item Find the joint probability distribution of $X$ and $Y$ and display it as a joint probability
+distribution table. Please be sure to clearly label which variable corresponds to the
+row values and which variable corresponds to the column values.
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $\downarrow Y\rightarrow X$ &1&2&3&4&Total\\
+        \hline
+        -1&0&1/16&2/16&3/16&6/16\\
+        \hline
+        0&3/16&2/16&1/16&0&6/16\\
+        \hline
+        2&1/16&1/16&1/16&1/16&4/16\\
+        \hline
+        Total & 4/16 &4/16&4/16&4/16&1\\
+        \hline
+    \end{tabular}
+\end{center}
+\item Find $COV(X, Y)$.
+\begin{align*} 
+    COV[X,Y]&=E[XY]-E[X]E[Y]\\
+    &=
+\end{align*}
+\end{enumerate} 
+\iffalse
+Problem 5
+At a health clinic, the wait time to see a doctor is known to follow an exponential
+distribution with 𝛽 = 20.34 minutes. A receptionist at the clinic observes 14 patients and
+records the waiting time (in minutes) for each of them.
+1. Let 𝑥̅ represent the average waiting time of the 14 patients observed by the
+receptionist. Describe the distribution of 𝑥̅ .
+2. What is the probability that the average waiting time of the 14 patients is between 15
+minutes and 20 minutes?
+\fi
+\end{enumerate}
+\end{document}

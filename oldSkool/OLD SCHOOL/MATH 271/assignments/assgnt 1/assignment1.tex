@@ -1,0 +1,156 @@
+\documentclass{article}
+
+\input{preamble}
+
+\begin{document}
+\huge Assignment 1 - Thomas Boyko - 30191728
+\normalsize \nl
+\begin{enumerate}
+ 
+\item For each of the following statements: if the statement is true, then give a proof; if the
+statement is false, then write out the negation and prove that.
+\begin{enumerate}[label= (\alph*)]
+\item There exists an integer n, so that $n^3 - n$ 
+ is odd.\nl 
+The statement is false. The negation is: "For all integers n, $n^3-n$ is even."
+\begin{proof}
+    Let $n \in \integer $.
+    \nl First we will consider the case when n is even.
+    \nl So, $n = 2k $ for some $k \in \integer$.
+    \nl $n^3 - n = (2k)^3 - 2k = 8k^3 - 2k = 2(4k^3 - k)$ where $(4k^3 - k) \in \integer$.
+    \nl So, when $n$ is even, $n^3-n$ is always even.
+    \nl 
+    \nl Next is the case n is odd.
+    \nl So, $n = 2l+1$ for some $l \in \integer$.
+    \nl $n^3 - n = 8 l^{3} + 12 l^{2} + 4 l = 2(4l^3+6l^2+2l)$ where $(4l^3+6l^2+2l) \in \integer$
+    \nl So, when n is odd, $n^3-n$ is always even.
+    \nl \nl Since integers can only be even or odd, $n^3-n$ is odd 
+    for any integer n.
+\end{proof}
+\item$\sqrt[]{6}$ is irrational. \nl 
+\nl We will prove $\sqrt[]{6} \not \in \rational$ by contradiction.
+\nl \begin{proof}
+    Suppose $\sqrt[]{6} \in \rational$.
+    \nl So, $\sqrt{6} = \frac{a}{b}$ where $a,b \in \integer$ and $a,b$ have no common factors.
+    \nl It follows that $6=\frac{a^2}{b^2}$
+    \nl Therefore, $6b^2 = a^2$. 
+    \nl We can show that $b^2 | a^2 \implies b|a$ 
+    \nl So a and b share a factor of b, but a and b have no common factors. (A contradiction!)
+    \nl So $\sqrt{6} \not\in\rational$.
+\end{proof}
+\item For all a, b $\in \integer$, if $a > 1$ and $b > 1$, then gcd(2a, 2b) = 2 gcd(a, b).
+\nl \begin{proof}
+    Suppose $a,b \in\integer$, $a>1,b>1$.
+    \nl Let $c = \gcd(2a,2b)$ where $c\in\integer.$
+    \nl From Bezout's identity, we know that $c=2ax+2by$ for some $x,y \in\integer$.
+    \nl So, $c =2(ax+by)$.
+    \nl Since $c = \gcd(2a,2b)$ and $ax+by = \gcd(a,b)$,
+    \nl $\gcd(2a,2b) = 2\gcd(a,b)$.
+\end{proof}
+\end{enumerate}
+\item Let Z
++ be the set of all positive integers.
+\begin{enumerate}[label=(\alph*)]
+\item Use the Euclidean Algorithm to compute $\gcd (2023, 271)$ and use that to find integers x
+and y so that $\gcd (2023, 271) = 2023 x + 271 y$. \nl
+\nl First we find the gcd using the Euclidean Algorithm: \nl
+$
+ \begin{array}{lcl} 
+ 2023 & = & 271 \times 7 + 126\\ 
+ 271 & = & 126 \times 2 + 19\\ 
+ 126 & = & 19 \times 6 + 12\\ 
+ 19 & = & 12 \times 1 + 7\\ 
+ 12 & = & 7 \times 1 + 5\\
+ 7 & = & 5 \times 1 + 2\\
+ 5 & = & 2 \times 2 + 1\\
+ 2 & = & 1 \times 2 + 0\\
+ \end{array}
+$
+\nl\nl So, $gcd (2023,271) = 1$ 
+\nl Next, we use the extended algorithm to find $x, y$. \nl 
+
+$
+\begin{array}{lcl}
+2023 & 1 &0\\
+271 &0&1\\ 
+126 &1&-7\\ 
+19 & -2 & 15\\ 
+12 &13 & -97\\ 
+7 & -15&112\\ 
+5 & 28 & -209\\ 
+2 & -43 & 321 \\
+1 & 114 & -851\\
+\end{array}
+$
+\nl \nl So, $\gcd(2023,271) = 1 = 114 \times2023 + -851 \times271$. \nl 
+\newpage
+\item Find integers $n,m$  so that $\gcd(2023, 271) = 2023 m + 271 n$, but $n \neq x$ and $m \neq y$.
+Note that x and y are the integers that you found in part (a).
+\nl 
+\nl Consider $x, y$ found in part (a). If we add x to n, and subtract y from n, we are able to 
+find another linear combination that equals $\gcd(2023, 271)$. $-385(2023)+-2874(271) = 1$.
+\nl So, $m = 385, n = -2874$.
+
+\item Is it true that: For all $a, b \in\integer^+$, if $a > 1$ and $b > 1$, 
+then $\gcd(a, b) < \gcd(a^3,b^3)$? \nl
+Prove your answer.
+\nl \nl The statement is false.
+\nl The negation is as follows: "$\exists a,b\in\integer^+$ so that $a>1$ and $b>1$ but $\gcd(a^3,b^3)\leq\gcd(a,b)$.
+\begin{proof}
+    Let $a,b \in\integer$
+    \nl Choose $a=2$, $ b=3$.
+    \nl $a^3=8$, $b^3 =27$. 
+    \nl So, $\gcd(a,b) = \gcd(2,3) = 1$, 
+    \nl And $\gcd(a^3,b^3) = \gcd(8,27) = 1$.
+    \nl So, $\gcd(a,b)=\gcd(a^3,b^3)$
+    \nl Therefore, There exists $ a,b\in\integer^+$ so that $a>1$ and $b>1$ but $\gcd(a^3,b^3)\leq\gcd(a,b)$.
+
+\end{proof}
+
+\end{enumerate}
+\item Let P be the statement: "For all a, b, c $\in\integer^+$, if $\gcd(a, b) = 1$ and c divides a + b, then
+gcd(a, c) = 1 and gcd(b, c) = 1."
+\begin{enumerate}[label=(\alph*)] 
+    \item Is P true? Prove your answer.
+    \nl \begin{proof}
+        Suppose $a,b,c \in\integer$
+        \nl Further suppose $c|a+b, \gcd(a,b)=1$.
+        \nl Let $d = \gcd(a,c)$ where $d$ is a positive integer (according to the definition of gcd).
+        \nl We now know that $d$ divides $a,c, $ and $ a+b$.
+        \nl Since d divides $a$ and $a+b$, $d$ must divide $b$.
+        \nl By the definition of the greatest common denominator, d dividing $a$ and $b$
+        implies that $d\leq\gcd(a,b)=1$.
+        \nl Since $1\leq d\leq1$:
+        \nl $d=\gcd(a,c)=1$.
+        \nl Since the order of $a,b$ is irrelevant, this also proves that $\gcd(b,c)=1$.
+        \nl So, if $\gcd(a,b)=1$ and $c|a+b$, then $\gcd(a,c)=1=\gcd(b,c)$.
+    \end{proof}
+    \item Write out the converse of P. Is the converse of P true? Prove your answer.
+    \nl \nl The converse of P is: "For all $a, b, c \in \integer$, if $\gcd(a,c) = 1$ and
+    $\gcd (b,c)=1$, then $c | a+b $ and $\gcd(a,b)=1$.
+    \nl \begin{proof}
+        The statement is false. The negation is as follows:
+        \nl "There exists $a,b,c \in\integer$ so that $\gcd(a,c)=\gcd(b,c)=1$ but
+        $c \nmid a+b$ or $\gcd(a,b)\neq1$."
+        Suppose $a, b, c \in\integer$.
+        \nl Choose $a=2,b=4,c=5$.
+        \nl Note that $\gcd(2,5)=\gcd(4,5)=1$.
+        \nl Also note that $5\nmid4+2$.
+        \nl So, the converse of $P$ is false.
+    \end{proof}
+    \item Write out the contrapositive of P. Is the contrapositive of P true? Explain.
+    \nl \nl The contrapositive of P is: "For all $a, b, c \in\integer, if \gcd(a,c)\neq1$ or 
+    $\gcd(b,c) \neq1$, then $a \nmid b+c$ or $\gcd(a,b) \neq1$.
+    \nl The contrapositive of $P$ is true, since it is logically equivalent to $P$, and $P$ is true.
+    \item Write out the negation of P. Is the negation of P true? Explain.
+    \nl \nl The negation of P is: "There exists $a, b, c \in\integer$ so that 
+    $\gcd(a,c)=1$ and $\gcd(b,c) = 1$ but $c$ does not divide $a+b$ or $\gcd(a,b) \neq1$.
+    \nl The negation of $P$ is false, since it is logically opposite from $P$, and $P$ is true.
+    
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
+%%fixes to make: ensure that the root6 proof is solid and that 6|x^2 implies 6|x.
+%%check linear combination question, ensure you're throrough enough.

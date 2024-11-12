@@ -1,0 +1,114 @@
+\documentclass{article}
+
+
+\input{preamble}
+
+\begin{document}
+\section{Statements}
+A \textbf{Statement or Proposition} is a sentence that is true or false but not both.
+Here's some examples:
+\begin{ex}
+\begin{itemize}
+    \item The sky is blue.
+    \item 5=2
+    \item All prime numbers are divisible by two.
+\end{itemize}
+\end{ex}
+\par 
+
+A \textbf{Conditional Statement} is one of the form ”If p, then q.” We denote this correlation with a
+$\then$ symbol. If we have a statement $ p \then q \equiv r$, then $r$ is always true unless $p$ is false and $q$ is true.
+In a conditional statement, we consider $p$ to be the hypothesis, and $q$ to be the conclusion.
+\par 
+
+Note that the hypothesis of a conditional statement can be false, as long as the conclusion is as well.
+This means that $0=1 \to 1=2$ is true.
+
+\par 
+Statements can take other forms, such as using and ($\land$), or ($\lor$), not ($\lnot$), as well as some other forms 
+seen especially when writing proofs.
+\par
+
+Two mathematical forms often seen are: "There exists / For some" ($\exists$), and "For all
+ / For every" ($\forall$).
+\par 
+The \textbf{negation} of a Statement is the opposite of the statement. For all true values of $P$, $\lnot P $ will be false.
+and vice versa.
+
+
+\begin{df}
+    Negations of some basic statements:
+    \[\lnot (P \land Q ) \equiv \lnot P \lor \lnot Q\]
+    \[\lnot(P \lor Q) \equiv \lnot P \land \lnot Q\]
+    \[\lnot(\exists x, P(x)) \equiv \forall x, \lnot P(x)\]
+    \[\lnot(\forall x , Q(x))\equiv \exists x, \lnot Q(x)\]
+    \[\lnot(P \to Q) \equiv P \land \lnot Q\]
+
+\end{df}
+
+\begin{df}
+    \begin{itemize}
+        \item The converse of $P \to Q$ is $Q \to P$.
+        \item The contrapositive of $P \to Q$ is $\lnot P \to \lnot Q$.
+    \end{itemize}
+    Note that the contrapositive of a statement is logically equivalent, but the converse may not be.
+\end{df}
+
+\section{Integers}
+
+Integers posess the following properties:
+\par 
+Remember that theorems can be used in assignment proofs, but lemmas
+must be used more carefully with explanation.
+\begin{th}
+    $\forall n \in \integer $, n is either even or odd but not both.
+\end{th}
+\begin{th}
+    $\forall a,b \in \integer$, $ a|b\implies b\geq a$
+\end{th}
+\begin{th}
+    Products and sums of integers are integers.
+\end{th}
+
+\begin{le}
+    Suppose m, n are integers. If m and n are both odd, mn is odd.
+\end{le}
+\begin{pf}
+    Assume $m, n \in \integer$.
+    Suppose m and n are odd. 
+    \newline
+    Then, $m = 2k+1, n = 2l+1$ for some
+     $l, k \in \integer$.
+    \newline
+    $mn = (2k+1)(2l+1)$\newline
+    $mn = 2(4kl + k + l) + 1$\newline
+    So, $mn$ can be expressed in the form $2q+1$, where $q = 4kl + k +l$, and q is an integer.
+\end{pf}
+\begin{df}
+    Let $n \in \integer$.\newline
+    $n$ is prime $\iff \exists r,s $ so that $rs = n$, and $r = 1, s=n$ or $r=n, s =1$. \newline
+    n is composite $\iff \exists r,s $ so that $rs =n$ and nither $r$ or $s$ is 
+    equal to 1.
+\end{df}
+\begin{df}
+    Let $a,b \in \integer$. $a$ divides $b$ ($a|b$) if $a\neq 0$ and $ak = b$
+    for some $k \in \integer$.
+\end{df}
+
+\section{Rationals}
+\begin{df}
+    Let $x \in \real$. $x$ is rational $(x \in \rational) \iff x = \frac{a}{b}$ for some
+    $a,b \in \integer, b\neq 0$
+\end{df}
+\begin{le}
+    If $x \in \integer$, $x \in \rational$.
+    \begin{proof}
+        Any $x \in \integer$ can be written as $x=\frac{x}{1}$. Since both 1 and $x$
+        are integers, x is rational.
+    \end{proof}
+\end{le}
+\begin{le}
+    Like with integers, the sum and product of any rationals is also rational.
+\end{le}
+
+\end{document}

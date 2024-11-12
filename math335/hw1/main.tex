@@ -1,0 +1,82 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Assignment 1 - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+    \item Given $x\in\mathbb{R}$ define the set of rational numbers $C_x=\{r\in\mathbb{Q}:r<x\}.$ Prove that
+$$x=\sup C_x.$$
+More precisely, prove that
+\begin{enumerate}[label= (\alph*)] 
+    \item $C_{x}$ is non-empty and bounded above, and $x$ is an upper bound of $C_{x}.$
+
+        \begin{proof} 
+
+            Take $x-1<x$,so that $x\in {C}_x$. Then by the density of the rationals in the reals (Rudin theorem 1.20), there must exist some $q\in \mathbb{Q}$ so that
+            $x-1<q<x$. So $q\in C_{x}$ and $C_{x}$ is nonempty.
+
+            Of course $x$ is an upper bound of ${C}_x$ since for any $r\in C_x$, $r<x$ by definition of $C_{x}$.
+
+        \end{proof}
+
+    \item $x$ is the least upper bound of $C_{x}$.
+
+         \begin{proof} 
+            Suppose by way of contradiction that $y<x$ is the least upper bound for $C_x$. By theorem 1.20 from Rudin, the density of $\mathbb{Q}$ in $\mathbb{R}$,
+            we know that since $y<x$, there must exist some $q\in \mathbb{Q}$, where $y<q<x$. But $q<x$ so $q\in C_x$, and since $q>y$, $y$ cannot be
+            an upper bound. And we have found our contradiction. So $x$ is the least upper bound for $C_x$.
+        \end{proof}
+
+\end{enumerate}
+
+\item A sequence of rational numbers $\{r_{j}\}_{j=1}^{\infty}=\{r_{1},r_{2},r_{3},\ldots\}$ is said to be a Cauchy sequence
+if given any $n\in \mathbb{N}$ there exists $N\in \mathbb{N}$ such that if $j, k\geq N$ then $| x_j- x_k| < \frac 1n.$
+
+Let $\mathcal{C}$ denote the set of all Cauchy sequences in $\mathbb{Q}$, if r$= \{ r_j\} _{j= 1}^{\infty }$ and $\mathbf{q} = \{ q_k\} _{k= 1}^{\infty }$ are in
+$\mathcal{C}$, we say that $\mathbf{r}$ is equivalent to $\mathbf{q}$ and write $\mathbf{r}\sim\mathbf{q}$ if the sequence $\mathbf{r}-\mathbf{q}=\{r_j-q_j\}_{j=1}^{\infty}$
+converges to zero, that is, if for every $n\in\mathbb{N}$, there exists $N\in\mathbb{N}$ such that
+
+$$j\ge N\quad\implies\quad|r_j-q_j|<\dfrac{1}{n}.$$
+
+Prove that $\sim$ is an equivalence relation in $\mathcal{C}.$ That is, prove that the relation is Reflexive, Symmetric, Transitive.
+
+\begin{proof} 
+\begin{enumerate}[label= (\alph*)] 
+
+    \item Reflexive:
+
+    Let $\mathbf{r}$ be a Cauchy sequence, and $n\in \mathbb{N}$. Then for any $j\ge n$, $|r_j-r_j| =0<1/n$ since $n>0$. 
+    $\mathbf{r}\sim \mathbf{r}$ and $\sim $ is reflexive.
+
+    \item Symmetric:
+
+        Let $\mathbf{r}\sim\mathbf{q}$ be Cauchy sequences. Then for any $n\in \mathbb{N}$, there exists some $N\in \mathbb{N}$ 
+        such that $j\ge N \implies |{r_j}-{q_j}|<\frac{1}{n}$.
+
+        But $|r_j-q_j|=|-(r_j-q_j)|=|q_j-r_j|<\frac{1}{n}$
+
+        So $\mathbf{q}\sim \mathbf{r}$ and $\sim $ is symmetric.
+
+    \item Transitive
+
+        Take $n\in \mathbb{N}$. Let $\mathbf{r}\sim \mathbf{q}, \mathbf{q}\sim \mathbf{s}$. Then for $2n\in \mathbb{N}$,
+        there exists some $N_1,N_2\in \mathbb{N}$, so that 
+        (Letting $N=\max \{N_1,N_2\}$ so that $N\ge N_1$ and $N\ge N_2$), we can write:
+
+        \begin{align*}
+             j\ge N&\implies|r_j-q_j|<\frac{1}{2n}\\
+             j\ge N&\implies|q_j-s_j|<\frac{1}{2n}
+        .\end{align*}
+
+        %TODO: 2n??
+        And by the triangle inequality, 
+        \[
+        |r_j-s_j|=|(r_j-q_j)+(q_-s_j)|\leq|(r_j-q_j)|+|(q_-s_j)|<\frac{1}{2n}+\frac{1}{2n}=\frac{2}{2n}=\frac{1}{n}
+        .\] 
+        In particular,$ |r_j-s_j|<\frac{1}{n}$ and $\mathbf{r}\sim \mathbf{s}$, hence $\sim $ is transitive.
+
+\end{enumerate}
+\end{proof}
+\end{enumerate}
+\end{document}

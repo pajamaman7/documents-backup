@@ -1,0 +1,66 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\pagestyle{fancy}
+\lhead{Assignment \# $2$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+
+    \item Let $G$ be a non-abelian group of order 8. Prove that $G$ has a subgroup of order 4.
+
+        \paragraph{Solution: }We already know every group of order 8. Particularly, we know that the non-abelian groups are $Q_8, D_4$. As well, we know that $Q_8$ has a subgroup
+        $\{1,i,-1,-i\} =\left<i \right>$, and that $D_4$ has a subgroup $\{e,r,r^2,r^3\} =\left<r \right>$. Both of these are of order 4, and in fact both of these are normal,
+        since they have index 2.
+
+    \item Exercises 9.1 \#1(c). Find the length of $D_{4}$ and exhibit the composition factors.
+
+        \paragraph{Solution: }Write the composition series:
+
+        \[ D_4\trianglerighteq \left< r \right>\trianglerighteq \left<r^2 \right>\trianglerighteq \{e\} .\] 
+
+        Comparing the orders of each subgroup (8,4,2,1), we can see that each factor group has order 2, since the index $[G_{i+1}:G_{i}]=2$. This not only validates normality
+        of each subgroup, but tells us that each factor group must have $\frac{G_i}{G_{i+1}}\cong C_2$, a simple group (By Lagrange, the only subgroups it can have are of order 1 and 2).
+        So this is a composition series of $D_4$, with each
+        factor isomorphic to the cyclic group of order 2.
+
+    \item Exercises 9.1\#10. For groups $G_1,G_2,\ldots,G_r$ show that $G_{1}\times\cdots\times G_{r}$ has a composition series iff each $G_{i}$ has a composition series. In this case, show the the length of $G_{1}\times\cdots\times G_{r}$ is equal to the sum of the lengths of the $G_{i}$'s.
+
+        Proceed by induction. The base case of $r=2$ is proved in Corollary 2 of theorem 2 in Nicholson. We use the same strategy.
+
+        Start with a lemma; if $\theta : G\to H$ is a homomorphism, then $G$ has a composition series if
+        and only if both ker $\theta$ and $\theta ( G)$ have composition series.  In this case, 
+
+        \[ \operatorname{length}G=\operatorname{length}\ker\theta+\operatorname{length}\theta(G).\] 
+
+        \begin{proof} [Proof of lemma: ]
+            Let $G$ have a composition series. We know that $\ker \theta$ is a normal subgroup, and from Theorem 2 it has a series. 
+            And from the first isomorphism theorem, $G /\ker\theta\cong \theta(G)$. And since $G /\ker\theta$ has a series, again by Theorem 2, so does $\theta(G)$.
+
+            Finally, we use Theorem 2 one more time to see that 
+            \[ \operatorname{length}G=\operatorname{length}\ker\theta+\operatorname{length}G /\ker\theta=\operatorname{length}\ker\theta+\operatorname{length}\theta(G).\] 
+        \end{proof}
+
+        Now we begin on the original question, proceeding by induction on $r$.
+        \paragraph{Base case:} $r=1$ is trivial, if $G_1$ has a series, then $G_1 $ has a series. Take the case $r=2$.
+
+        Consider the homomorphism  $\theta:G_1\times G_2$ by $\theta(g_1,g_2)=g_1.$ This is onto, since for any $g\in G_1$, we have
+        $(g,e)\in G_1\times G_2$, and $\theta(g_1,e)=g_1$. And, taking some $(a,b)\in \ker\theta$, we have $\theta(a,b)=a=e$. So
+        $\ker\theta=G_1\times \{e\} \cong G_1$. So using our previous result, we can see that $G_1\times G_2$ has a series $\iff$ $G_1\cong \ker\theta$ and $G_2=\theta(G_1\times G_2)$ 
+        both have series, and that $\operatorname{length}G_1\times G_2=\operatorname{length}G_1+\operatorname{length}G_2.$
+
+        \paragraph{Inductive Hypothesis:} Suppose that for some $k\ge 2$, $G_1\times \ldots\times G_k$ has a composition series $\iff$ $G_i$ has a series
+        for $i=1,2,\ldots,k$, and that its length is equal to the sum of the lengths of each $G_i$.
+
+        We want to show that this holds for $k+1$.
+        \paragraph{Inductive Step:} Write $H=G_1\times \ldots\times G_k$. We know this is a group and has a series $\iff\, G_1,\ldots,G_k$ all have series by the inductive hypothesis.
+        The problem then reduces to showing $H\times G_{k+1}$ has a series $\iff$ $H,G_{k+1}$ have series, which was shown already in the base case. As well, from the inductive hypothesis,
+        we can say that the length of $H$ is the sum of the lengths of $G_1,\ldots,G_k$. Again from the base case, we simply add on the length of $G_{k+1}$.
+
+        Therefore, by induction on $r$, $G_{1}\times\cdots\times G_{r}$ has a composition series iff each $G_{i}$ has a composition series, and the length of 
+        $G_{1}\times\cdots\times G_{r}$ is equal to the sum of the lengths of the $G_{i}$'s.
+
+\end{enumerate}
+\end{document}

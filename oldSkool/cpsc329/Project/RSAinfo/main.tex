@@ -1,0 +1,203 @@
+\documentclass{article}
+\usepackage{hyperref}
+\input{preamble.tex}
+
+
+\begin{document}
+    \huge The Procedure
+    \normalsize
+    \bigskip
+    \begin{enumerate}
+\item Bob chooses prime numbers $p,q$ so that $pq=n>c$, where $c$ is the size of the largest message they expect to encrypt. The $n$ is called the key length.
+
+\item Bob also chooses $e,d$ by first computing $\varphi(n)=(p-1)(q-1)$, then choosing $e$ so that $\gcd(e,\varphi(n))=1$. Bob can then release the keypair $(e,n)$, and now Alice, Bob, and Eve respectively have their own step to perform.
+    
+    \paragraph{Bob:} Will compute the multiplicative inverse of $e\pmod{\varphi(n)}$, using Wolfram-Alpha, in order to find his private key $d$.
+
+    \paragraph{Alice:} Will choose a message which is converted to a large natural number $M$. We have many ways of doing this, however for the purpose of this exercise we will use $a=1, b=2,\dots, z=26$, and a space is $00$. For messages longer than a single character, simply combine the letters. For example, a message "abc" will be encoded with $M=010203$. Alice encrypts her message text with Wolfram-Alpha using $M^e\pmod{n}$, and reveals it to both Bob and Eve.
+
+    \paragraph{Eve:} Will use Wolfram-Alpha to attempt to factor $n$, and if successful, uses the $p,q$ she finds in order to find $d$ (see Bob's instructions above).
+
+\item Now Bob and Eve (if successful) should reveal the decrypted messages; and confirm whether they recieved it.
+\end{enumerate}
+
+\newpage
+
+    \huge Exercise 1
+    \normalsize
+
+    For the first exercise, delegate who will be Bob, Alice, and Eve, and perform the procedure with $p=2$ and $q=13$. This first exercise is exactly enough to encrypt a message of one character. As a group, fill out the following:
+    \begin{enumerate}
+        \item What was the message sent by Alice? 
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p1q1, multiline=true]{}
+
+        \item What was Bob able to decrypt?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p1q2, multiline=true]{}
+
+        \item What was Eve able to encrypt?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p1q3, multiline=true]{}
+
+        \item How private was the message?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p1q4, multiline=true]{}
+
+        \item For what purposes would you use this level of encryption?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p1q5, multiline=true]{}
+
+    \end{enumerate}
+
+\newpage
+
+    \huge Exercise 2
+    \normalsize
+
+    For the second exercise, use \verb|bigprimes.org| or some other random number generating site to choose some primes $p,q$ with more digits. Try to ensure that the primes are small enough that Eve has a chance at breaking the message. All participants will need Wolfram-Alpha.
+
+    \begin{enumerate}
+        \item What was the message sent by Alice? 
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p2q1, multiline=true]{}
+
+        \item What was Bob able to decrypt?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p2q2, multiline=true]{}
+
+        \item What was Eve able to encrypt?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p2q3, multiline=true]{}
+
+        \item How private was the message?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p2q4, multiline=true]{}
+
+        \item For what purposes would you use this level of encryption?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p2q5, multiline=true]{}
+
+    \end{enumerate}
+
+
+    \newpage
+    \huge Exercise 3
+    \normalsize
+
+    For the third and final exercise, use \verb|bigprimes.org| or some other random number generating site to choose some primes $p,q$ with enough digits that Bob and Alice can agree that Eve will not be able to factor $n$ using Wolfram-Alpha (How can they check this!). 
+
+    \begin{enumerate}
+        \item What was the message sent by Alice? 
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p3q1, multiline=true]{}
+
+        \item What was Bob able to decrypt?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p3q2, multiline=true]{}
+
+        \item What was Eve able to encrypt?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p3q3, multiline=true]{}
+
+        \item How private was the message?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p3q4, multiline=true]{}
+
+        \item For what purposes would you use this level of encryption?
+
+            \TextField[width=6in,height=1in, bordercolor=0 0 0, name=p3q5, multiline=true]{}
+
+    \end{enumerate}
+
+
+    \newpage
+    \huge Bonus Exercise
+    \normalsize
+
+    As an addition to the manual exercise above, your group will now be guided through how the above steps can be easily automated through a simple python script. The general generation of keys, encoding and decoding of messages, and encrypting and decrypting of messages is provided through an \verb|rsa.py| file. It is your task to create character files for Bob, Alice, and Eve that will perform the steps you and your group members had to do manually.
+
+    \paragraph{alice.py:} Alice is the simplest of our three characters as all that is required for this portion is to encode, encrypt, and return a message.
+
+    \begin{enumerate}
+        \item Import the \verb|rsa.py| file.
+
+        \item Gather the inputs from Bob, aka the public key and the key length.
+            
+        \item Use the functions from the \verb|rsa.py| file to encode the message.
+
+        \item Once you have your encoded message, encrypt the message.
+
+        \item Print the encrypted message as a string.
+
+            Paste your code below:
+
+            \TextField[width=6in,height=5in, bordercolor=0 0 0, name=bob, multiline=true]{}
+
+    \end{enumerate}
+
+    \paragraph{bob.py:} Bob’s task is slightly more complex as prime inputs will be required and the numpy and sympy libraries will be utilised.
+
+    \begin{enumerate}
+        \item Import the \verb|rsa.py| file, and the numpy and sympy libraries.
+
+        \item Create a boolean variable to keep track of whether the user will input their primes, or if they should be provided by the user.
+
+        \item If the user needs to input primes, then prompt the user to give two primes. If not, proceed as below.
+
+        \item Now prompt the user to enter a lower bound for the amount of characters in the message.
+
+        \item Using \verb|pow()|, generate a lower bound for the message length, setting 10 as the base, and the length from above as the exponent.
+
+        \item To generate our primes, we will use \verb|sympy.randprime()|, where our input will be lower, and lower*2. Do this twice such that values of $p$ and $q$ are present.
+
+        \item Check that the primes are unique.
+
+        \item Finally, we print our values for $p$ and $q$ as a string, separated by commas.
+
+        \item Now we must generate and return these keys to Bob so he may share them with Alice and Eve, to do this we use our \verb|rsa.py| file, and use \verb|generate_keys| to encrypt our $p$ and $q$ values.
+
+        \item Print all three values (the public key, private key, and key length) as strings.
+
+        \item Lastly, once Alice has created and encrypted a message, Bob can decode it. Promt the user for the message obtained from Alice.
+
+        \item Then we use \verb|decrypt_message| from the \verb|rsa.py| file, feeding it the above message from Alice, the private key, and the key length.
+
+        \item Finally, we use \verb|decode_message| from the \verb|rsa.py| file on the above value obtained from \verb|decrypt_message| to obtain the decrypted message from Alice.
+
+        Paste your code below:
+
+            \TextField[width=6in,height=5in, bordercolor=0 0 0, name=bob2, multiline=true]{}
+    \end{enumerate}
+
+    \paragraph{eve.py:} It is Eve’s task to collect all inputs from Alice and Bob in order to decrypt and decode the messages.
+
+    \begin{enumerate}
+        \item Import the \verb|rsa.py| file, and the numpy and sympy libraries.
+
+        \item Gather the inputs from Bob and Alice, aka the public key, key length, and the message from Alice.
+
+        \item Next, using \verb|factorint()| from the sympy library, factor the key length to find $p$ and $q$. (Make sure to assign this to a variable, for example, \verb|factors|).
+
+        \item Now you will want to check if the length of this is equal to 2. If it is you will want to raise a \verb|ValueError|, as $n$ should never have exactly two prime factors. If it is not, proceed by returning the factors to Eve (you can obtain these from the dictionary returned by \verb|factorint| using \verb|factors.keys()|).
+
+        \item Print the primes, $p$ and $q$, you have found as strings separated by commas.
+
+        \item Now you must set your variables ($p$, $q$, and $n$). $p$ and $q$ will be easy enough as they are your primes. $n$ will simply be the two primes multiplied by one another.
+
+        \item To get the modular inverse, we need $\varphi(n)$, which we can obtain by multiplying $p-1$ and $q-1$.
+
+        \item Now to get the modular inverse, we will use \verb|mod_inverse| from the sympy library, with the inputs being the public key and $\varphi(n)$.
+
+        \item Finally, to decrypt and decode the message we will use the \verb|decrypt_message| function from the \verb|rsa.py| file, our input being the message from Alice, the modular inverse, and our $n$ from earlier.
+
+        \item The above leaves us with the decrypted message from Alice, which can be printed as a string.
+
+        Paste your code below:
+
+            \TextField[width=6in,height=5in, bordercolor=0 0 0, name=bob2, multiline=true]{}
+    \end{enumerate}
+
+    The above code can be cross referenced with the provided solutions so as to ensure correct documentation.
+
+\end{document}

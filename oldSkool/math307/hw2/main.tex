@@ -1,0 +1,103 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Homework 2 - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+    \item Find all values $\alpha\in \mathbb{C}$ for which the equation $\cos z=\alpha$
+        has real solutions, where $z$ is a complex unknown. For such values of
+        $\alpha$, are there any non-real solutions?
+
+        Let $z\in \mathbb{R}$. Solving this for $z$ gives $z=\arccos \alpha$, which has an 
+        infinitude of solutions with $\alpha\in \mathbb{R}$.
+
+        We can write $\alpha=\arccos z +2\pi k$, for $k\in \mathbb{Z}$.
+
+    \item Consider the complex function of a real variable:
+        \[
+        f(t)=\frac{t^3+t^{\alpha}}{t^3+t}
+        .\] 
+        Where $\alpha\in \mathbb{C}$. Study the limit $\lim_{t \to -\infty} f(t)$.
+
+        We can rewrite the exponential:
+        \begin{align*}
+            \lim_{t \to -\infty} f(t)&= \lim_{t \to -\infty}  \frac{t^3+t^{\alpha}}{t^3+t}\\
+            &= \lim_{t \to -\infty}  \frac{t^3+e^{\alpha\ln t}}{t^3+t}\\
+            &= \lim_{t \to -\infty}  \frac{t^3+e^{x\ln t+iy\ln t}}{t^3+t}&\text{Writing }\alpha=x+iy\\
+            &= \lim_{t \to -\infty}  \frac{t^3+e^{x\ln t}e^{iy\ln t}}{t^3+t}&(*)\\
+            &= \lim_{t \to -\infty} \frac{t^3+t^{x}(\cos(y\ln t)+i\sin(y\ln t))}{t^3+t}
+        .\end{align*}
+        We can split into cases; $\mathrm{Re}\,z<3$, $\mathrm{Re}\,z=3$. $\mathrm{Re}\,z> 3$.
+
+        If $\mathrm{Re}\,z<3$, we have a dominant term of $t^3$ on both the numerator and
+        the denominator: 
+            $$\lim_{t \to -\infty} \frac{t^3+t^{x}(\cos(y\ln t)+i\sin(y\ln t))}{t^3+t}=1$$
+
+        If $\mathrm{Re}\,z= 3$, and $\mathrm{Im}\,z=0$, our limit becomes:
+        \[
+            \lim_{t \to -\infty} \frac{t^3+t^{3}\cos(0)}{t^3+t}=2
+        .\]
+        However if $\mathrm{Im}\,z\neq 0$, we have:
+            $$\lim_{t \to -\infty} \frac{t^3+t^{x}(\cos(y\ln t)+i\sin(y\ln t))}{t^3+t}$$
+        which has oscillating real and imaginary part with constant modulus, 
+        so the limit does not exist.
+
+        And we see from the modulus of $f(t)$ 
+        \begin{align*}
+            \lim_{t \to -\infty} \left|\frac{t^3+e^{x\ln t}e^{iy\ln t}}{t^3+t}\right|&=\lim_{t \to -\infty}\left| \frac{t^3+t^{x}e^{iy\ln t}}{t^3+t}\right|&\text{From }(*)\\
+            &= \lim_{t \to -\infty} \left| \frac{t^3+t ^{x}}{t^3+t} \right| &\text{Since }e^{iy\ln t}=1 \text{, and by linearity of limits} \\
+        .\end{align*}
+        And since the numerator has a dominant term of $t ^{3+x}>t^{3}$, the limit of the modulus is $\infty$ and therefore the limit of our function $f(t)$ will be $\infty_{\mathbb{C}}$.
+
+
+        \newpage
+    
+    \item\, \paragraph*{a)} 
+        Calculate the limit:
+        \[
+        \lim_{z \to 0} \frac{|z|^2 \mathrm{Im}\, z}{\mathrm{Re}\, z}
+        .\] 
+        This limit does not exist. To show this we will find two parametric curves 
+        $\gamma(t), \delta(t)$ so that the limits do not agree.
+
+        First write $f(t)=\frac{|z|^2 \mathrm{Im}\, z}{\mathrm{Re}\, z}$.
+
+        Now choose the functions:
+        \[
+        \gamma(t) = t,\quad \delta(t)= it
+        .\] 
+        And now we study the limits:
+        \[
+        \lim_{t \to 0} f(\gamma(t)),\quad \lim_{t \to 0}f(\delta(t)) 
+        .\] 
+        First we look to $\gamma$.
+        \[
+        \lim_{t \to 0} f(\gamma(t))=\lim_{t \to 0} t^2 \frac{0}{t}=0
+        .\] 
+        And then we look to $\delta$.
+        \[
+        \lim_{t \to 0} f(\delta(t))=\lim_{t \to 0} \frac{t^2}{\mathrm{Re}\,it}= \frac{0}{0}
+        .\] 
+        Which is of indeterminate form. So this limit does not exist, since our function disagrees
+        on two paths to $0$.
+
+        \paragraph*{b)}
+        Calculate the limit:
+
+        \[
+        \lim_{z \to \infty_{\mathbb{C}}} \frac{\mathrm{Re}\,z}{|z|^2}
+        .\] 
+        Let's find a candidate limit; take $\gamma_m(t)=t+imt$. Then:
+        $$f(\gamma(t))=\frac{t}{t^2+m^2t^2}=\frac{1}{tm^2+t}$$
+        And $\lim_{t \to \infty} f(\gamma(t))=0 $ regardless of choice of $m$.
+
+        So let's write $f(re^{i\theta}=\frac{r\cos\theta}{r^2}=\frac{\cos\theta}{r}$.
+        Take the function $g(r)=\frac{1}{r}$, and note that $\lim_{r \to \infty} g(r)=0$ and
+        $|f(re^{i\theta}|=\left|\frac{\cos\theta}{r}\right|\leq \left|\frac{1}{r}\right|$ since $\cos\theta\in [-1,1]$. So by squeeze theorem we can say that:
+        \[
+        \lim_{z \to \infty_{\mathbb{C}}} \frac{\mathrm{Re}\,z}{|z|^2}=0
+        .\] 
+
+\end{enumerate}
+\end{document}

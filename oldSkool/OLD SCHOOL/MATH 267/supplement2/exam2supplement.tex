@@ -1,0 +1,50 @@
+\documentclass{article}
+\input{preamble}
+
+\begin{document}
+    \huge Thomas Boyko - 30191728 \nl 
+    \normalsize \textbf{Let $b$ be the last nonzero digit of your UCID number. }
+    \nl My $b=8$.
+    \begin{enumerate}
+        \item Suppose that $\sum\limits_{n=0}^{\infty}a_n$ is a series for which the Ratio Test
+        is inconclusive.
+        \nl Find the radius of the power series $\sum\limits_{n=1}^\infty (-1)^n\frac{a_n}{n^2+1}(4x-8)^{2n}$
+        \nl We know that since the Ratio Test is inconclusive, $\lim\limits_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right|=1$.
+        \nl To find the radius of our series, we can run the ratio test on it.
+        \begin{align*}
+            L &= \lim_{n\to\infty}\left|\frac{a_{n+1}(4x-8)^{2n+2}}{(n+1)^2+1}\frac{n^2+1}{a_n(4x-8)^{2n}}   \right| \\
+            &=\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|\cdot\lim_{n\to\infty}\left|\frac{(n^2+1)(4x-8)^{2n+2}}{(n^2+2n+2)(4x-8)^{2n}}\right|\\
+            &=1\cdot\left|(4x-8)^2\right|\cdot\lim_{n\to\infty}\left|\frac{n^2+1}{n^2+2n+2}\right|\\
+            &=|(4x-8)^2|
+        \end{align*}
+        And since $L<1$ where the series converges,
+        \begin{align*}
+            |4x-8|^2&<1\\
+            |4x-8|&<1\\
+            \left|x-\frac{1}{2}\right|&=\frac{1}{4}\\
+        \end{align*}
+        So, the centre is $1/2$ and the radius is $1/4$.
+        \item Consider the series $\sum\limits_{n=0}^{\infty}\frac{(-1)^n9^n}{(2n)!}$.
+        \begin{alphenum}
+            \item Compute the limit $L$ required to perform the Ratio Test (Write a number or DIV).
+            \begin{align*}
+                L&=\lim_{n\to\infty}\left|\frac{9^{n+1}}{(2n+1)!}\frac{(2n)!}{9^n}\right|\\
+                &=\lim_{n\to\infty}\left|\frac{9}{2n+1}\right|\\
+                &=0
+            \end{align*}
+            So $L=0$.
+            \item Therefore, by the Ratio Test the series converges absolutely.
+        \end{alphenum}
+        \item Suppose that $a_n$ is a sequence where we only know the first few terms.
+        \nl In particular, suppose that
+        $\{a_n\}_{n=1}^{\infty}=\{2,3,8,-8,1,5,-3,\ldots\}$.
+        \begin{alphenum}
+            \item If the series $\sum\limits_{n=1}^{\infty}a_n$ diverges, then $\lim\limits_{n\to\infty}a_n$ is unknown.
+            \item If the series $\sum\limits_{n=1}^{\infty}a_n$ converges to 267, then $\sum\limits_{n=7}^{\infty}a_n=256$
+        \end{alphenum}
+       \item Fill in the blanks to make the following sentence true. 
+       \nl The series $\sum\limits_{n=8}^{\infty}\frac{(-1)^{n+1}}{n^{10}}$ converges by the Alternating Series Test.
+
+    \end{enumerate}
+    
+\end{document}

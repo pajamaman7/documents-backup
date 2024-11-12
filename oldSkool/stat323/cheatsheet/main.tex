@@ -1,0 +1,245 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\input{preamble.tex}
+
+\begin{document}
+\begin{multicols*}{3}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+% \huge Cheat Sheet - Thomas B
+\normalsize
+%------------ Method of Transformations -----------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        Single variable: Let $Y=g(X)$. Find some $g^{-1}(Y)=X$. Then:
+        $f_Y=f_X(g^{-1}(y))\left| \frac{d}{dy}g^{-1}(y) \right|$\\
+        Multivariable: \\
+        $f_{X_1,Y}(x_1,y)=f_{X_1,X_2}(x_1,g_{X_2}^{-1}(y,x_1))\left|\frac{d}{dy}g_{X_2}(y,x_1)\right|$\\
+        $f_{X_2,Y}(x_2,y)=f_{X_2,X_1}(g_{X_1}^{-1}(y,x_2)),x_2)\left|\frac{d}{dy}g_{X_1}(y,x_2)\right|$\\
+        $f_{Y_1,Y_2}(y_1,y_2)=f_{X_1,X_2}\left(g_1^{-1}\left(y_1,y_2\right),g_2^{-1}\left(y_1,y_2\right)\right)|J|$\\
+        (then integrate out)
+    \end{minipage}
+};
+%Method of Transformation
+\node[fancytitle, right=10pt] at (box.north west) {Method of Transformations};
+\end{tikzpicture}
+
+\iffalse
+% Dist. of statistics
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        $\frac{(n-1)S^2}{\sigma^2}\sim\chi^2_{df=n-1}$\\
+        $\bar{X}\sim N(\mu_X,\frac{\sigma^2}{n})$\\
+        $\frac{S_{1}^{2}\sigma_{2}^{2}}{S_{2}^{2}\sigma_{1}^{2}}\sim F(n_{1}=1,n_{2}=1)$
+    \end{minipage}
+};
+% Dist. of statistics
+\node[fancytitle, right=10pt] at (box.north west) {Distributions of Statistics};
+\end{tikzpicture}
+\fi
+
+%Bias Content
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        For an estimator $\hat{\theta}$ of $\theta$:\\
+        $B(\hat{\theta})=E[\hat{\theta}]-\theta$.\\
+        $MSE(\hat{\theta})=B(\hat{\theta^2})+Var(\theta)$\\
+    \end{minipage}
+};
+
+% Bias Header
+\node[fancytitle, right=10pt] at (box.north west) {Bias and Mean Squared Error};
+\end{tikzpicture}
+
+%CI Content
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        For sufficiently large or normal samples with mean $\mu$, variance $\sigma^2$:\\
+        $\bar{X}\pm \frac{Z_{\frac{\alpha}{2}}\sigma}{\sqrt{ n }} $\\
+        Population Proportion:\\
+        $$\hat{p}\pm Z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p}}{n}} $$
+    \end{minipage}
+};
+
+% CI Header
+\node[fancytitle, right=10pt] at (box.north west) {Confidence intervals};
+\end{tikzpicture}
+
+%CI single sample in R
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        \textbf{To find a CI for $\mu$:}\\
+        Have RAW DATA and know $\sigma$:\\
+        \verb|z.test|\\
+        (BSDA) Have SUMMARY DATA and do know $\sigma$ :\\
+        \verb|zsum.test|\\
+        Have RAW DATA and do not know $\sigma$:\\
+        \verb|t.test|\\
+        (BSDA) Have SUMMARY DATA and do not know $\sigma$:\\
+        \verb|tsum.test|\\
+        DescTools for variance CIs (only for raw data):\\
+        \verb|VarCI|\\
+        Use ? for more information on arguments
+    \end{minipage}
+};
+
+% CI in R Header
+\node[fancytitle, right=10pt] at (box.north west) {CIs and Hypothesis testing in R};
+\end{tikzpicture}
+
+%ORDER STATS
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+$f_{X_{(n)}}=n[F_X(x)]^{n-1}f_X(x)$\\
+$f_{X_{(1)}}=n[1-F_X(x)]^{n-1}f_X(x)$\\
+$f_{X_{(k)}}=\frac{n!}{(k-1)!(n-k)!}F_X(x)^{k-1}\left[ 1-F_X(x) \right] ^{n-k}f_X(x)$
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Order Statistics};
+\end{tikzpicture}
+
+%Two Sample CI
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        Use eg. \verb|?t.test| for info on arguments\\
+        For $\frac{\sigma_1}{\sigma_2}$ (RAW only):\verb|var.test|\\
+        CIs for $\mu_1-\mu_2$ (ensure you check equal variance): \\
+        RAW: \verb|t.test|\\
+        SUMMARY: \verb|tsum.test|\\
+        CI for $\hat{p}_1-\hat{p}_2$:\\ 
+        \verb|prop.test(x=c(success),n=c(n),conf=,correct=F)|
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Two Sample CIs and Hypothesis testing in R};
+\end{tikzpicture}
+
+%Two Sample CI summary
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        For $\frac{\sigma_1}{\sigma_2}$ with summary data: \\
+$$\frac{S_1^2}{F_{1-\alpha/2,(n_1-1,n_2-1)}\cdot S_2^2}\leq\frac{\sigma_1^2}{\sigma_2^2}\leq\frac{S_1^2}{F_{\alpha/2,(n_1-1,n_2-1)}\cdot S_2^2}$$
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Two Sample CIs};
+\end{tikzpicture}
+
+% Consistency
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+An estimator is said to be consistent if, for any positive integer $\epsilon$,
+$$\lim\limits_{ n \to \infty } P(|\hat{\theta}_n-\theta|\leq\epsilon)=1$$
+or,
+$$\lim\limits_{ n \to \infty } P(|\hat{\theta}_n-\theta|>\epsilon)=0$$
+   $$eff(\hat{\theta}_1,\hat{\theta}_2)=RE(\hat{\theta}_1,\hat{\theta}_2)=\frac{MSE(\hat{\theta}_1)}{MSE(\hat{\theta}_2)}$$
+If efficiency is less than 1, $\hat{\theta}_1$ is a more efficient estimator.     
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Consistency and Efficiency};
+\end{tikzpicture}
+
+%MoM
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        \paragraph{Central Moments}
+            Equate the first sample moment about the origin $M_1^{\prime}=\frac1n\sum_{i=1}^nX_i^1=X$ to the first theoretical moment $E(X).$
+            Continue equating sample central moments, $M_k^*$ with the corresponding central theoretical moments $\bar{E}((X-\mu)^k),k=3,4,...$ until you have as many equations as you have parameters.
+            Solve for the parameters.
+        \paragraph{Raw Moments}
+            Equate the first sample raw moment $M_1^{\prime}=\frac1n\sum_{i=1}^nX_i^1=\bar{X}$ to the first theoretical moment $E(X).$
+            Continue equating raw sample moments, $M_k^{\prime}$, with the corresponding theoretical moments $E(X^k),k=3,4,...$ until you have as many equations as you have parameters.
+            Solve for the parameters.
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Method of Moments};
+\end{tikzpicture}
+
+%MLE
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        Find pdf\\
+        Find the likelihood function ${L}(\theta)=\prod_{i=1}^nf(x_i|\theta)$\\
+        Optional: take $\ln$ of the function\\
+        Take the first derivative and set it to 0\\
+        Ensure that the zero is a maximum and not a minimum
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {MLEs};
+\end{tikzpicture}
+
+%Hypothesis Testing
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        $\alpha=P(RH_0|H_0\text{ is true})$, type 1 error\\
+        $\beta=P(FTRH_0|H_0\text{ is false})$, type 2 error\\
+        Power$=1-\beta=P(RH_0|H_0\text{ is true})$
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Hypothesis testing};
+\end{tikzpicture}
+
+%Test Statistics
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+$$Z_{calc}=\frac{\widehat{p}_1-\widehat{p}_2}{\sqrt{\widehat{p}(1-\widehat{p})\left(\frac1{n_1}+\frac1{n_2}\right)}}\sim Normal{\left(0,1\right)}$$
+$$Z_{calc}=\frac{(\widehat{p}_1-\widehat{p}_2)-d_0}{\sqrt{\frac{\widehat{p}_1(1-\widehat{p}_1)}{n_1}+\frac{\widehat{p}_2(1-\widehat{p}_2)}{n_2}}}\sim Normal{\left(0,1\right)}$$
+For difference in means or variance use R.
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Test Statistics for proportion difference};
+\end{tikzpicture}
+
+%Neyman Pearson
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        The uniformly most powerful test for testing $H_0:\theta=\theta_0$ vs. $H_a: \theta=\theta_a$:
+        \[ \frac{L(\theta_0)}{L(\theta_a)}<k .\] 
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Neyman Pearson};
+\end{tikzpicture}
+
+%LINEAR REGRESSION
+\begin{tikzpicture}
+\node [mybox] (box){
+    \begin{minipage}{0.3\textwidth}
+        We can find covariance and correlation respectively with \verb|cov, cor| in R\\
+        For our probabalistic model of linear regression $Y_i=\beta_0+\beta_1X_i+\epsilon_i$,
+        we use \verb|lm|, and for more information we wrap \verb|lm| in a \verb|summary()|\\
+        Using \verb|anova| can see our SST and SSE.\\
+        Using \verb|plot| we may be able to remove outliers from the dataset, and using \verb|plot(fit)|
+        can give us several graphs to analyze our regression line.\\
+        \verb|confint(lm)| can give us CIs for our estimate slope and intercepts of our regression model.
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box.north west) {Covariance, Correlation and Linear Regression};
+\end{tikzpicture}
+%TODO: 
+\end{multicols*}
+\end{document}

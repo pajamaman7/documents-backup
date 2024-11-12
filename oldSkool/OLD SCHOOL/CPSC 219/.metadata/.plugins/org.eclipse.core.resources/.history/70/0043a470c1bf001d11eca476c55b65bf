@@ -1,0 +1,9 @@
+package basicjava;
+
+public class FileExercises {
+
+	public FileExercises() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,1 @@
+If $p$ is a [[Primes|Prime]], then $(p-1)!\equiv-1\pmod{p}$.

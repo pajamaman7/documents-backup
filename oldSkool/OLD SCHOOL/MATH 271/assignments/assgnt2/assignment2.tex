@@ -1,0 +1,205 @@
+\documentclass{article}
+
+\input{preamble}
+\begin{document}
+\huge Assignment 2 - Thomas Boyko - 30191728
+\normalsize
+\begin{enumerate}
+\item Let $a_n = \sum\limits_{i=1}^{n}\frac{2i-1}{2^i}$ where n is a positive integer.
+\begin{alphenum}
+\item Find $a_1, a_2, a_3,$ and $ a_4$.
+\begin{align*}
+    a_1 &= \frac{1}{2}\\
+    a_2 &= \frac{5}{4}\\
+    a_3 &= \frac{15}{8}\\
+    a_4 &= \frac{37}{16}
+\end{align*}
+\item Guess a simple formula for $a_n$ for all integers $n\geq 1$.
+\nl Guess: \[a_n = 3- \frac{2n+3}{2^n}\]
+
+\item Prove by induction on $n$ that your guess in part (b) is correct.
+
+\begin{proof}
+    We will prove by induction.
+    Suppose $n\in\integer$ and $n\geq1$.
+    \nl Base case: $n=1$.
+    \[\sum_{i=1}^{1}\frac{2i-1}{2^i} = \frac{2(1)-1}{2^1}=\frac{1}{2}
+    =3-\frac{5}{2}=3-\frac{2(1)+3}{2^1}\]
+    Induction Hypothesis: \nl 
+    Suppose $k\in\integer$ and $k \geq 1$.
+    Further suppose: 
+    \[\sum_{i=1}^{k}\frac{2i-1}{2^i}=3-\frac{2k+3}{2^k}\] 
+    We want to prove: 
+    \[\sum_{i=1}^{k+1}\frac{2i-1}{2^i}=3-\frac{2k+5}{2^{k+1}}\] 
+    Let's begin. 
+    \[\begin{split}
+        \sum_{i=1}^{k+1}\frac{2i-1}{2^i} 
+        & = \frac{2(k+1)-1}{2^{k+1}}+\sum_{i=1}^{k}\frac{2i-1}{2^i} \\
+        & = \frac{2(k+1)-1}{2^{k+1}}+3-\frac{2k+3}{2^k} \text{  (By the Induction Hypothesis)}\\
+        & = 3 +\frac{2k+1}{2^{k+1}} - \frac{2(2k+3)}{2^{k+1}} \\
+        & = 3 +\frac{2k+1-4k-6}{2^{k+1}} \\
+        & = 3-\frac{2k+5}{2^{k+1}}
+    \end{split}\]
+        Therefore, by induction on $n$, $\sum\limits_{i=1}^{n}\frac{2i-1}{2^i}= 3- \frac{2n+3}{2^n}$
+        for all positive integers $n$.
+\end{proof}
+
+\end{alphenum}
+
+\newpage
+
+\item The Fibonacci numbers $f_1, f_2, f_3, \ldots$ are defined by 
+setting $f_1 = f_2 = 1$ and $f_n = f_{n-1} +f_{n-2}$
+for all integers $n\geq 1$.
+\par A fact that will become helpful in these proofs is that $\gcd(a+b,b) = \gcd(a,b)$.
+\nl Here is a proof, so that we can use it in the following questions.
+\begin{proof}
+    Suppose $\gcd(a,b)=d$ where $d\in\integer$. $d$ is the greatest 
+    integer that divides both $a$ and $b$.
+    \nl So $d|b$ and $d|a$ which means $a=dk$ and $b=dl$ for some $k,l\in\integer$. \nl
+    $a+b =kd+ld = d(l+k)$ where $l+k\in\integer$, which means $d |a+b$. \nl 
+    \nl Now we will let $e=\gcd(a+b,b)$. $e$ is the greatest integer that divides
+    both $a+b$ and $b$.
+    \nl$em=a+b$ and $en=b$ for some $m,n\in\integer$.
+    \nl$em=a+en$
+    \nl$e(m-n)=a$ where $m-n\in\integer$ so $e$ divides $a$.
+    \nl Since d divides both $a+b$ and $b$, $d\leq e$.
+    \nl And since $e$ divides both $a$ and $b$, $e\leq d$.
+    \nl So $e\leq d\leq e$ which means $d=\gcd(a,b)=\gcd(a+b,b)=e$.
+
+\end{proof}
+\begin{alphenum}
+\item Prove that for all integers $n\geq3$, $\gcd(f_n,f_{n-1}) = \gcd(f_{n-1},f_{n-2})$
+\begin{proof}
+    Suppose $n\in\integer$, and $n\geq3$.\nl 
+    Because $n\geq3$, $\gcd(f_{n},f_{n-1})=\gcd(f_{n-1}+f_{n-2},f_{n-2})$.\nl 
+    As proved above, this is equal to $\gcd(f_{n-1},f_{n-2}).$\nl 
+    Therefore, for all integers $n\geq3$, $\gcd(f_n,f_{n-1}) = \gcd(f_{n-1},f_{n-2})$
+\end{proof}
+\item Prove by induction on $n$ that $\gcd(f_n,f_{n-1}) = 1$ for all integers $n\geq2$.
+\begin{proof}
+    Suppose $n\in\integer,n\geq2$.\nl 
+    Base cases: (For this we need to define $f_3=f_2+f_1=1+1=2$)\nl 
+    $n=2$: $\gcd(f_2,f_1)=\gcd(1,1)=1$.\nl 
+    $n=3$: $\gcd(f_3,f_2)=\gcd(2,1)=1$.\nl 
+    Induction Hypothesis:
+    \nl Suppose $k\in\integer, k>3$ \nl 
+    Further suppose that for all $m\in\integer$ where $2\leq m < k$: 
+    \[\gcd(f_m,f_{m-1})=1\]
+    We want to prove: $\gcd(f_k,f_{k-1})=1$.
+    \nl $\gcd(f_k,f_{k-1}) = \gcd(f_{k-1},f_{k-2})$ as proved in part (a). 
+    \nl By the Induction Hypothesis, since $2\leq k-1<k\leq3$, $1=\gcd(f_k,f_{k-1})$
+    \nl So, by induction on n, $\gcd(f_n,f_{n-1})=1$ for all $n\geq2$.
+    
+\end{proof}
+\item Prove by induction on $n$ that $\sum\limits^{n}_{i=1}f_i^2=f_{n+1}f_n$ for all integers $n\geq 1$.
+\begin{proof}
+    Suppose $n\in\integer$, $n\geq1$.
+    \nl Base case: $n=1$.
+    \[\sum\limits_{i=1}^{1}f_i^2=1^2=1=1\times1=f_2\times f_1\]
+    \nl Induction Hypothesis:
+    \nl Suppose $k\in\integer$, $k\geq1$.
+    \nl Further suppose that $\sum\limits_{i=0}^{k}f_i^2=f_{k+1}f_k$.
+    \nl We want to prove that: $\sum\limits_{i=0}^{k+1}f_i^2=f_{k+2}f_{k+1}$.
+    \nl Let's begin.
+    \[\begin{split}
+        \sum\limits_{i=0}^{k+1}f_i^2 &= {f_{k+1}}^2\sum\limits_{i=0}^{k}f_i^2\\
+        &= {f_{k+1}}^2+f_{k+1}f_k \text{ By the Induction Hypothesis}\\
+        &= f_{k+1}(f_k + f_{k+1})\\
+        &= f_{k+1}(f_{k+2})
+    \end{split}
+    \]
+    Therefore, by induction on $n$, $\sum\limits^{n}_{i=1}f_i^2=f_{n+1}f_n$ for all integers $n\geq 1$.
+\end{proof}
+\end{alphenum}
+\newpage 
+\item For each of the following statements, if the statement is true
+, then give a proof, and if the statement is false, 
+then write out its negation and prove that.
+\begin{alphenum}
+\item For all sets $A,B$, and $C$, $A \cup (B\cap C)$ is a subset of 
+$(A\cup B)\cap (A\cup C)$.
+
+\begin{proof}
+Suppose $A,B$ and $C$ are sets. Let $x\in A\cup(B\cap C)$. \nl
+So, $x$ is in $A$, or $x$ is in both $B$ and $C$.\nl
+\nl Case 1: $x\in A$
+\nl If $x\in A$, x is in both $A\cup B $ and $A \cup C$.
+\nl So, $x\in(A\cup B)\cap (A\cup C)$ if $x \in A$.\nl 
+\nl Case 2: $x\not\in A$
+\nl If $x\not\in A$, $x\in B\cap C$. 
+\nl This means that $x\in C$ and $x\in B$.
+\nl So x must be in both $A\cup B$ and $A\cup C$.
+\nl Therefore, if $x\not\in A$, $x\in (A\cup B)\cap (A\cup C)$
+\nl\nl Since we know that all $x$ must be in $A$ or ($B$ and $C$),
+\nl And we know that all $x$ in $A \cup (B\cap C)$ must be in $(A\cup B)\cap (A\cup C)$, 
+\nl $A \cup (B\cap C)$ is a subset of 
+$(A\cup B)\cap (A\cup C)$.
+
+\end{proof}
+
+\item For all sets $A,B$, and $C$, if $A\subset B$, then $(C-A)\subset(C-B)$.
+\nl The statement is false, so we will negate it and prove that.
+\nl The negation is: "There exist sets $A,B$, and $C$ so that $A\subset B$ but $(C-A)\not\subset(C-B)$."
+
+\begin{proof}
+Choose the following sets.\nl 
+$A=\varnothing$\nl$B=\{1\}$\nl $C=\{1\}$ \nl 
+Note that $A\subset B$, because there are no elements in $A$.
+\nl $C-A = \{1\}$
+\nl $C-B = \varnothing $\nl 
+So, $A\subset B$ but $(C-A)\not\subset(C-B)$ because the element 1 is in 
+$C-A$ but is not in $C-B$.
+Therefore, there exist sets $A,B$, and $C$ so that $A\subset B$ but 
+$(C-A)\not\subset(C-B)$.
+\end{proof}
+
+\item For all sets $A,B$, and $C$, $(A \cup B)-C=(A-C)\cup(B-C)$
+
+\begin{proof}
+    Suppose $A,B$, and $C$ are sets.
+    \nl Suppose $x\in(A \cup B)-Ccases$.
+    \nl So $x$ is in $A$ or $B$, but $x$ is not in $C$.
+    \nl We will consider two cases.
+    \nl Case: $x \in A$.
+    \nl Since $x\in A$, and $x\not\in C$, $x\in (A-C)$
+    \nl So, when $x\in A$, $x\in(A-C)\cup(B-C)$.
+    \nl Case: $x\not\in A$.
+    \nl Since $x\not\in A$, $x$ must be in $B$.
+    \nl Therefore $x\in(B-C)$ because $x$ is in $B$ but not $C$.
+    \nl So $x \in (A-C)\cup(B-C)$.
+    \nl All elements of the left side of the equation must be in the right 
+    side, so $(A \cup B)-C\subset(A-C)\cup(B-C)$
+
+    Let $y\in(A-C)\cup(B-C)$.
+    \nl So $y$ must be in either $A-C$ or $B-C$. This means $y$ must be in $A$ or $B$.
+    \nl Either way, $y\not\in C$
+    \nl Since $y$ must be in $A$ or $B$, it will always be in $A\cup B$.
+    \nl And since $y\not\in C$, $y$ must always be in $(A \cup B)-C$.
+    \nl Therefore, $(A-C)\cup(B-C)\subset(A \cup B)-C$
+    \nl Since the sets $(A-C)\cup(B-C)$ and $(A \cup B)-C$ are subsets of each other, they are equal.
+
+
+\end{proof}
+\newpage
+\item For all sets $A$ and $B$, $A\subset B \iff A-B=\varnothing$.
+
+\begin{proof} 
+    Suppose $A$, $B$ are sets.\nl
+    To prove that $A\subset B \iff A-B=\varnothing$, we will first prove $A\subset B \implies A-B=\varnothing$
+    \nl We will prove this by contradition. Suppose $A\subset B$ and $\exists x\in(A-B)$.
+    \nl So, $x\in A$ but $x\not\in B$.
+    \nl But all elements of $A$ must be in $B$ since $A\subset B$. A contradiction!
+    \nl So, $A\subset B\implies A-B=\varnothing$.
+    \nl Next we will prove that $A-B=\varnothing \implies A\subset B$.
+    \nl Since there are no elements in $A-B$, $\forall y\in A, y\in B$
+    \nl This is the same as saying "A is a subset of B"
+    \nl So, $A-B=\varnothing \implies A\subset B$
+    \nl $A\subset B\implies A-B=\varnothing$ and $A-B=\varnothing \implies A\subset B$
+    \nl Which means that $A\subset B \iff A-B=\varnothing$.
+
+\end{proof}
+
+\end{alphenum}
+\end{enumerate}
+\end{document}

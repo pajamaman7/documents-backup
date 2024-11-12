@@ -1,0 +1,85 @@
+\documentclass{article}
+\input{preamble}
+
+\begin{document}
+    \huge Homework 4 - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+\item Consider the function $z^n$, where $n \in  \mathbb{Z}$.
+\begin{enumerate}[label= (\alph*)] 
+    \item Calculate the integral 
+        \[
+            \oint_{\gamma}z^{n} \, dz 
+        .\] 
+        \[
+        \Re
+        .\] 
+        Where $\gamma$ is the boundary of the
+pentagon whose vertices are the 5th roots of 1, traversed once
+clockwise.
+
+For $n\ge 0$, we know that $z^{n}$ is holomorphic in its domain $\mathbb{C}$, so $\gamma$ will be homotopic to
+a constant contour and the integral will be zero.
+
+For $n<-1$, we notice that our curve $\gamma$ is homotopic to the unit circle traveled clockwise, the integral over which will be
+the negative of the typical unit circle parameterization, call it $\delta$.
+
+\begin{align*}
+    \oint_{\gamma}z^{n} \, dz &= -\oint_{\delta} z^{n} \, d z  \\
+    &= -\int_{0}^{2\pi} e^{nti}ie^{it} \, d t  \\
+    &= -i\int_{0}^{2\pi} e^{(n+1)it)}\, d t  \\
+    &= -i \left( \frac{e^{it(n+1)}}{n+1} \right)_{0}^{2\pi} \\
+    &= -i\left( \frac{e^{i_2\pi(n+1)}}{n+1}-\frac{e^{0}}{n+1} \right)  \\
+    &= -i\left(\frac{1}{n+1}-\frac{1}{n+1}\right) \\
+    &= 0
+.\end{align*}
+We can see in our calculations that the primitive we found in this example is undefined for $n=-1$, which
+motivates a seperate case.
+
+For $n=-1$, we have the same homotopy and we can use the same parameterization; so we calculate
+\begin{align*}
+    \oint_{\delta} \frac{1}{z} \, d z &= -i\int_{0}^{2\pi} \frac{e^{it}}{e^{it}} \, d z  \\
+    &= -i \int_{0}^{2\pi} 1 \, d z  \\
+    &= -2\pi i 
+.\end{align*}
+
+So for $n=-1$, the integral is $-2\pi i$, and for any other $n\in \mathbb{Z}$, the integral is 0.
+
+\item Calculate the integral of $z^n$ , where $n \in \mathbb{Z}$, on the first side of the same pentagon, originating from 1 and moving clockwise.
+
+We start by finding the necessary 5th roots of unity, which are given by $z_0=1$ and $z_1=e^{\frac{8}{5}\pi i}$. First let's take the case $n\neq -1$, where our integral is not path-dependent. So we only depend on the endpoints, $1$ and $e^{i\frac{5\pi}{8}}$, and a primitive for $z^{n}$ which is $\frac{z^{n+1}}{n+1}$ for $n\neq -1$.
+\[
+    \int_{\gamma} z^{n} \, dz=F(e^{\frac{8\pi}{5}i})-F(1)=\frac{1}{n+1}\left( e^{\frac{8\pi}{5}(n+1)}-1 \right) 
+.\] 
+For $n=-1$, we notice that though $\frac{1}{z}$ does not have a primitive in its domain, it does have
+a primitive in the domain of $\ln$, $\mathbb{C}\setminus\mathbb{R}_{\leq 0}$ since this domain is simply connected. This primitive is given by $\ln z$; and so we can evaluate the integral:
+\[
+\int_{\gamma}^{} \frac{1}{z} \, dz  =\ln e^{\frac{8\pi}{5}i}- \ln 1=\frac{8\pi}{5}i
+.\] 
+
+\end{enumerate} 
+
+\newpage
+
+\item Calculate the integral
+    \[
+    \oint_{\gamma} \frac{1}{z^2-4z+3} \, dz 
+    .\] 
+where $\gamma$ is the circle centred on 0 and of radius 2, traversed once counterclockwise.
+
+We can see singularities of this function at $z=1,3$. We also note that $\gamma$ is a positively oriented Jordan curve. Now if we let $f(z)=\frac{1}{z-3}$,
+we can modify our integral:
+\begin{align*}
+    \oint_{\gamma} \frac{1}{z^2-4z+3} \, d z&= \oint_{\gamma} \frac{f(z)}{z-1} \, d x  \\ 
+    &=\frac{2\pi i}{2\pi i} \oint_{\gamma} \frac{f(z)}{z-1} \, d z  \\
+    &= 2\pi i f(1) \\
+    &= \frac{2\pi i}{1-3} \\
+    &= -\pi i
+.\end{align*}
+So;
+\[
+    \oint_{\gamma} \frac{1}{z^2-4z+3} \, dz = -\pi i
+.\] 
+
+\end{enumerate}
+\end{document}

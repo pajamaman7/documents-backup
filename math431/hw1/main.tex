@@ -1,0 +1,122 @@
+\documentclass{article}
+\input{preamble.tex}
+\title{Assignment 1}
+\author{Thomas Boyko - 30191728}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item Exercises 8.3 \#14. Let $X= \mathbb{R}[x_1, \ldots , x_n]$ denote the set of all polynomials over $\mathbb{R}$ in the indeterminates $x_1, \ldots, x_n$.  If $\sigma\in S_n$ and $f=f(x_1, \ldots , x_n)\in X$, define $\sigma\cdot f=f(x_{\sigma 1}, \ldots , x_{\sigma n})$.  Show that this is an action and describe the fixer. If $n=3$, give three polynomials in the fixed set and compute $S_3\cdot g$ and $S(g)$, where $g(x_1, x_2, x_3)=x_1+x_2$.
+
+    \paragraph{Solution: }Begin by checking axioms for a group action. Let $\varepsilon$ be identity in $S_{n}$, and let $f\in X$. Then
+    \begin{align*}
+        \varepsilon\cdot f&=f(x_{\varepsilon(1)},\ldots,x_{\varepsilon(n)})\\
+                          &=f(x_1,\ldots,x_n)
+    .\end{align*}
+
+    Then let $\sigma,\tau\in S_n$. 
+    \begin{align*}
+        \sigma\cdot(\tau(f))&= \sigma\cdot(f(x_{\tau(1)},\ldots,x_{\tau(n)}) \\
+        &=  f(x_{\sigma(\tau(1))},\ldots,x_{\sigma(\tau(n))} \\
+        &= (\sigma\circ\tau)\cdot f
+    .\end{align*}
+
+    Claim: The fixer of $X$ is exactly. $\{\varepsilon\} $.
+
+    Clearly $\varepsilon$ fixes any polynomial in $X$. Then let $\sigma$ be in the fixer, and $f\in S_n$.
+    Then $\sigma\cdot f=f(x_{\sigma 1}, \ldots , x_{\sigma n})=f(x_1,x_2,\ldots,x_n)$. Then $\sigma(k)=k$ for any $k\in \{1,2,\ldots ,n\} $ and $\sigma=\varepsilon$.
+
+    The constant polynomials $\{0,1,2\} $ are all clearly fixed by every element of  $S_n$, since there are no invariants to move around.
+    
+    Letting $g(x_1,x_2,x_3)=x_1+x_2$, we find $S_3\cdot g=\{x_1+x_2,x_1+x_3,x_2+x_3 \}$. We may have exactly two distinct invariants out of the total three, 
+    without having to worry about the order in which they appear, so can be sure that we have found them all by noting ${\binom{3}{2}}=3$.
+
+    Now we find $Stab(g)$. Thanks to the commutativity of real addition, we do not have to fix  $x_1,x_2$. However it's necessary to fix
+    $x_3$. So $Stab(g)=\left\{\varepsilon,\begin{pmatrix} 1\,2\,3\\2\,1\,3 \end{pmatrix} \right\} $
+
+\item Exercises 8.3 \#24.  Let $X$ be a $G$-set with just one orbit (called a transitive action).
+\begin{enumerate}
+\item If $K\triangleleft G$, show that $K\subseteq S(x)$ for some $x\in X$ if and only if $K$ is contained in the fixer.
+
+    \paragraph{Solution: }
+        Let $X$ be a $G$-set with only one orbit. Suppose $K\trianglelefteq G$.
+        \paragraph{$\implies$:} Suppose $K\subseteq S(x)$ for some $x\in X$. Then let $k\in K$. Since $k\in S(x)$, $k\cdot x=x$. Let $y \in X$. Then $y$ must be in the orbit
+        of $x$, since $X$ has only one orbit. So there exists some $g\in G$ so that $g\cdot x=y$. 
+
+        Take $g^{-1}kg\cdot x$. By normality of $K$, and since the thing we are acting by is in $K$, contained within the stabilizer of $x$, this is simply $x$. 
+        So 
+        \begin{align*}
+            x&=g^{-1}kg\cdot x\\
+            g\cdot x&= kg\cdot x \\
+            y&= k\cdot y 
+        .\end{align*}
+        So we see that $K$ is contained in the fixer.
+
+        \paragraph{$\impliedby$:} Suppose $K$ is contained in the fixer. Then let $k\in K,x\in X$. We know then that $k\cdot x=x$, so clearly $k\in Stab(x)$
+        and $K\subseteq Stab(x)$ for any $x\in X$.
+
+\item If $|X|>2$, show that $g\in G$ exists such that $g\cdot x\neq x$ for all $x\in X$.
+    \paragraph{Solution: }
+    Nicholson points us to exercise \#10 in section 8.2, which points us to Theorem 2 in the same section.
+
+    Exercise 10 asks us to show that for a finite group, $G\neq\bigcup_{a\in G}aHa^{-1}$, and hints us to use the fact that for a subgroup $H$ of a finite $G$,
+    the number of conjugates of $H$ equals $[G:N(H)]$ (This is Theorem 2 from chapter 8.2).
+
+    #TODO solve Ex10
+
+    We take Exercise 10 as fact for the time being, and come back to it if I have time after finishing this assignment.
+
+    Let $X$ be a $G$-set with only one orbit. We begin by showing that  $Stab(x)$ is conjugate to $Stab(y)$ for any $x,y\in X$.
+    Since $x,y$ are in the same orbit, there exists some $g\in G$ so that $g\cdot x=y$, and it follows that $g^{-1}\cdot y=x$.
+    Then we show that $h\in Stab(y)\iff h\in g^{-1}Stab(y)g$.
+    \[
+    h\in Stab(y)\iff h\cdot y=y\iff hg\cdot x= g^{-1}hg\cdot x=g^{-1}\cdot y=x\iff g^{-1}hg\in Stab(x)
+    .\] 
+    So every stabilizer subgroup is conjugate in $G$. Now we can use Exercise 10 to say for some fixed $x_0\in X$, we have.
+    $\bigcup_{a\in G} aStab(x_0)a^{-1}=\bigcup_{x\in X} Stab(x)\neq G$. So there is some $g\in G$ that is not in any stabilizer, or
+    there exists some $g\in G$ so that $g\cdot x\neq x$ for all $x\in X$.
+
+\end{enumerate}
+\item Exercises 8.4 \#1 Find all Sylow $3$-subgroups of $S_4$ and show explicitly that they are all conjugate.
+
+    \paragraph{Solution: }
+    The Sylow 3-subgroups are as follows. The order of each cycle is 3, and so the order
+    of the generated subgroup is 3.
+    \[ \left<(1\,2\,3)\right>,\left<(1\,3\,4)\right>,\left<(1\,2\,4)\right>,\left<(2\,3\,4)\right> .\] 
+    Recall that conjugation preserves cycle structure and that conjugacy is an equivalence relation. 
+    So we need only show that each subgroup is conjugate to another, or that each generator is conjugate to another.
+
+    \begin{align*}
+        (3\,4)(1\,2\,3)(3\,4)&= (1\,2\,4) \\
+        (2\,3)(1\,2\,4)(2\,3)&= (1\,3\,4) \\
+        (1\,2)(1\,3\,4)(1\,2)&= (2\,3\,4)
+    .\end{align*}
+    We can confirm that we have found every such subgroup by checking Sylow's third theorem. Let $n_3$ be the number of 
+    Sylow 3-subgroups. Then since $|S_4|=24=3\cdot 8$:
+    \begin{align*}
+        n_3&\equiv 1\pmod{3} \\
+        n_3 &|8
+    .\end{align*}
+    So we can have 1 or 4 Sylow 3-subgroups according to this rule. 
+
+\item Exercises 8.3 \#1(b) If $|G|=28$, show that $G$ has a normal subgroup of order $7$.
+
+    \paragraph{Solution: } Write $|G|=p^{k}m=7^1 4$, and denote the number of Sylow $7$-subgroups as $n$.
+    Then, by Sylow's third theorem, we know that $n\equiv 1\pmod{7} $, and that $n|4$. The only $n$ that satisfies both of these is $n=1$.
+    So there is exactly one Sylow $7$-subgroup, which by Sylow's second theorem, means this subgroup is normal in $G$.
+
+\item If $N(P) = P$ for some Sylow $p$-subgroup $P$ of $G$, show that $N(Q) = Q$ for every Sylow $p$-subgroup $Q$ of $G$.
+
+    \paragraph{Solution: } Begin by noting that $Q=gPg^{-1}$ for some $g\in G$, by Sylow's second theorem. Likewise, $N(Q)=N(gPg^{-1})$.
+
+    Since $N(P)=P$, we can also say that $Q=gN(P)g^{-1}$. Now, if we can show that $N(gPg^{-1})=gN(P)g^{-1}$, we can show that $N(Q)=Q$.
+    \begin{align*}
+        h\in N(gpg^{-1})&\iff h(gPg^{-1})h^{-1}=gPg^{-1} &\text{By the definition of }N(gPg^{-1})\\
+                        &\iff g^{-1}hgP(g^{-1}h^{-1}g=P&\text{Cancelling our RHS to get a lone }P\\
+                        &\iff (g^{-1}hg)P(g^{-1}hg)^{-1}&\text{Rewriting}\\
+                        &\iff g^{-1}hg\in N(P)\\
+                        &\iff h\in gN(P)g^{-1} &\text{Coset logic}
+    .\end{align*}
+    So $Q=gPg^{-1}=gN(P)g^{-1}=N(gPg^{-1})=N(Q)$
+\end{enumerate}
+\end{document}

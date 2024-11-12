@@ -1,0 +1,62 @@
+\documentclass[]{article}
+\input{preamble}
+
+
+\begin{document}
+\section{Integration}
+
+\begin{df}
+    Here is the first principle definition for integration, if it proves helpful.
+    \[\int_a^b f(x) \mathrm{d} x=\lim _{n \rightarrow \infty} \sum_{i=1}^n f\left(x_{i, n}^*\right) \cdot \frac{b-a}{n}\]
+\end{df}
+
+\subsection{Integration by parts}
+The formula for integration by parts can be found by taking the indefinite integral
+of the formula for the power rule. 
+
+\begin{df}
+    The formula for integration by parts is as follows with $du$ being $u(x)$ and $dv$ being $v(x)$.
+    \[\int u dv = uv - \int v du\]
+
+\end{df}
+
+\section{Convergence Tests}
+
+\begin{df}
+    Divergence test:
+    Take \[\sum_{n=a}^{\infty}a_n\]
+     \[\lim_{n\rightarrow a_n} \neq 0\]
+    Implies that the series diverges.
+\end{df}
+\begin{df}
+    Limit comparison test. Suppose:
+    \[\lim_{n\rightarrow \infty}\frac{a_n}{b_n}=c\]
+    For some positive finite number c.
+    Then:
+    \[\sum_{n=0}^{\infty}a_n,\sum_{n=0}^{\infty}b_n\]
+    Either both converge or both diverge.
+\end{df}
+\begin{df}
+    Ratio/Root test.
+    For some infinite series with terms $a_n$, if:
+    \[\lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right|=L=
+    \lim_{n\to\infty} \sqrt[n]{|a_n|}\]
+    Where $L$ is some positive and finite number, $\sum\limits^{\infty}_{n=0}
+    a_n$ behaves like a geometric series with ratio $L$ and converges according
+    to the rules of a geometric series. (if $L<1$, the series converges absolutely) Note that if the test yields $1$, it
+    is inconclusive.
+\end{df}
+\begin{df}
+    Alternating Series Test (AST)
+    \newline For some series with terms $a_n$ containing some product where a term
+    is $(-1)^n$ or $(-1)^{n+1}$, If:
+    \begin{itemize}
+        \item $\lim\limits_{n\to\infty} = 0$
+        \item $a_n$ is decreasing
+    \end{itemize}
+    Then $\sum\limits_{n=0}^{\infty}a_n$ converges.
+\end{df}
+
+
+
+\end{document}

@@ -1,0 +1,110 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Homework 3 - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+\item Compute $\oint_C \vec{F} d\vec{r}$ where $C$ is the ellipse $4x^2 +y^2 = 4$ (with counterclockwise
+    motion) and 
+
+    $\vec{F} (x, y) = \begin{pmatrix} \frac{3x^2}{2\sqrt{x^3+y^2} }+y^2, 
+    && \frac{y}{\sqrt{ x^3+y^2}}+x^2 \end{pmatrix}^{T}$.
+
+    Trying to find an "almost potential" for $\vec{F}$, we begin by integrating $F_1,\, F_2$:
+
+    \[
+    \int \frac{3x^2}{2\sqrt{x^3+y^2} }+y^2 \, dx = \sqrt{x^3+y^2} +xy^2+f_1(y)
+    .\] 
+    \[
+    \int \frac{y}{\sqrt{x^3+y^2} }+x^2 \, dy = \sqrt{x^3+y^2} +x^2y+f_2(x) 
+    .\] 
+    And we can see that there is no $f_1,f_2$ which satisfy both equations.
+
+    So we will take $\Phi=\sqrt{x^3+y^2} $ and $\vec G=(xy^2, x^2y)^{T}$, so that 
+    $\nabla \Phi+\vec{G}=\vec{F}$. Now $\oint_C\vec{F}\,d\vec{r}=\oint_C\vec{G}\,d\vec{r}$.
+
+    Can we find a potential $\Psi$ for $\vec{G}$? 
+    \begin{align*}
+        \Psi&= \int xy^2\,dx =\frac{x^2y^2}{2}+f_3(y)\\
+        \Psi&= \int x^2y\,dy =\frac{x^2y^2}{2}+f_4(x)
+    .\end{align*}
+    And we can quickly see that if we take $\Phi=\frac{x^2y^2}{2}$ then $\nabla \Psi=\vec{G}$.
+
+    So we have a potential for $\vec{G}$, meaning that $\vec{G}$ is conservative, and since our
+    integral is over a closed curve, $\oint \vec{F} d\vec{r}=\oint \vec{G} d \vec{r}=0$.
+
+\item Compute the surface integral $\iint_S (z+3)dS$ where $S$ is the part of the
+paraboloid $z = 2x^2 + 2y^2 - 3$ that lies below the plane $z = 1$.
+
+    We begin by parameterizing $S$. 
+    Since $S$ is a function-type, we can write 
+    $\vec r(x,y)=( x,y,2x^2+2y^2-3 )^{T}$.
+
+    As for our bounds on $x,y$, we can just say that $(x,y)\in D$ where $D$ is the circle of radius
+    $2$ centered at the origin.
+
+    Now we find $\|\vec{n}\|$.
+    \[
+        \vec{n}=\begin{pmatrix} 4x \\ 4y \\ -1 \end{pmatrix} 
+    \] 
+    \[
+        \|\vec{n}\|=\sqrt{16x^2+16y^2+1} 
+    \] 
+    We can write our integral now as:
+    \[
+    2\iint_D (x^2+y^2)\sqrt{16x^2+16y^2+1} \, dA
+    .\] 
+    Converting to cylindrical coordinates:
+    \[
+    2\int_0^2\int_0^{2\pi} r^3\sqrt{16r^2+1}  \, d\theta\,dr=4\pi \int_{0}^{2} r^3\sqrt{16r^2+1} dr 
+    .\] 
+    Let $u=16r^2+1$, so $dr=\frac{du}{32r}$, and $r^2=\frac{u-1}{16}$.
+    Our endpoints now go from $u(0)=1$ to $u(2)=65$.
+    \[
+    \frac{\pi}{128}\int_{1}^{65}  (u-1)\sqrt{u} \,du=\frac{\pi}{128}\left( \frac{2}{5}u^{\frac{5}{2}}
+    -\frac{2}{3}u^{\frac{3}{2}}\right) _{u=1}^{65}
+    \] 
+    \[
+    =\frac{\pi}{128}\left(\frac{2}{5}65^\frac{5}{2}-\frac{2}{3}65^{\frac{3}{2}}+\frac{4}{15}\right)
+    .\] 
+    
+\item Compute the surface integral $\iint_S y dS$ where $S$ is the part of the cylinder
+$4x^2 + y^2 = 4$ bounded between the planes $z = -3$ and $z = 4y + x + 3$.
+
+First we parameterize $S$ as:
+\[
+    \vec{r}(z,\theta)=\begin{pmatrix} \cos\theta&2\sin\theta&z \end{pmatrix} ^{T}
+.\] 
+Within a region $D$ given by $\theta\in [0,2\pi]$ and $z\in [-3,8\sin\theta+\cos\theta+7].$
+
+Taking the cross product of the derivatives of $\vec{r}$ we get:
+\[
+    \vec{n}=\begin{pmatrix} 2\cos\theta & \sin\theta & 0 \end{pmatrix} ^{T}
+.\] 
+And so $\|\vec n\|=\sqrt{3\cos^2\theta+1} $, which gives us the integral
+\begin{align*}
+    \int_{0}^{2\pi}\int_{-3}^{8\sin\theta+\cos\theta+7}2\sin\theta\sqrt{3\cos^2\theta+1} dzd\theta&= 
+    \int_{0}^{2\pi} (8\sin\theta+\cos\theta+10)\sqrt{\cos^2\theta+1} d\theta \\
+    \approx 96.8845
+.\end{align*}
+I was not able to compute this final step but Wolfram was.
+
+\item Compute the surface integral $\iint_S xz dS$ where $S$ is the part of the plane
+$z = 4y + x + 3$ that lies inside the cylinder $4x^2 + y^2 = 4$.
+
+First we parameterize $S$ with $\vec{r}(x,y)=(x,y,4y+x+3)^{T}$ with $0\le 4x^2+y^2\le 4$.
+This gives our normal $\vec{n}=(1,4,-1)^{T}$, and $\|\vec{n}\|=\sqrt{18} =3\sqrt{2} $.
+
+Our bounds on $x,y$ become $x\in [-1,1]$ and $y\in [-2\sqrt{1-x^2}  ,2\sqrt{1-x^2} ]$.
+
+We transform our integral into:
+
+\begin{align*}
+    3\sqrt{2} \int_{-1}^1\int_{-2\sqrt{1-x^2} }^{2\sqrt{1-x^2} }4xy+x^2+3x\,dy\,dx&=
+    3\sqrt{2} \int_{-1}^{1}4x^2\sqrt{1-x^2} +12x\sqrt{1-x^2} \,dx\\
+    &= 3\sqrt{2} \int_{-1}^{1}(4x^2+12)\sqrt{x^2-1}
+.\end{align*}
+Wolfram helpfully evaluates this lengthy inverse trig substitution to give a final answer of $3\sqrt{2} \frac{\pi}{2}$
+\end{enumerate}
+\end{document}

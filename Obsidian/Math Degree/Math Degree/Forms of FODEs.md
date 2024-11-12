@@ -1,0 +1,2 @@
+- Derivative form: $\frac{dx}{dt}=f(t,x)$
+- Differential form: $M(t,x)dx+N(t,x)dt=0$

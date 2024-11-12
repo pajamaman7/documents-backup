@@ -1,0 +1,167 @@
+\documentclass[]{article}
+\input{preamble.tex}
+
+\begin{document}
+\huge Assignment 3 - Thomas Boyko - 30191728
+\normalsize
+\begin{enumerate} 
+
+\item An urn contains two red balls, four blue balls, and three green balls. You randomly select a ball from the urn, record its color, and do not return it to the urn. You do this process twice (for a total of two recorded colors). Let $X$ represent the number of red balls that you observed.
+
+Suppose $X\sim Hypergeometric(2,9,2)$
+\begin{enumerate}[label= (\alph*)] 
+\item Create a probability distribution table for $X$.
+\begin{verbatim}
+    dhyper(0:2,2,7,2)
+\end{verbatim}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    x & 0 & 1 & 2\\
+    \hline
+    P(X=x)&0.58333333&0.38888889&0.02777778\\
+    \hline 
+\end{tabular}
+\end{center}
+
+\item How many red balls should you expect to select in this process?
+\[E[X]=\frac{nr}{N}=\frac{2(2)}{9}=\frac{4}{9}\]
+So the expected value is $0.44444$.
+\end{enumerate}
+\item A certain region of the Florida coast experiences 4.04 hurricanes per year.
+
+Suppose $X\sim Poisson(4.04)$.
+\begin{enumerate}[label= (\alph*)] 
+\item What is the probability that this region experiences exactly 10 hurricanes in a two-year period?
+
+Modify the distribution to consider a two year period rather than one (See part b). This gives $\lambda = 8.08$.
+\begin{verbatim}
+    dpois(10,8.08)
+    #0.1012165
+\end{verbatim}
+
+\item How many hurricanes would we expect this region to experience in a two-year
+period?
+
+\[E[2X]=2E[X]=2\lambda=8.08\]
+
+\end{enumerate}
+\item Let $f(x) = \begin{cases} 
+2x - 1 &1 \leq x \leq 2\\
+0& elsewhere
+\end{cases}$
+
+Show that $f(x)$ is not a valid pdf.
+
+Consider: 
+\begin{align*} 
+\int_{1}^{2}2x-1 dx&=x^2-x|^{2}_{1}\\
+&=(2^2-2)-(1^2-1)\\
+&=2-0\\
+&=2\neq1
+\end{align*}
+So $f$ is not a valid pdf since the integral over all nonzero values is not 1.
+\item The moment generating function for a Poisson random variable $X$ with parameter $\lambda$ is $M_X(t) = e^{\lambda(e^t-1)}$
+Use this moment generating function to show that $E[X] =\lambda $.
+
+\begin{align*}
+    E[X]&=\frac{d}{dx}M_X(t)\\
+    &=\frac{d}{dx}(e^{\lambda(e^t-1)})\\
+    &=(\lambda e^t e^{\lambda(e^t-1)})\\
+    t=0:\quad\quad&=\lambda e^0 e^{\lambda(e^0-1)}\\
+    &=\lambda 1 e^{\lambda(0)}\\
+    &=\lambda
+\end{align*}
+\item Let $f(x) = \begin{cases} 
+2x & 0 \leq x \leq 1\\
+0 & elsewhere
+\end{cases}$ 
+\begin{enumerate}[label= (\alph*)] 
+\item Find $E[X]$.
+
+\begin{align*} 
+    E[X]&=\int_{0}^{1}xf(x)dx\\
+    &=\int_{0}^{1}2x^2dx\\
+    &=\frac{2x^3}{3}|^{1}_{0}\\
+    &=\frac{2}{3}
+\end{align*}
+So the expected value is $\frac{2}{3}$.
+\item Find $P(X \leq \frac{1}{2})$
+
+\begin{align*} 
+    P(X\leq \frac{1}{2})&=F(\frac{1}{2})\\
+    &=\int_{0}^{\frac{1}{2}}2xdx\\
+    &=x^2|_0^\frac{1}{2}\\
+    &=\frac{1}{4}
+\end{align*}
+So $P(X\leq\frac{1}{2})=\frac{1}{4}$.
+\end{enumerate}
+
+\item The duration of a pulse of light from a device follows a uniform distribution with a = 10
+seconds and b = 20 seconds. Let X represent the duration of the pulse (in seconds). If
+the duration of a specific pulse is at least 13 seconds long, what is the probability that
+the duration of the pulse is at most 18 seconds long?
+
+We can say: $X\sim Uniform(10,20)$ and $f(x)=\frac{1}{10}$.
+
+\begin{align*} 
+    P(X\leq18|X\geq13)&=\frac{P(13\leq X\leq18)}{P(X\geq13)}=\frac{F(18)-F(13)}{1-F(13)}\\
+\end{align*}
+\begin{verbatim}
+    (punif(18,10,20)-punif(13,10,20))/(1-punif(13,10,20))
+    #0.7142857
+\end{verbatim}
+So there is a $0.7142857$ chance that the pulse is at most $18$ seconds long, given that the pulse is at least $13$ seconds long
+\newpage
+\item The finishing time for a particular half-marathon is normally distributed with $\mu = 131.9$
+minutes and $\sigma = 20.3$ minutes.
+
+So we say $X\sim Normal(131.9,20.3)$.
+\begin{enumerate}[label= (\alph*)] 
+\item What is the probability that a given runner's finishing time is less than two hours?
+\begin{verbatim}
+    pnorm(120,131.9,20.3)
+    #0.2788682
+\end{verbatim}
+So the probability that a runner's finishing time is less than two hours is $0.27887$.
+\item What is the fastest a runner can finish the half-marathon and still be in the slowest
+$20\%$ of finishers?
+\begin{verbatim}
+    qnorm(0.2,131.9,20.3)
+    #114.8151
+\end{verbatim}
+So the fastest a runner can finish while being in the slowest $20\%$ of runners is $113.8151$ minutes.
+\item Suppose 10 random finishers are selected. What is the probability that exactly four
+of the finishers selected took less than two hours to finish the half-marathon?
+
+Each runner's time being under two hours can be considered a Bernouli trial with $p=0.27887$. So we can model our 10 trials with a Binomial Distribution.
+
+Suppose $Y\sim Binomial(0.27887,10)$.
+
+\begin{verbatim}
+    dbinom(4,0.2788682,10)
+    #0.1786089
+\end{verbatim}
+
+So the probability that exactly four of the ten runners selected took less than two hours to complete the half-marathon is $0.17861$.
+
+\end{enumerate}
+\item The number of times per hour a printer is used at a busy office can be modeled with a
+Poisson distribution with $\lambda = 4.3$. Let $W$ represent the amount of time (in hours) that
+passes between consecutive uses.
+\begin{enumerate}[label= (\alph*)] 
+\item What type of distribution can be used to model the behavior of $W$? State any
+relevant parameter values as well.
+
+$W\sim Exponential\left(\frac{1}{4.3}\right)$.
+
+\item What is the probability that fewer than 30 minutes pass between consecutive uses
+of this printer?
+\begin{verbatim}
+    pexp(0.5,4.3)
+    #0.8835158
+\end{verbatim}
+So the probability that fewer than 30 minutes pass between consecutive uses of the printer is $0.10977$.
+\end{enumerate}
+\end{enumerate}
+\end{document}

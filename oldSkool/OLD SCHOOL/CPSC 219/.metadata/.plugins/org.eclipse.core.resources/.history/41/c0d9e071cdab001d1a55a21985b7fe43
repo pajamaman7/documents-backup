@@ -1,0 +1,30 @@
+package basicjava;
+
+public class CCArrays {
+	public static void replace(char[] charArray, char toReplace, char replaceWith) {
+		for(int i = 0; i<charArray.length;i++) {
+			if(Character.toLowerCase(charArray[i])==Character.toLowerCase(toReplace)) {
+				charArray[i]=replaceWith;
+			}
+		}
+	}
+	public static void sortAlphabetic(String[] strArray) {
+		/*pseudocode:
+		 * iterate through string array, then iterate through the indexes of the first two strings and compare chars until one needs to switch. 
+		 * repeat n times, n being the array size
+		 */
+		for(int i =0; i<strArray.length;i++) {
+			for(int j = 0; j<strArray.length-i;j++) {
+				for (int c = 0; c<strArray[j].length();c++) {
+					int comp = Character.compare(Character.toLowerCase(strArray[j+1].charAt(c)),Character.toLowerCase(strArray[j].charAt(c)));
+					if(0<comp){
+						j=strArray.length+1;
+						String temp = strArray[j];
+						strArray[j]=strArray[j+1];
+						strArray[j+1] = temp;
+					}
+				}
+			}
+		}
+	}
+}

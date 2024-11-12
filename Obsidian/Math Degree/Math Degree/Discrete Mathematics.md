@@ -1,0 +1,1 @@
+Discrete Mathematics is a course focused on [[Proofs]], [[Logical Reasoning]], with some consideration of [[Functions]] and [[Counting]]. 

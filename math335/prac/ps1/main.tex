@@ -1,0 +1,128 @@
+\documentclass{article}
+\input{preamble.tex}
+\usepackage{scsnowman}
+\makeqedsnowman
+
+\begin{document}
+    \huge Problem Set 1 - Thomas Boyko - 30191728
+    \normalsize
+\begin{enumerate} 
+
+    \item Let $m,n\in \mathbb{Z}^{+}$ so that $\gcd(m,n)=1$. Prove that if $\sqrt{\frac{m}{n}} $ is rational, then $m,n$ are perfect squares.
+        \begin{proof} 
+            Suppose $m,n\in \mathbb{Z}^{+}$ coprime, and that $\sqrt{\frac{m}{n}} =\frac{a}{b}$ for some $a,b\in \mathbb{Z}$ where $b\neq 0$. We may also assume that $a,b$ are also coprime; i.e. $\frac{a}{b}$ is the lowest terms we can put $\sqrt{\frac{m}{n}} $.
+
+            Then $\frac{m}{n}=\frac{a^2}{b^2}$, and $mb^2=na^2$. So $m|na^2$, and since
+            $m\not\mid n$, $m|a^2$. Likewise $n|b^2$. 
+            TODO
+        \end{proof}
+
+    \item Prove that no order can be defined in $\mathbb{C}$ that turns it into an ordered field.
+
+        \begin{proof} 
+            Suppose by way of contradiction that we have an order $<$ on $\mathbb{C}$ so that
+            $\mathbb{C}$ is an ordered field. Then the square of any element in $\mathbb{C}$ must
+            be positive. So $1^2=1>0$, and $(i)^2=-1>0$. But
+            \[
+            0<1\implies 0+0<1+(-1)=0
+            .\] 
+            Which means $0<0$, a contradiction. So $\mathbb{C}$ cannot be an ordered field.
+        \end{proof}
+
+    \item Write $z=a+bi$, and $w=c+di$. Define the lexicographic order, $z<w$ if $a<c$ and also if
+        $a=c$ but $b<d$. Prove that this turns $\mathbb{C}$ into an ordered set.
+
+        \begin{proof} 
+            Take the order defined above, and write $z,w$ as above.
+
+            Then we show that exactly $z<w,z=w$, or $w<z$. Suppose neither $w<z,z<w$ are true.
+            So we know four things:
+            \begin{align*}
+                a\leq c\\
+                c\leq a\\
+            .\end{align*}   
+            TODO
+
+        \end{proof}
+    \item Show that a field automorphism $f:\mathbb{R}\to \mathbb{R}$
+        is either constant zero or identity.
+
+        \begin{enumerate}[label= (\alph*)] 
+            \item Prove $f(0)=0$ and $f(1)$ is either $0,1$.
+                \begin{proof} 
+                    We easily see $f(0)=0$:
+                    \[
+                    f(0)=f(0+0)=f(0)+f(0)\implies f(0)=f(0)
+                    .\] 
+                    And similarly, letting $f(1)=x$:
+                    \[
+                    f(1)=f(1\cdot 1)=f(1)\cdot f(1)
+                    .\] 
+                    Then $x^2=x$, so $x(x-1)=0$ and $f(1)$ is either $0$ or $1$.
+                \end{proof}
+
+                    Now if $f(1)=0$ then for any $x\in \mathbb{R}$, we have $f(x)=f(1x)=f(1)f(x)=0$.
+                    So for the rest of these proofs we suppose $f(1)=1$.
+            \item Prove $f(n)=nf(1)$ for any $n\in \mathbb{Z}$. Use this to show that
+                $f\left( \frac{m}{n} \right) =\frac{m}{n}f(1)$ for any $m,n\in \mathbb{Z}$, and
+                conclude that $f(q)$ must be either $q$ or $0$.
+                \begin{proof} 
+                    We have covered that $f(0)=0$, and outlined the cases for $f(1)$.
+                    Consider $n\in \mathbb{Z}_{>1}$, recalling that we are choosing $f(1)=1$ 
+                    as the other case gives the constant function $0$.
+                    \[
+                    f(nx)=f(1+\ldots+1)=1+\ldots+1=n1
+                    .\] 
+                    Now we show that $f(-n)=-f(n)$:
+                    \[
+                    0=f(0)=f(n-n)=f(n)+f(-n)\implies-f(n)=f(-n)
+                    .\] 
+                    So clearly $f(n)=n$ for any $n\in \mathbb{Z}$.
+
+                    Now we want to show $f\left( \frac{1}{n} \right) =\frac{1}{n}$ for any 
+                    $n\in \mathbb{Z}$.
+
+                    \[
+                    1=f(1)=f\left( \frac{n}{n} \right) =f(n)f\left( \frac{1}{n} \right) 
+                    \implies \frac{1}{f(n)}=\frac{1}{n}=f\left(\frac{1}{n}\right)
+                    .\] 
+                    Then we can easily see:
+                    \[
+                    f\left( \frac{m}{n} \right) =f(m)f\left( \frac{1}{n} \right) =\frac{m}{n}
+                    .\] 
+                    And clearly since each $q\in \mathbb{Q}$ takes this form, $f(q)=q$ for any such 
+                    $q$.
+                \end{proof}
+
+            \item Show that if $x\leq y$, then $f(x)\leq f(y)$.
+                \begin{proof} 
+                    If $x=y$ then clearly $f(x)=f(y)$. So take the case where $x<y$. In this case
+                    there exists $\epsilon>0$ so that $y-x=\epsilon$, and so $x+\epsilon=y$, and
+                    $f(x+\epsilon)=f(x)+f(\epsilon)=f(y)$, which finally gives us 
+                    $f(x)-f(y)=f(\epsilon)$.
+
+                    Since $\epsilon>0$, we know that there must exist some $\delta\in \mathbb{R}$ so
+                    that $\delta^2=\epsilon$. So $f(\delta^2)=f(\delta)^2=f(\epsilon)$, and
+                    since $f(\epsilon)$ is the square of a real number $f(\epsilon)$ is positive.
+                    And since we know that $f(\epsilon)$ is positive, and equal to the difference of
+                    $f(y),f(x)$, we know that $f(x)<f(y)$. So $f$ is nondecreasing.
+                \end{proof}
+            \item Show that $f(x)$ is either zero or identity.
+                \begin{proof} 
+                    As was shown, if $f(1)=0$, then $f(x)=0$ for all $x\in \mathbb{R}$.
+
+                    If $f(1)=1$, then we use the previously shown facts. Suppose by way of 
+                    contradiction that $f(x)\neq x$ for some $x \in \mathbb{R}$.
+                    By density of $\mathbb{Q}$ on $\mathbb{R}$, there
+                    exists some $q\in \mathbb{Q}$ so that either $x<q<f(x)$ or $f(x)<q<x$.
+                    We handle the first case, the second is identical.
+
+                    Since $f$ preserves inequality, we know that $f(x)<f(q)=q$ 
+                    (since $q$ is rational). So we have $f(x)<q$ and $q<f(x)$, a contradiction!
+
+                    So if $f(x)\neq 0$, $f(x)=x$ for all $x\in \mathbb{R}$.
+                \end{proof}
+        \end{enumerate}
+
+\end{enumerate}
+\end{document}

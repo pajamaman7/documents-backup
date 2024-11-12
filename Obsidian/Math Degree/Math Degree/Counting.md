@@ -1,0 +1,1 @@
+Counting is a field of mathematics (also known as Combinatorics) that involves gathering information about how many of a certain object can exist. [[Permutations and Combinations]] can be used, as well as logic and multiplication of certain events.

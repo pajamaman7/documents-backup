@@ -1,0 +1,360 @@
+{
+  "main": {
+    "id": "46727da5bde74115",
+    "type": "split",
+    "children": [
+      {
+        "id": "d51aa14442db3318",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e2db167dffca6562",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Limits and Continuity in Metric Spaces.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Limits and Continuity in Metric Spaces"
+            }
+          },
+          {
+            "id": "53dc6126219485c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Limits in R.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Limits in R"
+            }
+          },
+          {
+            "id": "aa43df72817a3c5d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Limits and Continuity in Metric Spaces.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Limits and Continuity in Metric Spaces"
+            }
+          },
+          {
+            "id": "ee2ec580bf9a1c46",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Central Series.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Central Series"
+            }
+          },
+          {
+            "id": "93baee8b7c91f253",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Splitting Fields.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Splitting Fields"
+            }
+          },
+          {
+            "id": "a151366c93c423fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Galois Theory.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Galois Theory"
+            }
+          },
+          {
+            "id": "33f8f2fdc8ec5fbf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Extending Isomorphism.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Extending Isomorphism"
+            }
+          },
+          {
+            "id": "369ca52bd93a8f0f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Field Extensions.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Field Extensions"
+            }
+          },
+          {
+            "id": "18e21c1842e81e16",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Finite Fields.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Finite Fields"
+            }
+          }
+        ],
+        "currentTab": 7
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6fe16eefb1faf8c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "319e6e09cc989e50",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ea2f0fe942087425",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "09ff564ff7b820db",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "[\"aliases\"]",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "704ca60141efd324",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "35c9053a5d32d801",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "e17409cd3de342f1",
+    "type": "split",
+    "children": [
+      {
+        "id": "df66a2430e3e8107",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a6ebcf64a1d6be3b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Least Upper Bound Property.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Least Upper Bound Property"
+            }
+          },
+          {
+            "id": "21d2742ad27c2463",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Least Upper Bound Property.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Least Upper Bound Property"
+            }
+          },
+          {
+            "id": "0236d26d5638935a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "dfa4a1b58dc23ada",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "52020d3bf846814f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Extending Isomorphism.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Extending Isomorphism"
+            }
+          },
+          {
+            "id": "44ede41d4e7078b7",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "Field Extensions.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for Field Extensions"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "canvas:Create new canvas": false
+    }
+  },
+  "active": "369ca52bd93a8f0f",
+  "lastOpenFiles": [
+    "Galois Theory.md",
+    "Extending Isomorphism.md",
+    "Galois Field.md",
+    "Finite Fields.md",
+    "Splitting Fields.md",
+    "Field Extensions.md",
+    "Polynomial Rings.md",
+    "Fields.md",
+    "Vector Spaces.md",
+    "Central Series.md",
+    "Modular Arithmetic.md",
+    "Limits in R.md",
+    "Limits and Continuity in Metric Spaces.md",
+    "Intermediate Value Theorem.md",
+    "Continuous.md",
+    "Connectedness.md",
+    "Integration of Functions of Complex Variable.md",
+    "Gaussian and Eisenstein Integers.md",
+    "Limits.md",
+    "Functions.md",
+    "Least Upper Bound Property.md",
+    "Metric Spaces.md",
+    "Commutative Diagram.md",
+    "Group Actions.md",
+    "Series of Subgroups.md",
+    "Jordan-Holder Theorem.md",
+    "Ideals.md~",
+    "Untitled.canvas",
+    "Pasted image 20240119100450.png",
+    "Commutative",
+    "Minima",
+    "Root"
+  ]
+}

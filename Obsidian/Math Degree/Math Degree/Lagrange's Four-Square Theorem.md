@@ -1,0 +1,1 @@
+Lagrange's theorem states that every natural number $n$ can be written as the sum of four squares.

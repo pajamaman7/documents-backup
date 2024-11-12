@@ -1,0 +1,2 @@
+## Degree 0
+A function $f(t,x)$ of the independent variables $x,t$ is called homogenous of degree zero if $f(t,x)$ remains unchanged upon replacing $t,x$ with $\lambda t, \lambda x$, $\lambda \in \mathbb{R}$.

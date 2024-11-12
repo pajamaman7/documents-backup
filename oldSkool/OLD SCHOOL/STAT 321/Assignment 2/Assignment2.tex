@@ -1,0 +1,250 @@
+\documentclass{article}
+\input{preamble}
+
+\begin{document}
+\huge Assignment 2 - Thomas Boyko - 30191728
+
+\normalsize 
+\begin{enumerate}
+\item Consider the following probability distribution table for a discrete random variable $X$.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+x & -10& 0 &5\\
+\hline
+P(X=x)& 0.3 &0.5& 0.2\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label= (\alph*)] 
+ 
+\item Find $E[X]$.
+
+\begin{align*} 
+    E[X]&=\sum\limits xp(x)\\
+    &=-10(0.3)+0(0.5)+0.2(5)\\
+    &=-3+1\\
+    &=-2
+\end{align*}
+\item Find $VAR[X]$.
+    \begin{align*} 
+    E[X^2]&=\sum\limits x^2p(x)\\
+    &=100(0.3)+0(0.5)+25(0.2)\\
+    &=30+0+5\\
+    &=35\\
+    VAR[X]&=E[X^2]-E[X]^2\\
+    &=35-(-2)^2\\
+    &=31
+    \end{align*}
+\item Find $E[3X]$.
+    \begin{align*} 
+    E[3X]&=3E[X]\\
+    &=3(-2)\\
+    &=-6
+    \end{align*}
+\end{enumerate}
+
+\item In an experiment two weighted (unfair) coins are being flipped simultaneously. The first
+coin will land “heads” with a probability of $0.7$ and the second coin will land “heads” with
+a probability of $0.8$. Assume that the results of the flips are independent. Let $X$ represent
+the total number of “heads” that result from this experiment.
+
+\begin{enumerate}[label= (\alph*)] 
+\item Find $E[X]$.
+
+We can find the expected value from the formula $\sum xp(x)$.
+
+\[E[X]=0(0.3\cdot0.2)+1(0.3\cdot0.8+0.7\cdot0.2)+2(0.7\cdot0.8)=1.5\]
+
+So the expected number of heads is $1.5$.
+
+\item Find $SD[X]$.
+
+\begin{align*}
+    SD[X]&=\sqrt{E[X^2]-E[X]^2}\\
+    &=\sqrt{0(0.3\cdot0.2)+1(0.3\cdot0.8+0.7\cdot0.2)+4(0.7\cdot0.8)-1.5^2}\\
+    &=\sqrt{2.62-2.25}\\
+    &=0.6082762
+\end{align*}
+
+So $SD[X]=0.60828$.
+
+\end{enumerate}
+\newpage
+\item Four fair coins are flipped. Let $X$ represent the number of “heads” observed.
+\begin{enumerate}[label= (\alph*)] 
+ 
+\item Construct a probability distribution table for $X$.
+
+\begin{verbatim}
+    x=0:4
+    px=dbinom(x,4,.5)
+\end{verbatim}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+x & 0& 1 &2&3&4\\
+\hline
+P(X=x)&  0.0625 & 0.2500 & 0.3750 & 0.2500 & 0.0625 \\
+\hline
+\end{tabular}
+\end{center}
+\item Create a probability distribution graph for $X$ (a simple sketch is fine!). Include the
+graph/sketch in your assignment submission. How would you describe the shape of the graph?
+
+\begin{verbatim}
+    ##Continuing from a)
+    plot(x,px)
+\end{verbatim}
+
+\includegraphics*{Rplot.png}
+
+The shape of the graph is symmetric around the mean of $2$. The graph is roughly bell-shaped
+
+\item What is the probability that at least two “heads” are observed when these four fair
+coins are flipped?
+
+\begin{verbatim}
+    ##Continuing from a),b)
+    sum(dbinom(2:4,4,0.5))
+    #0.6875
+\end{verbatim}
+
+So the probability of at least two heads is $0.6875$.
+
+\end{enumerate}
+
+\item A factory produces a type of screw that is sold in small boxes of 20 screws each.
+Suppose the probability of any given screw being defective is 0.01.
+\begin{enumerate}[label= (\alph*)] 
+ 
+\item What is the probability that a box contains no defective screws?
+\begin{verbatim}
+    dbinom(0,20,0.01)
+    #0.8179069
+\end{verbatim}
+So the probability that the box contains no defective screws is $0.81791$.
+\item What is the probability that a box contains exactly one defective screw?
+\begin{verbatim}
+    dbinom(1,20,0.01)
+    #0.1652337
+\end{verbatim}
+So the probability of there being exactly one screw that is defective is $0.0.16523$.
+\newpage
+\item The company that sells the boxes offers a full refund on the purchase of a box if the
+box contains more than one defective screw. What is the probability that the
+company would have to offer a refund for a randomly selected box?
+\begin{verbatim}
+    sum(dbinom(2:20,20,0.01))
+    #0.01685934
+\end{verbatim}
+So the probability that the company will have to refund a randomly selected box is $0.01686$.
+\end{enumerate}
+
+\item Suppose $Y\sim binomial(120,0.3)$.
+\begin{enumerate}[label= (\alph*)] 
+\item Find $E[4Y-2]$.
+
+First we will find $E[Y]$.
+
+\[E[Y]=np=120(0.3)=36\]
+
+From this,
+
+\[E[4Y-2]=4E[Y]-2=4(36)-2=142\]
+
+So $E[4Y-2]=142$.
+
+\item Find $VAR[4Y-2]$.
+
+First we find $VAR[Y]$.
+
+\[VAR[Y]=npq=120(0.7)(0.3)=25.2\]
+
+And we know that:
+
+\[VAR[4Y-2]=4^2 VAR[Y]=16(25.2)=403.2
+\]
+So $VAR[4Y-2]=403.2$.
+
+\end{enumerate}
+
+\item An urn contains two red balls, four blue balls, and three green balls. You randomly
+select a ball from the urn, record its color, and return it to the urn. You do this process
+twice (for a total of two recorded colors). Let $X$ represent the number of red balls that
+you observed.
+\begin{enumerate}[label= (\alph*)] 
+ 
+\item Create a probability distribution table for $X$.
+\begin{verbatim}
+    dbinom(0:2,2,2/9)
+\end{verbatim}
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        x&0&1&2\\
+        \hline
+        P(X=x)&0.60493827& 0.34567901& 0.04938272\\
+        \hline
+    \end{tabular}
+\end{center}
+\item How many red balls should you expect to select in this process?
+\[E[X]=np=2\frac{2}{9}=\frac{4}{9}\]
+\end{enumerate}
+\item Bob is playing a game in which a fair die is rolled. If the die lands on a 6, Bob wins the
+round. If it lands on any other number, he loses the round.
+\begin{enumerate}[label= (\alph*)] 
+ 
+\item What is the probability that Bob's first win will occur on the fourth round?
+
+\begin{verbatim}
+    dbinom(1-1,4-1,1/6)/6
+    #0.09645062
+\end{verbatim}
+
+So the probability that his first win occurs on the fourth round is $0.09645$.
+
+\item What is the probability that Bob's second win will occur on the third round?
+
+\begin{verbatim}
+    dbinom(2-1,3-1,1/6)/6
+    #0.0462963
+\end{verbatim}
+
+So the probability that Bob's second win occurs on the third round is $0.04630$.
+
+\end{enumerate}
+\item According to the M\&M's website, $24\%$ of peanut M\&M's are yellow. Consider a package
+containing 23 peanut M\&M's.
+\begin{enumerate}[label= (\alph*)] 
+ 
+\item What is the probability that more than 10 of the M\&M's in the pack are yellow?
+
+\begin{verbatim}
+    sum(dbinom(11:23,23,0.24))
+    #0.01087513
+\end{verbatim}
+
+The probability of more than 10 yellow M\&M's in the pack is $0.01088$.
+
+\item What is the probability that between five and 10 (inclusive) of the M\&M's in the pack
+are yellow?
+
+\begin{verbatim}
+    sum(dbinom(5:10,23,0.24))
+    #0.6674023
+\end{verbatim}
+The probability of between five and 10 (inculsive) M\&M's are in the pack is $0.66740$.
+\item If the number of yellow M\&M's in the pack is between five and 10 (inclusive), what is
+the probability that there are exactly seven yellow M\&M's in the pack?
+\[P(x=7|5\leq x\leq10)=\frac{P(x=7\cap 5\leq x\leq 10)}{P(5\leq x\leq10)}=\frac{P(x=7)}{P(5\leq x\leq10)}\]
+\begin{verbatim}
+    dbinom(7,23,0.24)/sum(dbinom(5:10,23,0.24))
+    #0.20871
+\end{verbatim}
+So, given that there are between 5 and 10 inclusive yellow M\&M's in the pack, there is a $0.20871$ chance that there are 7 yellow M\&M's.
+\end{enumerate}
+\end{enumerate}
+\end{document}

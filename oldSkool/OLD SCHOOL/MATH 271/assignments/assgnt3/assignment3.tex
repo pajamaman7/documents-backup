@@ -1,0 +1,221 @@
+\documentclass{article}
+\input{preamble}
+
+\begin{document}
+\huge Assignment 3 - Thomas Boyko - 30191728
+\normalsize 
+\begin{enumerate}
+\item For each of the following statements: If the statement is true, then give a proof;
+if the statement is false, then write out the negation and prove that.
+\nl \textbf{Notation: } Let $F$ be the set of all functions from $\integer$ to $\integer$.
+\begin{alphenum}
+   \item For all $f,g,h \in F$, if $ f\circ g = f\circ h$, then $g=h$.
+        \nl The statement is false. The negation is: 
+        "There exist functions $f,g,h\in F$ so that $f\circ g = f\circ h$ but $g\neq h$."
+        \begin{proof}
+            Choose the functions $f,g,h \in F$ where $f(x)= x^2$, $g(x) = x$ and $h(x)= -x$ for all $x\in\integer$.
+            \nl Note that 
+            \[f\circ g = f(g(x)) = f(x)=x^2=(-x)^2=f(-x)=f(h(x))=f\circ h\]
+            So for all $x\in\integer$, $f(g(x))=f(h(x))$
+            \nl However, 
+            \[g(1)=1\neq-1=h(1)\]
+            So $g\neq h$.
+            \nl Therefore, 
+            there exist functions $f,g, h\in F$ so that $f\circ g = f\circ h$ but $g\neq h$.
+        \end{proof}
+
+   \item For all $f,g,h \in F$, if $ g\circ f = h\circ f$, then $g=h$.
+   The statement is false. The negation is: "There exist $f,g,h \in F$ so 
+   that $g\circ f=h\circ f$ but $g\neq h$."
+
+    \begin{proof}
+        Choose the following functions $f,g,h \in F$.
+        \begin{align*}
+            f(x) &= x^2\\
+            g(x) &= \begin{cases}
+                y & \exists y\in\integer \text{ so that } y^2=x\\
+                0 & \forall y\in\integer, y^2\neq x
+            \end{cases}\\
+            h(x) &= \begin{cases}
+                y & \exists y\in\integer \text{ so that } y^2=x\\
+                1 & \forall y\in\integer, y^2\neq x
+            \end{cases}
+        \end{align*}
+
+        Note that the entire codomain of $f$ will take the first case for $g,h$
+        since every element in the codomain is a perfect square.
+
+        So:
+        \[h(f(x))=x=g(f(x))\]
+
+        But, $h(2)=1\neq0=g(2)$, so $h\neq g$.
+
+        Therefore, there exist $f,g,h \in F$ so that $g\circ f=h\circ f$ but $g\neq h$.
+
+    \end{proof}
+
+   \item For all $f,g,h \in F$, if $ f\circ g = f\circ h$ and $f$ is one-to-one,
+   then $g=h$.
+
+        \begin{proof}
+            Suppose $f,g,h\in F$. Further suppose $f\circ g(x)= f\circ h(x)$ for all $x\in\integer$.
+            Finally, suppose $f$ is one-to-one.
+            \nl Let $a=h(x)$ and $b=g(x)$ where $a,b\in\integer$.
+            \nl Then f(a)=f(b).
+            \nl Then by the definition of one-to-one, since $f(a)=f(b)$, $a=b$.
+            \nl Therefore, for all $f,g,h \in F$, if $ f\circ g = f\circ h$ and $f$ is one-to-one,
+            then $g=h$.
+        \end{proof}
+   
+   \item For all $f,g,h \in F$, if $ g\circ f = h\circ f$ and $f$ is onto, then $g=h$.
+
+   \begin{proof}
+    Suppose $f,g,h\in F$, and that $f\circ g = f\circ h$.
+
+    Since $f$ is onto, for all $b\in\integer$, there exists an $a\in\integer$ so that
+    $f(a)=b$. So, the codomain of $f$ is $\integer$.
+
+    This means that for all $c\in\integer$, $g(c)=h(c)$.
+
+    Therefore, $g=f$.
+
+   \end{proof}
+\end{alphenum}
+\newpage
+
+\item Let $f:\integer\to\integer$ be the function defined by $f(x) = 3x^2+x$ for every $x\in\integer$.
+\begin{alphenum}
+    
+
+    \item Is $f$ one-to-one? Prove your answer.
+    \nl $f$ is one-to-one.
+
+    \begin{proof}
+        Let $f:\integer\to\integer$, $f(x)=3x^2+x$, where $x\in\integer$.
+        Suppose $a,b\in \integer$ and that $f(a)=f(b)$. From this we will attempt to prove that $a=b$.
+        \nl So we have:
+        \begin{align*}
+            3a^2+a&=3b^2+b\\
+            3a^2+a-3b^2-b&=0\\
+            3(a^2-b^2)+(a-b)&=\\
+            3(a-b)(a+b)+(a-b)&=\\
+            (a-b)(3(a+b)+1)&=\\
+        \end{align*}
+        So, either $(a-b)=0$ or $3(a+b)+1=0$. However, if $3(a+b)+1=0$, then $a+b=-\frac{1}{3}$ which means $a,b$ cannot
+        both be integers. 
+        \nl Since $3(a+b)+1\neq 0$, $a-b=0$ and $a=b$.\nl
+        Therefore, for all $a,b\in\integer$, if $f(a)=f(b)$, then $a=b$.
+        So $f$ is one-to-one.
+        \nl 
+    \end{proof}
+
+
+    \item Is $f$ onto? Prove your answer.
+    \nl $f$ is not onto. So, we must prove: "There exists some $b\in\integer$ so that for all $a\in\integer$, $f(a)\neq b$."
+
+    \begin{proof}
+        Choose $b=-1$. We must prove that for all $a\in\integer$, $f(a)> -1$.
+
+        Note that since $a\in\integer$, we know that $(a+\frac{1}{6})^2\geq0$.
+
+        We can follow this to show that $f$ is greater than a certain value.
+        
+        \begin{align*}
+            (a+\frac{1}{6})^2&\geq0\\
+            3(a+\frac{1}{6})^2&\geq0\\
+            3(a^2+\frac{a}{3}+\frac{1}{36})&\geq0\\
+            (3a^2+a+\frac{1}{12})&\geq0\\
+            3a^2+a&\geq-\frac{1}{12}>-1
+        \end{align*}
+
+        So the function $f(a)\neq-1$ for all $a\in\integer$.
+
+        Since there exists some $b\in\integer$ so that for all $a\in\integer$, $f(a)\neq b$, 
+        $f$ is not onto.
+
+        
+    \end{proof}
+
+    \item Is there a function $g:\integer\to\integer$ so that $g\circ f =I_{\integer}$
+    where $I_\integer$ is the identity function from $\integer$ to $\integer$? Prove your answer.
+
+    \begin{proof}
+        Choose the following function $g:\integer\to\integer$. 
+        \[
+        g(x)=\begin{cases}
+            y& \text{If }3y^2+y=x \text{ for some } y\in\integer\\
+            0 & \text{If }\forall y\in\integer, \; 3y^2+y\neq x
+        \end{cases}\]
+        Note that $g\circ f = g(f(x))=g(3x^2+x)$.
+        \nl Looking back at the definition for $g(x)$ we can see that every input
+        for $g\circ f$ will take the form $3y^2+y$ for some integer $y$, where $y$ will always equal $x$.
+        \nl So, for all integers $x$, $g(f(x))=x$ which is the identity function $I_{\integer}$.
+        \nl Therefore, there exists a function $g:\integer\to\integer$ so that $g\circ f = I_{\integer}$ 
+
+        
+    \end{proof}
+
+\end{alphenum}
+
+\newpage 
+
+\item Let $S=\{1,2,3,4,5\}$.\nl 
+Let $f: S\to S$ be the function defined by $f=\{(1,1),(2,1),(3,3),(4,3),(5,5)\}$.
+\begin{alphenum}
+    \item How many functions $g:S\to S$ are there so that $g\circ f(2) = 1$? Explain.
+
+    Note that $f(2)=1$ so $g(f(2))=g(1)=1$. So $(1,1)\in g$. 
+    
+    Now we must map the remaining 4 elements of $S$ to something in $S$. Since there
+    are $5$ elements in $S$, there are $5^4$ ways to do this.
+
+    So the total number of functions $g:S\to S$ so that $g\circ f(2)=1$ is $5^4=625$
+
+    \item How many functions $g:S\to S$ are there so that $f \circ g(2) = 1$? Explain.
+    
+    Note that for $f(i)$ to equal 1, $i$ must equal 1 or 2. So, either $g(2)=1$ or 
+    $g(2)=2$.
+
+    So, to count the number of functions, we will first choose whether $g(2)$ equals
+    1 or 2. (there are two ways to do this). Then, for the remaining elements of $S$,
+    we can choose it to map to any other element of $S$ under $g$. There are $5^4$ ways
+    to do this.
+
+    So, the total number of functions $g:S\to S$ so that $f\circ g(2)=1$ is $2\times 5^4=1250$
+
+    \item How many functions $g:S\to S$ are there so that $g\circ f(i) = 1$ for some $i\in S$? Explain.
+
+    Note that the codomain of $f$ is $\{1,3,5\}$. So the number of functions $g$ so that $g(f(i))=1$ equals
+    the total number of functions $g:S\to S$ minus those where $1, 3, 5$ are all not mapped
+    to 1.
+
+    We can build the former section with $5^5$, since we are choosing an element from $S$
+    for each element of $S$.
+
+    The latter can be built by choosing for 1,3 and 5, to map it to any element that is not
+    1. There are $4^3$ ways to do this. Then we can map 2 and 4 to any element,
+    and there are $5^2$ ways to do this. So there are $5^2\times4^3$ ways to build a function
+    so that 1, 3, and 5 are all not mapped to 1.
+
+    Subtracting these, we find there are $5^5-5^2\times4^3=3125-1600=1525$ ways to build a function $g:S\to S$
+    so that $g\circ f (i)=1$
+
+    \item How many functions $g:S\to S$ are there so that $f \circ g(i) = 1$ for some $i\in S$? Explain.
+
+    Note that $f(n)$ equals 1 if $n=1$ or $n=2$. Therefore, $g(i)$ must equal 1 or 2.
+
+    We can count these functions by taking the total number of functions $g:S\to S$ and subtracting the number
+    of functions where no element is mapped to 1 or 2. 
+
+    The total number of functions is $5^5$.
+
+    We can count the functions where no element is mapped to 1 or 2 by mapping each element in $S$ to
+    $3,4$ or $5$. There are $3^5$ ways to choose this.
+
+    So the total number of ways to choose a function $g:S\to S$ so that $f\circ g(i)=1 $ for some 
+    $i\in S$ is $5^5-3^5=3125-243=2882$.
+
+\end{alphenum}
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,2 @@
+Let $X$ be an [[Ordered Set]]. An upper bound of some $A\subseteq X$ is some $x \in X$ so that for any $a\in A$, $a<x$.
+The least upper bound of $A$ is the $l\in X$ so that for any upper bound $x$ of $A$, $l<x$.

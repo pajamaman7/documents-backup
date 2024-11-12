@@ -1,0 +1,152 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\begin{document}
+    \huge Assignment 3
+    \normalsize
+\begin{enumerate} 
+
+    \item We can take the difference
+        of the two means to find a point estimate for the mean of the two samples.
+        This gives us our point estimate: $3.1-2.4=0.7$.
+    \item 
+    \item 3-
+        \begin{enumerate}[label= (\alph*)] 
+            \item First we must check whether the standard deviations of our 
+                two samples are significantly different. Since R can only handle
+                raw data, we do this with:
+
+                \begin{align*}
+                    \frac{S_1^2}{F_{1-\alpha/2,(n_1-1,n_2-1)}\cdot S_2^2}\leq\frac{\sigma_1^2}{\sigma_2^2}\leq\frac{S_1^2}{F_{\alpha/2,(n_1-1,n_2-1)}\cdot S_2^2}\\
+                .\end{align*}
+                \begin{verbatim}
+                    > (8.03^2)/(qf(.025,364,297)*6.96^2)
+                    [1] 1.651888
+                    > (8.03^2)/(qf(1-.025,364,297)*6.96^2)
+                    [1] 1.070024
+                \end{verbatim}
+                And we can't say the variances are equal, so now we find our CI
+                using the R code:
+                \begin{verbatim}
+                    > tsum.test(18.5,8.03,265,16.5,6.96,298,var.equal=FALSE)
+                \end{verbatim}
+                We obtain the interval: 
+                \[
+                    (0.7484522,3.2515478)
+                .\] 
+            \item Since this interval does not contain 0, we can say with 95\% 
+                confidence that there is a difference in the means of the 
+                posttest scores.
+        \end{enumerate}
+    \item 
+    \item 5- 
+        \begin{enumerate}[label= (\alph*)] 
+            \item Begin with
+            \begin{align*}
+                X&\sim N(\mu_1,\sigma^2)\\
+                Y&\sim N(\mu_2,3\sigma^2)
+            .\end{align*}
+            And let $W=2\bar{X}+\bar{Y}$. We want to find $M_W(t)$.
+
+            \begin{align*}
+                M_W(t)&= E\left[ \exp(2t\bar{X}+t\bar{Y} )\right] \\
+                      &= E\left[ \exp(2t\bar{X})]E[\exp(t\bar{Y}) \right]&\bar{X}\perp\bar{Y}\\
+                      &= M_{\bar{X}}(2t)M_{\bar{Y}}(t)
+            .\end{align*}
+            And we know that:
+            \begin{align*}
+                M_{\bar{X}}(2t)&=\exp\left(2t\mu_1+(\frac{2t^2\sigma^2}{n}\right)  \\
+                M_{\bar{Y}}(t)&= \exp\left( t\mu_2 +\frac{3t^2\sigma^2}{m}\right) 
+            .\end{align*}
+            Since each $X_i,Y_i$ is normal.
+            \begin{align*}
+                M_W(t)&= \exp\left(2t\mu_1+(\frac{2t^2\sigma^2}{n}\right) \exp\left( t\mu_2 +\frac{3t^2\sigma^2}{m}\right) \\
+                &= \left( t(2\mu_1+\mu_2)+t^2\left( \frac{2\sigma^2}{n} + \frac{3\sigma^2}{m} \right)  \right) 
+            .\end{align*}
+            And we recognise the MGF of a normal distribution, and say
+            $W\sim N(2\mu_1+\mu_2,\sigma^2\left( \frac{2}{n}+\frac{1}{m} \right) $
+
+        \item To find our confidence interval we first notice that since $W$ is 
+            normally distributed:
+            \[
+        \frac{W-2\mu_1-\mu_2}{\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) }=Z
+        .\]
+            And now we begin with the probability statement:
+            \begin{align*}
+                1-\alpha&=P(a<2\mu_1+\mu_2<b)\\
+                    &=P(a-W<-W+2\mu_1+\mu_2<b-W)\\
+                    &=P(W-b<W-(2\mu_1+\mu_2)<W-a)\\
+                    &= P\left( \frac{W-b}{\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) }<\frac{W-(2\mu_1+\mu_2)}{\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) }<\frac{W-a}{\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) } \right)\\
+                    &= P\left( \frac{W-b}{\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) }<Z<\frac{W-a}{\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) } \right)
+            .\end{align*}
+            Which gives us:
+            \begin{align*}
+                Z_{\frac{\alpha}{2}}&=\frac{W-b}{\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) }\\
+                -Z_{\frac{\alpha}{2}}&=\frac{W-a}{\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) }
+            .\end{align*}
+            And after isolating for $a,b$ and substituting $W=2\bar{X}+\bar{Y}$,
+            we get $(1-\alpha)100\%$ confidence interval for $2\mu_1+\mu_2$:
+            \[
+                (2\bar{X}+\bar{Y})\pm Z_{\frac{\alpha}{2}}\sigma^2\left( \frac{4}{n}+\frac{3}{m} \right) 
+            .\] 
+        \end{enumerate}
+    \item 
+    \item 7- 
+        Seasonal ranges (in hectares) for alligators were monitored on a lake outside Gainesville, Florida, by biologists
+        from the Florida Game and Fish Commission. Five alligators monitored in the spring showed ranges of 8.0,
+        12.1, 8.1, 18.2, and 31.7. Four different alligators monitored in the summer showed ranges of 102.0, 81.7,
+        54.7, and 50.7.
+        Assume the sd in summer is higher than in the spring.
+
+
+        We must assume that the gator range is normally distributed in order for CLT to work.
+        Then we simply use \verb|t.test|.
+        \begin{verbatim}
+            > spring=c(8.0, 12.1, 8.1, 18.2, 31.7)
+            > summer=c(102.0, 81.7, 54.7, 50.7)
+            > t.test(spring,summer,var.equal=FALSE)
+        \end{verbatim}
+
+        Which gives the CI:
+
+        $$(-93.04715,-20.26285)$$
+
+        Which tells us that the average range of an alligator in spring is between $20$ and $93$ hectares less than that in summer, 95\% of the time.
+    \item 
+    \item 9-
+        A Time magazine article reported about a survey of men’s attitudes, and noted that ‘when talking about
+their problems, young men are more comfortable than older men.’ The survey reported that of 129 randomly
+chosen males between the ages of 18 and 24 years, 80 were comfortable talking about their problems. Of
+184 randomly chosen between the ages of 25 to 34 years, 98 were comfortable talking about their problems.
+Using a confidence coefficient (or confidence level) of 95\%, Find a confidence interval that will allow you to
+compare the two proportions of these two populations. 
+
+Since we are testing two sample proportions we can use \verb|prop.test| for this.
+        \begin{verbatim}
+            > prop.test(prop.test(x=c(80,98),n=c(129,184),conf.level = .95,correct = F)
+        \end{verbatim}
+        Which gives our interval
+        \[
+            \left( -0.0229613,0.1980540 \right) 
+        .\] 
+        Which contains 0, which suggests with 95\% confidence that there is no difference in the true population proportions.
+    \item 
+\item We begin by checking whether $\sigma_1$ and $\sigma_2$ are significantly different. Running 
+    \\\verb|var.test(mydata$DelaysAA,mydata$DelaysUA)| in R gives the interval:
+    \[
+        \left( 0.4946789,1.7401896 \right) 
+    .\] 
+    And since our interval contains $1$, we can assume the variances to be equal.
+    
+    Now we can run 
+    \verb|t.test(mydata$DelaysAA,mydata$DelaysUA,var.equal=TRUE)|
+    , which gives us the interval:
+    \[
+        (-14.86492, 14.52444)
+    .\] 
+    Which contains $0$, so we cannot say that the sample means are significantly 
+    different.
+    \item 
+
+\end{enumerate}
+\end{document}

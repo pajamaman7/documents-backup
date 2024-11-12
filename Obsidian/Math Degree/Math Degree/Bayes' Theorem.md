@@ -1,0 +1,4 @@
+Bayes' Theorem states the following:
+
+Given $A_{1}, A_2, \ldots, A_n$ such that $\bigcup_{i=1}^n A_i=S$, where $A_i\cap A_j=\varnothing$ when $i\neq j$, and$P(A_i)>0$ for $i=1,2,\ldots,n$, then for any event $B$ such tht $P(B)>0$:
+$$P\big({A}_j\big|{B}\big)=\frac{P({A}_j\cap{B})}{P({B})}=\frac{P({B}|{A}_j)P({A}_j)}{P({B})}=\frac{P({B}|{A}_j)P({A}_j)}{\sum_{i=1}^n P({B}|{A}_i){P({A}_i)}}$$

@@ -1,0 +1,1 @@
+Considering [[Differential Equations]] which appear unsolvable with a substitution $v=\frac{x}{y}$, or $v=ax+by$ can transform the equation into another form. Ensure you write out both $v, v'$ and substitute back until you can isolate $y$.

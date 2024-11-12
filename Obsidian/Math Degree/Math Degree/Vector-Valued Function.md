@@ -1,0 +1,1 @@
+A Vector-Valued function is a function $\overrightarrow f:\mathbb{R}^n\to\mathbb{R}^m$ with $n\in\mathbb{N}>1,m\in\mathbb{N}$.

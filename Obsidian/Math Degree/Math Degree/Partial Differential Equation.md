@@ -1,0 +1,1 @@
+A Partial Differential Equation, or PDE, is an equation which contains an unknown equation of two or more variables together with its [[Partial derivatives]] with respect to the variables.
