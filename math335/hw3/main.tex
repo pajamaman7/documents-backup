@@ -21,8 +21,8 @@
         \item For $a>0$ find the sum of the series
         $$\sum_{k=2}^\infty\left(\frac a{a+1}\right)^k\quad\text{(show your work)}$$
 
-        \paragraph{Solution: }We notice a geometric series; since $a>0$, $\frac{a}{a+1}<1$. Then the sum
-        is given by:
+        \paragraph{Solution: }We notice a geometric series; since $a>0$,we can say $a<a+1$ and $\frac{a}{a+1}<1$.
+        Then the sum is given by:
         \[
         \left(\frac{a}{a+1}\right)^2 \frac{1}{1-\frac{a}{a+1}}=
         \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{a+1}{a+1}-\frac{a}{a+1}}=
@@ -42,12 +42,23 @@
                 Choose $\varepsilon=2$, and let $\delta>0$. Then we must choose $|x-y|<\delta$ but 
                 $|\sin x^2-\sin y^2|=2$
 
-                WLOG choose $x<y$, in fact $x<y-\delta$ 
+                %TODO more clarity on choice of x,y
+                We choose $x<y-\delta$, say $x^2=n\pi+\frac{\pi}{2}$ for $n\in \mathbb{N}$ so 
+                $x=\sqrt{n\pi+\frac{\pi}{2}}$ (taking the positive root since we care only about the positive reals.
+                Then we want $y^2-x^2=\pi$ so that the difference $\sin y^2-\sin x^2=2$.
+                So choose $y^2= (n+1)\pi+\frac{\pi}{2}$, and then $y=\sqrt{(n+1)\pi+\frac{\pi}{2}} $.
 
-                So we wish to choose $x^2+\pi=y^2$ and $\sin x^2=1$ and $x-\delta=y$ and
-                $|\sin x^2-\sin y^2|=2\impliedby x^2+\pi=y^2\impliedby \pi=y^2-x^2=(x-y)(x+y) $
-
-                Can do dumb algebra lter to finish this
+                We now have guaranteed that $|f(x)-f(y)|=2$, and we must choose $n$ so that $|x-y|<\delta$ for any given
+                $\delta$. Rewrite with the assumptions $y>x$, and with our expressions for $x,y$ above, so we may
+                find an expression for $n$ in terms of $\delta$.
+                \begin{align*}
+                    y-x&<\delta\\
+                    y^2+x^2-2yx&<\delta^2\\
+                    (n\pi+\pi)+\frac{\pi}{2}-(n\pi+\frac{\pi}{2})-2yx&<\delta^2\\
+                    \pi-2yx &<\delta^2\\
+                    2yx&>\pi-\delta^2\\
+                    2\sqrt{\left( n\pi+\frac{\pi}{2} \right)\left( (n-1)\pi+\frac{\pi}{2} \right)  } &>\pi-\delta^2\\
+                .\end{align*}
 
             \end{proof}
 
