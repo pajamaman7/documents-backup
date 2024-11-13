@@ -4,6 +4,7 @@
 \lhead{Assignment \# $3$}
 \rhead{Name: Thomas Boyko; UCID: 30191728}
 \chead{}
+\makeqedsnowman
 
 \begin{document}
 \begin{enumerate} 
@@ -13,14 +14,48 @@
         is convergent for all $p>1.$ Here $\log_2x$ denotes the logarithm base 2 of $x.$ You may assume
         that $\log_2n$ is increasing in $n.$
 
+        \begin{proof} 
+            We compare with a $p$-series. %TODO show the general term is less than n^-p, however this may be difficult since log_2 n > n.. Perhaps by induction?
+        \end{proof}
+
         \item For $a>0$ find the sum of the series
         $$\sum_{k=2}^\infty\left(\frac a{a+1}\right)^k\quad\text{(show your work)}$$
+
+        \paragraph{Solution: }We notice a geometric series; since $a>0$, $\frac{a}{a+1}<1$. Then the sum
+        is given by:
+        \[
+        \left(\frac{a}{a+1}\right)^2 \frac{1}{1-\frac{a}{a+1}}=
+        \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{a+1}{a+1}-\frac{a}{a+1}}=
+        \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{1}{a+1}}=
+        \left(\frac{a}{a+1}\right)^2 (a+1)=\frac{a^2}{a+1}
+        .\] 
 
     \end{enumerate}
 \item \begin{enumerate}
         \item Prove that $f\left(x\right)=\sin\left(x^{2}\right)$ is not uniformly continuous in $[0,\infty).$
-        \item Show an example of a continuous function in ( 0, 1)  which is not uniformly
+
+            $f$ is uniformly continuous on $E\subset X$ if and only if $\forall\varepsilon>0$, $\exists \delta>0$, $d(x,y)<\delta\implies d(f(x),f(y))<\varepsilon$
+
+            $f$ is NOT uniformly continuous on $E\subset X$ if and only if $\exists\varepsilon>0$, $\forall  \delta>0$, we can choose $x,y$ so that $d(x,y)<\delta$ and $ d(f(x),f(y))\geq\varepsilon=1$
+            \begin{proof} 
+
+                Choose $\varepsilon=2$, and let $\delta>0$. Then we must choose $|x-y|<\delta$ but 
+                $|\sin x^2-\sin y^2|=2$
+
+                WLOG choose $x<y$, in fact $x<y-\delta$ 
+
+                So we wish to choose $x^2+\pi=y^2$ and $\sin x^2=1$ and $x-\delta=y$ and
+                $|\sin x^2-\sin y^2|=2\impliedby x^2+\pi=y^2\impliedby \pi=y^2-x^2=(x-y)(x+y) $
+
+                Can do dumb algebra lter to finish this
+
+            \end{proof}
+
+        \item Show an example of a continuous function in $(0,1)$ which is not uniformly
             continuous (no proof necessary).
+
+            \paragraph{Solution:} $f(x)=\sin\left( \frac{1}{x^2} \right) $ is continuous in $(0,1)$ however
+            it is not uniformly continuous (as shown in class)
     \end{enumerate}
 
 \end{enumerate}

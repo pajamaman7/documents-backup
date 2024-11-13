@@ -50,7 +50,7 @@ $f$ is bounded $\iff \exists  M>0$ so that $f(X)\subseteq B_Y(f(x),M)$  for some
 #### Corollary
 $f$ is continuous from $X\to \mathbb{R}^{k}$. Then if $X$ is compact, $f(X)$ is closed and bounded.
 ## Uniform Continuity
-
+$f$ is uniformly continuous on $E\subset X$ if and only if $\forall\varepsilon>0$, $\exists \delta>0$, $d(x,y)<\delta\implies d(f(x),f(y))<\varepsilon$
 ### Counterexample
 $\sin \left( \frac{1}{x} \right)$ is continuous in $(0,\infty)$ but not uniformly continuous.
 #### Proof outline

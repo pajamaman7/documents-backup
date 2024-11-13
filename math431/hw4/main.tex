@@ -72,7 +72,7 @@ so the polynomial is irreducible over $\mathbb{R}$. And since it is monic, and h
 
     \item Show that $[\mathbb{E}(u):\mathbb{F}(u)]\leq[\mathbb{E}:\mathbb{F}].$ (Hint: Theorem 6.1.6.)
         %6.1.6 discusses the size of a basis, didn't need this..
-        Take the same minimal polynomials we found above; and rewrite both:
+        \paragraph{Solution:} Take the same minimal polynomials we found above; and rewrite both:
         \begin{align*}
             [\mathbb{E}(u):\mathbb{F}(u)]&=[\mathbb{E}(u):\mathbb{E}][\mathbb{E}:\mathbb{F}(u)]\\
                                          &=[\mathbb{E}(u):\mathbb{E}]\frac{[\mathbb{E}:\mathbb{F}]}{[\mathbb{F}(u):\mathbb{F}]}\\
@@ -101,29 +101,32 @@ $\mathbb{Z}_2(a)\cong \mathbb{F}_4$.
 Now, in $\mathbb{Z}_3$ we can see that $f(2)=9\equiv 0\pmod{3} $, so $2\equiv -1$ is a root of $f$. Rewrite, $f(x)=(x+1)(x^2+2x+1)=(x+1)^3$. So the splitting field
 for $f$ over $\mathbb{Z}_3$ is $\mathbb{Z}_3$.
 
+\newpage
 \item Exercise 6.3 \#9 Let $f(x)$ and $g(x)$ be polynomials in $F[x].$ Show that $f(x)$ and $g(x)$
 are relatively prime (have no common nonconstant factors) in $F[x]$ if and only if
 they have no common root in any extension $E$ of $F.$
 
-\paragraph{Solution: }
-%CHECK this is wrong i think... The extension is not necessarily algebraic? which one might be?
-\paragraph{$\implies$: }
-Let $f,g\in F[x]$ be coprime, and suppose for the sake of contradiction that they have a common root $a$ in some extension $E$ of $F$.
-Then $f(x)=f'(x)(x-a)$ and $g(x)=g'(x)(x-a)$. Then  $x-a$ is a common nonconstant factor, a contradiction!
+\paragraph{Solution: $\implies$: }
+Let $f,g\in F[x]$ be coprime, and suppose for the sake of contradiction that they have a common root $a$
+in some extension $E$ of $F$. Since both have a root of $a$, its minimal polynomial must divide both $f,g$.
+So $f,g$ share a common factor, a contradiction!
+%TODO show that they must be div. by the minimal polynomial?
 Therefore $f,g$ must have no common factor in $F[x]$.
 \paragraph{$\impliedby:$ }
 Suppose that $f,g $ share no root in any $E\supseteq F$. Then suppose for the sake of contradiction that there exists some $h\in F[x],$ and $g=g'h$, $f=f'h$.
 This polynomial must have a root in some extension of $F$, say $u\in K$. Then $g(u)=g'(u)h(u)=0=f'(u)h(u)=f(u)$. So $u$ is a root of both $f,g$, a contradiction. Then by contradiction
-$f,g$ must be coprime. %Are they coprime in F or E?
+$f,g$ must be coprime. %CHECK
 
 \item Exercise 6.3 \#17 If $E$ over $F$ is an algebraic extension and every polynomial in
 $F[x]$ splits over $E$, show that $E$ is algebraically closed. (Hint: Theorem 6.2.6)
 
-\paragraph{Solution: }Let $E\supseteq F$ be an algebraic extension, where every polynomial in $F[x]$ splits over $E$. Then suppose for the sake of contradiction that 
-$E$ is not algebraically closed. So there exists some $f(x)\in E[x]$, where $f$ has degree greater than one, and is irreducible. Write $f(x)=a_{0}+a_1x+\ldots+a_nx^{n}$,
-with each $a_i\in E$. Take the field extension $F(a_0,\ldots,a_n)=F(a_0)(\ldots)(a_n)$. Since $E$ is an algebraic extension, each $a_i$ has a finite degree monic polynomial, 
-each adjoined element on $F$ produces another finite degree extension (Theorem 6.2.6). Since this extension is finite, it must be algebraic. 
-%TODO why does this imply there is some m in F[x]? what would be the contradiciton
+\paragraph{Solution: }Let $E\supseteq F$ be an algebraic extension, where every polynomial in $F[x]$ splits over $E$. 
+Let $f(x)\in E[x]$, $f(x)=a_0+a_1x+\ldots+a_nx^{n}$.
+Then thanks to Kronecker's Theorem, we can say that $f$ has a root in some extension of E, call it $\alpha$.
+Adjoin each coefficient of $f$, as well as $\alpha$ to $F$. The extension $F(a_0,\ldots,a_n,\alpha)$ 
+is finite since each intermediate extension is finite. Since $\alpha$ is in a finite extension of $F$, it 
+must have a minimal polynomial $m(x)\in F[x]$. 
+This must split in $E$ by hypothesis, so $m(x)=m'(x)(x-\alpha)$, with $\alpha\in E$. Therefore $E$ is algebraically closed since every polynomial in $E[x]$ has a root in $E$.
 
 \end{enumerate}
 \end{document}

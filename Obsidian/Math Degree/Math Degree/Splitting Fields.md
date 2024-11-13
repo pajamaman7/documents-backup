@@ -11,7 +11,7 @@ A Splitting Field of the polynomial $f$ over the [[Fields|Field]] $F$ is a field
 - $f(x)=a(x-u_{1})\dots(x-u_n)$
 A splitting field for $f$ always exists, is finite degree, and has $[E:F]\leq n!$
 ## Kronecker's Theorem
-If $f(x)\in F[x]$ is non-constant, then there is a field extension $E$ of $F$ in which $f(x)$ is a root.
+If $f(x)\in F[x]$ is non-constant, then there is a field extension $E$ of $F$ in which $f(x)$ has a root.
 ## Algebraically Closed
 For a field $C$, the following are equivalent
 - Every non constant polynomial in $C[x]$ has a root in $C$
