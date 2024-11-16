@@ -15,7 +15,11 @@
         that $\log_2n$ is increasing in $n.$
 
         \begin{proof} 
-            We compare with a $p$-series. %TODO show the general term is less than n^-p, however this may be difficult since log_2 n > n.. Perhaps by induction?
+            We attempt to satisfy the criterion in Rudin Theorem 3.27. Rewrite the series;
+            \begin{align*}
+                \sum_{k=1}^{\infty} \frac{2^k}{\left(\log_2 2^k\right)^{p\log_2 2^k}}&= \sum_{k=1}^{\infty} \frac{2^{k}}{k^{pk}}\\
+                &= \sum_{k=1}^{\infty} \left( \frac{2}{k^{p}} \right) ^{k} % Use theorem 3.25 to show that this is less than a p-series
+            .\end{align*}
         \end{proof}
 
         \item For $a>0$ find the sum of the series
@@ -23,12 +27,13 @@
 
         \paragraph{Solution: }We notice a geometric series; since $a>0$,we can say $a<a+1$ and $\frac{a}{a+1}<1$.
         Then the sum is given by:
-        \[
-        \left(\frac{a}{a+1}\right)^2 \frac{1}{1-\frac{a}{a+1}}=
-        \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{a+1}{a+1}-\frac{a}{a+1}}=
-        \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{1}{a+1}}=
-        \left(\frac{a}{a+1}\right)^2 (a+1)=\frac{a^2}{a+1}
-        .\] 
+        \begin{align*}
+            \left(\frac{a}{a+1}\right)^2 \frac{1}{1-\frac{a}{a+1}}
+            &= \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{a+1}{a+1}-\frac{a}{a+1}}\\
+            &= \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{1}{a+1}}\\
+            &= \left(\frac{a}{a+1}\right)^2 (a+1)\\
+            &=\frac{a^2}{a+1}
+        .\end{align*}
 
     \end{enumerate}
 \item \begin{enumerate}
@@ -39,6 +44,7 @@
             $f$ is NOT uniformly continuous on $E\subset X$ if and only if $\exists\varepsilon>0$, $\forall  \delta>0$, we can choose $x,y$ so that $d(x,y)<\delta$ and $ d(f(x),f(y))\geq\varepsilon=1$
             \begin{proof} 
 
+                %TODO epsilon = 1 may be simpler in order to bound delta
                 Choose $\varepsilon=2$, and let $\delta>0$. Then we must choose $|x-y|<\delta$ but 
                 $|\sin x^2-\sin y^2|=2$
 
@@ -52,12 +58,7 @@
                 $\delta$. Rewrite with the assumptions $y>x$, and with our expressions for $x,y$ above, so we may
                 find an expression for $n$ in terms of $\delta$.
                 \begin{align*}
-                    y-x&<\delta\\
-                    y^2+x^2-2yx&<\delta^2\\
-                    (n\pi+\pi)+\frac{\pi}{2}-(n\pi+\frac{\pi}{2})-2yx&<\delta^2\\
-                    \pi-2yx &<\delta^2\\
-                    2yx&>\pi-\delta^2\\
-                    2\sqrt{\left( n\pi+\frac{\pi}{2} \right)\left( (n-1)\pi+\frac{\pi}{2} \right)  } &>\pi-\delta^2\\
+                    y-x&= \sqrt{n\pi}  \\
                 .\end{align*}
 
             \end{proof}
