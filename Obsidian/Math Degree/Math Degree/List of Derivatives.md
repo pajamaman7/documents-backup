@@ -1,6 +1,6 @@
 (From [[Differentiation]])
 A list of some common derivatives might be necessary for some basic but common functions found throughout mathematics.
-For the puropses of this list, suppose $x$ is some variable and $n$ is some integer.
+For the purposes of this list, suppose $x$ is some variable and $n$ is some integer.
 $$\begin{align*}
 \frac{d}{dx}x^{n}&=nx^{n-1}\\
 \frac{d}{dx}n &= 0\\

@@ -61,3 +61,16 @@ This proof also works for $x\sin \left( \frac{1}{x} \right)$, and to show $x^{2}
 Continuous functions on compact sets are uniformly continuous
 ### Easy check
 Differentiable functions are continuous when the derivatives are bounded.
+## Monotonic Functions
+A function is monotonically increasing if $x<y\implies f(x)<f(y)$
+A function is monotonically decreasing if $x<y\implies f(x)>f(y)$
+A function is called monotonic if it is either monotonically increasing or decreasing.
+### Theorem
+If $f$ is monotonic on $(a,b)$, then $f(x+)$ and $f(x-)$ exist for all $x \in(a,b)$.
+#### Corollary
+- Monotonic functions can only have discontinuities of the first kind (jump)
+### Theorem 
+If $f$ is monotone on $(a,b)$, then the points of discontinuity of $f$ in $(a,b)$ are [[Countable and Uncountable sets|At most Countable]].
+#### Example
+Let $\sum_{n=1}^\infty c_n <\infty$ of positive terms. Let $\{ x_{1},x_{2},\dots \}\subset(a,b)$
+and $f(x)=\sum_{n:x_{n}<x}c_{n}$. Then $f$ has infinitely many discontinuities.

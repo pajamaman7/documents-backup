@@ -15,7 +15,9 @@
         that $\log_2n$ is increasing in $n.$
 
         \begin{proof} 
-            We attempt to satisfy the criterion in Rudin Theorem 3.27. Rewrite the series;
+            We attempt to satisfy the criterion in Rudin Theorem 3.27. Rewrite the series; 
+            %TODO Need to show that the general term is decreasing (denominator \ge 1)
+            
             \begin{align*}
                 \sum_{k=1}^{\infty} \frac{2^k}{\left(\log_2 2^k\right)^{p\log_2 2^k}}&= \sum_{k=1}^{\infty} \frac{2^{k}}{k^{pk}}\\
                 &= \sum_{k=1}^{\infty} \left( \frac{2}{k^{p}} \right) ^{k} % Use theorem 3.25 to show that this is less than a p-series
@@ -36,29 +38,46 @@
         .\end{align*}
 
     \end{enumerate}
+    \newpage
 \item \begin{enumerate}
         \item Prove that $f\left(x\right)=\sin\left(x^{2}\right)$ is not uniformly continuous in $[0,\infty).$
-
             $f$ is uniformly continuous on $E\subset X$ if and only if $\forall\varepsilon>0$, $\exists \delta>0$, $d(x,y)<\delta\implies d(f(x),f(y))<\varepsilon$
 
             $f$ is NOT uniformly continuous on $E\subset X$ if and only if $\exists\varepsilon>0$, $\forall  \delta>0$, we can choose $x,y$ so that $d(x,y)<\delta$ and $ d(f(x),f(y))\geq\varepsilon=1$
             \begin{proof} 
 
                 %TODO epsilon = 1 may be simpler in order to bound delta
-                Choose $\varepsilon=2$, and let $\delta>0$. Then we must choose $|x-y|<\delta$ but 
-                $|\sin x^2-\sin y^2|=2$
+                Choose $\varepsilon=1$, and let $\delta>0$. Then we must choose $|x-y|<\delta$ but 
+                $|\sin x^2-\sin y^2|\ge 1$
 
-                %TODO more clarity on choice of x,y
-                We choose $x<y-\delta$, say $x^2=n\pi+\frac{\pi}{2}$ for $n\in \mathbb{N}$ so 
-                $x=\sqrt{n\pi+\frac{\pi}{2}}$ (taking the positive root since we care only about the positive reals.
-                Then we want $y^2-x^2=\pi$ so that the difference $\sin y^2-\sin x^2=2$.
-                So choose $y^2= (n+1)\pi+\frac{\pi}{2}$, and then $y=\sqrt{(n+1)\pi+\frac{\pi}{2}} $.
+                We attempt to choose $x,y$ so that the function's value on one is $0$, and on the other
+                is $\pm 1$. Then let $x^2=n\pi$ for some $n\in \mathbb{N}$, and $y^2= n\pi+\frac{\pi}{2}$,
+                and our final choice is 
+                \[
+                x=\sqrt{n\pi},\quad y=\sqrt{n\pi+\frac{\pi}{2}}
+                .\] 
+                Then regardless of our choice of $n$, $|f(x)-f(y)|
+                =|\sin(n\pi)-\sin\left(n\pi-\frac{\pi}{2}\right)|$. If $n$ is odd, then 
+                $|\sin(n\pi)-\sin\left(n\pi-\frac{\pi}{2}\right)|=|\pm 1 -0|=1$, and if $n$ is even,
+                $|\sin(n\pi)-\sin\left(n\pi-\frac{\pi}{2}\right)|=|0 -\pm 1|=1$
 
-                We now have guaranteed that $|f(x)-f(y)|=2$, and we must choose $n$ so that $|x-y|<\delta$ for any given
-                $\delta$. Rewrite with the assumptions $y>x$, and with our expressions for $x,y$ above, so we may
-                find an expression for $n$ in terms of $\delta$.
+                We now have guaranteed that $|f(x)-f(y)|=1$ for any $n$, so now we must choose $n$
+                so that $|x-y|<\delta$, for any given $\delta$. 
                 \begin{align*}
-                    y-x&= \sqrt{n\pi}  \\
+                    |y-x|&=y-x&\text{Since }y>x\\
+                    &= \sqrt{n\pi+\frac{\pi}{2}} -\sqrt{n\pi} \\
+                    &= \frac{n\pi+\frac{\pi}{2}-n\pi}{\sqrt{n\pi+\frac{\pi}{2}} +\sqrt{n\pi}} \\
+                    &= \frac{\frac{\pi}{2}}{\sqrt{n\pi+\frac{\pi}{2}} +\sqrt{n\pi}} \\
+                    &< \frac{2}{\sqrt{n\pi+\frac{\pi}{2}} +\sqrt{n\pi}} &\text{Since }\frac{\pi}{2}<2\\
+                    &< \frac{2}{\sqrt{n}\left(\sqrt{\pi+\frac{\pi}{2\sqrt{n}}} +\sqrt{\pi}\right)}\\
+                    &< \frac{2}{\sqrt{n}\left(2\sqrt{\pi}\right)}\\
+                    &< \frac{1}{\sqrt{n}}
+                .\end{align*}
+                So then choose $n>\frac{1}{\delta^2}$ (Which we can do by the Archimedian Property), 
+                \begin{align*}
+                    |y-x|&= y-x \\
+                    &= \sqrt{n\pi+\frac{\pi}{2}} -\sqrt{n\pi}  \\
+                    &< \sqrt{\frac{\pi}{\delta^2}+\frac{\pi}{2}} -\sqrt{\frac{\pi}{\delta^2}} \\
                 .\end{align*}
 
             \end{proof}

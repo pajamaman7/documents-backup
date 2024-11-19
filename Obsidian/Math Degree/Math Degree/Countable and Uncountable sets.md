@@ -1,3 +1,10 @@
+---
+aliases:
+  - Countable
+  - Uncountable
+  - At most Countable
+  - Finite
+---
 Let $X$ be a set, and write $X\sim A$ if there exists a [[Bijection]] from $X$ to $A$. We can classify $X$ in one of the following ways:
 - $X$ is finite if $X\sim \mathbb{Z}_n$
 - $X$ is infinite if $X$ is not finite
