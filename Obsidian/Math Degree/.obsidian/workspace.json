@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Derivatives.md",
+                "file": "Mean Value Theorem.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Derivatives"
+              "title": "Mean Value Theorem"
             }
           },
           {
@@ -236,8 +236,9 @@
   },
   "active": "4d330bca452105a4",
   "lastOpenFiles": [
-    "Math Degree/List of Derivatives.md",
     "Derivatives.md",
+    "Mean Value Theorem.md",
+    "Math Degree/List of Derivatives.md",
     "Math Degree/Limits and Continuity in Metric Spaces.md",
     "Math Degree/Countable and Uncountable sets.md",
     "Math Degree/Field Extensions.md",

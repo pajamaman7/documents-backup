@@ -17,5 +17,4 @@ $$
 f(g(x))'&=f'(g(x))g'(x)
 \end{align}
 $$
-### Theorem
-See [[List of Derivatives]]
+See [[List of Derivatives]] for more.

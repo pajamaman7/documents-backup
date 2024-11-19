@@ -1,0 +1,1 @@
+Let $f:[a,b]\to\mathbb{R}$ be continuous and differentiable on $[a,b]$.
