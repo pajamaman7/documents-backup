@@ -16,12 +16,30 @@
 
         \begin{proof} 
             We attempt to satisfy the criterion in Rudin Theorem 3.27. Rewrite the series; 
-            %TODO Need to show that the general term is decreasing (denominator \ge 1)
-            
+            and let $c_n:\mathbb{N}\to \mathbb{R}$:
+            \[
+            c_n=\begin{cases}
+                0&n=1\\
+                \frac1{(\log_2n)^{p(\log_2n)}}&n\ge 2
+            \end{cases}
+            .\] 
+            Then our summation becomes
             \begin{align*}
-                \sum_{k=1}^{\infty} \frac{2^k}{\left(\log_2 2^k\right)^{p\log_2 2^k}}&= \sum_{k=1}^{\infty} \frac{2^{k}}{k^{pk}}\\
-                &= \sum_{k=1}^{\infty} \left( \frac{2}{k^{p}} \right) ^{k} % Use theorem 3.25 to show that this is less than a p-series
+                \sum_{n=2}^\infty\frac1{(\log_2n)^{p(\log_2n)}}&= 0+\sum_{n=2}^\infty\frac1{(\log_2n)^{p(\log_2n)}} \\
+                &= \sum_{n=1}^{\infty} c_n
             .\end{align*}
+
+            %TODO Need to show that the general term is decreasing to apply thm (denominator \ge 1)
+            Now that our sum is indexed from $1$ and we have shown that the general term is decreasing,
+            we can apply Rudin theorem 3.27. Our series of $c_n$ converges if and only if the following 
+            series converges.
+            \begin{align*}
+                \sum_{k=0}^{\infty} 2^kc_k
+                &= 0\cdot 2^0+  \sum_{k=1}^{\infty} \frac{2^k}{\left(\log_2 2^k\right)^{p\log_2 2^k}} \\
+                &= \sum_{k=1}^{\infty} \left( \frac{2}{k^{p}} \right) ^{k} 
+            .\end{align*}   
+            %TODO want to use 3.25, show this is less than a convergent series 2/k^p
+
         \end{proof}
 
         \item For $a>0$ find the sum of the series
@@ -41,52 +59,56 @@
     \newpage
 \item \begin{enumerate}
         \item Prove that $f\left(x\right)=\sin\left(x^{2}\right)$ is not uniformly continuous in $[0,\infty).$
-            $f$ is uniformly continuous on $E\subset X$ if and only if $\forall\varepsilon>0$, $\exists \delta>0$, $d(x,y)<\delta\implies d(f(x),f(y))<\varepsilon$
-
-            $f$ is NOT uniformly continuous on $E\subset X$ if and only if $\exists\varepsilon>0$, $\forall  \delta>0$, we can choose $x,y$ so that $d(x,y)<\delta$ and $ d(f(x),f(y))\geq\varepsilon=1$
             \begin{proof} 
 
-                %TODO epsilon = 1 may be simpler in order to bound delta
-                Choose $\varepsilon=1$, and let $\delta>0$. Then we must choose $|x-y|<\delta$ but 
-                $|\sin x^2-\sin y^2|\ge 1$
+                Choose $\varepsilon=1$, and let $\delta>0$. Then let $k>\frac{1}{\delta^2}$ 
+                which we can do by the Archimedian Property.
 
                 We attempt to choose $x,y$ so that the function's value on one is $0$, and on the other
-                is $\pm 1$. Then let $x^2=n\pi$ for some $n\in \mathbb{N}$, and $y^2= n\pi+\frac{\pi}{2}$,
+                is $\pm 1$. Then let $x^2=k\pi$ for some $k\in \mathbb{N}$, and $y^2= k\pi+\frac{\pi}{2}$, 
                 and our final choice is 
                 \[
-                x=\sqrt{n\pi},\quad y=\sqrt{n\pi+\frac{\pi}{2}}
+                x=\sqrt{k\pi-\frac{\pi}{2}},\quad y=\sqrt{k\pi}
                 .\] 
-                Then regardless of our choice of $n$, $|f(x)-f(y)|
-                =|\sin(n\pi)-\sin\left(n\pi-\frac{\pi}{2}\right)|$. If $n$ is odd, then 
-                $|\sin(n\pi)-\sin\left(n\pi-\frac{\pi}{2}\right)|=|\pm 1 -0|=1$, and if $n$ is even,
-                $|\sin(n\pi)-\sin\left(n\pi-\frac{\pi}{2}\right)|=|0 -\pm 1|=1$
+                Then regardless of our choice of $k$, 
+                \[
+                |f(x)-f(y)|=
+                \left|\sin\left(\left(\sqrt{ k\pi}\right)^2\right)
+                -\sin\left(\left(\sqrt{ k\pi-\frac{\pi}{2}}\right)^2\right)\right|
+                =\left|\sin(k\pi)-\sin\left(k\pi-\frac{\pi}{2}\right)\right|.
+                \] 
+                If $n$ is odd, then 
+                $|\sin(k\pi)-\sin\left(k\pi-\frac{\pi}{2}\right)|=|\pm 1 -0|=1$, and if $k$ is even,
+                $|\sin(k\pi)-\sin\left(k\pi-\frac{\pi}{2}\right)|=|0 -\pm 1|=1$.
 
-                We now have guaranteed that $|f(x)-f(y)|=1$ for any $n$, so now we must choose $n$
-                so that $|x-y|<\delta$, for any given $\delta$. 
+                We now have guaranteed that $|f(x)-f(y)|=1$ for any $k$. 
+                It aids us to note that thanks to our choice of $k$, we can say that 
+                $\frac{1}{k}<\delta^2$ and $\frac{1}{\sqrt{k} }<\delta$. So then we proceed
+                on $|y-x|$.
+
                 \begin{align*}
                     |y-x|&=y-x&\text{Since }y>x\\
-                    &= \sqrt{n\pi+\frac{\pi}{2}} -\sqrt{n\pi} \\
-                    &= \frac{n\pi+\frac{\pi}{2}-n\pi}{\sqrt{n\pi+\frac{\pi}{2}} +\sqrt{n\pi}} \\
-                    &= \frac{\frac{\pi}{2}}{\sqrt{n\pi+\frac{\pi}{2}} +\sqrt{n\pi}} \\
-                    &< \frac{2}{\sqrt{n\pi+\frac{\pi}{2}} +\sqrt{n\pi}} &\text{Since }\frac{\pi}{2}<2\\
-                    &< \frac{2}{\sqrt{n}\left(\sqrt{\pi+\frac{\pi}{2\sqrt{n}}} +\sqrt{\pi}\right)}\\
-                    &< \frac{2}{\sqrt{n}\left(2\sqrt{\pi}\right)}\\
-                    &< \frac{1}{\sqrt{n}}
+                    &= \sqrt{\pi k} -\sqrt{\pi k-\frac{\pi}{2}}  \\
+                    &= \frac{\left(\sqrt{\pi k} -\sqrt{\pi k-\frac{\pi}{2}}\right)
+                    \left(\sqrt{\pi k} +\sqrt{\pi k-\frac{\pi}{2}}\right)  }
+                    {\left(\sqrt{\pi k} +\sqrt{\pi k-\frac{\pi}{2}}\right) } \\
+                    &= \frac{\pi k -\left({\pi k-\frac{\pi}{2}}\right)}
+                    {\left(\sqrt{\pi k} +\sqrt{ \pi k-\frac{\pi}{2}}\right) } \\
+                    &= \frac{\frac{\pi}{2}} {\left(\sqrt{\pi k} +\sqrt{ \pi k-\frac{\pi}{2}}\right) } \\
+                    &= \frac{\pi} {2\left(\sqrt{\pi k} +\sqrt{ \pi k-\frac{\pi}{2}}\right) } \\
+                    &= \frac{\pi} {2\sqrt{\pi} \left(\sqrt{k} +\sqrt{  k-\frac{1}{2}}\right) } \\
+                    &< \frac{\sqrt{ \pi}} {2\left(\sqrt{k} +\sqrt{  k}\right) } \\
+                    &<\frac{1}{4\sqrt{k} }\\
+                    &< \frac{1}{\sqrt{k}}\\
+                    &<\delta
                 .\end{align*}
-                So then choose $n>\frac{1}{\delta^2}$ (Which we can do by the Archimedian Property), 
-                \begin{align*}
-                    |y-x|&= y-x \\
-                    &= \sqrt{n\pi+\frac{\pi}{2}} -\sqrt{n\pi}  \\
-                    &< \sqrt{\frac{\pi}{\delta^2}+\frac{\pi}{2}} -\sqrt{\frac{\pi}{\delta^2}} \\
-                .\end{align*}
-
             \end{proof}
 
         \item Show an example of a continuous function in $(0,1)$ which is not uniformly
             continuous (no proof necessary).
 
             \paragraph{Solution:} $f(x)=\sin\left( \frac{1}{x^2} \right) $ is continuous in $(0,1)$ however
-            it is not uniformly continuous (as shown in class)
+            it is not uniformly continuous (as shown in class).
     \end{enumerate}
 
 \end{enumerate}
