@@ -4,11 +4,11 @@
 \lhead{Assignment \# $3$}
 \rhead{Name: Thomas Boyko; UCID: 30191728}
 \chead{}
-\makeqedsnowman
+\scsnowmandefault{nose=orange,arms,broom=brown,hat=red,buttons,muffler,scale=2}
+\renewcommand\qedsymbol{\scsnowman}
 
 \begin{document}
 \begin{enumerate} 
-
 \item \begin{enumerate}
         \item Prove that the series $$\sum_{n=2}^\infty\frac1{(\log_2n)^{p(\log_2n)}}$$
         is convergent for all $p>1.$ Here $\log_2x$ denotes the logarithm base 2 of $x.$ You may assume
@@ -29,9 +29,17 @@
                 &= \sum_{n=1}^{\infty} c_n
             .\end{align*}
 
-            %TODO Need to show that the general term is decreasing to apply thm (denominator \ge 1)
+            Next we want to show that the general term is decreasing so we can use Theorem 3.27. Let $x<y$
+            be natural numbers.
+            \begin{align*}
+                x&<y\\
+                \log_2 x&<\log_2 y\\
+                (\log_2 x)^{p}&<(\log_2 y)^{p}\\
+                (\log_2 x)^{p\log_2 x}&<(\log_2 y)^{p\log_2 y}\\
+                \frac{1}{(\log_2 x)^{p\log_2 x}}&>\frac{1}{(\log_2 y)^{p\log_2 y}}
+            .\end{align*}
             Now that our sum is indexed from $1$ and we have shown that the general term is decreasing,
-            we can apply Rudin theorem 3.27. Our series of $c_n$ converges if and only if the following 
+            we can apply Rudin Theorem 3.27. Our series of $c_n$ converges if and only if the following 
             series converges.
             \begin{align*}
                 \sum_{k=0}^{\infty} 2^kc_k
@@ -61,7 +69,7 @@
         \item Prove that $f\left(x\right)=\sin\left(x^{2}\right)$ is not uniformly continuous in $[0,\infty).$
             \begin{proof} 
 
-                Choose $\varepsilon=1$, and let $\delta>0$. Then let $k>\frac{1}{\delta^2}$ 
+                Choose $\varepsilon=1$, and let $\delta>0$. Then let $k\in \mathbb{Z}, $ and $k>\frac{1}{\delta^2}$ 
                 which we can do by the Archimedian Property.
 
                 We attempt to choose $x,y$ so that the function's value on one is $0$, and on the other
@@ -98,7 +106,7 @@
                     &= \frac{\pi} {2\left(\sqrt{\pi k} +\sqrt{ \pi k-\frac{\pi}{2}}\right) } \\
                     &= \frac{\pi} {2\sqrt{\pi} \left(\sqrt{k} +\sqrt{  k-\frac{1}{2}}\right) } \\
                     &< \frac{\sqrt{ \pi}} {2\left(\sqrt{k} +\sqrt{  k}\right) } \\
-                    &<\frac{1}{4\sqrt{k} }\\
+                    &<\frac{\sqrt{\pi} }{4\sqrt{k} }&\text{Since }\frac{\sqrt{\pi} }{4}<1 \\
                     &< \frac{1}{\sqrt{k}}\\
                     &<\delta
                 .\end{align*}

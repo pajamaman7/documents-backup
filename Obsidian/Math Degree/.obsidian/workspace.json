@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math Degree/List of Derivatives.md",
+                "file": "Math Degree/Taylor Series.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "List of Derivatives"
+              "title": "Taylor Series"
             }
           },
           {
@@ -104,23 +104,9 @@
               "icon": "lucide-file",
               "title": "Polynomial Rings"
             }
-          },
-          {
-            "id": "ba858382a104bbd3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Untitled.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Untitled"
-            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -262,17 +248,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ba858382a104bbd3",
+  "active": "8f24926727614fb5",
   "lastOpenFiles": [
-    "Untitled.md",
+    "Math Degree/Taylor Series.md",
+    "L'Hopital's rule.md",
+    "Mean Value Theorem.md",
     "Math Degree/Limits and Continuity in Metric Spaces.md",
+    "Math Degree/Polynomial Rings.md",
+    "Untitled.md",
+    "Derivatives.md",
+    "Math Degree/List of Derivatives.md",
+    "snip.txt",
     "Math Degree/Galois Theory.md",
     "Math Degree/Ideals.md",
-    "Math Degree/Polynomial Rings.md",
     "Math Degree/Splitting Fields.md",
-    "Math Degree/List of Derivatives.md",
-    "Mean Value Theorem.md",
-    "Derivatives.md",
     "Math Degree/Countable and Uncountable sets.md",
     "Math Degree/Field Extensions.md",
     "Math Degree/Modular Arithmetic.md",
