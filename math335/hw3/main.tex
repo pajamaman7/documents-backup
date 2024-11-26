@@ -17,54 +17,76 @@
         \begin{proof} 
             We attempt to satisfy the criterion in Rudin Theorem 3.27. Rewrite the series; 
             and let $c_n:\mathbb{N}\to \mathbb{R}$:
+            %TODO 3.27 requires decreasing so defining c1 this wy is not right, need another way to get
+            %there
             \[
             c_n=\begin{cases}
-                0&n=1\\
+                1&n=1\\
                 \frac1{(\log_2n)^{p(\log_2n)}}&n\ge 2
             \end{cases}
             .\] 
             Then our summation becomes
-            \begin{align*}
-                \sum_{n=2}^\infty\frac1{(\log_2n)^{p(\log_2n)}}&= 0+\sum_{n=2}^\infty\frac1{(\log_2n)^{p(\log_2n)}} \\
-                &= \sum_{n=1}^{\infty} c_n
-            .\end{align*}
+            \[
+                1+\sum_{n=2}^\infty\frac1{(\log_2n)^{p(\log_2n)}}=
+                 \sum_{n=1}^{\infty} c_n
+            .\] 
 
-            Next we want to show that the general term is decreasing so we can use Theorem 3.27. Let $x<y$
-            be natural numbers.
+            Next we want to show that the general term is decreasing so we can use Theorem 3.27. Let $1<x<y$
+            be natural numbers, and thanks to $\log_2$ being increasing in $\mathbb{N}$,
             \begin{align*}
-                x&<y\\
-                \log_2 x&<\log_2 y\\
-                (\log_2 x)^{p}&<(\log_2 y)^{p}\\
-                (\log_2 x)^{p\log_2 x}&<(\log_2 y)^{p\log_2 y}\\
-                \frac{1}{(\log_2 x)^{p\log_2 x}}&>\frac{1}{(\log_2 y)^{p\log_2 y}}
+                x&\leq y\\
+                \log_2 x&\leq\log_2 y\\
+                (\log_2 x)^{p}&\leq(\log_2 y)^{p}\\
+                (\log_2 x)^{p\log_2 x}&\leq(\log_2 y)^{p\log_2 y}\\
+                \frac{1}{(\log_2 x)^{p\log_2 x}}&\geq\frac{1}{(\log_2 y)^{p\log_2 y}}
             .\end{align*}
+            Note above we can only take the inverse when $\log_2$ is positive, so the series is decreasing 
+            for $x\geq 2$, but we have defined $c_1=c_2$ so that our series decreases regardless.
             Now that our sum is indexed from $1$ and we have shown that the general term is decreasing,
             we can apply Rudin Theorem 3.27. Our series of $c_n$ converges if and only if the following 
             series converges.
             \begin{align*}
-                \sum_{k=0}^{\infty} 2^kc_k
-                &= 0\cdot 2^0+  \sum_{k=1}^{\infty} \frac{2^k}{\left(\log_2 2^k\right)^{p\log_2 2^k}} \\
-                &= \sum_{k=1}^{\infty} \left( \frac{2}{k^{p}} \right) ^{k} 
+                \sum_{k=0}^{\infty} 2^kc_{2^k}
+                &= 1\cdot 2^0+  \sum_{k=1}^{\infty} \frac{2^k}{\left(\log_2 2^k\right)^{p\log_2 2^k}} 
             .\end{align*}   
-            %TODO want to use 3.25, show this is less than a convergent series 2/k^p
+            By Rudin Theorem 3.3 (b), this is convergent $\iff \sum\limits_{k=1}^{\infty} \frac{2^k}{\left(\log_2 2^k\right)^{p\log_2 2^k}} $ is convergent.
+
+            Now consider:
+            \begin{align*}
+            \limsup\limits_{k \to \infty}\sqrt[k]{\left| \frac{2}{k^p} \right| ^k}  
+            &=\limsup\limits_{k \to \infty}\left| \frac{2}{k^{p}} \right| \\
+            &=\limsup\limits_{k \to \infty}\frac{2}{k^{p}}\\
+            &=\lim\limits_{k \to \infty}\frac{2}{k^{p}}&\text{By Rudin Theorem 3.18}\\
+            &=2\lim\limits_{k \to \infty}\frac{1}{k^{p}}\\
+            &=2(0)&\text{By Rudin Theorem 3.20}\\
+            &= 0 \\
+            &<1
+            .\end{align*}
+            So by Rudin Theorem 3.33 this series is convergent, and so our original series must be.
 
         \end{proof}
 
+        \newpage
         \item For $a>0$ find the sum of the series
-        $$\sum_{k=2}^\infty\left(\frac a{a+1}\right)^k\quad\text{(show your work)}$$
+        $$\sum_{k=2}^\infty\left(\frac a{a+1}\right)^k$$ (show your work)
 
-        \paragraph{Solution: }We notice a geometric series; since $a>0$,we can say $a<a+1$ and $\frac{a}{a+1}<1$.
-        Then the sum is given by:
+        \paragraph{Solution: }Since $a>0$,we can say $0<a<a+1$ and $0<\frac{a}{a+1}<1$, satisfying one 
+        condition of Rudin Theorem 3.26. 
+        Then we must reindex the summation in order to use the theorem:
         \begin{align*}
-            \left(\frac{a}{a+1}\right)^2 \frac{1}{1-\frac{a}{a+1}}
-            &= \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{a+1}{a+1}-\frac{a}{a+1}}\\
-            &= \left(\frac{a}{a+1}\right)^2 \frac{1}{\frac{1}{a+1}}\\
-            &= \left(\frac{a}{a+1}\right)^2 (a+1)\\
-            &=\frac{a^2}{a+1}
+            \sum_{k=2}^\infty\left(\frac a{a+1}\right)^k&= 
+            \sum_{k=1}^\infty\left(\frac a{a+1}\right)^k-\left( \frac{a}{a+1} \right) -1\\
+            &= \frac{1}{1-\frac{a}{a+1}}-\frac{a}{a+1} -1\\
+            &= \frac{1}{\frac{a+1}{a+1}-\frac{a}{a+1}}-\frac{a}{a+1} -1\\
+            &= \frac{1}{\frac{1}{a+1}}-\frac{a}{a+1} -1\\
+            &= a+1-\frac{a}{a+1} -1\\
+            &= \frac{(a+1)^2}{a+1}-\frac{a}{a+1} -1\\
+            &= \frac{a^2+2a+1}{a+1}-\frac{a}{a+1} -\frac{a+1}{a+1}\\
+            &= \frac{a^2}{a+1}
         .\end{align*}
 
     \end{enumerate}
-    \newpage
+        \newpage
 \item \begin{enumerate}
         \item Prove that $f\left(x\right)=\sin\left(x^{2}\right)$ is not uniformly continuous in $[0,\infty).$
             \begin{proof} 
@@ -76,18 +98,19 @@
                 is $\pm 1$. Then let $x^2=k\pi$ for some $k\in \mathbb{N}$, and $y^2= k\pi+\frac{\pi}{2}$, 
                 and our final choice is 
                 \[
-                x=\sqrt{k\pi-\frac{\pi}{2}},\quad y=\sqrt{k\pi}
+                y=\sqrt{k\pi+\frac{\pi}{2}},\quad x=\sqrt{k\pi}
                 .\] 
                 Then regardless of our choice of $k$, 
                 \[
                 |f(x)-f(y)|=
                 \left|\sin\left(\left(\sqrt{ k\pi}\right)^2\right)
-                -\sin\left(\left(\sqrt{ k\pi-\frac{\pi}{2}}\right)^2\right)\right|
-                =\left|\sin(k\pi)-\sin\left(k\pi-\frac{\pi}{2}\right)\right|.
+                -\sin\left(\left(\sqrt{ k\pi+\frac{\pi}{2}}\right)^2\right)\right|
+                =\left|\sin(k\pi)-\sin\left(k\pi+\frac{\pi}{2}\right)\right|.
                 \] 
                 If $n$ is odd, then 
-                $|\sin(k\pi)-\sin\left(k\pi-\frac{\pi}{2}\right)|=|\pm 1 -0|=1$, and if $k$ is even,
-                $|\sin(k\pi)-\sin\left(k\pi-\frac{\pi}{2}\right)|=|0 -\pm 1|=1$.
+                $|\sin(k\pi)-\sin\left(k\pi+\frac{\pi}{2}\right)|=|\pm 1 -0|=1$, and if $k$ is even,
+
+                $|\sin(k\pi)-\sin\left(k\pi+\frac{\pi}{2}\right)|=|0 -\pm 1|=1$.
 
                 We now have guaranteed that $|f(x)-f(y)|=1$ for any $k$. 
                 It aids us to note that thanks to our choice of $k$, we can say that 
@@ -96,26 +119,28 @@
 
                 \begin{align*}
                     |y-x|&=y-x&\text{Since }y>x\\
-                    &= \sqrt{\pi k} -\sqrt{\pi k-\frac{\pi}{2}}  \\
-                    &= \frac{\left(\sqrt{\pi k} -\sqrt{\pi k-\frac{\pi}{2}}\right)
-                    \left(\sqrt{\pi k} +\sqrt{\pi k-\frac{\pi}{2}}\right)  }
-                    {\left(\sqrt{\pi k} +\sqrt{\pi k-\frac{\pi}{2}}\right) } \\
-                    &= \frac{\pi k -\left({\pi k-\frac{\pi}{2}}\right)}
-                    {\left(\sqrt{\pi k} +\sqrt{ \pi k-\frac{\pi}{2}}\right) } \\
-                    &= \frac{\frac{\pi}{2}} {\left(\sqrt{\pi k} +\sqrt{ \pi k-\frac{\pi}{2}}\right) } \\
-                    &= \frac{\pi} {2\left(\sqrt{\pi k} +\sqrt{ \pi k-\frac{\pi}{2}}\right) } \\
-                    &= \frac{\pi} {2\sqrt{\pi} \left(\sqrt{k} +\sqrt{  k-\frac{1}{2}}\right) } \\
-                    &< \frac{\sqrt{ \pi}} {2\left(\sqrt{k} +\sqrt{  k}\right) } \\
-                    &<\frac{\sqrt{\pi} }{4\sqrt{k} }&\text{Since }\frac{\sqrt{\pi} }{4}<1 \\
-                    &< \frac{1}{\sqrt{k}}\\
+                    &= \sqrt{\pi k+\frac{\pi}{2}} -\sqrt{\pi k}  \\
+                    &= \frac{\left( \sqrt{\pi k+\frac{\pi}{2}} -\sqrt{\pi k} \right) 
+                    \left( \sqrt{\pi k+\frac{\pi}{2}} +\sqrt{\pi k} \right)}
+                    {\left( \sqrt{\pi k+\frac{\pi}{2}} +\sqrt{\pi k} \right)} \\
+                    &=\frac{\pi k +\frac{\pi}{2}-\pi k}
+                    {\left( \sqrt{\pi k+\frac{\pi}{2}} +\sqrt{\pi k} \right)} \\
+                    &=\frac{\frac{\pi}{2}} { \sqrt{\pi k+\frac{\pi}{2}} +\sqrt{\pi k} } \\
+                    &=\frac{\sqrt{\pi} } {2\left( \sqrt{ k+\frac{1}{2}} +\sqrt{ k}\right) } \\
+                    &< \frac{\sqrt{ \pi}} {2\left(\sqrt{k} +\sqrt{  k}\right) }&
+                    \sqrt{x} \text{ is monotinically increasing}  \\
+                    &<\frac{\sqrt{\pi} }{4\sqrt{k} } \\
+                    &< \frac{1}{\sqrt{k}}&\text{Since }\frac{\sqrt{\pi} }{4}<1\\
                     &<\delta
                 .\end{align*}
             \end{proof}
+            Therefore $\sin x^2$ is not uniformly continuous on $[0,\infty)$
 
         \item Show an example of a continuous function in $(0,1)$ which is not uniformly
             continuous (no proof necessary).
 
-            \paragraph{Solution:} $f(x)=\sin\left( \frac{1}{x^2} \right) $ is continuous in $(0,1)$ however
+            \paragraph{Solution:} $f(x)=\sin\left( \frac{1}{x^2} \right) $ is continuous in $(0,1)$
+            since it is the composition of continuous functions. However
             it is not uniformly continuous (as shown in class).
     \end{enumerate}
 

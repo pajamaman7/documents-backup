@@ -34,5 +34,11 @@ Format:
     - Short proofs (3), computation based of varying length
         - 2 computations/direct applications of theorems
         - 1 longer proof
-## Pre-final quiz
+## Quiz 2
+Practice for final exam
+- Chapters 6.2-6.4
+- 2 Statement of named theorem
+- Choose your own adventure
 ## Final
+There will be choices between questions on the final (eg choose one of the following to prove, choose two of three definition to recite)
+

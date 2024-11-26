@@ -1,0 +1,94 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $5$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+\scsnowmandefault{nose=orange,arms,broom=brown,hat=red,buttons,muffler,scale=1}
+\renewcommand\qedsymbol{\scsnowman}
+
+\begin{document}
+
+    \begin{enumerate}
+\item The goal of this problem is to produce a (particular) proof that the cyclotomic polynomials for a prime $p$ are irreducible.   Let $p$ be a prime.  The $p$-th cyclotomic polynomial is $\Phi_p(x)=x^{p-1}+x^{p-2}+\cdots +x^2+x+1$.  Let $u=e^{2\pi i/p}$.  Let $m(x)$ be the minimal monic polynomial for $u$ in ${\mathbb Q}(u)$.  Do not assume $m(x)=\Phi_p(x)$.
+
+\begin{enumerate}
+\item A {\it primitive} $p$-th root of unity is a complex number $\zeta$ such that $\zeta^p=1$ and $\zeta^k\neq 1$ for any $k<p$.  Prove that $u$ is a primitive $p$-th root of unity.
+    \begin{proof} 
+        Let $u=e^{i \frac{2\pi}{p}}$, then $u^{p}=e^{ip \frac{2\pi}{p}}=e^{2\pi i}=1$
+
+        Recall that the $n$-th roots of unity form a group $G$ under complex multiplication, with $|G|=n$.
+        Now suppose $u^{d}=1$. Then $d|p$ since the order of the element divides the order of the group,
+        and $d=1$ (and $u=1$) or $d=p$. So then $u$ must have order $p$, and $u$ is a primitive $p$-th 
+        root of unity.
+    \end{proof}
+\item Verify that each $u^k$ for $k=1, \ldots , p-1$ is a root of $\Phi_p(x)$
+    \paragraph{Solution:} 
+    Let $k$ be as above, and observe:
+    \begin{align*}
+        \Phi_p(x)(x-1)=(x-1)(x^{p-1}+\ldots+x+1)=x^{p}-x^{p-1}+x^{p-1}-x^{p-2}+\ldots-x+x+1=x^{p}-1
+    .\end{align*}
+    And since $(u^{k})^{p}-1=e^{\frac{2kp\pi i}{p}}-1=e^{2ik\pi}-1=1-1=0$, and $u^{k}$ is a root of this 
+    product of polynomials. But since the linear polynomial $x-1$ is irreducible and $u^k\neq 1$ 
+    for any of the given $k$, $u^{k}$ cannot be a root of $x-1$ and it must instead be a root of the 
+    $p$th cyclotomic polynomial.
+
+\item Prove that for any prime $q\neq p$, $m(u^q)=0$.
+
+    %TODO Great proof for the wrong thing, the cyclotomic poly is not m..
+     \begin{proof} 
+         \iffalse
+        Let $q\neq p$. Write $q=np+r$ with $1\leq r < p$ by Quotient-Remainder Theorem ($r\neq 1$ since
+        $q,p$ are distinct primes). Then:
+        \[
+            u^q=e^{\frac{2i\pi q}{p}}=e^{\frac{2i\pi(np+r) }{p}}=e^{2\pi i n}\cdot e^{\frac{2\pi i r}{p}}
+            =1\cdot u^{r}
+        .\] 
+        And then by (b), $\Phi_p(u^{q})=0$
+    \fi
+    \end{proof}
+
+\item Conclude that $m(x)=\Phi_p(x)$ and that therefore $\Phi_p(x)$ is irreducible.
+\end{enumerate}
+
+\item Exercise 6.4.13 If $E$ is an extension of ${\mathbb Z}_p$ and $u\in E$ is a root of $f(x)\in {\mathbb Z}_p[x]$, show that $u^p$ is also a root.
+    \paragraph{Solution:} Let $u$ be a root of $f(x)\in \mathbb{Z}_p[x]$. Let $f$ have degree $n$,
+    and write it as $f(x)=a_0+a_1x+\ldots+a_nx^{n}$, with $a_i \in \mathbb{Z}_p$.
+
+    Then let $\sigma:E\to E$ be the automorphism that fixes $\mathbb{Z}_p$ and has
+    $\sigma(u)=u^{p}$. We know this automorphism to commute with polynomial functions;
+    \begin{align*}
+        f(\sigma(u))&= a_0+a_1\sigma(u)+\ldots+a_n\sigma(u)^{n}\\
+        &=  \sigma(a_0)+\sigma(a_1)\sigma(u)+\ldots+\sigma(a_n)\sigma(u)^{n} \\
+        &=  \sigma(a_0)+\sigma(a_1u)+\ldots+\sigma(a_nu^{n}) \\
+        &=  \sigma(a_0+a_1u+\ldots+a_nu^{n}) \\
+        &=  \sigma(f(u))\\
+        &=\sigma(0)\\
+        &=0
+    .\end{align*}
+    So $f(\sigma(u))=\sigma(f(u))=\sigma(0)=0$.
+    \newpage
+
+\item Exercise 10.1.8: If $E= {\mathbb Q}(\sqrt{2}, \sqrt{3} )$, show that $Gal(E:{\mathbb Q})\cong C_2\times C_2$.
+
+    \paragraph{Solution:} First find the minimal monic polynomials. $x^2-2$ for $\sqrt{2} $ is 
+    irreducible over $\mathbb{Q}$ by the quadratic equation (Its roots $\pm \sqrt{2} $ are real). For the 
+    same reason $x^2-3$ is minimal for $\sqrt{3}$, it has roots $\pm\sqrt{3} $. So we have 
+    four roots to permute, which tells us that our group must be either $C_2\times C_2$ or $C_4$ thanks
+    to our classification of finite groups.
+    %Mention fund. theorem arith? TODO
+
+    Let $\sigma \in Gal(E:\mathbb{Q})$ such that $\sigma(\sqrt{2})=\sqrt{3}$ and 
+    $\sigma(\sqrt{3} )=\sqrt{2} $. Then $\sigma^2(\sqrt{2} ) =\sigma(\sqrt{3})=\sqrt{2}$
+    and $\sigma^2(\sqrt{3} )=\sigma(\sqrt{2} )=\sqrt{3} $. So $\sigma\cdot \sigma=\varepsilon$, and
+    the order of $\sigma$ is $2$.
+
+    Then pick $\tau$ so that $\tau(\sqrt{2})=-\sqrt{2} $ and $\tau(\sqrt{3})=\sqrt{3} $. Note that we
+    can say that $\tau$ is distinct from $\sigma$ since they are uniquely determined by their action
+    on $\sqrt{2} ,\sqrt{3} $. Then $\tau^2(\sqrt{2})=\tau(-\sqrt{2} ) =-\tau(\sqrt{2} )=\sqrt{2} $, and 
+    $\tau^2(\sqrt{3})=\tau(\sqrt{3} )=\sqrt{3} $. So the order of $\tau$ is 2, which tells us the Galois
+    group must be $C_2\times C_2$ since it has two distinct elements of order 2, which $C_4$ does not.
+
+\end{enumerate}
+
+\end{document}
