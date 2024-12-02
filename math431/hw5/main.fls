@@ -265,6 +265,17 @@ INPUT /usr/share/texmf-dist/tex/generic/xypic/xypdf-li.tex
 INPUT /usr/share/texmf-dist/tex/generic/xypic/xypdf-ro.tex
 INPUT /usr/share/texmf-dist/tex/latex/tools/multicol.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/multicol.sty
+INPUT /usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+INPUT /usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+INPUT /usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
 INPUT ./main.aux
 INPUT ./main.aux

@@ -3,6 +3,8 @@ aliases:
   - Algebraic Extension
   - Field Extension
   - Algebraic Extensions
+  - Separable Extension
+  - Eisenstein's Criterion
 ---
 If $F\subseteq E$ are fields and $F$ is a subring of $E$, we say $E$ is an extension of $F$.
 In fact, $E$ is a $F$-[[Vector Spaces|Vector Space]].
@@ -42,3 +44,23 @@ Let $u\in E$ be algebraic over $F$ of degree $n$, with minimal polynomial $m$ Th
 - $F(u)=\{ a_{0}+a_{1}u+a_{k-q}u^{k-1}|a_i \in F, k\geq 0 \}=\{ f(u)|f(x)\in F[x] \}$
 - $\{ 1,u,\dots,u^{n-1} \}$ is an $F$-basis of $F[u]$, so $[F(u):F]=n$.
 - As a ring, $F[u]\cong F[x] / \left< m(x) \right>$. 
+## Separable Extensions
+### Lemma
+The following are equivalent for an irreducible $p(x)\in F[x]$:
+- $p(x)$ has distinct roots in every extension $E\supseteq F$ in which it splits.
+- $p(x)$ has distinct roots in some extension $E\supseteq F$ in which it splits.
+- $p'(x)\neq 0$.
+Let $F$ be a field and $E$ be the splitting field of $f(x)\in F[x]$. Let $X=\{ a \in E:f(a)=0 \}$, and $G=gal(E:F)$ be the [[Galois Theory|Galois Group]] of $E$ over $F$. Then $G\curvearrowright X$. Let $\sigma \in G$, and define $\bar{\sigma}:X\to X:\bar{\sigma}(x)=\sigma(x)$. This automorphism $\bar{\sigma} \in S_{X}$. 
+### Separable Polynomial
+A polynomial $p(x)\in F[x]$ is called a separable polynomial if its irreducible factors have distinct roots in any splitting field of $p(x)$ over $F$.
+#### Characteristic and Separability
+For an irreducible $p(x)\in F[x]$:
+- $charF=0$ then $p$ is separable $\iff$ $p$ is constant.
+- $char F= p$ then $p(x)$ is separable $\iff p(x)\neq g(x^p)$ for some $g\in F[x]$.
+#### Corollary
+Every algebraic extension is separable for $char F=0$.
+### Extension
+A **Separable extension** is an algebraic extension $E\supseteq F$ where the minimal monic polynomial for every $u\in E$ is separable.
+#### Theorem
+- $G\cong H \leq S_{X}$
+- If $f$ is irreducible, then $G$ [[Group Actions|Acts Transitively]] on $X$.

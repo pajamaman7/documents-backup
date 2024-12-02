@@ -2,6 +2,7 @@
 aliases:
   - Galois Group
   - Galois Field
+  - Separable Polynomial
 ---
 ## Galois Field
 
@@ -23,3 +24,17 @@ If $E\supseteq F$ is a finite extension with $E=F(u_{1},\dots u_{n})$, where $u_
 - $\sigma$ is completely determined by each $\sigma(u_{1}),\dots,\sigma(u_{n})$
 - $\sigma(u_{i})$ is a root of $m_{i}(x)$. 
 In particular, $gal(E:F)$ is finite when $[E:F]$ is finite.
+### Theorem
+Let $\sigma:F\to \bar{F}$ be a field isomorphism. Let $f(x)\in F[x]$ be separable.
+If $E$ is a [[Splitting Fields|Splitting Field]]for $f(x)$ over $F$ and $\bar{E}$ is a splitting field for $\sigma(f(x))=f^\sigma(x)$, then there are exactly $[E:F]$ isomorphisms $\hat{\sigma}:E\to \bar{E}$ extending $\sigma.$
+$$
+\begin{CD}
+E @>\hat{\sigma}>> \bar{E} \\
+@|         @| \\
+F(u) @>\hat{\sigma}>> K&=\hat{\sigma}(\bar{F}(u)) \\
+@|         @| \\
+F @>\sigma>\cong> \bar{F} \\
+\end{CD}
+$$
+#### Corollary
+If $E$ is a splitting field of a separable polynomial $f(x)\in F[x]$ then  $|gal(E:F)|=[E:F]$

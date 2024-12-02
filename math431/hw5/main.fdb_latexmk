@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1732647062.29162 "main.tex" "main.pdf" "main" 1732647062.73154 0
+["pdflatex"] 1733173143.36809 "main.tex" "main.pdf" "main" 1733173143.85882 0
   "/usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc" 1727349926 3877 2ca811886181a05a861d20a35de75e06 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1727349926 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1727349926 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -77,8 +77,11 @@
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex" 1727349926 35249 abd4adf948f960299a4b3d27c5dddf46 ""
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex" 1727349926 22012 81b34a0aa8fa1a6158cc6220b00e4f10 ""
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex" 1727349926 8893 e851de2175338fdf7c17f3e091d94618 ""
+  "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex" 1727349926 4228 c39d423dc1a80da31c8c67bf1067f384 ""
+  "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex" 1727349926 3970 c199216b190c70e45bff870bacf0da00 ""
   "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1727349926 11518 738408f795261b70ce8dd47459171309 ""
   "/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1727349926 186782 af500404a9edec4d362912fe762ded92 ""
+  "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex" 1727349926 58801 1e750fb0692eb99aaac45698bbec96b1 ""
   "/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex" 1727349926 32995 ac577023e12c0e4bd8aa420b2e852d1a ""
   "/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex" 1727349926 3063 8c415c68a0f3394e45cfeca0b65f6ee6 ""
   "/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex" 1727349926 949 cea70942e7b7eddabfb3186befada2e6 ""
@@ -111,6 +114,7 @@
   "/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex" 1727349926 4385 510565c2f07998c8a0e14f0ec07ff23c ""
   "/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex" 1727349926 29239 22e8c7516012992a49873eff0d868fed ""
   "/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def" 1727349926 6950 8524a062d82b7afdc4a88a57cb377784 ""
+  "/usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex" 1727349926 23059 b4b98da760150611227e2533f15fe352 ""
   "/usr/share/texmf-dist/tex/generic/xkeyval/keyval.tex" 1727349926 2725 1a42bd9e7e57e25fc7763c445f4b785b ""
   "/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex" 1727349926 19231 27205ee17aaa2902aea3e0c07a3cfc65 ""
   "/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex" 1727349926 7677 9cb1a74d945bc9331f2181c0a59ff34a ""
@@ -200,6 +204,7 @@
   "/usr/share/texmf-dist/tex/latex/scsnowman/scsnowman-normal.def" 1727349926 8805 c48a9f8dc60349094940182a3ad26bb0 ""
   "/usr/share/texmf-dist/tex/latex/scsnowman/scsnowman.sty" 1727349926 15212 61497cf65c5fc4059baeabb9b237ee97 ""
   "/usr/share/texmf-dist/tex/latex/scsnowman/sctkzsym-base.sty" 1727349926 5628 89100b9102ffced67340a0b6826f98b4 ""
+  "/usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty" 1727349926 823 2375f30bf77af9357d3b4834b054bf52 ""
   "/usr/share/texmf-dist/tex/latex/tools/multicol.sty" 1727349926 32515 51caec75eda9c8890135f12f1a4eddc3 ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1727349926 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1727349926 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
@@ -207,8 +212,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1727349926 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731350417.53289 5312047 b07fcd2a9090df96fc745b92a3db793b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731350392 7113023 faa9f848b9ce41baa0f4a6d4a057436c ""
-  "main.aux" 1732647062.67546 284 da90ff7e571b19afd21136e90b8fe375 "pdflatex"
-  "main.tex" 1732647060.7555 5052 6c697c35a490f52af95853674c8e5f9d ""
+  "main.aux" 1733173143.7955 368 06e994adc95ccfda5763a045a13d7971 "pdflatex"
+  "main.tex" 1733173141.57215 5688 4514a5a80a1a2893d1c830d6dd8906c1 ""
   "preamble.tex" 1731349757.96156 765 33a3172ad2787605774e19883ff0e339 ""
   (generated)
   "main.aux"

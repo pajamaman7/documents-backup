@@ -1,5 +1,8 @@
 {
   "theme": "obsidian",
   "cssTheme": "Everforest",
-  "baseFontSize": 20
+  "baseFontSize": 20,
+  "enabledCssSnippets": [
+    "largertikz"
+  ]
 }

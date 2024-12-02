@@ -1,5 +1,6 @@
 \documentclass{article}
 \input{preamble.tex}
+\usepackage{tikz-cd}
 \pagestyle{fancy}
 \lhead{Assignment \# $5$}
 \rhead{Name: Thomas Boyko; UCID: 30191728}
@@ -19,15 +20,16 @@
 
         Recall that the $n$-th roots of unity form a group $G$ under complex multiplication, with $|G|=n$.
         Now suppose $u^{d}=1$. Then $d|p$ since the order of the element divides the order of the group,
-        and $d=1$ (and $u=1$) or $d=p$. So then $u$ must have order $p$, and $u$ is a primitive $p$-th 
-        root of unity.
+        and either $d=1$ (in this case $u=1$), or $d=p$. So then $u$ must have order $p$, and $u$
+        is a primitive $p$-th root of unity. In fact, any non-identity element in $G$ is a primitive root.
     \end{proof}
 \item Verify that each $u^k$ for $k=1, \ldots , p-1$ is a root of $\Phi_p(x)$
-    \paragraph{Solution:} 
-    Let $k$ be as above, and observe:
+    \paragraph{Solution:} Let $k$ be as above, and observe:
+
     \begin{align*}
         \Phi_p(x)(x-1)=(x-1)(x^{p-1}+\ldots+x+1)=x^{p}-x^{p-1}+x^{p-1}-x^{p-2}+\ldots-x+x+1=x^{p}-1
     .\end{align*}
+
     And since $(u^{k})^{p}-1=e^{\frac{2kp\pi i}{p}}-1=e^{2ik\pi}-1=1-1=0$, and $u^{k}$ is a root of this 
     product of polynomials. But since the linear polynomial $x-1$ is irreducible and $u^k\neq 1$ 
     for any of the given $k$, $u^{k}$ cannot be a root of $x-1$ and it must instead be a root of the 
@@ -35,20 +37,29 @@
 
 \item Prove that for any prime $q\neq p$, $m(u^q)=0$.
 
-    %TODO Great proof for the wrong thing, the cyclotomic poly is not m..
+    %TODO this is only true in finite fields of prime characteristic
      \begin{proof} 
-         \iffalse
-        Let $q\neq p$. Write $q=np+r$ with $1\leq r < p$ by Quotient-Remainder Theorem ($r\neq 1$ since
-        $q,p$ are distinct primes). Then:
-        \[
-            u^q=e^{\frac{2i\pi q}{p}}=e^{\frac{2i\pi(np+r) }{p}}=e^{2\pi i n}\cdot e^{\frac{2\pi i r}{p}}
-            =1\cdot u^{r}
-        .\] 
-        And then by (b), $\Phi_p(u^{q})=0$
-    \fi
+        Let $q\neq p$. Then let $\sigma:\mathbb{Q}(u)\to \mathbb{Q}(u)$ be the automorphism fixing $\mathbb{Q}$ and 
+        $u\mapsto u^{q}$. Then write $m(x)=a_0+a_1x+\ldots+a_nx^{n}$
+        \begin{align*}
+            m(u^{q})&=m(\sigma(u))\\
+            &=a_0+a_1\sigma(u)+\ldots+a_n\sigma(u)^{n}\\
+            &=  \sigma(a_0)+\sigma(a_1)\sigma(u)+\ldots+\sigma(a_n)\sigma(u)^{n} \\
+            &=  \sigma(a_0)+\sigma(a_1u)+\ldots+\sigma(a_nu^{n}) \\
+            &=  \sigma(a_0+a_1u+\ldots+a_nu^{n}) \\
+            &=  \sigma(m(u))\\
+            &=\sigma(0)\\
+            &=0
+        .\end{align*}
+
     \end{proof}
 
 \item Conclude that $m(x)=\Phi_p(x)$ and that therefore $\Phi_p(x)$ is irreducible.
+    \paragraph{Solution:} We see already that $\Phi_p(x)$ is monic and that $\Phi_p(u)=0$.
+    Since $\Phi_p(x)=0$, we can say that $m(x)|\Phi_p(x)$ (The minimal polynomial of $u$ must divide 
+    any polynomial that has $u$ as a root). 
+
+    And since both polynomials divide each other we can say that $\Phi=m$.
 \end{enumerate}
 
 \item Exercise 6.4.13 If $E$ is an extension of ${\mathbb Z}_p$ and $u\in E$ is a root of $f(x)\in {\mathbb Z}_p[x]$, show that $u^p$ is also a root.
@@ -67,7 +78,6 @@
         &=0
     .\end{align*}
     So $f(\sigma(u))=\sigma(f(u))=\sigma(0)=0$.
-    \newpage
 
 \item Exercise 10.1.8: If $E= {\mathbb Q}(\sqrt{2}, \sqrt{3} )$, show that $Gal(E:{\mathbb Q})\cong C_2\times C_2$.
 
@@ -90,5 +100,6 @@
     group must be $C_2\times C_2$ since it has two distinct elements of order 2, which $C_4$ does not.
 
 \end{enumerate}
+
 
 \end{document}

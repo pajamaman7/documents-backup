@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math Degree/Taylor Series.md",
+                "file": "Math Degree/Galois Theory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Taylor Series"
+              "title": "Galois Theory"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math Degree/Polynomial Rings.md",
+                "file": "Math Degree/Field Extensions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Polynomial Rings"
+              "title": "Field Extensions"
             }
           },
           {
@@ -222,16 +222,26 @@
   },
   "active": "8f24926727614fb5",
   "lastOpenFiles": [
-    "Math Degree/Field Extensions.md",
     "Math Degree/Galois Theory.md",
-    "Math Degree/Groups of order n.md",
-    "Math Degree/Polynomial Rings.md",
-    "Math Degree/Math 431.md",
-    "Math Degree/Ideals.md",
-    "Math Degree/Taylor Series.md",
-    "L'Hopital's rule.md",
+    "Math Degree/Field Extensions.md",
+    "Riemann Stieljes Integral.md",
+    "Reimann Integral.md",
     "Mean Value Theorem.md",
     "Math Degree/Limits and Continuity in Metric Spaces.md",
+    "Math Degree/Group Actions.md",
+    "Math Degree/Ideals.md",
+    "Math Degree/Extending Isomorphism.md",
+    "snip.json~",
+    "Math Degree/Taylor Series.md",
+    "snip.json",
+    "obsidian.snippets~",
+    "obsidian.snippets",
+    "convertsnip.py~",
+    "convertsnip.py",
+    "Math Degree/Polynomial Rings.md",
+    "Math Degree/Groups of order n.md",
+    "Math Degree/Math 431.md",
+    "L'Hopital's rule.md",
     "Untitled.md",
     "Derivatives.md",
     "Math Degree/List of Derivatives.md",

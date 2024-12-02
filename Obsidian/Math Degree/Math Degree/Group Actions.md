@@ -1,3 +1,11 @@
+---
+aliases:
+  - Transitive Group Action
+  - Acts Transitively
+  - Group Action
+  - Orbit
+  - Stabilizer
+---
 Given a [[Groups|Group]] $G$, and another set $X$, we say "$G$ acts on $X$", or "$X$ is a $G$-set" and write $G\curvearrowright X$ when there exists a mapping $f$:
 $$f:G\times X\to X,\quad (g,x)\mapsto g\cdot x$$
 Satisfying:
@@ -42,3 +50,5 @@ $$
 - $S_n\curvearrowright X_n$; $\sigma\cdot x \in X$.
 - $D_n\curvearrowright$ vertices of an $n$-gon
 - $\mathbb{R} \setminus \{ 0 \}\curvearrowright R^{n}$
+## Transitive Action
+A group $G$ acts transitively on $X$ if there is exactly one orbit.
