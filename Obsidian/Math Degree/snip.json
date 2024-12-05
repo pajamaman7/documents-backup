@@ -38,9 +38,10 @@
 	{trigger: "@R", replacement: "\\rho", options: "mA"},
 	{trigger: "@s", replacement: "\\sigma", options: "mA"},
 	{trigger: "@S", replacement: "\\Sigma", options: "mA"},
-	{trigger: "ome", replacement: "\\omega", options: "mA"},
 	{trigger: "@o", replacement: "\\omega", options: "mA"},
 	{trigger: "@O", replacement: "\\Omega", options: "mA"},
+	{trigger: "phi", replacement: "\\varphi", options: "mA"},
+	{trigger: "Phi", replacement: "\\Phi", options: "mA"},
 	//{trigger: "([^\\\\])(${GREEK}|${SYMBOL})", replacement: "[[0]]\\[[1]]", options: "rmA", description: "Add backslash before greek letters and symbols"},
 
 

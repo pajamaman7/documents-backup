@@ -1,0 +1,74 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $6$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+
+\item Exercise 10.1.20. Let $\mathbb{F}$ be a field.
+    \begin{enumerate}
+        \item Show that the following are equivalent for a polynomial $f (x) \in  F[x].$
+            \begin{enumerate}
+                \item $f (x)$ has no repeated root in any extension field of $\mathbb{F}$.
+                \item $f (x)$ has no repeated root in some splitting field over $\mathbb{F}$.
+                \item $f (x)$ and $f '(x)$ are relatively prime in $\mathbb{F}[x]$
+                    \paragraph{i.$\implies$ ii.} Suppose $f$ has no repeated root in any extension 
+                    of $\mathbb{F}$. $f$ has a splitting field, and by assumption it must have no repeated
+                    roots in this field. 
+                    \paragraph{ii.$\implies$ iii.} Suppose $f$ has no repeated roots in an extension
+                    $\mathbb{E}$ in which it splits. Then suppose for the sake of 
+                    contradiction that there exists some $g\in \mathbb{F}[x]$ so that $g|f$ and $g|f'$,
+                    and that $g$ is nonconstant. By Kronecker's Theorem, take a root $\alpha\in \mathbb{E}$
+                    of $g$. Then $x-a|g$ and so $x-\alpha|f$, $x-\alpha|f'$. But if $x-\alpha|f'$, then
+                    $(x-\alpha)^2|f$, a contradiction since we assumed that $f$ had no repeated root.
+
+                    \paragraph{iii. $\implies$ i. } Suppose that $f,f'$ are relatively prime in
+                    $\mathbb{F}[x]$. Then suppose for the sake of contradiction that there is some
+                    extension $\mathbb{E}$ of $\mathbb{F}$ so that $f$ has a repeated root in $\mathbb{E}$.
+                    Then $(x-\alpha)^2|f$. But then $(x-\alpha)$ would divide $f'$, contradicting
+                    $f,f'$ being coprime. 
+                    %TODO was this an iff??
+                    
+            \end{enumerate}   
+            \item If $f (x)$ is as in (a), show that $f (x)$ is separable, but not conversely.
+
+              \paragraph{Solution:} Let $f$ have no repeated roots in any extension $\mathbb{E}$ 
+              of $\mathbb{F}$. 
+              %TODO is this not the condition for seperability? if not what to use?
+
+              Counterexample: 
+    \end{enumerate}
+\item Exercise 10.1.26 (a) (b)
+    \begin{enumerate}
+        \item Show that the following conditions are equivalent for a field $\mathbb{F}$ 
+            (then called a perfect field):
+        \begin{enumerate}
+            \item Every algebraic extension of $\mathbb{F}$ is separable.
+            \item Every finite extension of $\mathbb{F}$ is separable.
+            \item Every irreducible polynomial in $\mathbb{F}[x]$ is separable.
+        \end{enumerate}
+
+          \paragraph{i. $\implies$ ii. } Suppose that every algebraic extension of $\mathbb{F}$ 
+          is separable. Then in particular, if $\mathbb{E}$ were a finite extension, it would have to be
+          algebraic and as such it would be separable.
+          \paragraph{ii. $\implies$ iii. } Suppose that every extension of $\mathbb{F}$ is separable, and
+          that $f$ is irreducible in $\mathbb{F}[x]$. % TODO
+
+          \paragraph{iii. $\implies$ i. } Suppose that every irreducible polynomial in $\mathbb{F}[x]$ is 
+          separable. Then let $\mathbb{E}$ be an algebraic extension of $\mathbb{F}$. 
+
+
+        \item Show that every field of characteristic 0 is perfect.
+          \paragraph{Solution:} Let $f$ be of characteristic $0$. Then an irreducible $p$ is separable 
+          (Nicholson Chapter 10, Theorem 4), satisfying iii. Therefore $\mathbb{F}$ is perfect.
+      \end{enumerate}
+\item Exercise 10.2.12 If $\mathbb{E}$ is a finite extension of $\mathbb{F}$ and 
+    $G = gal( \mathbb{E} : \mathbb{F})$, show that the extension $E$ of $F$ is Galois if and only if 
+    $|G| = [\mathbb{E} : \mathbb{F}]$.
+    \paragraph{$\implies$:} Let $\mathbb{E}$ be a finite extension of $\mathbb{F}$ and 
+    $G=gal(\mathbb{E}:\mathbb{F})$. 
+\end{enumerate}
+\end{document}

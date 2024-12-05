@@ -41,4 +41,16 @@ Practice for final exam
 - Choose your own adventure
 ## Final
 There will be choices between questions on the final (eg choose one of the following to prove, choose two of three definition to recite)
+### Format
+Will be on D2L before the final
+### Exam Design
+Every box in the below table should be ticked once
 
+| Section  | 2 Definitions and Statements | 2 Computations/verification | 1 Proof |
+| -------- | ---------------------------- | --------------------------- | ------- |
+| 10.1     |                              |                             |         |
+| 10.2     |                              |                             |         |
+| 6.1      |                              |                             |         |
+| 6.2      |                              |                             |         |
+| 6.3      |                              |                             |         |
+| $\vdots$ |                              |                             |         |

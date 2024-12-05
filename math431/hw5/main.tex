@@ -37,31 +37,21 @@
 
 \item Prove that for any prime $q\neq p$, $m(u^q)=0$.
 
-    %TODO this is only true in finite fields of prime characteristic
-     \begin{proof} 
-        Let $q\neq p$. Then let $\sigma:\mathbb{Q}(u)\to \mathbb{Q}(u)$ be the automorphism fixing $\mathbb{Q}$ and 
-        $u\mapsto u^{q}$. Then write $m(x)=a_0+a_1x+\ldots+a_nx^{n}$
-        \begin{align*}
-            m(u^{q})&=m(\sigma(u))\\
-            &=a_0+a_1\sigma(u)+\ldots+a_n\sigma(u)^{n}\\
-            &=  \sigma(a_0)+\sigma(a_1)\sigma(u)+\ldots+\sigma(a_n)\sigma(u)^{n} \\
-            &=  \sigma(a_0)+\sigma(a_1u)+\ldots+\sigma(a_nu^{n}) \\
-            &=  \sigma(a_0+a_1u+\ldots+a_nu^{n}) \\
-            &=  \sigma(m(u))\\
-            &=\sigma(0)\\
-            &=0
-        .\end{align*}
-
-    \end{proof}
+         Skipped as per the news item on D2L
 
 \item Conclude that $m(x)=\Phi_p(x)$ and that therefore $\Phi_p(x)$ is irreducible.
-    \paragraph{Solution:} We see already that $\Phi_p(x)$ is monic and that $\Phi_p(u)=0$.
-    Since $\Phi_p(x)=0$, we can say that $m(x)|\Phi_p(x)$ (The minimal polynomial of $u$ must divide 
-    any polynomial that has $u$ as a root). 
+    \paragraph{Solution:} Since $\Phi_p$ has a root $u$, the minimal polynomial $m(x)$ must divide $\Phi_p$.
+    And $m(x)$ by assumption is irreducible and monic, and since it has $u^{q}$ as a root
+    it must be the minimal polynomial for $u^{q} $ as well as $u$. Then take  $u^{k}$ for some 
+    $k=1,\ldots,p-1$. This has a prime factorization $k=q_1q_2\ldots q_m$ and by repeating (c) on  $u$ with
+    each prime, we can see that $m(u^{k})=0$ and $m$ is minimal for $u^{k}$.
+    But since every root of $\Phi_p$ is a root of $m$, $\Phi_p|m$.
+    Since the two polynomials divide each other, they must differ by at most a constant multiple.
+    And since they are both monic and minimal, we must have $m(x)=\Phi_p(x)$.
 
-    And since both polynomials divide each other we can say that $\Phi=m$.
 \end{enumerate}
 
+\newpage
 \item Exercise 6.4.13 If $E$ is an extension of ${\mathbb Z}_p$ and $u\in E$ is a root of $f(x)\in {\mathbb Z}_p[x]$, show that $u^p$ is also a root.
     \paragraph{Solution:} Let $u$ be a root of $f(x)\in \mathbb{Z}_p[x]$. Let $f$ have degree $n$,
     and write it as $f(x)=a_0+a_1x+\ldots+a_nx^{n}$, with $a_i \in \mathbb{Z}_p$.

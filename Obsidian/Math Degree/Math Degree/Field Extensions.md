@@ -49,13 +49,13 @@ Let $u\in E$ be algebraic over $F$ of degree $n$, with minimal polynomial $m$ Th
 The following are equivalent for an irreducible $p(x)\in F[x]$:
 - $p(x)$ has distinct roots in every extension $E\supseteq F$ in which it splits.
 - $p(x)$ has distinct roots in some extension $E\supseteq F$ in which it splits.
-- $p'(x)\neq 0$.
+- $p'(a)\neq 0$ for any root $a$ of $p$.
 Let $F$ be a field and $E$ be the splitting field of $f(x)\in F[x]$. Let $X=\{ a \in E:f(a)=0 \}$, and $G=gal(E:F)$ be the [[Galois Theory|Galois Group]] of $E$ over $F$. Then $G\curvearrowright X$. Let $\sigma \in G$, and define $\bar{\sigma}:X\to X:\bar{\sigma}(x)=\sigma(x)$. This automorphism $\bar{\sigma} \in S_{X}$. 
 ### Separable Polynomial
 A polynomial $p(x)\in F[x]$ is called a separable polynomial if its irreducible factors have distinct roots in any splitting field of $p(x)$ over $F$.
 #### Characteristic and Separability
 For an irreducible $p(x)\in F[x]$:
-- $charF=0$ then $p$ is separable $\iff$ $p$ is constant.
+- $charF=0$ then $p$ is separable.
 - $char F= p$ then $p(x)$ is separable $\iff p(x)\neq g(x^p)$ for some $g\in F[x]$.
 #### Corollary
 Every algebraic extension is separable for $char F=0$.
@@ -64,3 +64,9 @@ A **Separable extension** is an algebraic extension $E\supseteq F$ where the min
 #### Theorem
 - $G\cong H \leq S_{X}$
 - If $f$ is irreducible, then $G$ [[Group Actions|Acts Transitively]] on $X$.
+## Primitive Element Theorem
+Let $E$ be a finite separable extension of $F$. Then $E$ is a simple extension, $E=F(u)$ and $u$ is called the primitive element.
+### Corollary 
+Every finite extension of a field $F$ with $char F=0$ is a simple.
+#### Algorithm to find $u$
+ex: $E=\mathbb{Q}(\sqrt{ 2 },\sqrt{ 5 })$. Take the minimal monic for $\sqrt{ 2 },\sqrt{ 5 }$, $x^{2}-2$ and $x^{2}-5$. All in all we are given $\pm \sqrt{ 5 },\pm\sqrt{ 2 }$. This gives $|gal(\mathbb{Q}(\sqrt{ 2 },\sqrt{ 5 } ))|\leq 4$. Consider all $\frac{u-u_i}{v-v_i}$ where $u_i,v_i$ roots of min. monic polynomial of $u,v$ respectively. Choose any element of $E$ not in this list, then this element $a$ will have $\mathbb{Q}(u+av)=E$.

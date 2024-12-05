@@ -1,0 +1,1 @@
+There exists a topological equivalent to the main theorem of [[Galois Theory]].
