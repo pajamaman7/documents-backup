@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1733436748.72186 "main.tex" "main.pdf" "main" 1733436749.1333 0
+["pdflatex"] 1733691263.52199 "main.tex" "main.pdf" "main" 1733691263.97563 0
   "/usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc" 1727349926 3877 2ca811886181a05a861d20a35de75e06 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1727349926 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1727349926 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -172,8 +172,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1727349926 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731350417.53289 5312047 b07fcd2a9090df96fc745b92a3db793b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731350392 7113023 faa9f848b9ce41baa0f4a6d4a057436c ""
-  "main.aux" 1733436749.08391 1553 013a32447559b80e733f619bd7707a11 "pdflatex"
-  "main.tex" 1733436748.41724 4201 95f4570c3aecc313bc0fdb7132d0d2e2 ""
+  "main.aux" 1733691263.92378 1739 0951112604e3c98e862013afad8f0093 "pdflatex"
+  "main.tex" 1733691262.98711 5079 bfc9150b434e121715fe836e0cd7faed ""
   "preamble.tex" 1732822722.40056 792 75c02794bb5e238addfb8a8056681c5e ""
   (generated)
   "main.aux"

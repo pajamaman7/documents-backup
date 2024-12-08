@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.11)  5 DEC 2024 15:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.11.11)  8 DEC 2024 13:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -786,15 +786,15 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 19332 strings out of 476076
- 367647 string characters out of 5793774
- 1939187 words of memory out of 5000000
+ 19335 strings out of 476076
+ 367671 string characters out of 5793774
+ 1942187 words of memory out of 5000000
  41065 multiletter control sequences out of 15000+600000
- 576754 words of font info for 72 fonts, out of 8000000 for 9000
+ 577624 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  118i,12n,118p,544b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/zplr.pfb>
-Output written on main.pdf (1 page, 124136 bytes).
+Output written on main.pdf (1 page, 125816 bytes).
 PDF statistics:
  58 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream

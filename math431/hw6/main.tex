@@ -35,11 +35,12 @@
             \end{enumerate}   
             \item If $f (x)$ is as in (a), show that $f (x)$ is separable, but not conversely.
 
-              \paragraph{Solution:} Let $f$ have no repeated roots in any extension $\mathbb{E}$ 
-              of $\mathbb{F}$. 
-              %TODO is this not the condition for seperability? if not what to use?
+              \paragraph{Solution:} Let $f$ have no repeated roots in its splitting field. Then clearly
+              none of its factors can have repeated roots, so it must be separable.
 
-              Counterexample: 
+              Counterexample: Take $f(x)=x^2+2x+1$ which has a repeated root in the trivial extension
+              $\mathbb{F}$ of $\mathbb{F}$, but its irreducible factor $(x+1)$ has no repeated root in any
+              extension $\mathbb{E}$ of $\mathbb{F}$. 
     \end{enumerate}
 \item Exercise 10.1.26 (a) (b)
     \begin{enumerate}
@@ -52,14 +53,17 @@
         \end{enumerate}
 
           \paragraph{i. $\implies$ ii. } Suppose that every algebraic extension of $\mathbb{F}$ 
-          is separable. Then in particular, if $\mathbb{E}$ were a finite extension, it would have to be
+          is separable. Then, if $\mathbb{E}$ were a finite extension, it would have to be
           algebraic and as such it would be separable.
-          \paragraph{ii. $\implies$ iii. } Suppose that every extension of $\mathbb{F}$ is separable, and
-          that $f$ is irreducible in $\mathbb{F}[x]$. % TODO
 
-          \paragraph{iii. $\implies$ i. } Suppose that every irreducible polynomial in $\mathbb{F}[x]$ is 
-          separable. Then let $\mathbb{E}$ be an algebraic extension of $\mathbb{F}$. 
+          \paragraph{ii. $\implies$ iii. } Suppose that every finite extension of $\mathbb{F}$ is separable, and
+          that $f$ is irreducible in $\mathbb{F}[x]$. Let $\mathbb{E}$ be the splitting field of $f$ over
+          $\mathbb{E}$. Then $\mathbb{E}$ is a finite extension, and by hypothesis 
+          $\mathbb{E}$ must be separable. Since the minimal monic polynomial for  any root  $u_i$ of $f$ 
+          is $x-u_i\in E[x]$, and these are all seperable since $\mathbb{E}$ is seperable. we can say
+          $f$ is seperable since it is the product of all these and a constant in $\mathbb{F}$. 
 
+          \paragraph{iii. $\implies$ i. } Note that
 
         \item Show that every field of characteristic 0 is perfect.
           \paragraph{Solution:} Let $f$ be of characteristic $0$. Then an irreducible $p$ is separable 
@@ -69,6 +73,10 @@
     $G = gal( \mathbb{E} : \mathbb{F})$, show that the extension $E$ of $F$ is Galois if and only if 
     $|G| = [\mathbb{E} : \mathbb{F}]$.
     \paragraph{$\implies$:} Let $\mathbb{E}$ be a finite extension of $\mathbb{F}$ and 
-    $G=gal(\mathbb{E}:\mathbb{F})$. 
+    $G=gal(\mathbb{E}:\mathbb{F})$. Then suppose $\mathbb{E}$ is Galois 
+
+    \paragraph{$\impliedby:$} Let $\mathbb{E}$ be a finite extension of $\mathbb{F}$ and 
+    $|G| = [\mathbb{E} : \mathbb{F}]$. Then suppose $|G|=[\mathbb{E}:\mathbb{F}]$.
+
 \end{enumerate}
 \end{document}

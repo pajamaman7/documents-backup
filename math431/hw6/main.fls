@@ -312,6 +312,10 @@ INPUT /usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc
 INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmia.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT main.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb
