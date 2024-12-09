@@ -38,7 +38,7 @@
               \paragraph{Solution:} Let $f$ have no repeated roots in its splitting field. Then clearly
               none of its factors can have repeated roots, so it must be separable.
 
-              Counterexample: Take $f(x)=x^2+2x+1$ which has a repeated root in the trivial extension
+              \paragraph{Counterexample:}  Take $f(x)=x^2+2x+1$ which has a repeated root in the trivial extension
               $\mathbb{F}$ of $\mathbb{F}$, but its irreducible factor $(x+1)$ has no repeated root in any
               extension $\mathbb{E}$ of $\mathbb{F}$. 
     \end{enumerate}
@@ -63,20 +63,36 @@
           is $x-u_i\in E[x]$, and these are all seperable since $\mathbb{E}$ is seperable. we can say
           $f$ is seperable since it is the product of all these and a constant in $\mathbb{F}$. 
 
-          \paragraph{iii. $\implies$ i. } Note that
+          \paragraph{iii. $\implies$ i. } Suppose all irreducible polynomials in $\mathbb{F}[x]$ are 
+          seperable, and $\mathbb{E}$ be an algebraic extension of $\mathbb{F}$.
+          Let $u\in \mathbb{E}$, and $m(x)$ be the minimal monic polynomial
+          for $u$. Then since $m$ is irreducible, it is separable by hypothesis. Therefore the algebraic
+          extension $\mathbb{E}$ is seperable. 
+
 
         \item Show that every field of characteristic 0 is perfect.
           \paragraph{Solution:} Let $f$ be of characteristic $0$. Then an irreducible $p$ is separable 
           (Nicholson Chapter 10, Theorem 4), satisfying iii. Therefore $\mathbb{F}$ is perfect.
       \end{enumerate}
+      \newpage
 \item Exercise 10.2.12 If $\mathbb{E}$ is a finite extension of $\mathbb{F}$ and 
     $G = gal( \mathbb{E} : \mathbb{F})$, show that the extension $E$ of $F$ is Galois if and only if 
     $|G| = [\mathbb{E} : \mathbb{F}]$.
-    \paragraph{$\implies$:} Let $\mathbb{E}$ be a finite extension of $\mathbb{F}$ and 
-    $G=gal(\mathbb{E}:\mathbb{F})$. Then suppose $\mathbb{E}$ is Galois 
+
+    \paragraph{$\implies$:} Since the Galois group is a group of automorphisms fixing $\mathbb{F}$, this 
+    follows from Dedekind-Artin since $\mathbb{F}=\mathbb{E}_G$.
 
     \paragraph{$\impliedby:$} Let $\mathbb{E}$ be a finite extension of $\mathbb{F}$ and 
-    $|G| = [\mathbb{E} : \mathbb{F}]$. Then suppose $|G|=[\mathbb{E}:\mathbb{F}]$.
+    $|G| = [\mathbb{E} : \mathbb{F}]$. We want to show that the fixed set of $\mathbb{E}$ under $G$ is
+    precisely $\mathbb{F}$ in order to show that the extension is Galois. If the extension is degree $1$,
+    the result is clear, since the fixed set of $G=\{e\}$ is $\mathbb{F}$. So suppose the degree of the
+    extension is $\ge 2$.
+
+    Then let $u\in \mathbb{E}\setminus\mathbb{F}$, and suppose for the sake of contradiction that 
+    $u\in \mathbb{E}_{G}$. Then for any $\sigma\in G,$ $\sigma(u)=u$. But since $\sigma$ is uniquely 
+    defined by where it sends $u$, this must mean that $\sigma=e$ and therefore $G=\{e\} $. But then
+    $|G|=[\mathbb{E}:\mathbb{F}]=1<2$, a contradiction. Therefore $\mathbb{E}_G=\mathbb{F}$, and the 
+    extension is Galois.
 
 \end{enumerate}
 \end{document}
