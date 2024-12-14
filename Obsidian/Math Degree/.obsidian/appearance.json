@@ -4,5 +4,8 @@
   "baseFontSize": 20,
   "enabledCssSnippets": [
     "largertikz"
-  ]
+  ],
+  "textFontFamily": "Inter",
+  "interfaceFontFamily": "Inter",
+  "monospaceFontFamily": "ComicShannsMono Nerd Font Mono"
 }
