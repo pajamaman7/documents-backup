@@ -68,11 +68,11 @@ These are all proven with the observations above.
 - If $F=E_{gal(E:F)}$ then the extension $E:F$ is Galois
 ### Statement
 Let $F\subseteq E$ be a finite Galois extension. Let $K,K_{1}$ be intermediate fields and $H,H_{1}$ subgroups of the Galois group.
-Write $\varphi:$
-Write $\psi:$
+Write $\varphi: K\mapsto K'=gal(E:K)$
+Write $\psi:H\mapsto H^{\circ}=E_H$
 - $\varphi,\psi$ are inverse and order reversing
-- If $K_{1}\subseteq K$, then $[K:K_{1}]=|gal(E:K_{1}):gal(E:K)$
-- If $H_{1}\leq H$ then $H:H_{1}=[E_{H_{1}}:E_H]$
+- If $K_{1}\subseteq K$, then $[K:K_{1}]=[gal(E:K_{1}):gal(E:K)]$
+- If $H_{1}\leq H$ then $[H:H_{1}]=[E_{H_{1}}:E_H]$
 - $E / K$ is Galois
-- $K / F$ is Galois $\iff$ $K$ is stable in $E /F \iff gal(E:K)\trianglelefteq G$
+- $K / F$ is Galois $\iff$ $K$ is stable in $E \supseteq F \iff gal(E:K)\trianglelefteq G$
 

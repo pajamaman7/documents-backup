@@ -7,14 +7,12 @@ tags:
   - Algebra
 ---
 A Group $(G,\circ)$ is a [[Set]] $G$ and a [[Binary Operation]] $\circ$ that satisfies the following conditions.
-
 For some $a,b,c\in G$ 
 - $G$ is closed. That is, $\forall a,b\in G, a\circ b\in G$
 - Composition is [[Associative]]. That is, $(a\circ b)\circ c = a\circ (b\circ c)$
 - There is a unique Identity Element $e$ so that $a\circ e = a=e\circ a$.
 - There is a unique inverse element $a^{-1}$ for each element so that $a^{-1} \circ a =e=a\circ a^{-1}$.
 These are called the Group Axioms.
-
 The order of a group is simply the size of the set $G$.
 ## Abelian Group
 Groups where $a\circ b = b\circ a$ are called Commutative/Abelian Groups.
