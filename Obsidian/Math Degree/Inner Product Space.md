@@ -6,4 +6,4 @@ An inner product space is a [[Vector Spaces|Vector Space]] $V$ over $\mathbb{C}$
 - $(x,x)=0\iff x=0$, non-degeneracy
 This operation is called an inner product.
 ## Other Properties
-$x=0\iff(x,y)=0\forall y\in V$.
+- $x=0\iff(x,y)=0\forall y\in V$.
