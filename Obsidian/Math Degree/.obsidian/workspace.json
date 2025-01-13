@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inner Product Space.md",
+                "file": "Linear Methods III.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Inner Product Space"
+              "title": "Linear Methods III"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linear Operators.md",
+                "file": "Rank-Nullity Theorem.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Linear Operators"
+              "title": "Rank-Nullity Theorem"
             }
           },
           {
@@ -208,8 +208,10 @@
   },
   "active": "cb35dd791f08963d",
   "lastOpenFiles": [
-    "Inner Product Space.md",
     "Linear Operators.md",
+    "Rank-Nullity Theorem.md",
+    "Linear Methods III.md",
+    "Inner Product Space.md",
     "Topology.md",
     "The Product Topology.md",
     "Quotient Space.md",
@@ -234,8 +236,6 @@
     "Uniform Distribution.md",
     "Unconnected Subgroups.md",
     "Two Sample Hypothesis Testing.md",
-    "Two Sample CIs.md",
-    "Trigonometric Identities.md",
     "Pasted image 20240119100450.png",
     "Minima",
     "snip.json~",
