@@ -39,7 +39,7 @@ F_{1} & F_{2} & F_{3}\\
 \end{align}$$
 Think of $\nabla \times$ as a linear operator from vector fields to vector fields.
 - Suppose we drop a particle into a field $\vec{F}$, following some field line. If the particle follows any kind of positive curvature path then $curl(\vec{F})(P_{0})$ gives the axis of rotation on this path.
-## Laplacian - 
+## Laplacian - $\Delta$
 Given a scalar $f$, the *Laplacian* of $f$ can be considered "$\Delta f=\nabla \cdot \nabla f$".
 $$\Delta f=f_{xx}+f_{yy}+f_{zz}$$
 Given a vector field $\vec{F}$, 

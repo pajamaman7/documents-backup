@@ -24,6 +24,6 @@ class Pascal{
   }
   
   public static void main(String[] args){
-    pascalTri(10);
+    pascalTri(25);
   }
 }

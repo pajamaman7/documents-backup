@@ -40,5 +40,5 @@ If $v\in V$, $v$ has a unique representation as a linear combination of elements
 Dimension is well defined, and if $B$ is a basis, and $\{  u_{1},\dots,u_m\}\leq U$ is linearly independent, then $|U|\leq|V|$ 
 ### Case of finite fields
 If $|F|=q=p^{n}$, then any $n-$dimensional vector space has exactly $q^n$ elements.
-### Trick question
-What is the dimension of $\mathbb{C}$? Over $\mathbb{R}$, it's 2. Over $\mathbb{C}$, it's 1. We denote $\dim_FV$ as the dimension of $V$ over $F$.
+#### Trick question
+What is the dimension of $\mathbb{C}$? Over $\mathbb{R}$, it's 2. Over $\mathbb{C}$, it's 1. If we take $\mathbb{C}$ as a $\mathbb{Q}$-vector space the dimension is infinite. We denote $\dim_FV$ as the dimension of $V$ over $F$.

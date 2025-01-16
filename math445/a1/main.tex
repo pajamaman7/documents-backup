@@ -1,0 +1,60 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $1$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+
+\item Let $\{f_n\}$ be the sequence of functions defined by
+  \[
+  f_n=\begin{cases}
+    nx &\text{If } 0\leq x\leq \frac{1}{n}\\
+    1 &\text{If } \frac{1}{n}<x<1-\frac{1}{n}\\
+    n-nx &\text{If } 1-\frac{1}{n}\leq x \leq 1
+  \end{cases}
+  .\] 
+  \begin{enumerate}
+    \item Find the pointwise limit $f$ of the sequence.
+      \paragraph{Solution: }Proceed by cases. If $x=0$, then the first case of the function will always be
+      taken since $0\leq x$. So $f_n(0)=n0=0$. Likewise if $x=1$, then $f(1)=n-n 1=n-n=0$.
+
+      %TODO weak reasoning
+      Now, if $x\in (0,1)$, then we observe that $\frac{1}{n}\to 0$, and $1-\frac{1}{n}\to 1$. Therefore the middle case of our piecewise function gives us $f(x)=1$ for all $x$ in this open interval. 
+    \item Does $f_n\xrightarrow[{[0,1]}]{c.u}f$? Justify your answer.
+  \end{enumerate}
+
+\item Let $f_n(x)=\left( \cos\left( \frac{2x}{n}\right)  \right)^{n^2}$
+  \begin{enumerate}
+    \item Compute the pointwise limit $f$ of the sequence $\{f_n\} $.
+    \item Show that $f_n\xrightarrow[{[0,1]}]{c.u}f$.
+  \end{enumerate}
+\item Let $a\in \mathbb{R}_{+}$. Compute the limit
+  \[
+  \lim_{n \to \infty} \int_{a}^{\pi} \frac{\sin(nx)}{nx} \, d x 
+  .\] 
+  What happens if $a=0$?
+\item Construct a sequence of functions defined in $[0,1]$, each of which is discontinuous at every point of $[0,1]$ and which converges uniformly to a function that is continuous at every point 
+
+  \paragraph{Solution: }Take the series $\{f_n\} $ defined by:
+  \[
+    f_n(x)=\begin{cases}
+      \frac{1}{n}&\text{If } x\in \mathbb{Q}\\
+      0&\text{Otherwise}
+    \end{cases}
+  \] 
+  %TODO is uniform convergence true? Need to show?
+  Then $\{f_n\} $ converges uniformly to the constant function $0$, which we know to be continuous on the real line, as well as $[0,1]$. 
+
+\item Consider the series of functions $\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$.
+  \begin{enumerate}
+    \item Show that the series converges uniformly in the interval $[0,b]$ for any $b>0$.
+    \item Let $F(x)=\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$. Show that $F'(x)=\sum_{n\geq 1}^{} \frac{1}{n(n+x)^2}$, $x\geq 0$.
+  \end{enumerate}
+\item Consider the series of functions $\sum_{n\geq 1}^{} \frac{x}{1+n^2x^2}$. Show that the series doesn't converge uniformly in $\mathbb{R}_+$.
+
+  \textbf{Hint:} You could start by showing that $\frac{x}{1+n^2x^2}\geq \int_{n}^{n+1} \frac{x}{1+t^2x^2} \, d t, \quad \forall x\in \mathbb{R}$.
+\end{enumerate}
+\end{document}
