@@ -2,9 +2,15 @@
 $\lambda$ is an eigenvalue of a [[Linear Operators|Linear Operator]] $T$ if there is some $v \neq{0}$ in V so that $Tv=\lambda v$. In this case $v$ is an eigenvector
 ### Multiplicities
 #### Algebraic multiplicities
-Let $\lambda$ be an eigenvalue of a operator $A$. Then $k$ is the algebraic multiplicity of $\lambda$ if and only if $(z-\lambda)^{k}|C_A(z)$ and $(z-\lambda)^{k+1}|C_A(z)$
+Let $\lambda$ be an eigenvalue of a operator $A$. Then $k$ is the algebraic multiplicity of $\lambda$ if and only if $(z-\lambda)^{k}|C_A(z)$ and $(z-\lambda)^{k+1}\not\mid C_A(z)$. Denote this $a_A(\lambda)$ or $a(\lambda)$ if it proves clear enough.
 #### Geometric multiplicities
-Let $v_{1},\dots,v_n$ be eigenvectors associated with the same eigenvalue $\lambda$, then the geometric multiplicity of $\lambda$ is given by $G(\lambda)=\dim \ker(\lambda I-A)$.
+Let $v_{1},\dots,v_n$ be eigenvectors associated with the same eigenvalue $\lambda$, then the geometric multiplicity of $\lambda$ is given by $g_A(\lambda)=\dim \ker(\lambda I-A)$.
+Note that for any eigenvalue, the geometric multiplicity must be less than or equal to its algebraic multiplicity;
+$$
+a(\lambda)\leq g(\lambda)
+$$
+##### Corollary
+$T$ is diagonalizable if and only if $g(\lambda)=a(\lambda)\forall\lambda \in\sigma(T)$.
 ## Spectrum
 The spectrum of $T$ above is:
 $$

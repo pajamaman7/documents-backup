@@ -7,7 +7,102 @@
 
 \begin{document}
 \begin{enumerate} 
+    \item Let $V$ and $W$ be finite dimensional vector spaces with given bases $\mathcal{B} = \{\vec{b}_1,\ldots,\vec{b}_n\}$ and $\mathcal{D} = \{\vec{d}_1,\ldots,\vec{d}_m\}$, respectively.
+      \begin{enumerate}
+        \item For a given $\vec{x} \in V$, there are unique scalars so that $\vec{x} = a_1\vec{b}_1 + \cdots + a_n\vec{b}_n$. Define the vector $[\vec{x}]_{\mathcal{B}} := (a_1,\ldots,a_n)^T \in \mathbb{C}^n$. Show that the map $\vec{x} \mapsto [\vec{x}]_{\mathcal{B}}$ is a linear isomorphism from $V$ into $\mathbb{C}^n$.
 
-  \item The block matrix
+          \paragraph{Linearity: }Let $\vec{x},\vec{y}\in V$. Then write $\vec{x} = a_1\vec{b}_1 + \cdots + a_n\vec{b}_n$ and $\vec{y} = c_1\vec{b}_1 + \cdots + c_n\vec{b}_n$. Now:
+          \[
+              [\vec{x}+\vec{y}]_{\mathcal{B}}=\begin{bmatrix} a_1+c_1\\\vdots\\ a_n+c_n \end{bmatrix} 
+            =\begin{bmatrix} a_1\\\vdots\\ a_n \end{bmatrix} 
+            +\begin{bmatrix} c_1\\\vdots\\ c_n \end{bmatrix} 
+            =[\vec{x}   ]_{\mathcal{B}}
+            +[\vec{y}   ]_{\mathcal{B}}
+          \] 
+           \[
+               [\alpha\vec{x}]_\mathcal{B}=\begin{bmatrix} \alpha a_1\\\vdots \\ \alpha a_n \end{bmatrix} 
+               =\alpha \begin{bmatrix} a_1\\\vdots\\ a_n \end{bmatrix} 
+               =\alpha[\vec{x}]_{\mathcal{B}}
+          .\] 
+          So $[\cdot ]_{\mathcal{B}}$ is linear. 
+
+          \paragraph{Isomorphism: } Since $\dim V=\dim \mathbb{C}^{n}=n$, it will suffice to show that this mapping is injective. We do so by showing  $\ker [\cdot ]_\mathcal{B}=\{0\} $. Clearly $0$ is in the kernel since $[0]_{\mathcal{B}}=[0\vec{x}]_\mathcal{B}=0[\vec{x}]_\mathcal{B}=0$. For inclusion the other way, let $\vec{x}\in \ker [\cdot ]_\mathcal{B} $. Then $[\vec{x}]_\mathcal{B}=0$; meaning the basis representation of $\vec{x}$ is through zero coefficients; and
+          \[
+          \vec{x}=0\vec{b}_1+\ldots+0\vec{b}_n=0
+          .\] 
+          So $\ker[\cdot ]_\mathcal{B}=\{0\} $, and this map is injective. But since the spaces are of the same dimension it must also be surjective. So the map is a linear isomorphism from $V$ to $\mathbb{C}^{n}$. 
+        \item Let $T : V \to W$ be a linear map. In class, we defined the matrix representation of $T$ with respect to $\mathcal{B}$ and $\mathcal{D}$ as the $m \times n$ matrix $[T]_{\mathcal{B}\mathcal{D}} = [[T\vec{b}_1]_{\mathcal{D}},\ldots,[T\vec{b}_n]_{\mathcal{D}}].$ In other words, the $j$-the column of $[T]_{\mathcal{B}\mathcal{D}}$ is $[T\vec{b}_j]_{\mathcal{D}}.$ Show that $[T]_{\mathcal{B}\mathcal{D}}[\vec{x}]_{\mathcal{B}}=[T\vec{x}]_{\mathcal{D}}$ for any $\vec{x} \in V$.
+            \paragraph{Solution: }Let $T:V\to W$ be linear, then write $\vec{x}=a_1\vec{b}_1+\ldots+a_n\vec{b_n}$.
+            \begin{align*}
+                [T]_{\mathcal{B}\mathcal{D}}[\vec{x}]_{\mathcal{B}}
+                &= \left[ [T\vec{b}_1]_\mathcal{D}\ldots[T\vec{b}_n ]_\mathcal{D} \right]
+                \begin{bmatrix} a_1\\ \vdots \\ a_n \end{bmatrix} \\
+                &= a_1[T\vec{b}_1]_\mathcal{D}+\ldots+ a_n[T\vec{b}_n ]_\mathcal{D}  \\
+                &= [a_1 T\vec{b}_1 +\ldots+ a_n T\vec{b}_n ]_\mathcal{D}  &\text{By linearity of }[\cdot ]_{\mathcal{D}}\\
+                &= \left[T(a_1 \vec{b}_1 +\ldots+ a_n \vec{b}_n) \right]_\mathcal{D}  &\text{By linearity of }T\\
+                &=[T\vec{x}]_{\mathcal{D}}
+            .\end{align*}
+      \item Show that $[T]_{\mathcal{B}\mathcal{D}}$ is a linear isomorphism from $L(V,W)$ (the vector space of linear maps from $V$ to $W$) to $M_{mn}(\mathbb{C})$ (vector space of $m \times n$ complex matrices).
+          \paragraph{Linearity: }Let $T,S$ be linear from $V$ to $W$. Then:
+          \begin{align*}
+              [T+S]_{\mathcal{B}\mathcal{D}}&= \left[ [(T+S)\vec{b}_1]\ldots [(T+S)\vec{b}_n] \right] _\mathcal{D}\\
+               &= \left[ [(T\vec{b}_1+S\vec{b}_1)]\ldots [(T\vec{b}_n+S\vec{b}_n)] \right]_\mathcal{D} \\
+               &= \left[ [T\vec{b}_1]\ldots [T\vec{b}_n] \right] _\mathcal{D}+ \left[ [S\vec{b}_1]\ldots [S\vec{b}_n] \right] _\mathcal{D}&\text{By Linearity of }[\cdot]_\mathcal{D}\\
+               &=  [S]_{\mathcal{B}\mathcal{D}} +[T]_{\mathcal{B}\mathcal{D}} 
+          .\end{align*}
+          And then letting $\alpha\in \mathbb{C}$,
+           \begin{align*}
+               \alpha[T]_{\mathcal{B}\mathcal{D}}&=\alpha\left[ [T\vec{b}_1]\ldots[T\vec{b}_n] \right] _\mathcal{D}\\
+                         &=\left[ \alpha[T\vec{b}_1]\ldots\alpha[T\vec{b}_n] \right]_\mathcal{D} &\text{Linearity of }[\cdot]_{\mathcal{D}} \\
+                         &=\left[ [\alpha T\vec{b}_1]\ldots[\alpha T\vec{b}_n]\right] _\mathcal{D} \\
+               &= [\alpha T]_{\mathcal{B}\mathcal{D}} 
+          .\end{align*}
+          %TODO notation for matrix representation is wrong here
+          \paragraph{Isomorphism: } %TODO Better to find an inverse or do kernel zero? Instinct says inverse sending the basis representation to its linear combination. Ker not that bad but the dimension argument is weird.
+      \end{enumerate}
+    \item Let $V$, $W$ and $U$ be finite dimensional vector spaces with given bases: 
+
+        $\mathcal{B} = \{\vec{b}_1,\ldots,\vec{b}_n\}, \mathcal{D} = \{\vec{d}_1,\ldots,\vec{d}_m\}, \text{ and } \mathcal{F} = \{f_1,\ldots,f_k\}$, respectively. Suppose $T : V \to W$ and $S : W \to U$ are linear. Prove or disprove the following statement for the composition linear map  $ST : V \to U$:
+      \[
+      [ST]_{\mathcal{B}\mathcal{F}}=[S]_{\mathcal{DF}}[T]_{\mathcal{B}\mathcal{D}}.
+      .\] 
+      \paragraph{Solution: }%I made a really big matrix working on this earlier i think there's probably a better way...
+\item Let $V$ be a finite dimensional vector space and $T : V \to V$ be linear. Show that $\sigma(T)=\sigma([T]_{\mathcal{B}})$ where $\mathcal{B}$ is any basis for $V$.
+    \paragraph{Solution:} $\subseteq $: Let $ \lambda\in \sigma(T)$, and let $\vec{v}$ be an associated eigenvector. We show that $[\vec{v}]_\mathcal{B}$ is an eigenvector for $\lambda$ under $[T]_\mathcal{B}$.
+    \begin{align*}
+        [T]_\mathcal{B}[\vec{v}]_\mathcal{B}&= [T\vec{v}]_\mathcal{B}&\text{By 1(b)} \\
+                                            &= [\lambda \vec{v}]_\mathcal{B} \\
+                                            &= \lambda[ \vec{v}]_\mathcal{B} &[\cdot ]_\mathcal{B}\text{ is linear }
+    .\end{align*}
+
+    %TODO ask about the notation for the inverse map, whether there is a common convention?
+    $\supseteq$: Let $\tau$ be an eigenvalue of $[T]_B$ with associated eigenvector  $\vec{y}$. Since  $[\cdot ]_\mathcal{B}$ is an isomorphism, $\vec{y}$ has a unique preimage under the mapping, say $\vec{x}$ so that $[\vec{x}]_\mathcal{B}=\vec{y}$. Recall that $[\cdot ]_\mathcal{B}$ also must have an inverse. Denote this $[\cdot ]^{-1}_\mathcal{B}$ for lack of better notation.
+    \begin{align*}
+        T\vec{x}&=[[T\vec{x} ]_\mathcal{B}]^{-1}_\mathcal{B}\\
+                &= [[T]_\mathcal{B}[\vec{x}]_\mathcal{B}]_\mathcal{B}^{-1}&\text{Again by 1(b)} \\
+                &=  [[T]_\mathcal{B}\vec{y}]_\mathcal{B}^{-1}\\
+                &= [\tau\vec{y}]_\mathcal{B}^{-1} \\
+                &= \tau[\vec{y}]_\mathcal{B}^{-1} &[\cdot ]_\mathcal{B} \text{ is linear }\\
+                &= \tau\vec{x} 
+    .\end{align*}
+    Therefore $\sigma(T)=\sigma([T]_\mathcal{B})$.
+\item Let $A$ be an $n \times n$ complex matrix with $\sigma(A) = \{1\}$. Show that $A$ is diagonalizable if and only if $A$ is the identity matrix.
+    \paragraph{$\implies$}: Let $A$ be a diagonalizable matrix and $\sigma(A)=\{1\} $. Then there exists some invertible $S$ so that $S^{-1}AS=D=\text{diag}\{1,\ldots,1\}=I$. Multiply both sides:
+    \begin{align*}
+        S^{-1}AS&= I \\
+        SS^{-1}ASS^{-1}&=SIS^{-1}\\
+        A&=SS^{-1}\\
+        A&= I
+    .\end{align*}
+
+    \paragraph{$\impliedby$:} Conversely, if $A=I$, then take the invertible matrix $I$, so that $IAI^{-1}=A=I$, and since $I$ is diagonal, $A$ is diagonalizable. 
+
+\item Determine whether or not the derivative map $D : P_n \rightarrow P_n$ given by $Dp(z) = p'(z)$ is diagonalizable.
+    %TODO nilpotent proof?
+    \paragraph{Claim: }The derivative map defined above is nilpotent; the $k+1$-th derivative of 
+  Proceed by induction on the degree of $p$. If $p$ has degree $0$, then $p$ is constant and has zero derivative, and as such, any subsequent derivative will be zero.
+
+  \paragraph{Solution: } The derivative map is nilpotent on polynomial spaces; hence it is not diagonalizable.
+
 \end{enumerate}
 \end{document}

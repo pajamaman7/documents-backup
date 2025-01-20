@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.1.8)  16 JAN 2025 14:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.1.8)  17 JAN 2025 16:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -869,32 +869,32 @@ LaTeX Font Info:    Trying to load font information for U+zavm on input line 11.
 File: uzavm.fd 2006/05/30 Fontinst v1.929 font definitions for U/zavm.
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.39993pt on input line 34.
+(Font)              scaled to size 10.39993pt on input line 29.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.27995pt on input line 34.
+(Font)              scaled to size 7.27995pt on input line 29.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.19997pt on input line 34.
+(Font)              scaled to size 5.19997pt on input line 29.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/arev/arevot1.enc}
 
-{/usr/share/texmf-dist/fonts/enc/dvips/arev/arevoms.enc}{/usr/share/texmf-dist/fonts/enc/dvips/arev/arevoml.enc}] (./main.aux)
+{/usr/share/texmf-dist/fonts/enc/dvips/arev/arevoms.enc}{/usr/share/texmf-dist/fonts/enc/dvips/arev/arevoml.enc}] [2] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 16205 strings out of 476076
- 324834 string characters out of 5793776
- 1941187 words of memory out of 5000000
- 37964 multiletter control sequences out of 15000+600000
+ 16207 strings out of 476076
+ 324890 string characters out of 5793776
+ 1944187 words of memory out of 5000000
+ 37966 multiletter control sequences out of 15000+600000
  585758 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 118i,12n,118p,473b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 118i,13n,118p,473b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Oblique.pfb></usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Roman.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7t.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7y.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb>
-Output written on main.pdf (1 page, 57517 bytes).
+Output written on main.pdf (2 pages, 65066 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
