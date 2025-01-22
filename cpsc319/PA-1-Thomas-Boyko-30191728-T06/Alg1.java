@@ -8,7 +8,7 @@
 //
 // ** UCID: 30191728
 //
-// ** Tutorial Section: __________________TODO
+// ** Tutorial Section: T06
 //
 // ====================================================================
 import java.util.Scanner;

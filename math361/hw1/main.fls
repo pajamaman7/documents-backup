@@ -305,9 +305,9 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/arev/favb8t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/arev/favb8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/mathdesign/mdbch/mdbchr7v.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathdesign/mdbch/md-chr7v.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/arev/favri8t.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/arev/zavmr7y.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/mathdesign/mdbch/md-chb7y.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/arev/favri8t.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/public/arev/favri8t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/arev/favri8r.tfm
 INPUT main.aux

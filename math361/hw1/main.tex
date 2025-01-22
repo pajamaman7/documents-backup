@@ -57,7 +57,19 @@
                          &=\left[ [\alpha T\vec{b}_1]_\mathcal{D} \ldots[\alpha T\vec{b}_n]_\mathcal{D} \right] \\
                &= [\alpha T]_{\mathcal{B}\mathcal{D}} 
           .\end{align*}
-          \paragraph{Isomorphism: } %TODO Better to find an inverse or do kernel zero? Instinct says inverse sending the basis representation to its linear combination. Ker not that bad but the dimension argument is weird. Math exchange says that it's necessary to find the isomorphism in order to prove the same dimension anyways
+          \paragraph{Injective: } %TODO Better to find an inverse or do kernel zero? Instinct says inverse sending the basis representation to its linear combination. Ker not that bad but the dimension argument is weird. Math exchange says that it's necessary to find the isomorphism in order to prove the same dimension anyways
+          
+          Clearly  $0\in \ker[\cdot ]_{\mathcal{BD}}$; take any transformation $T$ and $[0]_{\mathcal{BD}}=[T-T]_{\mathcal{BD}}=[T]_{\mathcal{BD}}-[T]_{\mathcal{BD}}=0$ .
+
+      Ten let $\mathcal{B}=\{b_1,\ldots ,b_n\} $ and $T\in \ker [\cdot ]_\mathcal{BD} $. Then:
+      \begin{align*}
+          [T]_{\mathcal{BD}}&=0\\
+          \left[ [Tb_1]_\mathcal{D}\ldots [Tb_n]_\mathcal{D}\right] &=[0\ldots 0]
+      .\end{align*} 
+      Then $[Tb_i]_{\mathcal{D}}=0$ for any basis vector $b_i$. In particular this means that $TB_i=0$, since $[\cdot ]_\mathcal{D}$ is an isomorphism. Now for any arbitrary $v\in V,$ write $v=a_1b_1+\ldots a_nb_n$. Then $Tv=T(a_1b_1+\ldots a_n b_n)=a_1Tb_1+\ldots+a_nTb_n=0+\ldots+0=0$ and $T=0$.
+
+      Therefore $\ker[\cdot ]_{\mathcal{BD}}=\{0\} $.
+      \paragraph{Surjective:} The argument that $\dim L(V,W)=\dim M_{mn}(\mathbb{C})$ proves difficult, so instead we show directly that $[L(V,W)]_{BD}=M_{mn}(\mathbb{C})$
       \end{enumerate}
     \item Let $V$, $W$ and $U$ be finite dimensional vector spaces with given bases: 
 

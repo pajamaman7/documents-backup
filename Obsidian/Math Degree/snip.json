@@ -124,7 +124,7 @@
 
 	// Symbols
 	{trigger: "oo", replacement: "\\infty", options: "mA"},
-	{trigger: "sum", replacement: "\\sum\\limits_{${0:n}=${1:0} }^{${2:\\infty}}$3", options: "mA"},
+	{trigger: "sum", replacement: "\\sum\\limits_{${0:n=1}}^{${1:\\infty}}$2", options: "mA"},
 	{trigger: "prod", replacement: "\\prod\\limits_{${0:n}=${1:0} }^{${2:\\infty}}$3", options: "mA"},
 	{trigger: "lim", replacement: "\\lim\\limits_{ ${0:n} \\to ${1:\\infty} } $2", options: "mA"},
 	{trigger: "+-", replacement: "\\pm", options: "mA"},

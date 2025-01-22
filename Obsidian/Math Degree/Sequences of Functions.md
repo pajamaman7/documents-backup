@@ -15,6 +15,11 @@ Let $\{ f_n \}$ be a sequence of bounded functions convergent to $f(x)$, then $f
 ## Continuity
 If $\{ f_n \}$ is a sequence of continuous bounded functions which is uniformly convergent to $f(x)$, then $f(x)$ is bounded and continuous.
 ## Derivatives
+Let $\{ f_n \}$ be a sequence of functions, [[Differentiable]] in $[a,b]$ and $\{ f_n' \}$ convergent to a function $g$. Let $c\in[a,b]$ such that $\{f_n(c)\}$ converges.
+Then:
+- $f_n$ converges in $[a,b]$ to $f$
+- $f=\lim\limits_{ n \to \infty }f_n$ is differentiable in $[a,b]$
+- $f'=g$
 ## Integrals
 Let $\{ f_n \}$ be a sequence of functions, each Riemann integrable in $[a,b]$, and $f_n$ convergent uniformly to $f$ on $[a,b]$. Then
 $$
