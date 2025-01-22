@@ -1,3 +1,7 @@
+---
+aliases:
+  - Sequence of Functions
+---
 # Real Case
 ## Convergence
 Let $E\subseteq \mathbb{R}$ and $\{ f_n \}_{n\geq 1}$ be a sequence of functions from $E$ to $\mathbb{R}$. 
@@ -9,6 +13,11 @@ Let $\{ f_n \}, \{ g_n \},\{ h_n \}$ be sequences of functions $X\to\mathbb{R}$ 
 ## Boundedness
 Let $\{ f_n \}$ be a sequence of bounded functions convergent to $f(x)$, then $f$ is a bounded function and $\{ f_n \}$ is uniformly bounded, there is some $M\in\mathbb{R}$ so that $|f_n(x)|<M$ for all $x\in X$ and $n\geq 1$.
 ## Continuity
-If $\{ f_n \}$ is a sequence of continuous bounded functions which is uniformly convergent to $f(x)$, then $f(x)$ is bounded and convergent.
+If $\{ f_n \}$ is a sequence of continuous bounded functions which is uniformly convergent to $f(x)$, then $f(x)$ is bounded and continuous.
 ## Derivatives
 ## Integrals
+Let $\{ f_n \}$ be a sequence of functions, each Riemann integrable in $[a,b]$, and $f_n$ convergent uniformly to $f$ on $[a,b]$. Then
+$$
+\lim\limits_{ n \to \infty } \int_{a}^{b} f_n(x) \, dx =\int_{a}^{b} f(x) \, dx 
+$$
+In fact, the convergence of $f_n$ is superfluous, a proof exists for the [[Lebesgue Integral]] without this condition, called the [[Bounded Convergence Theorem]] 

@@ -45,29 +45,36 @@
       \item Show that $[T]_{\mathcal{B}\mathcal{D}}$ is a linear isomorphism from $L(V,W)$ (the vector space of linear maps from $V$ to $W$) to $M_{mn}(\mathbb{C})$ (vector space of $m \times n$ complex matrices).
           \paragraph{Linearity: }Let $T,S$ be linear from $V$ to $W$. Then:
           \begin{align*}
-              [T+S]_{\mathcal{B}\mathcal{D}}&= \left[ [(T+S)\vec{b}_1]\ldots [(T+S)\vec{b}_n] \right] _\mathcal{D}\\
-               &= \left[ [(T\vec{b}_1+S\vec{b}_1)]\ldots [(T\vec{b}_n+S\vec{b}_n)] \right]_\mathcal{D} \\
-               &= \left[ [T\vec{b}_1]\ldots [T\vec{b}_n] \right] _\mathcal{D}+ \left[ [S\vec{b}_1]\ldots [S\vec{b}_n] \right] _\mathcal{D}&\text{By Linearity of }[\cdot]_\mathcal{D}\\
+              [T+S]_{\mathcal{B}\mathcal{D}}&= \left[ [(T+S)\vec{b}_1]_\mathcal{D} \ldots [(T+S)\vec{b}_n]_\mathcal{D}  \right] \\
+               &= \left[ [(T\vec{b}_1+S\vec{b}_1)]_\mathcal{D} \ldots [(T\vec{b}_n+S\vec{b}_n)]_\mathcal{D}  \right]\\
+               &= \left[ [T\vec{b}_1]_\mathcal{D}\ldots [T\vec{b}_n]_\mathcal{D} \right] + \left[ [S\vec{b}_1]_\mathcal{D}\ldots [S\vec{b}_n]_\mathcal{D} \right] &\text{By Linearity of }[\cdot]_\mathcal{D}\\
                &=  [S]_{\mathcal{B}\mathcal{D}} +[T]_{\mathcal{B}\mathcal{D}} 
           .\end{align*}
           And then letting $\alpha\in \mathbb{C}$,
            \begin{align*}
-               \alpha[T]_{\mathcal{B}\mathcal{D}}&=\alpha\left[ [T\vec{b}_1]\ldots[T\vec{b}_n] \right] _\mathcal{D}\\
-                         &=\left[ \alpha[T\vec{b}_1]\ldots\alpha[T\vec{b}_n] \right]_\mathcal{D} &\text{Linearity of }[\cdot]_{\mathcal{D}} \\
-                         &=\left[ [\alpha T\vec{b}_1]\ldots[\alpha T\vec{b}_n]\right] _\mathcal{D} \\
+               \alpha[T]_{\mathcal{B}\mathcal{D}}&=\alpha\left[ [T\vec{b}_1]_\mathcal{D}\ldots[T\vec{b}_n]_\mathcal{D} \right] \\
+                         &=\left[ \alpha[T\vec{b}_1]_\mathcal{D} \ldots\alpha[T\vec{b}_n]_\mathcal{D}  \right]&\text{Linearity of }[\cdot]_\mathcal{D}\\
+                         &=\left[ [\alpha T\vec{b}_1]_\mathcal{D} \ldots[\alpha T\vec{b}_n]_\mathcal{D} \right] \\
                &= [\alpha T]_{\mathcal{B}\mathcal{D}} 
           .\end{align*}
-          %TODO notation for matrix representation is wrong here
-          \paragraph{Isomorphism: } %TODO Better to find an inverse or do kernel zero? Instinct says inverse sending the basis representation to its linear combination. Ker not that bad but the dimension argument is weird.
+          \paragraph{Isomorphism: } %TODO Better to find an inverse or do kernel zero? Instinct says inverse sending the basis representation to its linear combination. Ker not that bad but the dimension argument is weird. Math exchange says that it's necessary to find the isomorphism in order to prove the same dimension anyways
       \end{enumerate}
     \item Let $V$, $W$ and $U$ be finite dimensional vector spaces with given bases: 
 
         $\mathcal{B} = \{\vec{b}_1,\ldots,\vec{b}_n\}, \mathcal{D} = \{\vec{d}_1,\ldots,\vec{d}_m\}, \text{ and } \mathcal{F} = \{f_1,\ldots,f_k\}$, respectively. Suppose $T : V \to W$ and $S : W \to U$ are linear. Prove or disprove the following statement for the composition linear map  $ST : V \to U$:
       \[
-      [ST]_{\mathcal{B}\mathcal{F}}=[S]_{\mathcal{DF}}[T]_{\mathcal{B}\mathcal{D}}.
+      [ST]_{\mathcal{B}\mathcal{F}}=[S]_{\mathcal{DF}}[T]_{\mathcal{B}\mathcal{D}}
       .\] 
-      \paragraph{Solution: }%I made a really big matrix working on this earlier i think there's probably a better way...
-\item Let $V$ be a finite dimensional vector space and $T : V \to V$ be linear. Show that $\sigma(T)=\sigma([T]_{\mathcal{B}})$ where $\mathcal{B}$ is any basis for $V$.
+
+      \paragraph{Solution: }%TODO is this way good????
+      We make great use of the property shown in 1(b). Where it is used will be marked with $(*)$. Let $v\in V$ be arbitrary and recall that $[v]_{\mathcal{B}}$ is unique since $[\cdot ]_\mathcal{B}$ is an isomorphism. 
+      \begin{align*}
+          [ST]_{\mathcal{B}\mathcal{F}}[v]_\mathcal{B}&= [STv]_\mathcal{F}&(*) \\
+                                              &= [S]_{\mathcal{D}\mathcal{F}}[Tv]_{\mathcal{D}}&(*) \\
+                                              &= [S]_{\mathcal{D}\mathcal{F}}[T]_{\mathcal{B}\mathcal{D}}[v]_\mathcal{B}&(*) 
+      \end{align*}
+      So we have shown that these matrices $[ST]_{\mathcal{B}\mathcal{F}}$ and  $[S]_{\mathcal{DF}}[T]_{\mathcal{B}\mathcal{D}} $ agree upon all vectors in the image of $[\cdot ]_\mathcal{B}$. However since this particular mapping is onto, we know this to be all of  $\mathbb{C}^{n}$. This means the matrices agree upon all of $\mathbb{C}^{n}$ and therefore they must be equal. 
+  \item Let $V$ be a finite dimensional vector space and $T : V \to V$ be linear. Show that $\sigma(T)=\sigma([T]_{\mathcal{B}})$ where $\mathcal{B}$ is any basis for $V$.
     \paragraph{Solution:} $\subseteq $: Let $ \lambda\in \sigma(T)$, and let $\vec{v}$ be an associated eigenvector. We show that $[\vec{v}]_\mathcal{B}$ is an eigenvector for $\lambda$ under $[T]_\mathcal{B}$.
     \begin{align*}
         [T]_\mathcal{B}[\vec{v}]_\mathcal{B}&= [T\vec{v}]_\mathcal{B}&\text{By 1(b)} \\
@@ -75,8 +82,7 @@
                                             &= \lambda[ \vec{v}]_\mathcal{B} &[\cdot ]_\mathcal{B}\text{ is linear }
     .\end{align*}
 
-    %TODO ask about the notation for the inverse map, whether there is a common convention?
-    $\supseteq$: Let $\tau$ be an eigenvalue of $[T]_B$ with associated eigenvector  $\vec{y}$. Since  $[\cdot ]_\mathcal{B}$ is an isomorphism, $\vec{y}$ has a unique preimage under the mapping, say $\vec{x}$ so that $[\vec{x}]_\mathcal{B}=\vec{y}$. Recall that $[\cdot ]_\mathcal{B}$ also must have an inverse. Denote this $[\cdot ]^{-1}_\mathcal{B}$ for lack of better notation.
+    $\supseteq$: Let $\tau$ be an eigenvalue of $[T]_B$ with associated eigenvector  $\vec{y}$. Since  $[\cdot ]_\mathcal{B}$ is an isomorphism, $\vec{y}$ has a unique preimage under the mapping, say $\vec{x}$ so that $[\vec{x}]_\mathcal{B}=\vec{y}$. Recall that $[\cdot ]_\mathcal{B}$ also must have an inverse. Denote this $[\cdot ]^{-1}_\mathcal{B}$. %TODO who says this inverse is necessarily linear?
     \begin{align*}
         T\vec{x}&=[[T\vec{x} ]_\mathcal{B}]^{-1}_\mathcal{B}\\
                 &= [[T]_\mathcal{B}[\vec{x}]_\mathcal{B}]_\mathcal{B}^{-1}&\text{Again by 1(b)} \\
@@ -98,11 +104,17 @@
     \paragraph{$\impliedby$:} Conversely, if $A=I$, then take the invertible matrix $I$, so that $IAI^{-1}=A=I$, and since $I$ is diagonal, $A$ is diagonalizable. 
 
 \item Determine whether or not the derivative map $D : P_n \rightarrow P_n$ given by $Dp(z) = p'(z)$ is diagonalizable.
-    %TODO nilpotent proof?
-    \paragraph{Claim: }The derivative map defined above is nilpotent; the $k+1$-th derivative of 
-  Proceed by induction on the degree of $p$. If $p$ has degree $0$, then $p$ is constant and has zero derivative, and as such, any subsequent derivative will be zero.
+    \paragraph{Claim: }The derivative map defined above is nilpotent; the $k+1$-th derivative of a polynomial of degree $k\in C[x]$ is identically zero. 
+    \begin{proof} [Proof of claim:]
+        
+  Proceed by induction on the degree of $p$. 
+  \paragraph{Base case:} If $p$ has degree $0$, then $p$ is constant and has zero derivative, and as such, any subsequent derivative will be zero.
+  \paragraph{Inductive hypothesis:} Suppose that the $k$-th derivative of any  $p \in \mathbb{C}[x]$ with 
 
-  \paragraph{Solution: } The derivative map is nilpotent on polynomial spaces; hence it is not diagonalizable.
+  $\deg p=k-1$ is identically zero.
+  \paragraph{Inductive step:} Let $f(x)\in \mathbb{C}[x]$ be of degree $k$. Write $f(x)=a_0+a_1x+\ldots+a_kx^{k}$ for complex $a_i$ . Then $Df(x)=a_1+2a_2+\ldots+ka_nx^{k-1}$. And since this polynomial $Df$ is of degree $k-1$, by the inductive hypothesis the $k$-th derivative of this must be zero, and \newline $D^{k+1}f=D(D^{k}f)=0$. Therefore by induction on $\deg f$, the derivative operator is nilpotent on $\mathbb{C}[x]$
+    \end{proof}
+  \paragraph{Solution: } The derivative map is nilpotent on $\mathbb{C}[x]$, and since nilpotent operators are not diagonalizable, the derivative operator is not diagonalizable
 
 \end{enumerate}
 \end{document}

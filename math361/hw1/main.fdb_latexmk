@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737359016.71597 "main.tex" "main.pdf" "main" 1737359017.09935 0
+["pdflatex"] 1737502029.14605 "main.tex" "main.pdf" "main" 1737502029.53921 0
   "/usr/share/texmf-dist/fonts/enc/dvips/arev/arevoml.enc" 1736268207 2921 ae68ca7d9a4902b5e8c8b47846fadadb ""
   "/usr/share/texmf-dist/fonts/enc/dvips/arev/arevoms.enc" 1736268207 3537 5668d9ed3132b78b010223039ece2e6f ""
   "/usr/share/texmf-dist/fonts/enc/dvips/arev/arevot1.enc" 1736268207 3020 a1ac7e8d91c840af41a220ec7126413f ""
@@ -19,6 +19,8 @@
   "/usr/share/texmf-dist/fonts/tfm/public/arev/favmri7m.tfm" 1736268207 1364 7c90fbe96380b3f11c507b958aebb5a2 ""
   "/usr/share/texmf-dist/fonts/tfm/public/arev/favr8r.tfm" 1736268207 1540 32499ec35e48be8e0fc7ff8a5f99c0f7 ""
   "/usr/share/texmf-dist/fonts/tfm/public/arev/favr8t.tfm" 1736268207 13328 79144f6b1df0d0593b37dbdc91c692a6 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/arev/favri8r.tfm" 1736268207 1684 c7eb01e5300fd8036453ad8b07e9d35a ""
+  "/usr/share/texmf-dist/fonts/tfm/public/arev/favri8t.tfm" 1736268207 5988 e3bdd88271e7a056382bae1b8392bfea ""
   "/usr/share/texmf-dist/fonts/tfm/public/arev/zavmr7t.tfm" 1736268207 3416 f724efb245dc7ec50ba083ecc80b06ab ""
   "/usr/share/texmf-dist/fonts/tfm/public/arev/zavmr7y.tfm" 1736268207 1628 ac115d0844ebb158e2fa27ac1de24cb4 ""
   "/usr/share/texmf-dist/fonts/tfm/public/arev/zavmri7m.tfm" 1736268207 2252 d463bfcb21ba8e19c26d249d595f82a1 ""
@@ -41,6 +43,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb" 1736268207 33357 275501d693c4e1260cf31ec6e7949f38 ""
   "/usr/share/texmf-dist/fonts/vf/public/arev/favb8t.vf" 1736268207 2400 3a91f84494f7ba0b2d4f817d92ed11bb ""
   "/usr/share/texmf-dist/fonts/vf/public/arev/favr8t.vf" 1736268207 2392 55a4438d965908a0abf1bb02a45b438c ""
+  "/usr/share/texmf-dist/fonts/vf/public/arev/favri8t.vf" 1736268207 2400 0b61187bf93935f1c4eab043a82371bf ""
   "/usr/share/texmf-dist/fonts/vf/public/arev/zavmr7t.vf" 1736268207 1348 df271f4d810104a732df19d6f2889618 ""
   "/usr/share/texmf-dist/fonts/vf/public/arev/zavmr7y.vf" 1736268207 1364 a3a6fb37c76fd2592e1aef4b2867e0c1 ""
   "/usr/share/texmf-dist/fonts/vf/public/arev/zavmri7m.vf" 1736268207 1408 f4d599d182e3f6b917196734e9bb99c4 ""
@@ -167,8 +170,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1736268207 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736377622.99067 5318467 8236939515598d005dfbcc2e1a40f206 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736377602 7113022 36e1537e2f36d278ce4a5bbed18eaff3 ""
-  "main.aux" 1737359017.04973 1000 84340ed53766aa2ea8dad97524e7778f "pdflatex"
-  "main.tex" 1737359015.81306 8809 1c614535f3731e662f360594f05fa71d ""
+  "main.aux" 1737502029.48447 1356 027bb31fd412637926bb8236e0eb8c0c "pdflatex"
+  "main.tex" 1737502027.63105 10520 2a3c2c2147fcd6b43d4756e6727dbc65 ""
   "preamble.tex" 1734376725.30389 823 cd6a1d7ba244297766a454fe8bbbfa84 ""
   (generated)
   "main.aux"

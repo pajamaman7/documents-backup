@@ -45,15 +45,15 @@ public class Main {
         if (n<=1) {
             return FM;
         }
-        // Recursive call to matrixPower
-        FM=matrixPower(FM, n/2);
+        // Recursive call to matrixPower, change variable so as not to affect the output
+        int[][] NM=matrixPower(FM, n/2);
+        //Square FM
+        NM=multiplyMatrices(NM,NM);
         // If n is odd, muliply FM by the base matrix
         if (n%2==1) {
-            FM=multiplyMatrices(FM,M);
+            NM=multiplyMatrices(NM,M);
         }
-        //Square FM
-        FM=multiplyMatrices(FM,FM);
-        return FM;
+        return NM;
     }
 
     /**

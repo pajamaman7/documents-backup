@@ -41,7 +41,7 @@ public class Main {
             a=tmp;
         }
         // Return the nth Fibonacci number (stored in `b` after the loop)
-        return a; // Placeholder return value
+        return b; // Placeholder return value
     }
 
     /**
