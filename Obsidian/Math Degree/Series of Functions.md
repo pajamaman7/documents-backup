@@ -9,3 +9,6 @@ We say that $\sum\limits_{n=1 }^{\infty}f_n$ is absolutely convergent in $E\subs
 The series $\sum\limits_{n=1}^{\infty}f_n(x)$ converges uniformly in $E\subseteq \mathbb{R}$ if and only if: For ever $\varepsilon>0$, there exists $N\in\mathbb{N}$: $m>n\geq N\implies \left|\sum\limits_{k=n}^{m}f_k(x)\right|<\varepsilon \forall x\in E$.
 ## Weierstrass Comparison Test
 Let $\{ f_n \}$ be a [[Sequences of Functions|Sequence of Functions]] from $E\subseteq \mathbb{R}$ to $\mathbb{R}$. If there exists a sequence of positive numbers $\{ u_n \}$ such that $|f_n(x)|<u_n$, $\forall n\geq N_{0}\forall x\in E$, and $\sum\limits_{n=1}^{\infty}u_n$ converges.
+## Abel's Summation Formula
+Let $\{ u_n \}$ and $\{ v_n \}$ be sequences in $\mathbb{R}$, and $U_n=\sum\limits_{k=1}^{n}u_k$.
+$\sum\limits_{k=n}^{m}u_kv_k=U_mv_m-U_nv_{n+1}+\sum\limits_{k=n+1}^{m-1}U_k(u_k-u_{k+1})$

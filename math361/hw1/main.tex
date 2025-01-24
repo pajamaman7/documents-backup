@@ -30,7 +30,7 @@
           \[
           \vec{x}=0\vec{b}_1+\ldots+0\vec{b}_n=0
           .\] 
-          So $\ker[\cdot ]_\mathcal{B}=\{0\} $, and this map is injective. But since the spaces are of the same dimension it must also be surjective. So the map is a linear isomorphism from $V$ to $\mathbb{C}^{n}$. 
+          So $\ker[\cdot ]_\mathcal{B}=\{0\} $, and this map is injective. But since the spaces are of the same dimension it must also be surjective thanks to Rank-Nullity. So the map is a linear isomorphism from $V$ to $\mathbb{C}^{n}$. 
         \item Let $T : V \to W$ be a linear map. In class, we defined the matrix representation of $T$ with respect to $\mathcal{B}$ and $\mathcal{D}$ as the $m \times n$ matrix $[T]_{\mathcal{B}\mathcal{D}} = [[T\vec{b}_1]_{\mathcal{D}},\ldots,[T\vec{b}_n]_{\mathcal{D}}].$ In other words, the $j$-the column of $[T]_{\mathcal{B}\mathcal{D}}$ is $[T\vec{b}_j]_{\mathcal{D}}.$ Show that $[T]_{\mathcal{B}\mathcal{D}}[\vec{x}]_{\mathcal{B}}=[T\vec{x}]_{\mathcal{D}}$ for any $\vec{x} \in V$.
             \paragraph{Solution: }Let $T:V\to W$ be linear, then write $\vec{x}=a_1\vec{b}_1+\ldots+a_n\vec{b_n}$.
             \begin{align*}
@@ -57,7 +57,7 @@
                          &=\left[ [\alpha T\vec{b}_1]_\mathcal{D} \ldots[\alpha T\vec{b}_n]_\mathcal{D} \right] \\
                &= [\alpha T]_{\mathcal{B}\mathcal{D}} 
           .\end{align*}
-          \paragraph{Injective: } %TODO Better to find an inverse or do kernel zero? Instinct says inverse sending the basis representation to its linear combination. Ker not that bad but the dimension argument is weird. Math exchange says that it's necessary to find the isomorphism in order to prove the same dimension anyways
+          \paragraph{Injective: } %TODO in the surjective part an inverse was found; perhaps it's fine to prove with that?
           
           Clearly  $0\in \ker[\cdot ]_{\mathcal{BD}}$; take any transformation $T$ and $[0]_{\mathcal{BD}}=[T-T]_{\mathcal{BD}}=[T]_{\mathcal{BD}}-[T]_{\mathcal{BD}}=0$ .
 
@@ -69,7 +69,17 @@
       Then $[Tb_i]_{\mathcal{D}}=0$ for any basis vector $b_i$. In particular this means that $TB_i=0$, since $[\cdot ]_\mathcal{D}$ is an isomorphism. Now for any arbitrary $v\in V,$ write $v=a_1b_1+\ldots a_nb_n$. Then $Tv=T(a_1b_1+\ldots a_n b_n)=a_1Tb_1+\ldots+a_nTb_n=0+\ldots+0=0$ and $T=0$.
 
       Therefore $\ker[\cdot ]_{\mathcal{BD}}=\{0\} $.
-      \paragraph{Surjective:} The argument that $\dim L(V,W)=\dim M_{mn}(\mathbb{C})$ proves difficult, so instead we show directly that $[L(V,W)]_{BD}=M_{mn}(\mathbb{C})$
+      \paragraph{Surjective:} The argument that $\dim L(V,W)=\dim M_{mn}(\mathbb{C})$ proves difficult, so instead we show directly that $[L(V,W)]_{BD}=M_{mn}(\mathbb{C})$.
+
+      Let $A\in M_{mn}(\mathbb{C})$, and write $A=\begin{bmatrix} \vec{a}_1\ldots\vec{a}_n \end{bmatrix} $, where $\vec{a}_j$ are column vectors in $\mathbb{C}^m$. Then take the inverse map for $[\cdot ]_{D}$ (which was shown to exist in 1(a)), denote it $[\cdot ]_{D}^{-1}$ and define $T$ on the basis vectors in $\mathcal{B}$ such that $Tb_j=[\vec{a}_j]_\mathcal{D}^{-1}$. Then: 
+      \begin{align*}
+          [T]_{\mathcal{BD}}&= \left[[Tb_1]_\mathcal{D}\ldots[Tb_n]_\mathcal{D}\right] \\
+                            &= \left[\left[ [\vec{a}_1]_\mathcal{D}^{-1}\right]_\mathcal{D}\ldots\left[[\vec{a}_n]_\mathcal{D}^{-1}\right]_\mathcal{D} \right] \\
+                            &= \begin{bmatrix} \vec{a}_1\ldots\vec{a}_n \end{bmatrix}  \\
+                            &=A
+      .\end{align*}
+      So every arbitrary matrix has a preimage in the space of linear transformations, and therefore the mapping is onto. Since $[\cdot ]_{\mathcal{BD}}$ is bijective and linear, it must then be an isomorphism. 
+
       \end{enumerate}
     \item Let $V$, $W$ and $U$ be finite dimensional vector spaces with given bases: 
 
@@ -78,8 +88,9 @@
       [ST]_{\mathcal{B}\mathcal{F}}=[S]_{\mathcal{DF}}[T]_{\mathcal{B}\mathcal{D}}
       .\] 
 
-      \paragraph{Solution: }%TODO is this way good????
+      \paragraph{Solution: } 
       We make great use of the property shown in 1(b). Where it is used will be marked with $(*)$. Let $v\in V$ be arbitrary and recall that $[v]_{\mathcal{B}}$ is unique since $[\cdot ]_\mathcal{B}$ is an isomorphism. 
+      %The plan was to mark this property wherever it was used, however it is used in every equality in the next formula.
       \begin{align*}
           [ST]_{\mathcal{B}\mathcal{F}}[v]_\mathcal{B}&= [STv]_\mathcal{F}&(*) \\
                                               &= [S]_{\mathcal{D}\mathcal{F}}[Tv]_{\mathcal{D}}&(*) \\
@@ -87,6 +98,20 @@
       \end{align*}
       So we have shown that these matrices $[ST]_{\mathcal{B}\mathcal{F}}$ and  $[S]_{\mathcal{DF}}[T]_{\mathcal{B}\mathcal{D}} $ agree upon all vectors in the image of $[\cdot ]_\mathcal{B}$. However since this particular mapping is onto, we know this to be all of  $\mathbb{C}^{n}$. This means the matrices agree upon all of $\mathbb{C}^{n}$ and therefore they must be equal. 
   \item Let $V$ be a finite dimensional vector space and $T : V \to V$ be linear. Show that $\sigma(T)=\sigma([T]_{\mathcal{B}})$ where $\mathcal{B}$ is any basis for $V$.
+      \paragraph{Linearity of inverse:} 
+      Let $T,S\in L(V,V)$ and $\alpha\in \mathbb{C}$ .
+      \begin{align*}
+          [T]_\mathcal{B}^{-1}+[S]_{\mathcal{B}}^{-1}&=
+          [[[T]_\mathcal{B}^{-1}+[S]_{\mathcal{B}}^{-1}]_\mathcal{B}]_\mathcal{B}^{-1}\\
+         &=[[[T]_\mathcal{B}^{-1}]_\mathcal{B}+[[S]_{\mathcal{B}}^{-1}]_\mathcal{B}]_\mathcal{B}^{-1}\\
+         &=[T+S]_\mathcal{B}^{-1}
+      .\end{align*}
+      \begin{align*}
+          \alpha[T]_\mathcal{B}^{-1}&= [[\alpha[T]_\mathcal{B}^{-1}]_\mathcal{B}]_\mathcal{B}^{-1} \\ 
+                                    &= [\alpha[[T]_\mathcal{B}^{-1}]_\mathcal{B}]_\mathcal{B}^{-1} \\ 
+                                    &= [\alpha T]_\mathcal{B}^{-1} 
+      .\end{align*}
+      %TODO This comes out of nowhere fix that
     \paragraph{Solution:} $\subseteq $: Let $ \lambda\in \sigma(T)$, and let $\vec{v}$ be an associated eigenvector. We show that $[\vec{v}]_\mathcal{B}$ is an eigenvector for $\lambda$ under $[T]_\mathcal{B}$.
     \begin{align*}
         [T]_\mathcal{B}[\vec{v}]_\mathcal{B}&= [T\vec{v}]_\mathcal{B}&\text{By 1(b)} \\

@@ -26,7 +26,7 @@
       Now, if $x\in (0,1)$, then we observe that $\frac{1}{n}\to 0$, and $1-\frac{1}{n}\to 1$. Therefore the middle case of our piecewise function gives us $f(x)=1$ for all $x$ in this open interval. 
 
     \item Does $f_n\xrightarrow[{[0,1]}]{c.u}f$? Justify your answer.
-      \paragraph{Solution: }This sequence is not uniformly continuous. Pick $\varepsilon=\frac{1}{3}$, and let $N\in \mathbb{N}$, and $n>N$. Pick $\frac{1}{2n}$ so that $0\leq x\leq \frac{1}{n}$, and then $f_n(x)=nx=\frac{n}{2n}=\frac{1}{2}$. Then: $\left| f_n(x)-f(x) \right| = \left| \frac{1}{2}-1 \right|=\frac{1}{2}>\varepsilon$.
+      \paragraph{Solution: }This sequence is not uniformly continuous. Pick $\varepsilon=\frac{1}{3}$, and let $N\in \mathbb{N}$, and $n>N$. Pick $x=\frac{1}{2n}$ so that $0\leq x\leq \frac{1}{n}$, and then $f_n(x)=nx=\frac{n}{2n}=\frac{1}{2}$. Then: $\left| f_n(x)-f(x) \right| = \left| \frac{1}{2}-1 \right|=\frac{1}{2}>\varepsilon$.
 
         Therefore the sequence is not uniformly continuous.
 
@@ -45,8 +45,7 @@
   .\] 
   What happens if $a=0$?
 
-  We begin by considering our sequence of functions within the integral. Call this
-  $g_n(x) =\frac{\sin(nx)}{nx}$. Note that since $-1\leq\sin(nx)\leq 1$, we can find (for nonzero $x$) that $-\frac{1}{nx}\leq g_n(x)\leq \frac{1}{nx}$. Both the sequences bounding $g$ have a zero limit at infinity, so by the squeeze theorem on sequences of functions, we can say that for nonzero $x$, $g_n\to 0$.
+  We begin by considering our sequence of functions within the integral, each of which is a quotient of continuous functions, and is itself continuous (for all but $x=0$). Call this $g_n(x) =\frac{\sin(nx)}{nx}$. Note that since $-1\leq\sin(nx)\leq 1$, we can find (for nonzero $x$) that $-\frac{1}{nx}\leq g_n(x)\leq \frac{1}{nx}$. Both the sequences bounding $g$ have a zero limit at infinity, so by the squeeze theorem on sequences of functions, we can say that for nonzero $x$, $g_n\to 0$.
   %TODO x=0 case, show if each g_n is integrable?
   Now since we have already shown that our sequence $g_n$ is bounded, and since each $g_n$ is integrable, we can say:
 
@@ -70,6 +69,7 @@
   %TODO Discontinuous everywhere?
   \paragraph{Claim:}  $\{f_n\} $ converges uniformly to the constant function $0$, which we know to be continuous on the real line, as well as $[0,1]$. 
 
+  %TODO is this archimedes???
   Let $\varepsilon>0$, and choose (By Archimedian Principle), $N$ such that $0<\frac{1}{N}<\varepsilon$.
   Then any $n\geq N$ will have $0<\frac{1}{n}<\frac{1}{N}<\varepsilon$. Now by cases, if $x\in \mathbb{Q}$, then we have 
   \[
@@ -84,9 +84,10 @@
 \item Consider the series of functions $\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$.
   \begin{enumerate}
     \item Show that the series converges uniformly in the interval $[0,b]$ for any $b>0$.
-        %TODO bound this above? by what?
+        Bounded above by $\frac{b}{n^2}$
 
     \item Let $F(x)=\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$. Show that $F'(x)=\sum_{n\geq 1}^{} \frac{1}{n(n+x)^2}$, $x\geq 0$.
+        %TODO is it as easy as using the linearity of the derivative on the partial sums? Or the Cauchy m to n? 
 
   \end{enumerate}
 \item Consider the series of functions $\sum_{n\geq 1}^{} \frac{x}{1+n^2x^2}$. Show that the series doesn't converge uniformly in $\mathbb{R}_+$.

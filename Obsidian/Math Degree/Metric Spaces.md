@@ -1,3 +1,8 @@
+---
+aliases:
+  - Metric Space
+  - Metric
+---
 A Metric space is one on which a distance function $d$ is defined on any two points $p,q$, satisfying:
 - $d(p,q)>0$ provided that $p\neq q$.
 - $d(p,q)=d(q,p)$.
