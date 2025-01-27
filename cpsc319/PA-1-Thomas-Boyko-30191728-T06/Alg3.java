@@ -23,8 +23,8 @@ public class Main {
      * @param B the second matrix
      * @return the resulting matrix after multiplication
      */
-    private static int[][] multiplyMatrices(int[][] A, int[][] B) {
-        int [][] result = {{0,0},{0,0}};
+    private static long[][] multiplyMatrices(long[][] A, long[][] B) {
+        long [][] result = {{0,0},{0,0}};
         // Perform multiplication on all entries of the result matrix
         result[0][0] = A[0][0] * B[0][0] + A[0][1] * B[1][0];
         result[0][1] = A[0][0] * B[0][1] + A[0][1] * B[1][1];
@@ -38,15 +38,15 @@ public class Main {
      * @param FM the transformation matrix
      * @param n the power to which the matrix is raised
      */
-    private static int[][] matrixPower(int[][] FM, int n) {
+    private static long[][] matrixPower(long[][] FM, int n) {
         //Initialize base matrix for later multiplication
-        int[][] M = {{1, 1}, {1, 0}}; 
+        long[][] M = {{1, 1}, {1, 0}}; 
         // - If n <= 1, return as FM^1 is FM itself.
         if (n<=1) {
             return FM;
         }
         // Recursive call to matrixPower, change variable so as not to affect the output
-        int[][] NM=matrixPower(FM, n/2);
+        long[][] NM=matrixPower(FM, n/2);
         //Square FM
         NM=multiplyMatrices(NM,NM);
         // If n is odd, muliply FM by the base matrix
@@ -62,14 +62,14 @@ public class Main {
      * @param n the position in the Fibonacci sequence
      * @return the nth Fibonacci number
      */
-    public static int fibonacci(int n) {
+    public static long fibonacci(int n) {
         //Handle base case for n = 0 (return 0).
         if (n==0) {
             return 0;
         }
 
         // Initialize the transformation matrix:
-        int[][] FM = {{1, 1}, {1, 0}};
+        long[][] FM = {{1, 1}, {1, 0}};
 
         // Call matrixPower to compute FM^(n-1).
         FM=matrixPower(FM,n-1);
@@ -88,7 +88,7 @@ public class Main {
         // Initialize startTime based on useNanoTime
         long start=System.nanoTime();
         // Call the fibonacci method
-        int fib = fibonacci(n);
+        long fib = fibonacci(n);
         // Record the endTime and calculate elapsed time
         long end=System.nanoTime();
 

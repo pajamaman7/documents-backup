@@ -22,15 +22,15 @@ public class Main {
      * @param n the position in the Fibonacci sequence (non-negative integer)
      * @return the nth Fibonacci number
      */
-    public static int fibonacci(int n) {
+    public static long fibonacci(int n) {
         // Base Cases
         if (n==0) { return 0; }
         if (n==1) { return 1; }
         // Initialize variables `a` (F(0)) and `b` (F(1))
-        int a =0;
-        int b= 1;
+        long a =0;
+        long b= 1;
         // Create a temporary variable for switching a,b later
-        int tmp;
+        long tmp;
 
         // Use a loop to compute Fibonacci numbers sequentially from F(2) to F(n)
         for (int i=2; i<=n; i++) {
@@ -54,7 +54,7 @@ public class Main {
         // Initialize startTime based on useNanoTime
         long startTime=System.nanoTime();
         // Call the fibonacci method
-        int fib = fibonacci(n);
+        long fib = fibonacci(n);
         // Record the endTime and calculate elapsed time
         long endTime=System.nanoTime();
 

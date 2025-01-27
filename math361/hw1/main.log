@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.1.8)  24 JAN 2025 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.1.8)  26 JAN 2025 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -891,7 +891,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  118i,15n,118p,520b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Oblique.pfb></usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Roman.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7m.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7t.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7y.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb>
-Output written on main.pdf (4 pages, 96116 bytes).
+Output written on main.pdf (4 pages, 96308 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  53 compressed objects within 1 object stream

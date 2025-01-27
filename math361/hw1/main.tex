@@ -57,8 +57,7 @@
                          &=\left[ [\alpha T\vec{b}_1]_\mathcal{D} \ldots[\alpha T\vec{b}_n]_\mathcal{D} \right] \\
                &= [\alpha T]_{\mathcal{B}\mathcal{D}} 
           .\end{align*}
-          \paragraph{Injective: } %TODO in the surjective part an inverse was found; perhaps it's fine to prove with that?
-          
+          \paragraph{Injective: } 
           Clearly  $0\in \ker[\cdot ]_{\mathcal{BD}}$; take any transformation $T$ and $[0]_{\mathcal{BD}}=[T-T]_{\mathcal{BD}}=[T]_{\mathcal{BD}}-[T]_{\mathcal{BD}}=0$ .
 
       Ten let $\mathcal{B}=\{b_1,\ldots ,b_n\} $ and $T\in \ker [\cdot ]_\mathcal{BD} $. Then:
@@ -98,7 +97,7 @@
       \end{align*}
       So we have shown that these matrices $[ST]_{\mathcal{B}\mathcal{F}}$ and  $[S]_{\mathcal{DF}}[T]_{\mathcal{B}\mathcal{D}} $ agree upon all vectors in the image of $[\cdot ]_\mathcal{B}$. However since this particular mapping is onto, we know this to be all of  $\mathbb{C}^{n}$. This means the matrices agree upon all of $\mathbb{C}^{n}$ and therefore they must be equal. 
   \item Let $V$ be a finite dimensional vector space and $T : V \to V$ be linear. Show that $\sigma(T)=\sigma([T]_{\mathcal{B}})$ where $\mathcal{B}$ is any basis for $V$.
-      \paragraph{Linearity of inverse:} 
+      \paragraph{Linearity of inverse:} To show this we use the fact that $[\cdot ]_\mathcal{B}^{-1}$ is linear. Included is a brief demonstration of this fact. 
       Let $T,S\in L(V,V)$ and $\alpha\in \mathbb{C}$ .
       \begin{align*}
           [T]_\mathcal{B}^{-1}+[S]_{\mathcal{B}}^{-1}&=
@@ -111,7 +110,6 @@
                                     &= [\alpha[[T]_\mathcal{B}^{-1}]_\mathcal{B}]_\mathcal{B}^{-1} \\ 
                                     &= [\alpha T]_\mathcal{B}^{-1} 
       .\end{align*}
-      %TODO This comes out of nowhere fix that
     \paragraph{Solution:} $\subseteq $: Let $ \lambda\in \sigma(T)$, and let $\vec{v}$ be an associated eigenvector. We show that $[\vec{v}]_\mathcal{B}$ is an eigenvector for $\lambda$ under $[T]_\mathcal{B}$.
     \begin{align*}
         [T]_\mathcal{B}[\vec{v}]_\mathcal{B}&= [T\vec{v}]_\mathcal{B}&\text{By 1(b)} \\
@@ -119,7 +117,7 @@
                                             &= \lambda[ \vec{v}]_\mathcal{B} &[\cdot ]_\mathcal{B}\text{ is linear }
     .\end{align*}
 
-    $\supseteq$: Let $\tau$ be an eigenvalue of $[T]_B$ with associated eigenvector  $\vec{y}$. Since  $[\cdot ]_\mathcal{B}$ is an isomorphism, $\vec{y}$ has a unique preimage under the mapping, say $\vec{x}$ so that $[\vec{x}]_\mathcal{B}=\vec{y}$. Recall that $[\cdot ]_\mathcal{B}$ also must have an inverse. Denote this $[\cdot ]^{-1}_\mathcal{B}$. %TODO who says this inverse is necessarily linear?
+    $\supseteq$: Let $\tau$ be an eigenvalue of $[T]_B$ with associated eigenvector  $\vec{y}$. Since  $[\cdot ]_\mathcal{B}$ is an isomorphism, $\vec{y}$ has a unique preimage under the mapping, say $\vec{x}$ so that $[\vec{x}]_\mathcal{B}=\vec{y}$. Recall that $[\cdot ]_\mathcal{B}$ also must have an inverse. Denote this $[\cdot ]^{-1}_\mathcal{B}:M_{mn}(\mathbb{C})\to L(V,W)$. 
     \begin{align*}
         T\vec{x}&=[[T\vec{x} ]_\mathcal{B}]^{-1}_\mathcal{B}\\
                 &= [[T]_\mathcal{B}[\vec{x}]_\mathcal{B}]_\mathcal{B}^{-1}&\text{Again by 1(b)} \\

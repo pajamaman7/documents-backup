@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.1.8)  24 JAN 2025 14:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2025.1.8)  27 JAN 2025 13:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -889,9 +889,9 @@ Here is how much of TeX's memory you used:
  37966 multiletter control sequences out of 15000+600000
  585758 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 118i,13n,118p,523b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 118i,13n,118p,523b,360s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Bold.pfb></usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Oblique.pfb></usr/share/texmf-dist/fonts/type1/public/arev/ArevSans-Roman.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7t.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7y.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb>
-Output written on main.pdf (2 pages, 65250 bytes).
+Output written on main.pdf (2 pages, 66013 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream

@@ -20,7 +20,7 @@ public class Main {
      * @param n the position in the Fibonacci sequence (non-negative integer)
      * @return the nth Fibonacci number
      */
-    public static int fibonacci(int n) {
+    public static long fibonacci(int n) {
         // Base Cases
         if (n==0) { return 0; }
         if (n==1) { return 1; }
@@ -38,7 +38,7 @@ public class Main {
         // Initialize startTime based on useNanoTime
         long start=System.nanoTime();
         // Call the fibonacci method
-        int fib = fibonacci(n);
+        long fib = fibonacci(n);
         // Record the endTime and calculate elapsed time
         long end=System.nanoTime();
 

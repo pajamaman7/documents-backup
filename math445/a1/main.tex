@@ -84,7 +84,15 @@
 \item Consider the series of functions $\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$.
   \begin{enumerate}
     \item Show that the series converges uniformly in the interval $[0,b]$ for any $b>0$.
-        Bounded above by $\frac{b}{n^2}$
+
+        %Bounded above by $\frac{b}{n^2}$
+        \paragraph{Solution:} 
+        \begin{align*}
+            \frac{x}{n(n+x)}&= \frac{x}{n^2+nx} \\
+                            &\leq \frac{x}{n^2}\\
+                            &\leq \frac{b}{n^2}
+        .\end{align*}
+        Define $u_n=\frac{b}{n^2}$, then by the Weierstrass Comparison test, since $\sum_{n\geq 1}^{} u_n$ is convergent as a $p$-series with $p=2$, $\frac{x}{n(n+x)}\leq u_n$, this series must converge.
 
     \item Let $F(x)=\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$. Show that $F'(x)=\sum_{n\geq 1}^{} \frac{1}{n(n+x)^2}$, $x\geq 0$.
         %TODO is it as easy as using the linearity of the derivative on the partial sums? Or the Cauchy m to n? 
