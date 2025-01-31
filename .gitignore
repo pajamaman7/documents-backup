@@ -1,0 +1,6 @@
+# Ignoring non-pdf/tex files
+*.aux
+*.fdb_latexmk
+*.fls
+*.syctex.gz
+*.log
