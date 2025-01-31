@@ -4,6 +4,8 @@ aliases:
   - Orthogonal Basis
   - Orthonormal
   - Orthonormal Basis
+  - Gram-Schmidt Orthogonalization
+  - Projection
 ---
 - Two vectors in an [[Inner Product Space]] are said to be orthogonal if $\left< v,w \right>=0$. We may write $v\perp w$.
 - Two subspaces $V,W$ are orthogonal if $\left< v,w \right>=0$ for $v\in V,w\in W$. We may write $V\perp W$
@@ -30,4 +32,22 @@ Let $E$ be a subspace of a finite dimensional [[Inner Product Space]] $V$. For $
 - $P_Ev$ is unique
 - $\| v-P_Ev \|=\inf_{w\in E}\| v-w \|$
 ### Definition
-The projection above is given by $P_Ev=\sum\limits_{j=1}^{m} \frac{\left< v,v_j \right>}{\| v_j \|^{2}}v_j$
+The projection above is given by $P_Ev=\sum\limits_{j=1}^{m} \frac{\left< v,v_j \right>}{\| v_j \|^{2}}v_j$, for an orthogonal basis $\{ v_{1},\dots,v_n \}$ of $E$.
+### Properties
+- If $E=V$, $P_Ev=v$ is just the Fourier expansion of $v$ with respect to basis $v_{1},\dots,v_n$
+- $P_E:V\to E$ is a surjective [[Linear Operators|Linear Operator]].
+- $P_Ev\in E$.
+- If $v\in E$, $P_Ev=v$.
+- For any $v\in V$, $(v-P_Ev)\perp E$.
+- $\| v-P_Ev \|=\inf_{w\in E}\| v-w \|$
+- $P_Ev$ is independent of the choice of basis for $E$.
+### Decomposition of the Projection Operator
+For a subspace $E$ of $V$, $P_{E^{\perp}}=I-P_E$
+## Gram-Schmidt
+Suppose $\{ v_{1},\dots,v_n \}$ is [[Vector Spaces|Linearly independent]] in a [[Vector Spaces|Finite Dimensional]] [[Vector Spaces|Vector Space]]. Then there is an orthogonal system $e_{1},\dots,e_m$ so that $span\{ v_{1},\dots,v_n \}=span\{ e_{1},\dots,e_j \}$. The proof of this fact is constructive, we take:
+- $e_{1}=v_{1}$
+- $e_{2}=v_{2}-P_{e_{1}}v_{2}$
+- $e_{3}=v_{3}-P_{e_{1}}v_{3}-P_{e_{2}}v_{3}$
+- $e_k=v_k-P_{e_{1}}v_k-\dots-P_{e_{k-1}}v_k$
+## Decomposition of a space
+Suppose $E$ is a subspace of a vector space $V$. Then $V=E\oplus E^{\perp}$, where $E^{\perp}$ is the [[Orthogonality|Orthogonal]] complement of $E$.

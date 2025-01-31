@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sequences of Functions.md",
+                "file": "Multivariable Calculus.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sequences of Functions"
+              "title": "Multivariable Calculus"
             }
           },
           {
@@ -36,21 +36,7 @@
             }
           },
           {
-            "id": "aef144a0a25fc3b3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bounded Convergence Theorem.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Bounded Convergence Theorem"
-            }
-          },
-          {
-            "id": "88e5f2796d2e8501",
+            "id": "3b178ee5404cc72f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,17 +64,59 @@
             }
           },
           {
+            "id": "a2bf47cb9b55d1b4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Topology of R^n.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Topology of R^n"
+            }
+          },
+          {
             "id": "823e2dffaf6228a6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Orthogonality.md",
+                "file": "Adjoints.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Orthogonality"
+              "title": "Adjoints"
+            }
+          },
+          {
+            "id": "59a7bce9d9ebaef3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Internal Direct Sum of Vector Spaces.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Internal Direct Sum of Vector Spaces"
+            }
+          },
+          {
+            "id": "71a93be70143daeb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Vector Projection.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Vector Projection"
             }
           }
         ],
@@ -236,32 +264,32 @@
   },
   "active": "823e2dffaf6228a6",
   "lastOpenFiles": [
-    "Inner Product Space.md",
     "Orthogonality.md",
+    "Adjoints.md",
+    "Internal Direct Sum of Vector Spaces.md",
+    "Topology of R^n.md",
+    "Vector Projection.md",
+    "Inner Product Space.md",
     "Normed Vector Space.md",
-    "Bounded Convergence Theorem.md",
+    "Normed Topological Space.md",
     "Series of Functions.md",
+    "Topology.md",
+    "Metric Spaces.md",
+    "Multivariable Calculus.md",
     "Sequences of Functions.md",
+    "Heine-Borel Theorem.md",
+    "Bounded Convergence Theorem.md",
+    "Linear Operators.md",
     "Eigenvectors and Eigenvalues.md",
     "Matrix Representations of Linear Maps.md",
-    "Internal Direct Sum of Vector Spaces.md",
     "Big O Notation.md",
     "Power Series.md",
-    "Metric Spaces.md",
-    "Normed Topological Space.md",
     "List of Data Structures.md",
     "Lebesgue Integral.md",
     "Dot Product.md",
     "Riemann Integral.md",
     "Baire Category Theorem.md",
     "Riemann Stieljes Integral.md",
-    "Diagonalization.md",
-    "Bivariate Data Structures.md",
-    "Rank-Nullity Theorem.md",
-    "Linear Methods III.md",
-    "Invariant Subspaces.md",
-    "Fundamental Theorem of Algebra.md",
-    "Vector Spaces.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Pasted image 20240119100450.png",

@@ -26,9 +26,9 @@
       Now, if $x\in (0,1)$, then we observe that $\frac{1}{n}\to 0$, and $1-\frac{1}{n}\to 1$. Therefore the middle case of our piecewise function gives us $f(x)=1$ for all $x$ in this open interval. 
 
     \item Does $f_n\xrightarrow[{[0,1]}]{c.u}f$? Justify your answer.
-      \paragraph{Solution: }This sequence is not uniformly continuous. Pick $\varepsilon=\frac{1}{3}$, and let $N\in \mathbb{N}$, and $n>N$. Pick $x=\frac{1}{2n}$ so that $0\leq x\leq \frac{1}{n}$, and then $f_n(x)=nx=\frac{n}{2n}=\frac{1}{2}$. Then: $\left| f_n(x)-f(x) \right| = \left| \frac{1}{2}-1 \right|=\frac{1}{2}>\varepsilon$.
+      \paragraph{Solution: }This sequence is not uniformly convergent. Pick $\varepsilon=\frac{1}{3}$, and let $N\in \mathbb{N}$, and $n>N$. Pick $x=\frac{1}{2n}$ so that $0\leq x\leq \frac{1}{n}$, and then $f_n(x)=nx=\frac{n}{2n}=\frac{1}{2}$. Then: $\left| f_n(x)-f(x) \right| = \left| \frac{1}{2}-1 \right|=\frac{1}{2}>\varepsilon$.
 
-        Therefore the sequence is not uniformly continuous.
+        Therefore the sequence is not uniformly convergent.
 
   \end{enumerate}
 
@@ -36,6 +36,27 @@
 
   \begin{enumerate}
     \item Compute the pointwise limit $f$ of the sequence $\{f_n\} $.
+        \textbf{Hint:} Use the following double inequalities:
+        \[ 1-\frac{1}{2}t^2\leq \cos t\leq 1-\frac{1}{2}t^2+\frac{1}{24}t^4,\quad \forall t\in \mathbb{R} .\] 
+        \[ -t-t^2\leq\ln(1-t)\leq-t,\quad\forall t\in \left[0,\frac{1}{2}\right] .\] 
+        \paragraph{Solution: }Begin with the first inequality. 
+        \begin{align*}
+            1-\frac{1}{2}t^2&\leq \cos t\\
+            1-\frac{1}{2}\frac{4x^2}{n^2}&\leq \cos\left( \frac{2x}{n} \right) \\
+            -\frac{2x^2}{n^2}&\leq \cos\left( \frac{2x}{n} \right)-1 \\
+            1-\cos\left( \frac{2x}{n} \right) &\leq\frac{2x^2}{n^2}\\
+        .\end{align*}
+        And now using the second,
+        \[ \ln\left( 1-\cos\left( \frac{2x}{n} \right)  \right) \leq \cos\left( \frac{2x}{n} \right)-1 \leq -\frac{2x^2}{n^2}\\ .\] 
+        Since $\ln$ is monotonically increasing,
+        \begin{align*}
+            \ln\left( -\cos\left( \frac{2x}{n} \right)  \right) \leq \ln\left( 1-\cos\left( \frac{2x}{n} \right)  \right) &\leq -\frac{2x^2}{n^2} \\
+            n^2\ln\left( -\cos\left( \frac{2x}{n} \right)  \right) &\leq -2x^2 \\
+            \ln\left( -\cos^{n^2}\left( \frac{2x}{n} \right)  \right) &\leq -2x^2\\
+            \exp\left[   \ln\left( -\cos^{n^2}\left( \frac{2x}{n} \right)  \right) \right]&\leq e^{-2x^2}&\exp\text{ is monotonically increasing}\\
+              -\cos^{n^2}\left( \frac{2x}{n} \right)  &\leq e^{-2x^2}\\
+              \cos^{n^2}\left( \frac{2x}{n} \right)  &\leq e^{-2x^2}&\cos\text{ is an even function}
+        .\end{align*}
     \item Show that $f_n\xrightarrow[{[0,1]}]{c.u}f$.
   \end{enumerate}
 
@@ -66,11 +87,9 @@
       0&\text{Otherwise}
     \end{cases}
   \] 
-  %TODO Discontinuous everywhere?
   \paragraph{Claim:}  $\{f_n\} $ converges uniformly to the constant function $0$, which we know to be continuous on the real line, as well as $[0,1]$. 
 
-  %TODO is this archimedes???
-  Let $\varepsilon>0$, and choose (By Archimedian Principle), $N$ such that $0<\frac{1}{N}<\varepsilon$.
+  Let $\varepsilon>0$, and choose $N$ such that $0<\frac{1}{N}<\varepsilon$.
   Then any $n\geq N$ will have $0<\frac{1}{n}<\frac{1}{N}<\varepsilon$. Now by cases, if $x\in \mathbb{Q}$, then we have 
   \[
   |f_n(x)-f(x)|=\left|\frac{1}{n}-0\right|=\frac{1}{n}<\frac{1}{N}<\varepsilon
@@ -95,12 +114,55 @@
         Define $u_n=\frac{b}{n^2}$, then by the Weierstrass Comparison test, since $\sum_{n\geq 1}^{} u_n$ is convergent as a $p$-series with $p=2$, $\frac{x}{n(n+x)}\leq u_n$, this series must converge.
 
     \item Let $F(x)=\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$. Show that $F'(x)=\sum_{n\geq 1}^{} \frac{1}{n(n+x)^2}$, $x\geq 0$.
-        %TODO is it as easy as using the linearity of the derivative on the partial sums? Or the Cauchy m to n? 
+        %TODO Clarity on bringing derivative inside limit?
+        \paragraph{Solution: }
+        \begin{align*}
+            F'(x)&= \frac{d}{dx}\left(  \sum_{k=1}^{\infty} \frac{x}{k(k+x)}\right)  \\
+                &= \frac{d}{dx}\left( \lim_{n \to \infty} \sum_{k=1}^{n} \frac{x}{k(k+x)}\right)  \\
+                &= \lim_{n \to \infty}\left( \frac{d}{dx}\sum_{k=1}^{n} \frac{x}{k(k+x)}  \right)\\
+                &= \lim_{n \to \infty} \sum_{k=1}^{n} \frac{d}{dx}\frac{x}{k(k+x)}  \\
+                &= \lim_{n \to \infty} \sum_{k=1}^{n} \frac{k(x+k)-kx}{k^2(k+x)^2}  \\
+                &= \lim_{n \to \infty} \sum_{k=1}^{n} \frac{k}{k^2(k+x)^2}  \\
+                &= \lim_{n \to \infty} \sum_{k=1}^{n} \frac{1}{k(k+x)^2}  \\
+                &= \sum_{k=1}^{\infty} \frac{1}{k(k+x)^2} 
+        .\end{align*}
 
   \end{enumerate}
+  \newpage
 \item Consider the series of functions $\sum_{n\geq 1}^{} \frac{x}{1+n^2x^2}$. Show that the series doesn't converge uniformly in $\mathbb{R}_+$.
 
   \textbf{Hint:} You could start by showing that $\frac{x}{1+n^2x^2}\geq \int_{n}^{n+1} \frac{x}{1+t^2x^2} \, d t, \quad \forall x\in \mathbb{R}$.
   %Consider refinements?
+  \paragraph{Solution: }Begin with the hint. If we take $P_{0}=\{n,n+1\} $, the trivial partition on $[n,n+1]$, then we will have the upper sum:
+  \[
+       U\left(P_0,\frac{x}{1+t^2x^2}\right)=\sum_{k=1}^{1} \sup_{t\in [n,n+1]}\left( \frac{x}{1+t^2x^2} \right) ((n+1)-n)\\
+       = \frac{x}{1+n^2x^2} \\
+  .\] 
+  But from the definition of the Riemann integral, we have (For $\sigma$ the set of all partitions of $[n,n+1]$):
+  \begin{align*}
+      \int_{n}^{n+1} \frac{x}{1+t^2x^2} \, d t=&\inf_{P\in \sigma}U\left(P,\frac{x}{1+t^2x^2}\right)\\
+                        &\leq U\left( P_0,\frac{x}{1+t^2x^2} \right) \\
+      &= \frac{x}{1+n^2x^2}
+  .\end{align*}
+  Suppose by way of contradiction that the series does converge uniformly. Then there exists some $m$ such that, for any $x\in \mathbb{R}$
+  \[
+  \left| \sum_{n=1}^{\infty} \frac{x}{1+n^2x^2}-\sum_{n=1}^{m} \frac{x}{1+n^2x^2} \right| <\frac{1}{2}
+  .\] 
+
+  However,
+  \begin{align*}
+      \left| \sum_{n=1}^{\infty} \frac{x}{1+n^2x^2}-\sum_{n=1}^{m} \frac{1}{1+n^2x^2} \right| &= \left| \sum_{n=m+1}^{\infty} \frac{x}{1+x^2n^2} \right|  \\
+                  &=\sum_{n=m+1}^{\infty} \frac{x}{1+x^2n^2}\\
+                  &\geq \sum_{n=m+1}^{\infty} \int_{n}^{n+1} \frac{x}{1+t^2x^2} \, d t \\
+                    &= \int_{m+1}^{\infty} \frac{x}{1+t^2x^2} \, d t &\text{Let }u=tx \\
+                    &= \int_{(m+1)x}^{\infty} \frac{1}{1+u^2} \, d u &du=xdt \\
+                    &= \left( \arctan u \right)_{u=(m+1)x}^{\infty} \\
+                    &= \frac{\pi}{2}-\arctan ((m+1)x)\\
+                    &= \frac{\pi}{2}-\arctan(1) &\text{Pick }x=\frac{1}{m+1} \\
+                    &= \frac{\pi}{2}-\frac{\pi}{4} \\
+                    &= \frac{\pi}{4}\\
+                    & >\frac{1}{2}
+  .\end{align*}
+A contradiction, so our series cannot converge uniformly.
 \end{enumerate}
 \end{document}

@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\input{preamble.tex}
+\usepackage{arev}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+\begin{multicols*}{3}
+\hfuzz=5.002pt
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+% \huge Cheat Sheet - Thomas B
+\normalsize
+%------------ Method of Transformations -----------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        Content goes here
+    \end{minipage}
+};
+%Method of Transformation
+\node[fancytitle, right=10pt] at (box.north west) {Theorem};
+\end{tikzpicture}
+
+\end{multicols*}
+\end{document}

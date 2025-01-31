@@ -12,3 +12,5 @@ Let $\{ f_n \}$ be a [[Sequences of Functions|Sequence of Functions]] from $E\su
 ## Abel's Summation Formula
 Let $\{ u_n \}$ and $\{ v_n \}$ be sequences in $\mathbb{R}$, and $U_n=\sum\limits_{k=1}^{n}u_k$.
 $\sum\limits_{k=n}^{m}u_kv_k=U_mv_m-U_nv_{n+1}+\sum\limits_{k=n+1}^{m-1}U_k(u_k-u_{k+1})$
+### For Series of functions
+Consider the series of functions $\sum\limits_{n\geq 1}^{}u_n(x)v_n(x)$.

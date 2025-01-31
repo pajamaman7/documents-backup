@@ -2,6 +2,8 @@
 aliases:
   - Linear Transformation
   - Vector Space Homomorphism
+  - Linear Operator
+  - Linear Map
 ---
 A mapping $T$ from [[Vector Spaces|Vector Spaces]] $V\to W$ is called a linear operator if and only if:
 - $T(v_{1}+v_{2})=T(v_{1})+T(v_{2})$

@@ -6,7 +6,7 @@ Such a space is called a normed vector vector space.
 ## IP space
 Every [[Inner Product Space]] has a norm $\|\cdot\|=\sqrt{ \left< v,v \right> }$. This norm is said to be *induced* by the inner product.
 ## Metric Space
-Given a normed space $X$, we can define a metric $d(x,y)=\| x-y \|$, so that $X$ is a [[Metric Spaces|Metric Space]]
+Given a normed space $X$, we can define a metric $d(x,y)=\| x-y \|$, so that $X$ is a [[Metric Spaces|Metric Space]]. $d$ is called the metric induced by $\| \cdot \|$.
 ## Parallelogram Law
 For an inner product space $V$, we have 
 $$

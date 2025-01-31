@@ -5,6 +5,7 @@ aliases:
 ---
 A Metric space is one on which a distance function $d$ is defined on any two points $p,q$, satisfying:
 - $d(p,q)>0$ provided that $p\neq q$.
+- $d(p,p)=0$.
 - $d(p,q)=d(q,p)$.
 - $d(p,q)\leq d(p,r)+d(r,q)$ for any $r$ in the space.
 $\mathbb{R}^{n}$ is a metric space for $n\geq 1$, and subsets of metric spaces are also metric spaces.
@@ -24,4 +25,3 @@ Let $X$ be a metric space, and $E\subseteq X$.
 - A *covering* of $E$ in $X$ is a collection of open subsets $\{ G_{\alpha} \}$ so that $\bigcup_{\alpha}G_{\alpha}\subseteq E$.
 - $E$ is *compact* if every open cover of $E$ contains a finite subcover. ($E$ can be finitely covered).
     - See [[Heine-Borel Theorem]]
- 

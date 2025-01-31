@@ -42,6 +42,7 @@
                 &= \left[T(a_1 \vec{b}_1 +\ldots+ a_n \vec{b}_n) \right]_\mathcal{D}  &\text{By linearity of }T\\
                 &=[T\vec{x}]_{\mathcal{D}}
             .\end{align*}
+            \newpage
       \item Show that $[T]_{\mathcal{B}\mathcal{D}}$ is a linear isomorphism from $L(V,W)$ (the vector space of linear maps from $V$ to $W$) to $M_{mn}(\mathbb{C})$ (vector space of $m \times n$ complex matrices).
           \paragraph{Linearity: }Let $T,S$ be linear from $V$ to $W$. Then:
           \begin{align*}
@@ -60,7 +61,7 @@
           \paragraph{Injective: } 
           Clearly  $0\in \ker[\cdot ]_{\mathcal{BD}}$; take any transformation $T$ and $[0]_{\mathcal{BD}}=[T-T]_{\mathcal{BD}}=[T]_{\mathcal{BD}}-[T]_{\mathcal{BD}}=0$ .
 
-      Ten let $\mathcal{B}=\{b_1,\ldots ,b_n\} $ and $T\in \ker [\cdot ]_\mathcal{BD} $. Then:
+      Then let $\mathcal{B}=\{b_1,\ldots ,b_n\} $ and $T\in \ker [\cdot ]_\mathcal{BD} $. Then:
       \begin{align*}
           [T]_{\mathcal{BD}}&=0\\
           \left[ [Tb_1]_\mathcal{D}\ldots [Tb_n]_\mathcal{D}\right] &=[0\ldots 0]
@@ -80,6 +81,7 @@
       So every arbitrary matrix has a preimage in the space of linear transformations, and therefore the mapping is onto. Since $[\cdot ]_{\mathcal{BD}}$ is bijective and linear, it must then be an isomorphism. 
 
       \end{enumerate}
+      \newpage
     \item Let $V$, $W$ and $U$ be finite dimensional vector spaces with given bases: 
 
         $\mathcal{B} = \{\vec{b}_1,\ldots,\vec{b}_n\}, \mathcal{D} = \{\vec{d}_1,\ldots,\vec{d}_m\}, \text{ and } \mathcal{F} = \{f_1,\ldots,f_k\}$, respectively. Suppose $T : V \to W$ and $S : W \to U$ are linear. Prove or disprove the following statement for the composition linear map  $ST : V \to U$:
@@ -127,6 +129,7 @@
                 &= \tau\vec{x} 
     .\end{align*}
     Therefore $\sigma(T)=\sigma([T]_\mathcal{B})$.
+    \newpage
 \item Let $A$ be an $n \times n$ complex matrix with $\sigma(A) = \{1\}$. Show that $A$ is diagonalizable if and only if $A$ is the identity matrix.
     \paragraph{$\implies$}: Let $A$ be a diagonalizable matrix and $\sigma(A)=\{1\} $. Then there exists some invertible $S$ so that $S^{-1}AS=D=\text{diag}\{1,\ldots,1\}=I$. Multiply both sides:
     \begin{align*}
@@ -149,7 +152,7 @@
   $\deg p=k-1$ is identically zero.
   \paragraph{Inductive step:} Let $f(x)\in \mathbb{C}[x]$ be of degree $k$. Write $f(x)=a_0+a_1x+\ldots+a_kx^{k}$ for complex $a_i$ . Then $Df(x)=a_1+2a_2+\ldots+ka_nx^{k-1}$. And since this polynomial $Df$ is of degree $k-1$, by the inductive hypothesis the $k$-th derivative of this must be zero, and \newline $D^{k+1}f=D(D^{k}f)=0$. Therefore by induction on $\deg f$, the derivative operator is nilpotent on $\mathbb{C}[x]$
     \end{proof}
-  \paragraph{Solution: } The derivative map is nilpotent on $\mathbb{C}[x]$, and since nilpotent operators are not diagonalizable, the derivative operator is not diagonalizable
+  \paragraph{Solution: } The derivative map is nilpotent on $\mathbb{C}[x]$, and since nilpotent operators are not diagonalizable, the derivative operator is not diagonalizable.
 
 \end{enumerate}
 \end{document}
