@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -248,11 +248,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8a38da1294ac4af3",
+  "active": "823e2dffaf6228a6",
   "lastOpenFiles": [
+    "Big O Notation.md",
     "Algorithms.md",
     "Adjoints.md",
-    "Big O Notation.md",
     "Binary Search.md",
     "Sequences of Functions.md",
     "Series of Functions.md",

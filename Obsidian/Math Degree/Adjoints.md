@@ -9,3 +9,4 @@ $$ \left< Av,w \right> _W=\left< v,A^{*}w \right> _V $$
 ## Unitary Operator
 A unitary operator is one with $TT^{*}=I$
 ## Isometry
+An isometry is a linear transformation that preserves the norm; $\| Tv \|=$
