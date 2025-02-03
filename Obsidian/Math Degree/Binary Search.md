@@ -1,0 +1,2 @@
+Binary Search is an [[Algorithms|Algorithm]] used to find a target value, specifically in a sorted list. Taking a list of size $n$, we split into two lists of size $\frac{n}{2}$. Whichever contains our value, we repeat the algorithm on that.
+This has [[Big O Notation|Time Complexity]] $O(\log n)$.

@@ -1,3 +1,9 @@
+---
+aliases:
+  - O(n)
+  - Time Complexity
+al:
+---
 ## Primitive operations
 Each of the following operations takes the same amount of time on a given machine:
 - Assigning a value to a variable

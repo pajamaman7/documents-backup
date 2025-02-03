@@ -1,0 +1,1 @@
+Linear search is an [[Algorithms|Algorithm]] that simply searches through each element of a list until it finds the desired item, or the list ends.

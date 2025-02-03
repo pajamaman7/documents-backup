@@ -1,11 +1,23 @@
-A function defines a conversion between two sets, $A$ and $B$.
+---
+aliases:
+  - Bijection
+  - Bijective
+  - Onto
+  - Surjective
+  - Surjection
+  - Injection
+  - Injective
+  - One-to-one
+  - Map
+  - Domain
+  - Codomain
+---
 
-Definition: Suppose $A, B$ are sets. A function $f$ from $A$ to $B$ ($f:A\to B$), is a subset of the [[Cartesian Product]] $A\times B$ and for all $x\in A$, there exists a unique $y\in B$ so that $(x,y)\in f$. 
-
-$A$ is called the [[Domain]] of $f$ and B is the [[Codomain]] of $f$.
-
+Suppose $A, B$ are sets. A function $f$ from $A$ to $B$ ($f:A\to B$), is a subset of the [[Cartesian Product]] $A\times B$ and for all $x\in A$, there exists a unique $y\in B$ so that $(x,y)\in f$. 
+$A$ is called the Domain of $f$ and $B$ is the Codomain of $f$.
+## Image
 If $y=f(x)$, we call $y$ the "image of $x$ under $f$."
-
+We define, for some subset $S\subseteq A$, the set $f(S)=\{ y:\exists s \in S, f(s)=y \}$.
 ## Properties of Functions
 ### Onto (Surjective)
 A function is called Onto if every element of the codomain of f is also in the image.
@@ -21,6 +33,4 @@ A function is Bijective if it is both injective and surjective. Bijective functi
 The Identity map is the function that sends all elements of a set $A$ to itself.
 $id_A(x)=x$ for any $x \in A$.
 ## Inverse functions
-A function $f:A\to B$ is said to have an inverse $f^{-1}:B\to A$
-## Function Equality
-Two functions are equal if and only if they are subsets of each other.
+A function $f:A\to B$ is said to have an inverse $f^{-1}:B\to A$ such that $f\circ f^{-1}=\mathbb{1}_B, f^{-1}\circ f=\mathbb{1}_A$.

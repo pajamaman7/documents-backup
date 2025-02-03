@@ -8,3 +8,4 @@ Suppose $V,W$ are [[Vector Spaces|Finite Dimensional]] [[Inner Product Space|Inn
 $$ \left< Av,w \right> _W=\left< v,A^{*}w \right> _V $$
 ## Unitary Operator
 A unitary operator is one with $TT^{*}=I$
+## Isometry

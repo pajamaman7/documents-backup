@@ -125,6 +125,7 @@
 
 	// Symbols
 	{trigger: "oo", replacement: "\\infty", options: "mA"},
+	{trigger: "OO", replacement: "\\circ", options: "mA"},
 	{trigger: "sum", replacement: "\\sum\\limits_{${0:n=1}}^{${1:\\infty}}$2", options: "mA"},
 	{trigger: "prod", replacement: "\\prod\\limits_{${0:n}=${1:0} }^{${2:\\infty}}$3", options: "mA"},
 	{trigger: "fun", replacement: "${0:f}:${1:A}\\to ${2:B}$3", options: "mA"},
@@ -145,7 +146,6 @@
 	{trigger: "=<", replacement: "\\impliedby", options: "mA"},
 	{trigger: "iff", replacement: "\\iff", options: "mA"},
 	{trigger: "===", replacement: "\\equiv", options: "mA"},
-	{trigger: "Sq", replacement: "\\square", options: "mA"},
 	{trigger: "!=", replacement: "\\neq", options: "mA"},
 	{trigger: ">=", replacement: "\\geq", options: "mA"},
 	{trigger: "geq", replacement: "\\geq", options: "mA"},
@@ -159,6 +159,7 @@
 	{trigger: "xx", replacement: "\\times", options: "mA"},
 	{trigger: "**", replacement: "\\cdot", options: "mA"},
 	{trigger: "para", replacement: "\\parallel", options: "mA"},
+	{trigger: "perp", replacement: "\\perp", options: "mA"},
     {trigger: "<!", replacement: "\\trianglelefteq", options: "mA"},
 
 
