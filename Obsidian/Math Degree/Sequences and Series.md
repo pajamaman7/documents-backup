@@ -1,3 +1,7 @@
+---
+aliases:
+  - Sequence
+---
 Sequences and series is the middle section of [[Calculus II]], as well as having much to do with [[Proof by induction]].
 A sequence is defined as a discrete collection of numbers, seperated by commas. Take the following Fibonacci series.
 $$\{1,1,2,3,5,8,13\ldots\}$$

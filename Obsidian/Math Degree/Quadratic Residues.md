@@ -3,7 +3,7 @@ tags:
   - NumThry
 aliases: Quadratic Reciprocity
 ---
-Quadratic Residues can be considered the beginning of modern number theory.
+Quadratic Residues can be considered the beginning of modern number theory. See [[Modular Arithmetic]]
 ## $x^{2}\equiv a\pmod{p}$
 To find solutions to this equation, we consider $U(p)$, all equivalence classes$\pmod{p}$. Exactly half of these classes will be squares.
 ### Euler's Criteria for Squareness

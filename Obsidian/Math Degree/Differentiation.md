@@ -1,3 +1,8 @@
+---
+aliases:
+  - Differentiable
+  - Derivative
+---
 Differentiation is the process of taking the derivative of a function. The derivative of a function gives us the slope of a function at a given point. This can be notated several different ways. In general, when $y=f(x)$,
 $$\frac{dy}{dx}=y' = f'(x)$$
 Graphically, this can be thought of as the tangent line to the curve at $(x,f(x))$

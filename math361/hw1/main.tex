@@ -99,7 +99,7 @@
       \end{align*}
       So we have shown that these matrices $[ST]_{\mathcal{B}\mathcal{F}}$ and  $[S]_{\mathcal{DF}}[T]_{\mathcal{B}\mathcal{D}} $ agree upon all vectors in the image of $[\cdot ]_\mathcal{B}$. However since this particular mapping is onto, we know this to be all of  $\mathbb{C}^{n}$. This means the matrices agree upon all of $\mathbb{C}^{n}$ and therefore they must be equal. 
   \item Let $V$ be a finite dimensional vector space and $T : V \to V$ be linear. Show that $\sigma(T)=\sigma([T]_{\mathcal{B}})$ where $\mathcal{B}$ is any basis for $V$.
-      \paragraph{Linearity of inverse:} To show this we use the fact that $[\cdot ]_\mathcal{B}^{-1}$ is linear. Included is a brief demonstration of this fact. 
+      \paragraph{Linearity of inverse:} To show this we use the fact that $[\cdot ]_\mathcal{B}^{-1}$ is linear from $L(V,V)$ to $M_{mn}(\mathbb{C})$. Included is a brief demonstration of this fact. 
       Let $T,S\in L(V,V)$ and $\alpha\in \mathbb{C}$ .
       \begin{align*}
           [T]_\mathcal{B}^{-1}+[S]_{\mathcal{B}}^{-1}&=
@@ -142,7 +142,7 @@
     \paragraph{$\impliedby$:} Conversely, if $A=I$, then take the invertible matrix $I$, so that $IAI^{-1}=A=I$, and since $I$ is diagonal, $A$ is diagonalizable. 
 
 \item Determine whether or not the derivative map $D : P_n \rightarrow P_n$ given by $Dp(z) = p'(z)$ is diagonalizable.
-    \paragraph{Claim: }The derivative map defined above is nilpotent; the $k+1$-th derivative of a polynomial of degree $k\in C[x]$ is identically zero. 
+    \paragraph{Claim: }The $k+1$-th derivative of a polynomial of degree $k\in \mathbb{C}[x]$ is identically zero. 
     \begin{proof} [Proof of claim:]
         
   Proceed by induction on the degree of $p$. 
@@ -152,7 +152,7 @@
   $\deg p=k-1$ is identically zero.
   \paragraph{Inductive step:} Let $f(x)\in \mathbb{C}[x]$ be of degree $k$. Write $f(x)=a_0+a_1x+\ldots+a_kx^{k}$ for complex $a_i$ . Then $Df(x)=a_1+2a_2+\ldots+ka_nx^{k-1}$. And since this polynomial $Df$ is of degree $k-1$, by the inductive hypothesis the $k$-th derivative of this must be zero, and \newline $D^{k+1}f=D(D^{k}f)=0$. Therefore by induction on $\deg f$, the derivative operator is nilpotent on $\mathbb{C}[x]$
     \end{proof}
-  \paragraph{Solution: } The derivative map is nilpotent on $\mathbb{C}[x]$, and since nilpotent operators are not diagonalizable, the derivative operator is not diagonalizable.
+  \paragraph{Solution: } The derivative map is nilpotent on $P_n$ for $n\geq 1$ (For $n=0$, $D^{1}=D=0$, a diagonal operator), and since nilpotent operators are not diagonalizable, the derivative operator is not diagonalizable for $n\geq 1$.
 
 \end{enumerate}
 \end{document}

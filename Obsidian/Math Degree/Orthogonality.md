@@ -43,6 +43,8 @@ The projection above is given by $P_Ev=\sum\limits_{j=1}^{m} \frac{\left< v,v_j 
 - $P_Ev$ is independent of the choice of basis for $E$.
 ### Decomposition of the Projection Operator
 For a subspace $E$ of $V$, $P_{E^{\perp}}=I-P_E$
+### Abstract Characterization
+Let $T:V\to V$ be linear on a finite dimensional inner product space. $T$ is an orthogonal projection if and only if $T^{2}=T=T^{*}$ ($T$ is idempotent and self-adjoint).
 ## Gram-Schmidt
 Suppose $\{ v_{1},\dots,v_n \}$ is [[Vector Spaces|Linearly independent]] in a [[Vector Spaces|Finite Dimensional]] [[Vector Spaces|Vector Space]]. Then there is an orthogonal system $e_{1},\dots,e_m$ so that $span\{ v_{1},\dots,v_n \}=span\{ e_{1},\dots,e_j \}$. The proof of this fact is constructive, we take:
 - $e_{1}=v_{1}$
@@ -51,3 +53,4 @@ Suppose $\{ v_{1},\dots,v_n \}$ is [[Vector Spaces|Linearly independent]] in a [
 - $e_k=v_k-P_{e_{1}}v_k-\dots-P_{e_{k-1}}v_k$
 ## Decomposition of a space
 Suppose $E$ is a subspace of a vector space $V$. Then $V=E\oplus E^{\perp}$, where $E^{\perp}$ is the [[Orthogonality|Orthogonal]] complement of $E$.
+

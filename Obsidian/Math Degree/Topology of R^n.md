@@ -1,3 +1,8 @@
+---
+aliases:
+  - Euclidean Space
+  - Euclidean Topology
+---
 ## Norm in $\mathbb{R}^{n}$
 The Euclidean norm in $\mathbb{R}^{n}$ is given by:
 $$
