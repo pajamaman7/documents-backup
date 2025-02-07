@@ -9,6 +9,6 @@ Every [[Inner Product Space]] has a norm $\|\cdot\|=\sqrt{ \left< v,v \right> }$
 Given a normed space $X$, we can define a metric $d(x,y)=\| x-y \|$, so that $X$ is a [[Metric Spaces|Metric Space]]. $d$ is called the metric induced by $\| \cdot \|$.
 ## Parallelogram Law
 For an inner product space $V$, we have 
-$$
-\| v+w \| ^{2}=2\| v \| ^{2}+2\| w \| ^{2}
-$$
+$$ \| v+w \| ^{2}=2\| v \| ^{2}+2\| w \| ^{2} $$
+## Translation Invariance
+Normed vector spaces also satisfy $d(x-a,y-a)=d(x,y)$ and $d(\lambda x,\lambda y)=\left| \lambda \right|d(x,y)$

@@ -6,8 +6,8 @@ aliases:
 ---
 A topology on a set $X$ is a collection $\mathcal{T}\subseteq \mathcal{P(}X)$ with the properties:
 - $X,\varnothing\in\mathcal{T}$
-- If $A,B\in \mathcal{T}$, then $A\cup B\in\mathcal{T}$.
-- If $A,B\in \mathcal{T}$, then $A\cap B\in\mathcal{T}$.
+- If $A_i\in \mathcal{T}$, then $\bigcup_i A\in\mathcal{T}$. (Any union of open sets is open)
+- If $A_{1},\dots,A_n\in \mathcal{T}$, then $\bigcap_{i=1}^{n} A_i\in\mathcal{T}$. (Finite unions of open sets are open)
 If $U\subseteq X,$ we say $U$ is an open set if $U\in\mathcal{T}$.
 ### Examples
 - If $X$ is a set, clearly $\mathcal{P}(X)$ is a topology on $X$m called the discrete topology.

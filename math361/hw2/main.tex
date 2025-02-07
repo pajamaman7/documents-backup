@@ -8,13 +8,43 @@
 \begin{document}
 
 \begin{prob}{Q1}
-    Show that for a subspace  $S\subseteq T$, that ${S^{\perp}}^{\perp}=S$.
+Let $S$ be a subset (not necessarily a subspace) of a finite dimensional inner product space $V$. Show that $(S^\perp)^\perp = \text{span } S$, where
+$$\text{span } S := \left\{\sum_{j=1}^m \alpha_j s_j : \alpha_j \in \mathbb{C}, s_j \in S, m \in \mathbb{N}\right\}$$
+is the smallest subspace of $V$ containing $S$ (think of this as the set of all possible linear combinations of vectors from $S$).
 \end{prob}
-
-Let $x\in S^{\perp^{\perp}}$. Then for any $y\in S^{\perp}$, $\left<x,y \right>=0$
+\paragraph{Solution: } Write $E=\text{span}\, S$, and let $\{b_1,\ldots,b_n\} $ be a basis for $E^{\perp}$.
+\begin{align*}
+    v\in E&\iff 
+.\end{align*}
 
 \begin{prob}{Q2}
-    Let $T:V\to W$. Show that if $\ker T=\{0\} $, then $T$ is left invertible.
+Let $V$ and $W$ be finite dimensional inner product spaces and suppose $\ker A = \{0\}$. Find a left inverse for $A$ in terms of $A$ and $A^*$.
 \end{prob}
-\paragraph{Solution:} Suppose $\ker T=\{0\} $. 
+\paragraph{Solution: } Begin with the identity,
+\[ \{0\} =\ker A =\ker A^* A .\] 
+So the composition of transformations $A^* A:V\to V$ has zero kernel and is injective, and by rank-nullity it must too surjective. Then this map is invertible, and if we take $(A^* A)^{-1}A^* A=I$, we see that $(A^* A)^{-1}A^* $ is a left inverse for $A$.
+
+\begin{prob}{Q3}
+Let $V$ be a finite dimensional inner product space.
+\begin{enumerate}[label= (\alph*)] 
+\item We can think of any $x \in V$ as a linear map from $\mathbb{C} \to V$ by setting $x(\lambda) := \lambda x$. You do not have to prove that this is linear. Show that $x^*: V \to \mathbb{C}$ satisfies
+$$x^* y = \langle y, x\rangle.$$
+Use this to deduce that the map $xy^*$ is given by $xy^* v = \langle v, y\rangle x$.
+HINT: The inner product on $\mathbb{C}$ is assumed to be $\langle z, w\rangle = z\overline{w}$.
+\item Show that if $T: V \to \mathbb{C}$ is any linear map, then there is a vector $y$ so that $T = y^*$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{Q4}
+Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 useful here.
+\begin{enumerate}[label= (\alph*)] 
+    \item Suppose $T: V \to W$ satisfies $\text{rank } T = 1$. Show that there are vectors $x \in W$ and $y \in V$ so that $T = xy^*$.
+    \item Suppose $T: V \to W$ satisfies $\text{rank } T = k$. Show that $T$ is the sum of $k$ rank one operators. Hint: $PT = T$ where $P$ is the orthogonal projection onto $\text{ran } T$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}{Q5}
+Suppose that $A$ and $B$ are unitarily equivalent $n \times n$ matrices. That is, there is a unitary matrix $U$ so that $U^*AU = B$. Show that $E$ is an invariant subspace for $B$ if and only if $UE$ is invariant for $A$.
+Recall that a subspace $E$ of $V$ is invariant for $T$ if $Tv \in E$ for all $v \in E$.
+\end{prob}
 \end{document}

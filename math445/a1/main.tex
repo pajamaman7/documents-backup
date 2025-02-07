@@ -38,7 +38,6 @@
         \textbf{Hint:} Use the following double inequalities:
     \[ 1-\frac{1}{2}t^2\leq \cos t\leq 1-\frac{1}{2}t^2+\frac{1}{24}t^4,\quad \forall t\in \mathbb{R} .\] 
         \[ -t-t^2\leq\ln(1-t)\leq-t,\quad\forall t\in \left[0,\frac{1}{2}\right] .\] 
-    \item Show that $f_n\xrightarrow[{[0,1]}]{c.u}f$.
         \paragraph{Solution: }Begin with the first inequality. 
         \begin{align*}
             1-\frac{4x^2}{2n^2}&\leq \cos \left(   \frac{2x}{n}\right)\leq 1-\frac{4x^2}{2n^2}+\frac{16x^4}{24n^{4}}\\
@@ -49,9 +48,10 @@
             \exp\left( -{2x^2}-\frac{4x^4}{n^2} \right) &\leq \left( \cos \left(   \frac{2x}{n}\right)\right)^{n^2}\leq\exp\left( -{2x^2}+\frac{2x^4}{3n^{2}} \right) &\exp\text{ is increasing in }\mathbb{R}\\
         .\end{align*}
         %TODO u.c of the upper, lower bound.
-        For large $n$, we can see that both the upper and lower bound on our sequence converge uniformly to $f(x)=e^{-2x^2}$, so by squeeze theorem, we must also have:
+        For large $n$, we can see that both the upper and lower bound on our sequence converge pointwise to $f(x)=e^{-2x^2}$, so by squeeze theorem, we must also have:
+        \[ f_n\xrightarrow[{[0,1]}]{c.p}e^{-2x^2} .\] 
+    \item Show that $f_n\xrightarrow[{[0,1]}]{c.u}f$.
 
-        \[ f_n\xrightarrow[{[0,1]}]{c.u}e^{-2x^2} .\] 
   \end{enumerate}
 
 \item Let $a\in \mathbb{R}_{+}$. Compute the limit
@@ -92,6 +92,12 @@
 \[
   |f_n(x)-f(x)|=\left|0-0\right|=0<\varepsilon
 .\] 
+Now we must show that each of these functions is continuous nowhere in $[0,1]$.  Suppose by way of contradiction that $f_n$ is continuous at some $c\in [0,1]$. Then for $\varepsilon=\frac{1}{n+1}$, there must be some $\delta$ such that if $|x-c|<\delta$, $|f_n(x)-f_n(c)|<\frac{1}{n+1}$. Take $B_\delta(c)$ the $\delta$-ball about $c$, and proceed by cases on $c$.
+\paragraph{$c\in \mathbb{Q}$:} If $c$ is rational, find some $d\not\in\mathbb{Q} $ inside $B_{\delta}(c)$. Then we will have $f_n(c)=\frac{1}{n}$ and $f_n(d)=0$
+\paragraph{$c\not\in \mathbb{Q}$:} If $c$ is irrational, find some $d\in\mathbb{Q}$ inside $B_{\delta}(c)$. Then we will have $f_n(d)=\frac{1}{n}$ and $f_n(c)=0$
+
+Regardless of case, we will get $|f_n(c)-f_n(d)|=\frac{1}{n}>\frac{1}{n+1}$, and we have found our contradiction.
+
   Therefore $\{f_n\} $ is a sequence of functions which are continuous nowhere, convergent to the zero function which is continuous everywhere. 
 
 \item Consider the series of functions $\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$.
