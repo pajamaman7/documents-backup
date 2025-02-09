@@ -9,24 +9,48 @@ public class PA2 {
 
 	public static void main(String[] args) {
 		try {
-			// TODO (1.1) Prompt the user to enter an input file name, read the filename from standard input,
+			// (1.1) Prompt the user to enter an input file name, read the filename from standard input,
 			//          and print a confirmation message before proceeding with file operations.
+            Scanner scanner = new Scanner(System.in);
 
-			// ** YOUR CODE HERE **
+            System.out.print("Enter the filename of the file you would like to read: ");
+            String inputFileName=scanner.nextLine();
 
 			// Debugging: Print filename before reading
 			System.out.println();
 			System.out.println("=============================================");
             System.out.println(" 📂  Reading input file: " + inputFileName);
 
-			// TODO (1.2) Read the input file and store its contents as a string.
+			// (1.2) Read the input file and store its contents as a string.
 			//          If the file is empty or cannot be read, print an error message and terminate execution.
+            File f = new File(inputFileName);
+            if( !f.exists || f.toString()==""){
+                System.out.println("File read error! Exiting...");
+                System.exit(1);
+            }
 
-			// ** YOUR CODE HERE **
 
-			// TODO (1.3) Process input text to extract words into a 1-D array.
-			//            Trim input, split words by whitespace, and store words in an array.
+			// (1.3) Process input text to extract words into a 1-D array.
+			// Trim input, split words by whitespace, and store words in an array.
 
+            // Create a character array out of our file.
+            Char[] filestr=f.toString().toCharArray();
+            String word = "";
+
+            // this should be singly linked
+            SinglyLinkedList words = new SinglyLinkedList();
+
+            // Iterate over the string and add words to list when newline/space is reached
+            for (char c:filestr){
+                if(c=='\n'||c == ' '){
+                    words.add(word);
+                    word = "";
+                } else{
+                    word += c;
+                }
+            }
+
+            BufferedReader reader = new BufferedReader(f);
 			// ** YOUR CODE HERE **
 
 			// Debugging: Print words before sorting
@@ -43,11 +67,11 @@ public class PA2 {
             System.out.println(" ✓ Words after sorting: " + Arrays.toString(words));
 
 			// TODO (1.5) Call AnagramGrouper.groupAnagrams() to group words into singly linked lists (anagram groups).
-			Map<?, ?> anagramGroups = ? // ** YOUR CODE WHERE '?' **
+			// Map<?, ?> anagramGroups = ? // ** YOUR CODE WHERE '?' **
 
-			                          // Debugging: Print grouped anagrams before final output
-			                          System.out.println("\n =============================================");
-			System.out.println(" {} Grouped Anagrams: " + anagramGroups);
+            // Debugging: Print grouped anagrams before final output
+            //System.out.println("\n =============================================");
+			//System.out.println(" {} Grouped Anagrams: " + anagramGroups);
 
 			// TODO (1.6) Call printFinalOutput() to print and save the final formatted output (anagram groups).
 
@@ -64,44 +88,44 @@ public class PA2 {
 
 	private static String readFile(String fileName) throws IOException {
 
-		// TODO (1.7) Create a File object for the given file name.
+		// (1.7) Create a File object for the given file name.
 
         File f = new File(fileName);
 
-		// TODO (1.8) Check if the file exists before attempting to read.
+		// (1.8) Check if the file exists before attempting to read.
 		if (!f.exists) { // ** YOUR CODE WHERE '?' **
 
-			// TODO (1.9) Print an error message if the file is not found.
+			// (1.9) Print an error message if the file is not found.
 
             System.out.println("ERROR: File does not exist!");
 
-			// TODO (1.10) Return an empty string if the file doesn't exist.
+			// (1.10) Return an empty string if the file doesn't exist.
 
             return "";
 
 		}
 
-		// TODO (1.11) Use StringBuilder to store file contents.
+		// (1.11) Use StringBuilder to store file contents.
 
         StringBuilder bob = new StringBuilder();
 
-		// TODO (1.12) Use BufferedReader to read the file line by line.
+		// (1.12) Use BufferedReader to read the file line by line.
 
         BufferedReader reader = new BufferedReader(f);
 
-		// TODO (1.13) Declare a variable to store each line read from the file.
+		// (1.13) Declare a variable to store each line read from the file.
 
         String line = "";
 
-		// TODO (1.14) Iterate through the file and read it line by line.
+		// (1.14) Iterate through the file and read it line by line.
 		while (reader.ready) { // ** YOUR CODE WHERE '?' **
 
-			// TODO (1.15) Append each line to StringBuilder.
+			// (1.15) Append each line to StringBuilder.
             line = reader.readLine();
             bob.append(line);
 		}
 
-		// TODO (1.16) Close BufferedReader.
+		// (1.16) Close BufferedReader.
 
         reader.close();
 
@@ -116,17 +140,17 @@ public class PA2 {
 
 	public static void printFinalOutput(Map<String, SinglyLinkedList> groups, String inputFileName) {
 
-		// TODO (1.18) Print a header for the final grouped anagrams output.
+		// (1.18) Print a header for the final grouped anagrams output.
 
         System.out.println();
         System.out.println("=============================================");
         System.out.println("Grouped Anagrams:");
 
-		// TODO (1.19) Initialize a counter to number the anagram groups in the output.
+		// (1.19) Initialize a counter to number the anagram groups in the output.
 
         int counter=0;
 
-		// TODO (1.20) Create a StringBuilder to store the formatted output before saving to a file.
+		// (1.20) Create a StringBuilder to store the formatted output before saving to a file.
 
         StringBuilder builder = new StringBuilder();
 
@@ -162,9 +186,10 @@ public class PA2 {
 
         File f = new file("out-"+inputFileName);
 
+		// Initialize BufferedWriter for writing to the output file.
+        BufferedWriter writer = new BufferedWriter(f);
 		// TODO (1.27) Use try-with-resources to ensure BufferedWriter is closed automatically after writing.
-		//             Initialize BufferedWriter for writing to the output file.
-		try (?) { // ** YOUR CODE WHERE '?' **
+		try { 
 
 			// TODO (1.28) Write the final grouped anagrams output to the specified file.
 
@@ -174,12 +199,10 @@ public class PA2 {
 
 			// ** YOUR CODE HERE **
 
-			// TODO (1.30) Handle any IOException that may occur during file writing.
-		} catch (?) { // ** YOUR CODE WHERE '?' **
-
-			// TODO (1.31) Print an error message to standard error (stderr) if file writing fails.
-
-			// ** YOUR CODE HERE **
+			// (1.30) Handle any IOException that may occur during file writing.
+		} catch (IOException e) { // ** YOUR CODE WHERE '?' **
+			// (1.31) Print an error message to standard error (stderr) if file writing fails.
+			e.printStackTrace(); // Print stack trace for debugging.
 		}
 	}
 }

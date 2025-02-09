@@ -45,12 +45,24 @@
             -\frac{2x^2}{n^2}-\frac{4x^4}{n^4}&\leq \ln \left(  \cos \left(   \frac{2x}{n}\right)\right)\leq-\frac{2x^2}{n^2}+\frac{2x^4}{3n^{4}}&\text{From the second inequality}\\
             -{2x^2}-\frac{4x^4}{n^2}&\leq n^2 \ln \left(  \cos \left(   \frac{2x}{n}\right)\right)\leq{-2x^2}+\frac{2x^4}{3n^{2}}\\
             -{2x^2}-\frac{4x^4}{n^2}&\leq \ln \left( \left( \cos \left(   \frac{2x}{n}\right)\right)^{n^2}\right)\leq{-2x^2}+\frac{2x^4}{3n^{2}}\\
-            \exp\left( -{2x^2}-\frac{4x^4}{n^2} \right) &\leq \left( \cos \left(   \frac{2x}{n}\right)\right)^{n^2}\leq\exp\left( -{2x^2}+\frac{2x^4}{3n^{2}} \right) &\exp\text{ is increasing in }\mathbb{R}\\
+            \exp\left( -{2x^2}-\frac{4x^4}{n^2} \right) &\leq \left( \cos \left(   \frac{2x}{n}\right)\right)^{n^2}\leq\exp\left( -{2x^2}+\frac{2x^4}{3n^{2}} \right) &\exp\text{ is increasing in }\mathbb{R}
         .\end{align*}
-        %TODO u.c of the upper, lower bound.
-        For large $n$, we can see that both the upper and lower bound on our sequence converge pointwise to $f(x)=e^{-2x^2}$, so by squeeze theorem, we must also have:
-        \[ f_n\xrightarrow[{[0,1]}]{c.p}e^{-2x^2} .\] 
+        Intuitively, according to squeeze theorem, it appears that the limit will become $\exp\left( e^{-2x^2} \right) $, however this idea needs some formalizing.
     \item Show that $f_n\xrightarrow[{[0,1]}]{c.u}f$.
+        \paragraph{Lemma:} If $ f_n\xrightarrow[{[0,1]}]{c.p}f$, and $g:\mathbb{R}\to \mathbb{R}$ is uniformly continuous, then $ g\circ f_n\xrightarrow[{[0,1]}]{c.p}g\circ f$.
+
+        Since $f_n$ is uniformly convergent, it must be uniformly bounded, say that $f_n<M$ for all $n\in \mathbb{N}$ and $x\in [0,1]$. Let $\varepsilon>0$, and by uniform continuity of $g,$ there exists some $\delta$ such that $|a-b|<\delta\implies|g(a)-g(b)|<\varepsilon$.
+
+        Now, take $N\in \mathbb{N}$ so that $n>N\implies|f_n(x)-f(x)|<\delta$.
+
+        Therefore $|g(f_n(x))-g(f(x))|<\varepsilon$, and $ g\circ f_n\xrightarrow[{[0,1]}]{c.p}g\circ f$.
+
+        %TODO this is awful to read but at least somewhat complete.
+
+        \paragraph{Solution: } The exponential is continuous, so it must be uniformly continuous on a compact set. Since $-2x^2+\frac{2x^{4}}{3n^2}\xrightarrow[{[0,1]}]{c.u}{-2x^2} $, and $-2x^2- \frac{4x^{4}}{n^2}\xrightarrow[{[0,1]}]{c.u}{-2x^2} $, then by the above lemma both the bounds found for $f_n$ in part (a) must converge uniformly to  $\exp\left( -2x^2 \right) $.
+
+        Then by squeeze theorem:
+        \[ f_n\xrightarrow[{[0,1]}]{c.u}e^{-2x^2} .\] 
 
   \end{enumerate}
 
@@ -60,7 +72,7 @@
   .\] 
   What happens if $a=0$?
 
-  We begin by considering our sequence of functions within the integral, each of which is a quotient and composition of continuous functions, and is itself continuous (for all but $x=0$). Call this $g_n(x) =\frac{\sin(nx)}{nx}$. Note that since $-1\leq\sin(nx)\leq 1$, we can find (for nonzero $x$) that $-\frac{1}{nx}\leq g_n(x)\leq \frac{1}{nx}$. Both the sequences bounding $g$ have a zero limit at infinity, so by the squeeze theorem on sequences of functions, we can say that for nonzero $x$, $g_n\to 0$.
+  \paragraph{Solution: }We begin by considering our sequence of functions within the integral, each of which is a quotient and composition of continuous functions, and is itself continuous (for all but $x=0$). Call this $g_n(x) =\frac{\sin(nx)}{nx}$. Note that since $-1\leq\sin(nx)\leq 1$, we can find (for nonzero $x$) that $-\frac{1}{nx}\leq g_n(x)\leq \frac{1}{nx}$. Both the sequences bounding $g$ have a zero limit at infinity, so by the squeeze theorem on sequences of functions, we can say that for nonzero $x$, $g_n\to 0$.
   %TODO x=0 case, show if each g_n is integrable?
   Now since we have already shown that our sequence $g_n$ is bounded, and since each $g_n$ is integrable, we can say:
 
