@@ -49,27 +49,20 @@
         .\end{align*}
         Intuitively, according to squeeze theorem, it appears that the limit will become $\exp\left( e^{-2x^2} \right) $, however this idea needs some formalizing.
     \item Show that $f_n\xrightarrow[{[0,1]}]{c.u}f$.
-        \paragraph{Lemma:} If $ f_n\xrightarrow[{[0,1]}]{c.p}f$, and $g:\mathbb{R}\to \mathbb{R}$ is uniformly continuous, then $ g\circ f_n\xrightarrow[{[0,1]}]{c.p}g\circ f$.
+        \paragraph{Lemma:} If $ f_n\xrightarrow[{[0,1]}]{c.u}f$, and $g:\mathbb{R}\to \mathbb{R}$ is uniformly continuous, then $ g\circ f_n\xrightarrow[{[0,1]}]{c.u}g\circ f$.
 
         Since $f_n$ is uniformly convergent, it must be uniformly bounded, say that $f_n<M$ for all $n\in \mathbb{N}$ and $x\in [0,1]$. Let $\varepsilon>0$, and by uniform continuity of $g,$ there exists some $\delta$ such that $|a-b|<\delta\implies|g(a)-g(b)|<\varepsilon$.
 
         Now, take $N\in \mathbb{N}$ so that $n>N\implies|f_n(x)-f(x)|<\delta$.
 
-        Therefore $|g(f_n(x))-g(f(x))|<\varepsilon$, and $ g\circ f_n\xrightarrow[{[0,1]}]{c.p}g\circ f$.
+        Therefore $|g(f_n(x))-g(f(x))|<\varepsilon$, and $ g\circ f_n\xrightarrow[{[0,1]}]{c.u}g\circ f$.
 
-        %TODO this is awful to read but at least somewhat complete.
-
-        \paragraph{Solution: } The exponential is continuous, so it must be uniformly continuous on a compact set. Since $-2x^2+\frac{2x^{4}}{3n^2}\xrightarrow[{[0,1]}]{c.u}{-2x^2} $, and $-2x^2- \frac{4x^{4}}{n^2}\xrightarrow[{[0,1]}]{c.u}{-2x^2} $, then by the above lemma both the bounds found for $f_n$ in part (a) must converge uniformly to  $\exp\left( -2x^2 \right) $.
-
-        Then by squeeze theorem:
-        \[ f_n\xrightarrow[{[0,1]}]{c.u}e^{-2x^2} .\] 
+        \paragraph{Solution: } For both our functions of the form $h_c(x)=-2x^2+ \frac{cx^{4}}{n^2}$, we know that they are continuous on the compact set $[0,1]$, and so they must be bounded on that interval, say by $M_c$. The exponential is continuous, so it must be uniformly continuous on the compact set $[-M_c,M_c]$, which contains $\exp(h_c([0,1]))$.  Since $-2x^2+\frac{2x^{4}}{3n^2}\xrightarrow[{[0,1]}]{c.u}{-2x^2} $, and $-2x^2- \frac{4x^{4}}{n^2}\xrightarrow[{[0,1]}]{c.u}{-2x^2} $, then by the above lemma both the bounds found for $f_n$ in part (a) must converge uniformly to  $\exp\left( -2x^2 \right) $. Then by squeeze theorem: \[ f_n\xrightarrow[{[0,1]}]{c.u}e^{-2x^2} .\] 
 
   \end{enumerate}
 
 \item Let $a\in \mathbb{R}_{+}$. Compute the limit
-  \[
-  \lim_{n \to \infty} \int_{a}^{\pi} \frac{\sin(nx)}{nx} \, d x 
-  .\] 
+  \[ \lim_{n \to \infty} \int_{a}^{\pi} \frac{\sin(nx)}{nx} \, d x .\] 
   What happens if $a=0$?
 
   \paragraph{Solution: }We begin by considering our sequence of functions within the integral, each of which is a quotient and composition of continuous functions, and is itself continuous (for all but $x=0$). Call this $g_n(x) =\frac{\sin(nx)}{nx}$. Note that since $-1\leq\sin(nx)\leq 1$, we can find (for nonzero $x$) that $-\frac{1}{nx}\leq g_n(x)\leq \frac{1}{nx}$. Both the sequences bounding $g$ have a zero limit at infinity, so by the squeeze theorem on sequences of functions, we can say that for nonzero $x$, $g_n\to 0$.

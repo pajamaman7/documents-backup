@@ -32,35 +32,20 @@ public class PA2 {
 
 			// (1.3) Process input text to extract words into a 1-D array.
 			// Trim input, split words by whitespace, and store words in an array.
-
-            // Create a character array out of our file.
-            Char[] filestr=f.toString().toCharArray();
-            String word = "";
-
-            // this should be singly linked
-            SinglyLinkedList words = new SinglyLinkedList();
-
-            // Iterate over the string and add words to list when newline/space is reached
-            for (char c:filestr){
-                if(c=='\n'||c == ' '){
-                    words.add(word);
-                    word = "";
-                } else{
-                    word += c;
-                }
-            }
-
             BufferedReader reader = new BufferedReader(f);
-			// ** YOUR CODE HERE **
+            int numLines=reader.lines();
+            String[] words=new String[lines];
+            for (int i=0; i<lines; i++) {
+                words[i]=reader.readLine();
+            }
 
 			// Debugging: Print words before sorting
             System.out.println("---------------------------------------------");
             System.out.println(" ⊗  Words before sorting: " + Arrays.toString(words));
 			System.out.println("---------------------------------------------");
 
-			// TODO (1.4) Call MergeSort to sort words alphabetically.
-
-			// ** YOUR CODE HERE **
+			// (1.4) Call MergeSort to sort words alphabetically.
+            MergeSort.mergeSort(array,0,lines);
 
 			// Debugging: Print words after sorting
 			System.out.println("*********************************************");
@@ -75,7 +60,7 @@ public class PA2 {
 
 			// TODO (1.6) Call printFinalOutput() to print and save the final formatted output (anagram groups).
 
-			// ** YOUR CODE HERE **
+            // ** YOUR CODE HERE **
 
 		} catch (Exception e) {  // Catch exceptions and handle errors.
 			e.printStackTrace(); // Print stack trace for debugging.
@@ -184,7 +169,7 @@ public class PA2 {
 
 		// TODO (1.26) Save the final grouped anagrams to a text file with a modified filename based on the input file.
 
-        File f = new file("out-"+inputFileName);
+        File f = new File("out-"+inputFileName);
 
 		// Initialize BufferedWriter for writing to the output file.
         BufferedWriter writer = new BufferedWriter(f);

@@ -30,6 +30,15 @@ Or, for any $c\in U$, there is some $r\in\mathbb{R}$ such that $B_r(p)\subseteq 
 - If $A_i$ are open, then $\bigcup_i A$ is open. (Any union of open sets is open)
 - If $A_{1},\dots,A_n$ is open, then $\bigcap_{i=1}^{n} A_i$ is open. (Finite unions of open sets are open)
 - For any $a,b\in\mathbb{R}^{n},$ there exist $V,W$ two open sets in $\mathbb{R}^{n}$ so that $a\in V,b\in W$ so that $V\cap W=\varnothing$.
+### Neighborhood
+A neighborhood of a point $a\in\mathbb{R}^{n}$ is an open subset $A\subseteq \mathbb{R}^{n}$ containing $a$.
+### Interior
+A point $a\in\mathbb{R}^{n}$ is called an interior point of $A$ if $A$ is a neighborhood of $A$.
+The interior of $A$ is the set of all interior points of $A$, denoted $A^{\circ}$
+- If $A\subseteq \mathbb{R}^{n}$, then $A^{\circ}$ is the largest open set contained in $A$.
+- If $A\subseteq B\subseteq \mathbb{R}^{n}$, then $A^{\circ}\subseteq B^{\circ}$.
+- If $A,B\subseteq \mathbb{R}$, then $(A\cap B)^{\circ}=A^{\circ}\cap B^{\circ}$.
+$A^{\circ}$ is closed in $\mathbb{R}^{n}$
 ## Closed Balls
 A closed ball in $\mathbb{R}^{n}$ is given by $\overline{B_r}(\vec{x})=\{ \vec{y}\in\mathbb{R}^{n}:\| \vec{x}-\vec{y} \|\leq r \}$. In fact this is the closure of an open ball.
 ## Closed Sets
@@ -38,5 +47,17 @@ As usual in [[Topology]], closed sets are those which have an open complement; $
 - $\varnothing,\mathbb{R}^{n}$ are closed
 - If $A_\alpha$ are closed, then $\bigcap_\alpha A_\alpha$ is closed. (Any union of closed sets is closed)
 - If $A_{1},\dots,A_n$ is closed, then $\bigcup_{i=1}^{n} A_i$ is closed. (Finite unions of closed sets are closed)
+### Cluster point
+Let $A\subseteq \mathbb{R}^{n}$. If every neighborhood $U$ of $a$ has $U\cap A\neq\varnothing$, then $a$ is a cluster point of $A$. (Note that this includes isolated points).
+### Limit point
+A limit point of $A\subseteq \mathbb{R}$ is a cluster point which is not isolated.
+### Closure
+The closure of a set $A$ is the union of $A$ and the set of all its limit points. 
+Equivalently, $\bar{A}$ is the set of all cluster points of $A$.
+- $\bar{A}$ is a closed set in $\mathbb{R}^{n}$.
+- If $\bar{A}$ is closed, then $A=\bar{A}$
+### Exterior Point
+$a$ is an exterior point of a set $A\subseteq \mathbb{R}^{n}$ if $a\not\in \bar{A}$.
+Equivalently, $a$ is an exterior point of $A$ if $a$ is interior to $\mathbb{R}^{n}\setminus A$.
 ## Spheres
 We can define the sphere $S_r(x)=\overline{B_r}(x)\setminus B_r(x)=\{ y\in\mathbb{R}^{n}|\| y-x \|=r \}$, the boundary of a closed ball.

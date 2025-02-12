@@ -12,14 +12,17 @@ Let $S$ be a subset (not necessarily a subspace) of a finite dimensional inner p
 $$\text{span } S := \left\{\sum_{j=1}^m \alpha_j s_j : \alpha_j \in \mathbb{C}, s_j \in S, m \in \mathbb{N}\right\}$$
 is the smallest subspace of $V$ containing $S$ (think of this as the set of all possible linear combinations of vectors from $S$).
 \end{prob}
-\paragraph{Solution: } Write $E=\text{span}\, S$, and let $\{b_1,\ldots,b_n\} $ be a basis for $E^{\perp}$.
-\begin{align*}
-    v\in E&\iff 
-.\end{align*}
+\paragraph{Solution: }Let $B=\{b_1,\ldots,b_n\} $ be an orthonormal basis for $\text{span } S$.
+
+\paragraph{$\implies$:} Let $v\in \text{span }S$. Then write $v=a_1b_1+\ldots+a_nb_n$. Let $w\in S^{\perp}$ be given, and note that $w\perp b_j$ for any basis element in $S$. Take:
+\[ \left<v,w \right> =  \left< a_1b_1+\ldots+a_nb_n,w\right> = a_1\left< b_1,w\right>+\ldots+a_n\left<b_n ,w\right> =  0+\ldots+0=0 .\] 
+And we see that $v\perp w$, so $v$ is perpendicular to any element of $S^{\perp}$, and $v\in {S^{\perp}}^{\perp}$.
+\paragraph{$\impliedby$:} Now let $v\in {S^{\perp}}^{\perp}$. Then $v\perp w$ for any $w\in S^{\perp}$
 
 \begin{prob}{Q2}
 Let $V$ and $W$ be finite dimensional inner product spaces and suppose $\ker A = \{0\}$. Find a left inverse for $A$ in terms of $A$ and $A^*$.
 \end{prob}
+
 \paragraph{Solution: } Begin with the identity,
 \[ \{0\} =\ker A =\ker A^* A .\] 
 So the composition of transformations $A^* A:V\to V$ has zero kernel and is injective, and by rank-nullity it must too surjective. Then this map is invertible, and if we take $(A^* A)^{-1}A^* A=I$, we see that $(A^* A)^{-1}A^* $ is a left inverse for $A$.
@@ -34,6 +37,26 @@ HINT: The inner product on $\mathbb{C}$ is assumed to be $\langle z, w\rangle = 
 \item Show that if $T: V \to \mathbb{C}$ is any linear map, then there is a vector $y$ so that $T = y^*$.
 \end{enumerate}
 \end{prob}
+\begin{enumerate}[label= (\alph*)] 
+    \item Recall from the definition of an adjoint operator, that the adjoint $x^* :V\to \mathbb{C}$ is given by:
+        \begin{align*}
+            \left< x(\lambda),y \right>_V &=\left<\lambda,x^* (y) \right>_{\mathbb{C}}\\
+            \left<\lambda x,y \right>_V&= \lambda \overline{x^* (y)} \\
+            \lambda\left< x,y \right>_V&= \lambda \overline{x^* (y)} \\
+            \overline{\lambda\left< x,y \right>_V}&= \overline{\lambda \overline{x^* (y)}} \\
+            \overline{\lambda}\left< y,x \right>_V&= \overline{\lambda} {x^* (y)} \\
+            \langle y, x\rangle&= x^* y
+        .\end{align*}
+        Then for the map $xy^* :V\to V$, 
+        \[
+            x(y^* (v))=x(\left<v,y \right>)=\left<v,y \right> x
+        .\] 
+    \item Choose $y=T^* (1).$ Then, for any $v\in V$, 
+        \begin{align*}
+            y^* (v)=\left<v,y \right>=\left<v,T^* (1) \right>_V = \left<Tv,1 \right>_{\mathbb{C}}=Tv
+        .\end{align*}
+        And therefore $T$ is induced by $y=T^* (1)$
+\end{enumerate}
 
 \begin{prob}{Q4}
 Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 useful here.
@@ -42,9 +65,30 @@ Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 usef
     \item Suppose $T: V \to W$ satisfies $\text{rank } T = k$. Show that $T$ is the sum of $k$ rank one operators. Hint: $PT = T$ where $P$ is the orthogonal projection onto $\text{ran } T$.
 \end{enumerate}
 \end{prob}
+\begin{enumerate}[label= (\alph*)] 
+    \item Since the dimension of the image of $T$ has dimension 1, we must have $\text{ran }T=\text{span }\{b\} $ for some $b\in W$. Let $v\in V$, then $Tv=\alpha b$ for some $\alpha\in \mathbb{C}$. Choose $x=b$, and $y^*(v)=\alpha$. Now we have 
+        \[
+        xy^* (v)=x(y^* (v))=x(\alpha)=\alpha x=\alpha b= Tv
+        .\] 
+
+    \item Let $T$ be linear from $V$ to $W$ of rank $k$. Then let $\{b_1,\ldots,b_k\} $ be an orthogonal basis for $\text{ran }T$. Then for $1\leq j\leq k$ and some $v\in V$, define $T_jv=P_{b_j}(Tv)$. Now:
+        \[
+            \sum_{j=1}^{k} T_k v=\sum_{j=1}^{k} P_{b_j}(Tv)=\sum_{j=1}^{k} \frac{\left<Tv,b_j \right>}{\|b_j\|}b_j=Tv
+        .\] 
+        Note the last equality comes from the orthogonal expansion of a vector discussed in class.
+\end{enumerate}
 
 \begin{prob}{Q5}
 Suppose that $A$ and $B$ are unitarily equivalent $n \times n$ matrices. That is, there is a unitary matrix $U$ so that $U^*AU = B$. Show that $E$ is an invariant subspace for $B$ if and only if $UE$ is invariant for $A$.
 Recall that a subspace $E$ of $V$ is invariant for $T$ if $Tv \in E$ for all $v \in E$.
 \end{prob}
+\paragraph{Solution: }Recall that from unitary equivalence, we can see that $AU=UB$.
+\begin{align*}
+    E \text{ is invariant under }B&\iff Bv\in E\quad\forall v\in E\\
+                        &\iff Bv=w\in E\\
+                         &\iff UBv=Uw\\
+                         &\iff AUv=Uw\\
+                         &\iff AUv\in UE\quad \forall Uv\in UE\\
+                         &\iff  UE \text{ is invariant under } A
+.\end{align*}
 \end{document}
