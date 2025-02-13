@@ -7,11 +7,10 @@ class MergeSort {
 		// left represents the starting index of the current subarray 'array'.
 		// right represents the ending index of the current subarray 'array'.
 
-		// TODO (2.1) If the subarray has at least two elements, then it can still be split further.
+		// (2.1) If the subarray has at least two elements, then it can still be split further.
 		if ( array.length>=2 )  { // ** YOUR CODE WHERE '?' **
 
-			// TODO (2.2) Calculate the middle index to divide the array into two halves.
-
+			// (2.2) Calculate the middle index to divide the array into two halves.
             int middle = (right-left)/2;
 
 			// Debugging: Print subarray being sorted
@@ -22,53 +21,53 @@ class MergeSort {
 			// (2.4) Recursively sort the right half of the array.
             mergeSort(array,middle,left);
 
-			// ** YOUR CODE HERE **
-
+            // (2.5) Merge the left and right half of the array.
             merge(array,left,middle,right);
-
-			// ** YOUR CODE HERE **
 		}
 	}
 
-    /**
-     * Returns a bool, whether x is earlier in the alphabet than y
-     **/
-    private boolean  compareAlph(String x, String y) {
-        xArr=x.toCharArray();
-        yArr=y.toCharArray();
-        return true;
-    }
 	// ==================================================
 	// MERGE FUNCTION to combine two sorted subarrays.
 	// ==================================================
-
 	private static void merge(String[] array, int left, int mid, int right) {
 
-		// TODO (2.6) Compute the sizes of the two subarrays to be merged.
+		// (2.6) Compute the sizes of the two subarrays to be merged.
 
         int leftSize = mid-left;
         int rightSize = right-mid;
 
-		// TODO (2.7) Create temporary arrays to store elements from the left and right subarrays.
+		// (2.7) Create temporary arrays to store elements from the left and right subarrays.
 
-        String[] leftArr = new String[leftSize];
-        String[] rightArr = new String[leftSize];
+        String[] leftArray = new String[leftSize];
+        String[] rightArray = new String[rightSize];
 
-		// TODO (2.8) Copy data from the original array into the left and right subarrays.
-        for (int i = 0; i<=leftSize; i++ ){
-            leftArr[i]=array[left+i];
+		// (2.8) Copy data from the original array into the left and right subarrays.
+        for (int i = 0; i<leftSize; i++ ){
+            leftArray[i]=array[left+i];
         }
-        for (int i = 0; i<=rightSize; i++ ){
-            rightArr[i]=array[mid+i];
+        for (int i = 0; i<rightSize; i++ ){
+            rightArray[i]=array[mid+i];
         }
 
 		// Debugging: Print subarrays before merging
 		System.out.println("( ................... )");
 		System.out.println(" ∪ Merging: " + Arrays.toString(leftArray) + " and " + Arrays.toString(rightArray));
 
-		// TODO (2.9) Merge the two subarrays by comparing their elements.
-
-		// ** YOUR CODE HERE **
+		// (2.9) Merge the two subarrays by comparing their elements.
+        // Iterate over the right array;
+        // i := pos in array
+        // j:= pos in leftArray
+        // k:= pos in rightArray
+		for (int i = 0; i<rightSize+leftSize; i++) {
+            int j,k=0;
+            if (leftArray[j].compareTo(rightArray[k])<=0) {// Will be negative if the leftArray element is before the right in the alphabet.
+                array[i]=leftArray[j];
+                j++;
+            } else {
+                array[i]=leftArray[k];
+                i++;
+            }
+		}
 
 		// TODO (2.10) Copy any remaining elements from `leftArray` to `array`.
 

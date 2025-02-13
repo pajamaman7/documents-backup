@@ -6,6 +6,21 @@
 \chead{}
 
 \begin{document}
+\paragraph{Student's note:} A couple times in this assignment, I used a result from the Conway text, the squeeze theorem for sequences of functions. Upon review, I realised that the proof of this fact was not covered in class. So here I present my own proof of this fact. 
+
+\paragraph{Claim:} Let  $f_n,g_n,h_n:I\to \mathbb{R}$ be sequences of functions such that $g_n(x)\leq f_n(x)\leq h_n(x)$ for any $n\in \mathbb{N}$ and $x\in I$, and $g_n,h_n\xrightarrow[{I}]{c.u}f$, Then $f_n\xrightarrow[{I}]{c.u}f$
+\begin{proof} 
+    Let $f_n,g_n,h_n$ be as above and $\varepsilon>0$. Then there exist $N_1,N_2:$ $n_1>N_1\implies |g_n(x)-f(x)|<\varepsilon$ and $n_2<N_2\implies |h_n(x)-f(x)|<\varepsilon$ for any $x\in I $. Take $N=\max \{N_1,N_2\} $. Then we get the pair of double inequalities;
+    \[
+    f(x)-\varepsilon < h_n(x)<f(x)+\varepsilon,\quad
+    f(x)-\varepsilon < g_n(x)<f(x)+\varepsilon
+    .\] 
+    And combining this with our other assumption,
+    \[
+    f(x)-\varepsilon <g_n(x)\leq f_n(x)\leq h_n(x)<f(x)+\varepsilon\implies|f_n(x)-f(x)<\varepsilon
+    .\] 
+    And therefore $f_n$ converges uniformly to $f$ on $I$.
+\end{proof}
 \begin{enumerate} 
 
 \item Let $\{f_n\}$ be the sequence of functions defined by
@@ -31,6 +46,7 @@
 
   \end{enumerate}
 
+  \newpage
 \item Let $f_n(x)=\left( \cos\left( \frac{2x}{n}\right)  \right)^{n^2}$
 
   \begin{enumerate}
@@ -66,7 +82,6 @@
   What happens if $a=0$?
 
   \paragraph{Solution: }We begin by considering our sequence of functions within the integral, each of which is a quotient and composition of continuous functions, and is itself continuous (for all but $x=0$). Call this $g_n(x) =\frac{\sin(nx)}{nx}$. Note that since $-1\leq\sin(nx)\leq 1$, we can find (for nonzero $x$) that $-\frac{1}{nx}\leq g_n(x)\leq \frac{1}{nx}$. Both the sequences bounding $g$ have a zero limit at infinity, so by the squeeze theorem on sequences of functions, we can say that for nonzero $x$, $g_n\to 0$.
-  %TODO x=0 case, show if each g_n is integrable?
   Now since we have already shown that our sequence $g_n$ is bounded, and since each $g_n$ is integrable, we can say:
 
   \begin{align*}
@@ -76,7 +91,10 @@
   &= 0-0 \\
   &= 0
   .\end{align*}
+  %
+  \paragraph{a=0:} Intuitively, since each function is not defined at 0, which will be the endpoint of integration, the supremum or infimum of the function over the first range in any partition $[0,x_1]$ will remain zero for sufficiently large $n$. 
 
+  \newpage 
 \item Construct a sequence of functions defined in $[0,1]$, each of which is discontinuous at every point of $[0,1]$ and which converges uniformly to a function that is continuous at every point 
 
   \paragraph{Solution: }Take the series $\{f_n\} $ defined by:
@@ -105,6 +123,7 @@ Regardless of case, we will get $|f_n(c)-f_n(d)|=\frac{1}{n}>\frac{1}{n+1}$, and
 
   Therefore $\{f_n\} $ is a sequence of functions which are continuous nowhere, convergent to the zero function which is continuous everywhere. 
 
+  \newpage
 \item Consider the series of functions $\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$.
   \begin{enumerate}
     \item Show that the series converges uniformly in the interval $[0,b]$ for any $b>0$.
@@ -118,9 +137,15 @@ Regardless of case, we will get $|f_n(c)-f_n(d)|=\frac{1}{n}>\frac{1}{n+1}$, and
         .\end{align*}
         Define $u_n=\frac{b}{n^2}$, then by the Weierstrass Comparison test, since $\sum_{n\geq 1}^{} u_n$ is convergent as a $p$-series with $p=2$, $\frac{x}{n(n+x)}\leq u_n$, this series must converge.
 
-    \item Let $F(x)=\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$. Show that $F'(x)=\sum_{n\geq 1}^{} \frac{1}{n(n+x)^2}$, $x\geq 0$.
-        %TODO Clarity on bringing derivative inside limit?
-        \paragraph{Solution: }
+    \item Let $F(x)=\sum_{n\geq 1}^{} \frac{x}{n(n+x)}$. Show that $F'(x)=\sum_{n\geq 1}^{} \frac{1}{(n+x)^2}$, $x\geq 0$.
+        \paragraph{Solution: }Begin by considering the derivative of the partial sums, using the linearity of the derivative.
+        \[
+        \frac{d}{dx}\sum_{k=1}^{n} \frac{x}{k(x+k)}=\sum_{k=1}^{n} \frac{d}{dx} \frac{x}{k(x+k)}=\sum_{k=1}^{n} \frac{1}{(k+x)^2}
+        .\] 
+        Then, since for $x\geq 0,$ $ \frac{1}{(x+k)^2}\leq \frac{1}{k^2}$, a convergent $p$-series, this series must converge uniformly. Since this term-differentiated sequence of partial sums converges, we can say that $F'(x)=\sum_{n\geq 1}^{} \frac{1}{(n+x)^2}$.
+        %TODO perhaps there's a better way to cite this result
+        
+        \iffalse
         \begin{align*}
             F'(x)&= \frac{d}{dx}\left(  \sum_{k=1}^{\infty} \frac{x}{k(k+x)}\right)  \\
                 &= \frac{d}{dx}\left( \lim_{n \to \infty} \sum_{k=1}^{n} \frac{x}{k(k+x)}\right)  \\
@@ -131,6 +156,7 @@ Regardless of case, we will get $|f_n(c)-f_n(d)|=\frac{1}{n}>\frac{1}{n+1}$, and
                 &= \lim_{n \to \infty} \sum_{k=1}^{n} \frac{1}{k(k+x)^2}  \\
                 &= \sum_{k=1}^{\infty} \frac{1}{k(k+x)^2} 
         .\end{align*}
+    \fi
 
   \end{enumerate}
   \newpage
