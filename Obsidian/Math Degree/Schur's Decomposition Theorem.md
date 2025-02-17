@@ -12,13 +12,12 @@ $$
 Or equivalently, $A=[a_{ij}]$ has $a_{ij}=0$ if $i>j$
 If such a basis exists, we get a lattice of invariant subspaces for $A$:
 $$
-\{ 0 \}\subseteq E_{1}\subseteq\dots\subseteq E_n=V
+\{ 0 \}= E_{1}\subseteq\dots\subseteq E_n=V
 $$
 with $\dim E_j=j$, $E_j=\text{span }\{ b_{1},\dots,b_j \}$, and $AE_j\subseteq E_j$.
 # Statement
 Let $T:V\to V$ in a [[Vector Spaces|Finite Dimensional]] [[Inner Product Space]] over $\mathbb{C}$. There is an onto $\beta=\{ b_{1},\dots,b_n \}$ so that $[T]_\beta$ is upper triangular.
 ## Proof
-\begin{proof}
 Let $\lambda_{1} \in\sigma(T)$ and $b_{1}$ be a unit eigenvector for $\lambda_{1}$. Extending $b_{1}$ to any orthonormal basis gives the [[Matrix Representations of Linear Maps]]:
 $$
 [T]=\begin{bmatrix}
@@ -29,7 +28,6 @@ $$
 $$
 Then continue with $A_{1}$, doing the same process, finding $\lambda_{2}\in\sigma(A_{2})$ and a unit eigenvector orthogonal to $b_{1}$, call it $b_{2}$.
 And then we repeat until $\lambda_n$, eventually giving us an upper triangular matrix.
-\end{proof}
 ### Notes
 - $\sigma(T)=\{ \lambda_{1},\dots,\lambda_n \}$
 -  If we write $U = [b_{1} \dots b_n]$, so that $U$ is [[Adjoints|Unitary]], $T\sim_U$ an upper triangular matrix.

@@ -59,7 +59,7 @@ We say $T,S:V\to V$ are unitarily equivalent if there exists some unitary $U:V\t
 #### Properties
 If $A$ is unitarily equivalent to $B$, 
 - $tr(A)=tr(B)$.
-- $tr(A*A)=tr(B*B)$ Unitary equivalence is isometric w.r.t the trace norm on $M_N(\mathbb{C})$
+- $tr(A^*A)=tr(B^*B)$ Unitary equivalence is isometric w.r.t the trace norm on $M_N(\mathbb{C})$
 ### Unitarily Diagonalizable
 $T$ is unitarily diagonalizable if and only if $T\sim_UD$ for some diagonal $D$.
 #### Properties
@@ -67,6 +67,12 @@ $T$ is unitarily diagonalizable if and only if $T\sim_UD$ for some diagonal $D$.
 - If $T$ is unitarily diagonalizable, and $\lambda,\mu \in\sigma(T)$ distinct, then $\ker(\lambda I-T)\perp \ker(\mu I-T)$.
 ## Hermitian/Self-Adjoint
 We call a matrix $T:V\to V$ self-adjoint or hermitian if $T=T^{*}$
+### Properties
+For a self-adjoint $A$
+- $\sigma(A)\subseteq \mathbb{R}$
+- If $\lambda\neq\mu \in\sigma(A),$ then $\ker(A-\lambda I)\perp \ker(A-\mu I)$.
+- $(\ker A)^\perp=ran\,A$, or $V=\ker A\oplus ran \,A$
+- Self-adjoints span the space of linear maps from $V\to V$.1
 ### Examples
 - $A+A^{*}$ is self adjoint
 - $AA^{*}, A^{*}A$ is self adjoint
