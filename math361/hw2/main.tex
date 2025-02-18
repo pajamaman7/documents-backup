@@ -12,12 +12,14 @@ Let $S$ be a subset (not necessarily a subspace) of a finite dimensional inner p
 $$\text{span } S := \left\{\sum_{j=1}^m \alpha_j s_j : \alpha_j \in \mathbb{C}, s_j \in S, m \in \mathbb{N}\right\}$$
 is the smallest subspace of $V$ containing $S$ (think of this as the set of all possible linear combinations of vectors from $S$).
 \end{prob}
-\paragraph{Solution: }Let $B=\{b_1,\ldots,b_n\} $ be an orthonormal basis for $\text{span } S$.
+\paragraph{Solution: }Let $B=\{b_1,\dots,b_n\} $ be an orthonormal basis for $\text{span } S$.
 
-\paragraph{$\implies$:} Let $v\in \text{span }S$. Then write $v=a_1b_1+\ldots+a_nb_n$. Let $w\in S^{\perp}$ be given, and note that $w\perp b_j$ for any basis element in $S$. Take:
-\[ \left<v,w \right> =  \left< a_1b_1+\ldots+a_nb_n,w\right> = a_1\left< b_1,w\right>+\ldots+a_n\left<b_n ,w\right> =  0+\ldots+0=0 .\] 
+\paragraph{$\implies$:} Let $v\in \text{span }S$. Then write $v=a_1b_1+\dots+a_nb_n$. Let $w\in S^{\perp}$ be given, and note that $w\perp b_j$ for any basis element in $S$. Take:
+\[ \left<v,w \right> =  \left< a_1b_1+\dots+a_nb_n,w\right> = a_1\left< b_1,w\right>+\dots+a_n\left<b_n ,w\right> =  0+\dots+0=0 .\] 
 And we see that $v\perp w$, so $v$ is perpendicular to any element of $S^{\perp}$, and $v\in {S^{\perp}}^{\perp}$.
 \paragraph{$\impliedby$:} Now let $v\in {S^{\perp}}^{\perp}$. Then $v\perp w$ for any $w\in S^{\perp}$
+
+Recall the identity $V=\text{span } S \oplus (\text{span } S)^{\perp} $
 
 \begin{prob}{Q2}
 Let $V$ and $W$ be finite dimensional inner product spaces and suppose $\ker A = \{0\}$. Find a left inverse for $A$ in terms of $A$ and $A^*$.
@@ -71,7 +73,7 @@ Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 usef
         xy^* (v)=x(y^* (v))=x(\alpha)=\alpha x=\alpha b= Tv
         .\] 
 
-    \item Let $T$ be linear from $V$ to $W$ of rank $k$. Then let $\{b_1,\ldots,b_k\} $ be an orthogonal basis for $\text{ran }T$. Then for $1\leq j\leq k$ and some $v\in V$, define $T_jv=P_{b_j}(Tv)$. Now:
+    \item Let $T$ be linear from $V$ to $W$ of rank $k$. Then let $\{b_1,\dots,b_k\} $ be an orthogonal basis for $\text{ran }T$. Then for $1\leq j\leq k$ and some $v\in V$, define $T_jv=P_{b_j}(Tv)$. Now:
         \[
             \sum_{j=1}^{k} T_k v=\sum_{j=1}^{k} P_{b_j}(Tv)=\sum_{j=1}^{k} \frac{\left<Tv,b_j \right>}{\|b_j\|}b_j=Tv
         .\] 
@@ -82,7 +84,7 @@ Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 usef
 Suppose that $A$ and $B$ are unitarily equivalent $n \times n$ matrices. That is, there is a unitary matrix $U$ so that $U^*AU = B$. Show that $E$ is an invariant subspace for $B$ if and only if $UE$ is invariant for $A$.
 Recall that a subspace $E$ of $V$ is invariant for $T$ if $Tv \in E$ for all $v \in E$.
 \end{prob}
-\paragraph{Solution: }Recall that from unitary equivalence, we can see that $AU=UB$.
+\paragraph{Solution: }Suppose that $ U^* AU=B$, and recall that from unitary equivalence, we can see that $AU=UB$;
 \begin{align*}
     E \text{ is invariant under }B&\iff Bv\in E\quad\forall v\in E\\
                         &\iff Bv=w\in E\\

@@ -1,0 +1,88 @@
+Grouped anagrams for ex4.txt: 
+Group 1: 10th
+Group 2: 1st
+Group 3: 2nd
+Group 4: 3rd
+Group 5: 4th
+Group 6: 5th
+Group 7: 6th
+Group 8: 7th
+Group 9: 8th
+Group 10: 9th
+Group 11: acknowledge
+Group 12: search chaser arches
+Group 13: scar cars arcs
+Group 14: era ear are
+Group 15: tirades tardies staider astride aridest
+Group 16: ram mar arm
+Group 17: starer raters rarest arrest
+Group 18: traits strait artist
+Group 19: tars star rats arts
+Group 20: stance secant ascent
+Group 21: tacos coats coast ascot
+Group 22: please elapse asleep
+Group 23: spa sap pas asp
+Group 24: praised diapers despair aspired
+Group 25: spas saps pass asps
+Group 26: stares asters assert
+Group 27: tears taser stare rates aster
+Group 28: tea eta eat ate
+Group 29: education cautioned auctioned
+Group 30: slaw laws awls
+Group 31: break brake baker
+Group 32: spiracle replicas calipers
+Group 33: recall cellar caller
+Group 34: trance recant nectar canter
+Group 35: trances scanter recants nectars canters
+Group 36: trace crate cater caret
+Group 37: traces recast reacts crates caters caster carets
+Group 38: reacted created catered
+Group 39: dicer cried cider
+Group 40: medical declaim decimal claimed
+Group 41: slated lasted deltas
+Group 42: mode dome demo
+Group 43: rested deters desert
+Group 44: tailed dilate detail
+Group 45: stained sainted instead detains
+Group 46: toured routed detour
+Group 47: repaid paired diaper
+Group 48: tied tide edit diet
+Group 49: stride driest direst
+Group 50: reductions introduces discounter
+Group 51: space paces
+Group 52: repaint pertain painter
+Group 53: repaints pertains pantries painters
+Group 54: spelt slept pelts
+Group 55: serpents presents pertness
+Group 56: step pets pest
+Group 57: spire pries piers
+Group 58: spine snipe pines
+Group 59: points pitons piston
+Group 60: point piton
+Group 61: spore ropes prose poser pores
+Group 62: spotter protest potters
+Group 63: serpent repents present
+Group 64: spar rasp raps
+Group 65: shears shares rashes
+Group 66: startle starlet rattles
+Group 67: saltier retails realist
+Group 68: secure rescue recuse
+Group 69: secured rescued reduces recused
+Group 70: singer signer resign reigns
+Group 71: siren risen rinse resin reins
+Group 72: trees terse steer reset
+Group 73: sorter roster resort
+Group 74: trainers terrains strainer retrains restrain
+Group 75: retests
+Group 76: trainer terrain retrain
+Group 77: tire tier rite
+Group 78: tries tires tiers rites
+Group 79: stories sorties rosiest
+Group 80: stain satin saint
+Group 81: veals vales salve
+Group 82: tester street setter
+Group 83: yaws ways sway
+Group 84: treats tetras taster
+Group 85: thickset thickets thickest
+Group 86: wired wider weird
+Group 87: writhe wither

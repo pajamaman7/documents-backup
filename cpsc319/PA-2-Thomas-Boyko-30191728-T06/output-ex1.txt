@@ -1,0 +1,5 @@
+Grouped anagrams for ex1.txt: 
+Group 1: car arc
+Group 2: bed
+Group 3: mega game
+Group 4: tops stop pots

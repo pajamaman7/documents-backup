@@ -1,0 +1,7 @@
+Grouped anagrams for ex3.txt: 
+Group 1: traits strait artist
+Group 2: medical declaim decimal claimed
+Group 3: toured routed detour
+Group 4: shape phase heaps
+Group 5: repaint pertain painter
+Group 6: wired wider weird

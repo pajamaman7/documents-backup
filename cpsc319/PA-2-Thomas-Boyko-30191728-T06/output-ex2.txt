@@ -1,0 +1,14 @@
+Grouped anagrams for ex2.txt: 
+Group 1: acres
+Group 2: drawer
+Group 3: forest
+Group 4: gallery
+Group 5: lemons
+Group 6: petal
+Group 7: salesman
+Group 8: seat
+Group 9: smile
+Group 10: stories
+Group 11: stream
+Group 12: trade
+Group 13: wired
