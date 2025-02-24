@@ -4,6 +4,7 @@ aliases:
   - Unitary
   - Self-Adjoint
   - Hermitian
+  - Unitarily Diagonalizable
 ---
 ## For $M_{mn}(\mathbb{C})$
 We define $A^{*}=[\overline{a_{ji}}]$ for $A=[a_{ij}]$
@@ -73,6 +74,7 @@ For a self-adjoint $A$
 - If $\lambda\neq\mu \in\sigma(A),$ then $\ker(A-\lambda I)\perp \ker(A-\mu I)$.
 - $(\ker A)^\perp=ran\,A$, or $V=\ker A\oplus ran \,A$
 - Self-adjoints span the space of linear maps from $V\to V$.1
+- $A=0$ if and only if $\left< Av,v \right> = 0\forall v\in V$.
 ### Examples
 - $A+A^{*}$ is self adjoint
 - $AA^{*}, A^{*}A$ is self adjoint

@@ -1,1 +1,4 @@
-For a [[Adjoints|Self-Adjoint]] operator $A$ in a [[Vector Spaces|Finite Dimensional]] [[Inner Product Space]] $V$, $A=A^{*}$ if and only if $A$ is unitarily diagonalizable and has real eigenvalues. In fact, if $\sigma(A)=\{ \lambda_{1},\dots,\lambda_k \}$ for distinct eigenvalues, and $E_j=\ker(A-\lambda_jI)a$, then $A=\lambda_{1}P_{E_{1}}+\dots+\lambda_kP_{E_{k}}$, ($P_{E_j}$ are called spectral projections) and if $p(z)$ is any polynomial, then $P(A)=p(\lambda_{1}P_{E_{1}})+\dots+p(\lambda_k)P_{E_{k}}$, called the polynomial functional calculus.
+For a [[Adjoints|Self-Adjoint]] operator $A$ in a [[Vector Spaces|Finite Dimensional]] [[Inner Product Space]] $V$:
+$A=A^{*}$ if and only if $A$ is unitarily diagonalizable and has real eigenvalues.
+## Polynomial functional calculus
+In fact, if $\sigma(A)=\{ \lambda_{1},\dots,\lambda_k \}$ for distinct eigenvalues, and $E_j=\ker(A-\lambda_jI)a$, then $A=\lambda_{1}P_{E_{1}}+\dots+\lambda_kP_{E_{k}}$, ($P_{E_j}$ are called spectral projections) and if $p(z)$ is any polynomial, then $P(A)=p(\lambda_{1}P_{E_{1}})+\dots+p(\lambda_k)P_{E_{k}}$, called the polynomial functional calculus.

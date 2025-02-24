@@ -242,7 +242,7 @@
 	{trigger: "lr|", replacement: "\\left| $0 \\right| $1", options: "mA"},
 	{trigger: "lr{", replacement: "\\left\\{ $0 \\right\\} $1", options: "mA"},
 	{trigger: "lr[", replacement: "\\left[ $0 \\right] $1", options: "mA"},
-	{trigger: "lra", replacement: "\\left< $0 \\right> $1", options: "mA"},
+	{trigger: "lra", replacement: "\\langle $0 \\rangel $1", options: "mA"},
 
 
 

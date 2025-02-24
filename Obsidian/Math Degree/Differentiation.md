@@ -5,9 +5,7 @@ aliases:
 ---
 Differentiation is the process of taking the derivative of a function. The derivative of a function gives us the slope of a function at a given point. This can be notated several different ways. In general, when $y=f(x)$,
 $$\frac{dy}{dx}=y' = f'(x)$$
-Graphically, this can be thought of as the tangent line to the curve at $(x,f(x))$
-
-
+Graphically, this can be thought of as the slope of the tangent line to the curve at $(x,f(x))$
 ## First Principles
 The derivative of a function can be found algebraically using [[Limits]], and the formula is given by:
 $$\frac{dy}{dx}=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}$$

@@ -7,30 +7,47 @@
 
 \begin{document}
 
-\begin{prob}{Q1}
-Let $S$ be a subset (not necessarily a subspace) of a finite dimensional inner product space $V$. Show that $(S^\perp)^\perp = \text{span } S$, where
+\begin{enumerate}
+    
+\item Let $S$ be a subset (not necessarily a subspace) of a finite dimensional inner product space $V$. Show that $(S^\perp)^\perp = \text{span } S$, where
 $$\text{span } S := \left\{\sum_{j=1}^m \alpha_j s_j : \alpha_j \in \mathbb{C}, s_j \in S, m \in \mathbb{N}\right\}$$
 is the smallest subspace of $V$ containing $S$ (think of this as the set of all possible linear combinations of vectors from $S$).
-\end{prob}
-\paragraph{Solution: }Let $B=\{b_1,\dots,b_n\} $ be an orthonormal basis for $\text{span } S$.
+% TODO span S perp = S perp?
+\paragraph{Lemma:} To prove the following fact we use the following:
 
-\paragraph{$\implies$:} Let $v\in \text{span }S$. Then write $v=a_1b_1+\dots+a_nb_n$. Let $w\in S^{\perp}$ be given, and note that $w\perp b_j$ for any basis element in $S$. Take:
+For any subset $S$ of a finite dimensional inner product space $V$, $(\text{span }S)^{\perp}=S^{\perp}$.
+\begin{proof} 
+    
+
+{$\subseteq $:}  Let $v\in (\text{span }S )^{\perp}$. Since $v$ is perpendicular to any element of $\text{span }S$, it must be perpendicular to any element of $S$ (since $S\subseteq \text{span }S$).
+
+{$\supseteq$:} Let $v\in S^{\perp}$, and let $w=a_1s_1+\dots+a_ks_k$ for some spanning set $\{s_1,\dots,s_k\} \subseteq S$. Then take:
+\[ \langle w,v \rangle = \langle \sum_{j=1}^{k} a_js_j,v \rangle=\sum_{j=1}^{k} a_j\langle s_j,v \rangle=\sum_{j=1}^{k} a_j0=0 .\] 
+So $v\perp w$ and therefore $v\in \text{span }S$.
+\end{proof}
+\paragraph{Solution: }
+
+Let $B=\{b_1,\dots,b_n\} $ be an orthonormal basis for $\text{span } S$.
+
+\paragraph{$\subseteq $:} Let $v\in \text{span }S$. Then write $v=a_1b_1+\dots+a_nb_n$. Let $w\in S^{\perp}$ be given, and note that $w\perp b_j$ for any basis element in $S$. Take:
 \[ \left<v,w \right> =  \left< a_1b_1+\dots+a_nb_n,w\right> = a_1\left< b_1,w\right>+\dots+a_n\left<b_n ,w\right> =  0+\dots+0=0 .\] 
 And we see that $v\perp w$, so $v$ is perpendicular to any element of $S^{\perp}$, and $v\in {S^{\perp}}^{\perp}$.
-\paragraph{$\impliedby$:} Now let $v\in {S^{\perp}}^{\perp}$. Then $v\perp w$ for any $w\in S^{\perp}$
+\paragraph{$\supseteq $:} Recall the identity $V=(\text{span } S)^{\perp}\oplus  \text{span }S$. Then for any $v\in(S^{\perp})^{\perp}$, $v=x+y$ for some  $x\in (\text{span }S)^{\perp}=S^{\perp}$ and $y\in \text{span } S$.
 
-Recall the identity $V=\text{span } S \oplus (\text{span } S)^{\perp} $
+Now take the inner product $\langle v,x \rangle=0$ since $v\perp x$. Expanding,
+\[
+0=\langle v,x \rangle=\langle x+y,x \rangle=\langle x,x \rangle+\langle y,x \rangle=\langle x,x \rangle+0=\|x\|^2
+.\] 
+Then since $\|x\|=0$ we must have $x=0$, meaning $v=y$ and $v\in \text{span }S$.
 
-\begin{prob}{Q2}
-Let $V$ and $W$ be finite dimensional inner product spaces and suppose $\ker A = \{0\}$. Find a left inverse for $A$ in terms of $A$ and $A^*$.
-\end{prob}
+\item Let $V$ and $W$ be finite dimensional inner product spaces and suppose $\ker A = \{0\}$. Find a left inverse for $A$ in terms of $A$ and $A^*$.
 
 \paragraph{Solution: } Begin with the identity,
 \[ \{0\} =\ker A =\ker A^* A .\] 
 So the composition of transformations $A^* A:V\to V$ has zero kernel and is injective, and by rank-nullity it must too surjective. Then this map is invertible, and if we take $(A^* A)^{-1}A^* A=I$, we see that $(A^* A)^{-1}A^* $ is a left inverse for $A$.
 
-\begin{prob}{Q3}
-Let $V$ be a finite dimensional inner product space.
+\newpage
+\item Let $V$ be a finite dimensional inner product space.
 \begin{enumerate}[label= (\alph*)] 
 \item We can think of any $x \in V$ as a linear map from $\mathbb{C} \to V$ by setting $x(\lambda) := \lambda x$. You do not have to prove that this is linear. Show that $x^*: V \to \mathbb{C}$ satisfies
 $$x^* y = \langle y, x\rangle.$$
@@ -38,7 +55,7 @@ Use this to deduce that the map $xy^*$ is given by $xy^* v = \langle v, y\rangle
 HINT: The inner product on $\mathbb{C}$ is assumed to be $\langle z, w\rangle = z\overline{w}$.
 \item Show that if $T: V \to \mathbb{C}$ is any linear map, then there is a vector $y$ so that $T = y^*$.
 \end{enumerate}
-\end{prob}
+\paragraph{Solution: } 
 \begin{enumerate}[label= (\alph*)] 
     \item Recall from the definition of an adjoint operator, that the adjoint $x^* :V\to \mathbb{C}$ is given by:
         \begin{align*}
@@ -60,13 +77,11 @@ HINT: The inner product on $\mathbb{C}$ is assumed to be $\langle z, w\rangle = 
         And therefore $T$ is induced by $y=T^* (1)$
 \end{enumerate}
 
-\begin{prob}{Q4}
-Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 useful here.
-\begin{enumerate}[label= (\alph*)] 
+\item Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 useful here. \begin{enumerate}[label= (\alph*)] 
     \item Suppose $T: V \to W$ satisfies $\text{rank } T = 1$. Show that there are vectors $x \in W$ and $y \in V$ so that $T = xy^*$.
     \item Suppose $T: V \to W$ satisfies $\text{rank } T = k$. Show that $T$ is the sum of $k$ rank one operators. Hint: $PT = T$ where $P$ is the orthogonal projection onto $\text{ran } T$.
 \end{enumerate}
-\end{prob}
+\paragraph{Solution: }
 \begin{enumerate}[label= (\alph*)] 
     \item Since the dimension of the image of $T$ has dimension 1, we must have $\text{ran }T=\text{span }\{b\} $ for some $b\in W$. Let $v\in V$, then $Tv=\alpha b$ for some $\alpha\in \mathbb{C}$. Choose $x=b$, and $y^*(v)=\alpha$. Now we have 
         \[
@@ -79,11 +94,10 @@ Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 usef
         .\] 
         Note the last equality comes from the orthogonal expansion of a vector discussed in class.%TODO
 \end{enumerate}
+\newpage
 
-\begin{prob}{Q5}
-Suppose that $A$ and $B$ are unitarily equivalent $n \times n$ matrices. That is, there is a unitary matrix $U$ so that $U^*AU = B$. Show that $E$ is an invariant subspace for $B$ if and only if $UE$ is invariant for $A$.
+\item Suppose that $A$ and $B$ are unitarily equivalent $n \times n$ matrices. That is, there is a unitary matrix $U$ so that $U^*AU = B$. Show that $E$ is an invariant subspace for $B$ if and only if $UE$ is invariant for $A$.
 Recall that a subspace $E$ of $V$ is invariant for $T$ if $Tv \in E$ for all $v \in E$.
-\end{prob}
 \paragraph{Solution: }Suppose that $ U^* AU=B$, and recall that from unitary equivalence, we can see that $AU=UB$;
 \begin{align*}
     E \text{ is invariant under }B&\iff Bv\in E\quad\forall v\in E\\
@@ -93,4 +107,5 @@ Recall that a subspace $E$ of $V$ is invariant for $T$ if $Tv \in E$ for all $v 
                          &\iff AUv\in UE\quad \forall Uv\in UE\\
                          &\iff  UE \text{ is invariant under } A
 .\end{align*}
+\end{enumerate}
 \end{document}

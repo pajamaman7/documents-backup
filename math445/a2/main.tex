@@ -1,0 +1,26 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $2$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+
+\item Let $\phi : \mathbb{R}^n \to \mathbb{R}$ be such that $\phi(x) = 0 \Leftrightarrow x = 0$ and $\phi(\lambda x) = |\lambda| \phi(x), \forall x \in \mathbb{R}^n, \forall \lambda \in \mathbb{R}$  Show that if the set $B = \left\{x \in \mathbb{R}^n | \phi(x) \leq 1 \right\}$ is convex, then $\phi$ defines a norm on $\mathbb{R}^n$. 
+\paragraph{Solution: }Non-degeneracy and scalar linearity are given from the description of $\phi$. So all that is left to prove is the triangle inequality and non-negativity.
+
+\item Let E be a compact set in $\mathbb{R}^n$ and let F be a closed set in $\mathbb{R}^n$ such that $E \cap F = \emptyset$.  a. Show that there exists d > 0 such that $\|x - y\| > d$, $\forall x \in E$ and $\forall y \in F$.  b. Does the result you proved in the previous question remain true if E and F are closed, but neither is compact? Justify your answer.  
+
+\item Let $E = \left\{(x,y) | y = \sin\left( \frac{1}{x} \right), x > 0 \right\}$. Is E open? Is it closed? What are the accumulation points of E?  
+
+\item Let $f : \mathbb{R}^n \to \mathbb{R}$ be a function in $C^1(\mathbb{R}^n)$, i.e., $f, \partial_{x_1} f, ..., \partial_{x_n} f$ are continuous in $\mathbb{R}^n$. Suppose  $f(tx) = t f(x), \forall x \in \mathbb{R}^n, \forall t \in \mathbb{R}$  Show that f is a linear function.  
+
+\item Given $u : \mathbb{R} \to \mathbb{R}$ a function in $C^2(\mathbb{R})$, define $f : \mathbb{R}^2 \to \mathbb{R}$ by  $f(x,y) = \begin{cases} u(y) - u(x) & \text{if } y \neq x \\ u'(x) & \text{if } y = x \end{cases}$  Show that f is differentiable at any point $(a,a)$.  
+
+\item Let $f : \mathbb{R}^2 \to \mathbb{R}$ be a function that is defined in an open set $\Omega$ in $\mathbb{R}^2$.  Show that if $\partial_x f(x,y), \partial_y f(x,y)$ and $\partial_{xy} f(x,y)$ are continuous in $\Omega$, then $\partial_{yx} f(x,y)$ exists in $\Omega$ and we have  $\partial_{yx} f(x,y) = \partial_{xy} f(x,y), \forall (x,y) \in \Omega$  Hint: Consider the expression $\Delta(s,t) = f(a+s,b+t) - f(a+s,b) - f(a,b+t) + f(a,b)$.  
+
+\item Compute the degree 3 Taylor polynomial $T_3(x,x_2)$ of the function $f: \mathbb{R}^2 \to \mathbb{R}$, defined by $f(x_1, x_2) = \frac{4x_1 + 6x_2 - 1}{2x_1 + 3x_2}$ at the point $(-1,1).$
+\end{enumerate}
+\end{document}
