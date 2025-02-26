@@ -81,3 +81,15 @@ For a self-adjoint $A$
 - $D=\text{diag }\{ \lambda_{1},\dots,\lambda_n \}$ is self-adjoint $\iff\lambda_j\in\mathbb{R}$.
 - If $A$ is unitarily diagonalizable, then $A=A^{*}$ if and only if $\sigma(A)\subseteq \mathbb{R}$
 - Any orthogonal [[Orthogonality|Projection]] has $P=P^{2}=P^{*}$
+## Positive Semi-Definite
+Let $A:V\to V$ be self-adjoint. Then $A$ is positive semi-definite (or sometimes just positive) if $\langle Av,v \rangle\geq 0\forall v\in V$. We may write $A\geq 0$
+### Positive Definite
+Thanks to Ryan's indecision, 
+If $\langle Av,v \rangle>0\forall v\in V$, we say $A$ is positive definite and may write $A>0$.
+### Property
+Suppose $A$ is self-adjoint
+- $A\geq 0$ iff $\sigma(A)\subseteq [0,\infty )$ 
+- $A>0$ iff $\sigma(A)\subseteq(0,\infty)$
+If $A$ is positive semi-definite, 
+- There exists a unique positive semi-definite $B^{2}=A$, written $\sqrt{ A }$. (there may be more square roots)
+	- Such a root can be found with spectral theorem, unitarily diagonalize $A$ and square root the diagonal entries blah blah.

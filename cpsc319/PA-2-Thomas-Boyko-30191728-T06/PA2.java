@@ -1,12 +1,24 @@
+// ====================================================================
+// CPSC 319, W25, PA-2: Searching and Sorting
+//
+// Student Information:
+//
+// ** Full Name: Thomas Boyko
+//
+// ** UCID: 30191728
+//
+// ** Tutorial Section: T06
+//
+// ====================================================================
 import java.io.*;
 import java.util.*;
 
-// ============================
-// (1) MAIN CLASS (PA2)
-// ============================
-
 public class PA2 {
-
+    /**
+     * Main method to handle file input, output, sorting and searching
+     *
+     * @param args command-line arguments (not used)
+     **/
 	public static void main(String[] args) {
 		try {
 			// (1.1) Prompt the user to enter an input file name, read the filename from standard input,
@@ -54,9 +66,13 @@ public class PA2 {
 		}
 	}
 
-	// ================================
-	// FUNCTION TO READ FILE CONTENT
-	// ================================
+    /**
+     * Reads the given file
+     *
+     * @param fileName The file to be read
+     * @throws IOException if a file cannot be read or is empty
+     * @return file contents
+     **/
 	private static String readFile(String fileName) throws IOException {
 
 		// (1.7) Create a File object for the given file name.
@@ -100,10 +116,12 @@ public class PA2 {
         return bob.toString();
 	}
 
-	// ==========================================
-	// FUNCTION TO PRINT AND SAVE FINAL OUTPUT
-	// ==========================================
-
+    /**
+     * Prints all the groups of anagrams, nicely formatted
+     *
+     * @param groups A map between a canonical form and a linked list of all words with that form
+     * @param inputFileName The file to be written to 
+     **/
 	public static void printFinalOutput(Map<String, SinglyLinkedList> groups, String inputFileName) {
 
 		// (1.18) Print a header for the final grouped anagrams output.
@@ -141,7 +159,6 @@ public class PA2 {
 		// ==========================
 		// FILE OUTPUT HANDLING
 		// ==========================
-
 		// (1.26) Save the final grouped anagrams to a text file with a modified filename based on the input file.
 
 		// Initialize BufferedWriter for writing to the output file.
@@ -185,6 +202,13 @@ public class PA2 {
 // (2) MERGE SORT CLASS
 // ============================
 class MergeSort {
+    /**
+     * Sorts an array of strings
+     * 
+     * @param array The array to be sorted
+     * @param left The beginning index of the subarray to be sorted
+     * @param right The ending index of the subarray to be sorted
+     **/
 	public static void mergeSort(String[] array, int left, int right) {
 
 		// left represents the starting index of the current subarray 'array'.
@@ -209,9 +233,14 @@ class MergeSort {
 		}
 	}
 
-	// ==================================================
-	// MERGE FUNCTION to combine two sorted subarrays.
-	// ==================================================
+    /**
+	* Merge function to combine two sorted subarrays.
+    *
+    * @param array The array to be merged
+    * @param left The left index of the left subarray
+    * @param mid The middle index between subarrays
+    * @param right The right index of the right subarray
+    **/
 	private static void merge(String[] array, int left, int mid, int right) {
 
 		// (2.6) Compute the sizes of the two subarrays to be merged.
@@ -269,7 +298,6 @@ class MergeSort {
 // ====================================
 // (5) SINGLY LINKED LIST CLASS
 // ====================================
-
 class SinglyLinkedList {
 
 	// (5.1) Declare a head node representing the start of the linked list
@@ -287,9 +315,11 @@ class SinglyLinkedList {
         }
 	}
 
-	// =====================================================
-	// ADD SORTED METHOD to insert a word in sorted order
-	// =====================================================
+    /**
+     * Adds a node to the linked list in sorted order
+     *
+     * @param word The word to be added
+     **/
 	public void addSorted(String word) {
 
 		// (5.4) Allocate new Node
@@ -343,8 +373,6 @@ class SinglyLinkedList {
 	// ===============================================================
 
 	@Override // Java annotation that indicates a method overrides a method from its superclass.
-
-	// Convert the linked list to a formatted string representation
 	public String toString() {
 
 		// (5.10) Initialize a StringBuilder to store the result
@@ -395,7 +423,12 @@ class SinglyLinkedList {
 //
 // =======================================================
 class AnagramGrouper {
-
+    /** 
+     * Groups the anagrams within the hash maop
+     *
+     * @param words The string to be grouped
+     * @return A grouped hash map of algorithms
+     **/
 	public static Map<String, SinglyLinkedList> groupAnagrams(String[] words) {
 
 		// (6.1) Store anagram groups while preserving insertion order
@@ -436,7 +469,6 @@ class AnagramGrouper {
 	//      (3) Sort using insertion sort -------------> ['o', 'p', 's', 't']
 	//      (4) Convert back to string ----------------> "opst"
 	// ===================================================================================================
-
 	private static String computeCanonicalForm(String word) {
 
 		// (6.5) Convert word into a character array
@@ -450,10 +482,11 @@ class AnagramGrouper {
         return String.copyValueOf(charArr);
 	}
 
-	// =================================
-	// METHOD insertionSort()
-	// Implement insertion sort for sorting characters in a word
-	// =================================
+    /**
+     * Sorts a character array
+     *
+     * @param arr The array to be sorted
+     **/
 	private static void insertionSort(char[] arr) {
 		// Debugging: Initial array state
 		// System.out.println();

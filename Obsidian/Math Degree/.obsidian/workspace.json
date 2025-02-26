@@ -22,132 +22,6 @@
             }
           },
           {
-            "id": "c0abe7be9649cccd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Metric Spaces.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Metric Spaces"
-            }
-          },
-          {
-            "id": "cdbf2f925af31b16",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Functions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Functions"
-            }
-          },
-          {
-            "id": "fe9ce201d6046ea6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Sylow Theorems.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Sylow Theorems"
-            }
-          },
-          {
-            "id": "3b178ee5404cc72f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Sequences of Functions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Sequences of Functions"
-            }
-          },
-          {
-            "id": "91c76a5f4e26385c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Binary Search.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Binary Search"
-            }
-          },
-          {
-            "id": "1fdceb0588776c8b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Schur's Decomposition Theorem.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Schur's Decomposition Theorem"
-            }
-          },
-          {
-            "id": "6e71b964e181a42d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Orthogonality.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Orthogonality"
-            }
-          },
-          {
-            "id": "6324c240814dec0b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Normed Vector Space.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Normed Vector Space"
-            }
-          },
-          {
-            "id": "12ff0ebf59f422dd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Linear Algebra III.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Linear Algebra III"
-            }
-          },
-          {
             "id": "e25efa9c4f01eaf7",
             "type": "leaf",
             "state": {
@@ -176,6 +50,20 @@
             }
           },
           {
+            "id": "c47b3483c5e7b20d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Adjoints.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Adjoints"
+            }
+          },
+          {
             "id": "94d6d051c6620f27",
             "type": "leaf",
             "state": {
@@ -188,9 +76,65 @@
               "icon": "lucide-file",
               "title": "Adjoints"
             }
+          },
+          {
+            "id": "724e2badce57309a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Adjoints.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Adjoints"
+            }
+          },
+          {
+            "id": "f58dfe9153c00612",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Real Function of Several Variables.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Real Function of Several Variables"
+            }
+          },
+          {
+            "id": "b1d4c1599a6df91c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Partial Differentiation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Partial Differentiation"
+            }
+          },
+          {
+            "id": "dd5c70e62a4038f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Topology of R^n.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Topology of R^n"
+            }
           }
         ],
-        "currentTab": 11
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -333,34 +277,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "675d49d4961496b7",
+  "active": "c47b3483c5e7b20d",
   "lastOpenFiles": [
-    "Adjoints.md",
-    "Spectral Theorem for Normal Operators.md",
     "Normal Operators.md",
+    "Adjoints.md",
+    "Partial Differentiation.md",
+    "Topology of R^n.md",
+    "Spectral Theorem for Normal Operators.md",
+    "Euclid's Recursive Algorithm.md",
+    "Real Function of Several Variables.md",
+    "Ordered Set.md",
+    "Differential Operators.md",
+    "Partial Derivative.md",
+    "Linear Diophantine Equations.md",
+    "Differentiation.md",
     "Linear Algebra III.md",
+    "Schur's Decomposition Theorem.md",
+    "Orthogonality.md",
+    "Normed Vector Space.md",
+    "Binary Search.md",
+    "Sequences of Functions.md",
+    "Metric Spaces.md",
+    "Functions.md",
+    "Sylow Theorems.md",
     "Spectral Theorem for Self-Adjoints.md",
     "Topology.md",
     "Modular Arithmetic.md",
     "Convex Functions.md",
-    "Normed Vector Space.md",
-    "Orthogonality.md",
-    "Schur's Decomposition Theorem.md",
-    "Binary Search.md",
-    "Sequences of Functions.md",
-    "Sylow Theorems.md",
-    "Functions.md",
-    "Metric Spaces.md",
-    "Differentiation.md",
-    "Real Function of Several Variables.md",
     "Isomorphism Theorems.md",
-    "Big O Notation.md",
-    "Unitary Representation of Sn.md",
-    "Limits and Continuity in Metric Spaces.md",
-    "Topology of R^n.md",
-    "p-norm.md",
-    "Multivariable Calculus.md",
-    "k-forms.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Pasted image 20240119100450.png",

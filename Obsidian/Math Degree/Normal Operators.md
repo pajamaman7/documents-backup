@@ -1,6 +1,7 @@
 ---
 aliases:
   - Normal Operator
+  - Normal
 ---
 $N:V\to V$, a [[Linear Operators|Linear Operator]] on a [[Vector Spaces|Finite Dimensional]] [[Inner Product Space]] is a normal operator if $N^{*}N=NN^{*}$.
 ## Properties
