@@ -9,7 +9,7 @@ aliases:
 ## First Isomorphism Theorem
 Let $f:G\to H$ be a homomorphism, and recall that $\ker f\trianglelefteq G$, and $\mathrm{Im}f\leq H$. Then:
 $$G/ \ker f\cong\mathrm{Im}f$$
-This holds true for a ring.
+This holds true for a ring (with its [[Ideals]]).
 ### CRT Link
 From [[Chinese Remainder Theorem]]:
 Let $R$ be a commutative ring, and $I,J$ be ideals of $R$ such that $I+J=R$. Then

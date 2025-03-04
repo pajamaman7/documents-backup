@@ -4,6 +4,7 @@ aliases:
   - Euclidean Topology
   - Open Ball
   - Closed Ball
+  - Convex Set
 ---
 ## Standard 2-Norm in $\mathbb{R}^{n}$
 The Euclidean norm in $\mathbb{R}^{n}$ is given by:
@@ -61,3 +62,8 @@ $a$ is an exterior point of a set $A\subseteq \mathbb{R}^{n}$ if $a\not\in \bar{
 Equivalently, $a$ is an exterior point of $A$ if $a$ is interior to $\mathbb{R}^{n}\setminus A$.
 ## Spheres
 We can define the sphere $S_r(x)=\overline{B_r}(x)\setminus B_r(x)=\{ y\in\mathbb{R}^{n}|\| y-x \|=r \}$, the boundary of a closed ball.
+## Line segments
+$$ [\![a,b] \!]=\{ \lambda a+(1-\lambda)b|\lambda \in [0,1] \} $$
+## Convex Sets
+A convex set $C\subseteq\mathbb{R}^n$ is one such that any line segment between points of $C$, is contained in $C$. 
+For any $x,y\in C$ and $\lambda \in[0,1]$, $\lambda x+(1-\lambda)y\in C$.

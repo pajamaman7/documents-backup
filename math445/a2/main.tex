@@ -4,23 +4,29 @@
 \lhead{Assignment \# $2$}
 \rhead{Name: Thomas Boyko; UCID: 30191728}
 \chead{}
-
+%\hfuzz=45.002pt 
 \begin{document}
 \begin{enumerate} 
 
 \item Let $\phi : \mathbb{R}^n \to \mathbb{R}$ be such that $\phi(x) = 0 \Leftrightarrow x = 0$ and $\phi(\lambda x) = |\lambda| \phi(x), \forall x \in \mathbb{R}^n, \forall \lambda \in \mathbb{R}$  Show that if the set $B = \left\{x \in \mathbb{R}^n | \phi(x) \leq 1 \right\}$ is convex, then $\phi$ defines a norm on $\mathbb{R}^n$. 
 \paragraph{Solution: }Non-degeneracy and scalar linearity are given from the definition of $\phi$. So all that is left to prove is the triangle inequality and non-negativity.
 
-Non-negativity: Suppose $x\in \mathbb{R}^{n}$ is nonzero, and 
+Triangle inequality: Let $x,y\in \mathbb{R}^{n},$ and take $r=\max \{\phi(x),\phi(y)\} $. %TODO
 
-Let $x,y\in \mathbb{R}^{n},$ and take $r=\max \{\phi(x),\phi(y)\} $. Then $\frac{x}{r},\frac{y}{r}\in B$ 
+Non-negativity: Suppose $x\in \mathbb{R}^{n}$. Then $\phi(-x)=|-1|\phi(x)=\phi(x)$, and:
+\begin{align*}
+    \phi(x+(-x))&\leq \phi(x)+\phi(-x)&\text{By Triangle Inequality}\\
+    \phi(0)&\leq 2\phi(x)\\
+    0&\leq\phi(x)
+.\end{align*}
+
 \item Let E be a compact set in $\mathbb{R}^n$ and let F be a closed set in $\mathbb{R}^n$ such that $E \cap F = \emptyset$.  
 
 \begin{enumerate}[label= (\alph*)] 
     \item Show that there exists d > 0 such that $\|x - y\| > d$, $\forall x \in E$ and $\forall y \in F$.  
-        \paragraph{Solution: }Take $d=\inf_{x\in E,y\in F}\|x-y\|$. Clearly this is less than any $\|x-y\|$ for $x\in E$, $y\in F$, and it cannot be negative since the norm is positive. So then $d\geq 0$.For contradiction suppose $d=0$.
-    \item  Does the result you proved in the previous question remain true if E and F are closed, but neither is compact? Justify your answer.  
-        \paragraph{Solution: }
+        \paragraph{Solution: }Take $d=\inf_{x\in E,y\in F}\|x-y\|$. Clearly this is less than any $\|x-y\|$ for $x\in E$, $y\in F$, and it cannot be negative since the norm is positive. So then $d\geq 0$.For contradiction suppose $d=0$. %TODO
+    \item  Does the result you proved in the previous question remain true if $E$ and $F$ are closed, but neither is compact? Justify your answer.  
+        \paragraph{Solution: }This does not remain true. Take the sequence $\{e_n\}_{n\geq 2}$ given by $e_n=n$, and $E$ as its image. Take $\{f_n\}_{n\geq 2} :f_n=e_n+\frac{1}{n}$ and $F$ as its image (These sets contain only isolated points, and are closed). Then for any $d>0$, we can pick $N\in \mathbb{N}:\frac{1}{N}<d$; and the points $e_N$ and $f_N$ will have $|e_N-f_N|=\frac{1}{N}<d$, meaning we can have arbitrarily close points between the closed sets $E,F$.
 \end{enumerate}
 \item Let $E = \left\{(x,y) | y = \sin\left( \frac{1}{x} \right), x > 0 \right\}$. Is E open? Is it closed? What are the accumulation points of E?  
 
@@ -39,18 +45,87 @@ Let $x,y\in \mathbb{R}^{n},$ and take $r=\max \{\phi(x),\phi(y)\} $. Then $\frac
     Then the point $(x,a)$ is in $E$, and $\|(x,a)-(0,a)\|=\|(x,0)\|=\sqrt{x^2} =x<r$, so $x$ is in the arbitrary open ball we chose around $(0,a)$, and so every open ball around $p$ contains a distinct point in $E$, and as such $p$ is an accumulation point of $E$.
 
     Clearly none of these accumulation points can be in $E$ thanks to the condition $x>0$, so $E$ does not contain all its limit points and is not closed.
-    %TODO proof reading
 
 \item Let $f : \mathbb{R}^n \to \mathbb{R}$ be a function in $C^1(\mathbb{R}^n)$, i.e., $f, \partial_{x_1} f, ..., \partial_{x_n} f$ are continuous in $\mathbb{R}^n$. Suppose  $f(tx) = t f(x), \forall x \in \mathbb{R}^n, \forall t \in \mathbb{R}$  Show that f is a linear function.  
     \paragraph{Solution: }
 
 \item Given $u : \mathbb{R} \to \mathbb{R}$ a function in $C^2(\mathbb{R})$, define $f : \mathbb{R}^2 \to \mathbb{R}$ by  $f(x,y) = \begin{cases} u(y) - u(x) & \text{if } y \neq x \\ u'(x) & \text{if } y = x \end{cases}$  Show that f is differentiable at any point $(a,a)$.  
-    \paragraph{Solution: }
+    \paragraph{Solution: } %TODO yucky!
 
 \item Let $f : \mathbb{R}^2 \to \mathbb{R}$ be a function that is defined in an open set $\Omega$ in $\mathbb{R}^2$.  Show that if $\partial_x f(x,y), \partial_y f(x,y)$ and $\partial_{xy} f(x,y)$ are continuous in $\Omega$, then $\partial_{yx} f(x,y)$ exists in $\Omega$ and we have  $\partial_{yx} f(x,y) = \partial_{xy} f(x,y), \forall (x,y) \in \Omega$  Hint: Consider the expression $\Delta(s,t) = f(a+s,b+t) - f(a+s,b) - f(a,b+t) + f(a,b)$.  
-    \paragraph{Solution: }
+    \paragraph{Solution: } %TODO yuckey!
 
 \item Compute the degree 3 Taylor polynomial $T_3(x,x_2)$ of the function $f: \mathbb{R}^2 \to \mathbb{R}$, defined by $f(x_1, x_2) = \frac{4x_1 + 6x_2 - 1}{2x_1 + 3x_2}$ at the point $(-1,1).$
+    \paragraph{Solution: } Begin by computing all necessary partials, and evaluating at $(-1,1)$: 
+    \begin{align*}
+        f(x_1,x_2   )&= \frac{4x_1+6x_2-1}{2x_1+3x_2},&f(-1,1)&=1 \\
+        \frac{\partial f}{\partial x_1} &= \frac{2}{(2x_1+3x_2)^2},& \frac{\partial f}{\partial x_1}(-1,1)&=2 \\
+        \frac{\partial f}{\partial x_2} &= \frac{3}{(2x_1+3x_2)^2},& \frac{\partial f}{\partial x_2}(-1,1)&=3 \\
+        \frac{\partial^2 f}{\partial x_1x_2} &= \frac{-12}{(2x_1+3x_2)^3},& \frac{\partial^2 f}{\partial x_1x_2}(-1,1)&=-12 \\
+        \frac{\partial^2 f}{\partial x_1x_1} &= \frac{-8}{(2x_1+3x_2)^3},& \frac{\partial^2 f}{\partial x_1x_1}(-1,1)&=-8 \\
+        \frac{\partial^2 f}{\partial x_2x_2} &= \frac{-18}{(2x_1+3x_2)^3},& \frac{\partial^2 f}{\partial x_2x_2}(-1,1)&=-18 \\
+        \frac{\partial^3 f}{\partial x_1x_1x_1} &= \frac{48}{(2x_1+3x_2)^4},& \frac{\partial^3 f}{\partial x_1x_1x_1}(-1,1)&=48 \\
+        \frac{\partial^3 f}{\partial x_2x_2x_2} &= \frac{162}{(2x_1+3x_2)^4},& \frac{\partial^3 f}{\partial x_2x_2x_2}(-1,1)&=162 \\
+        \frac{\partial^3 f}{\partial x_1x_2x_2} &= \frac{72}{(2x_1+3x_2)^4},& \frac{\partial^3 f}{\partial x_1x_2x_2}(-1,1)&=72 \\
+        \frac{\partial^3 f}{\partial x_1x_1x_2} &= \frac{108}{(2x_1+3x_2)^4},& \frac{\partial^3 f}{\partial x_1x_1x_2}(-1,1)&=108
+    .\end{align*}
+    Then begin expanding the first three terms of the Taylor expansion
+    \begin{align*}
+        f((-1,1)+x)&=f(-1,1)+\left(\sum\limits_{k=1}^{3}\frac{1}{k!}\left( (x_1+1)\frac{\partial }{\partial x_1} +(x_2-1)\frac{\partial }{\partial x_2}  \right) ^{k}f(-1,1)\right)\\
+        &= 1+\frac{1}{1!}\left( (x_1+1)\frac{\partial }{\partial x_1} +(x_2-1)\frac{\partial }{\partial x_2}  \right) ^{1}f(-1,1)\\
+        &\quad+\frac{1}{2!}\left( (x_1+1)\frac{\partial }{\partial x_1} +(x_2-1)\frac{\partial }{\partial x_2}  \right) ^{2}f(-1,1)\\
+        &\quad+\frac{1}{3!}\left( (x_1+1)\frac{\partial }{\partial x_1} +(x_2-1)\frac{\partial }{\partial x_2}  \right) ^{3}f(-1,1)\\
+        &= 1+(x_1+1)\frac{\partial f}{\partial x_1}(-1,1) +(x_2-1)\frac{\partial f}{\partial x_2}(-1,1) \\
+        &\quad+\frac{1}{2}\bigg( (x_1+1)^2\frac{\partial^2 }{\partial x_1x_1} +2 (x_1+1)(x_2-1)\frac{\partial }{\partial x_1x_2}\\
+        &\quad\quad+(x_2-1)^2\frac{\partial^2 }{\partial x_2x_2} \bigg)f(-1,1)  \\
+        &\quad+\frac{1}{6}\bigg( (x_1+1)^3\frac{\partial^3 }{\partial x_1x_1x_1}+3(x_1+1)^2(x_2-1) \frac{\partial^3 }{\partial x_1x_1x_2}  \\
+        &\quad\quad +3(x_1+1)(x_2-1)^2 \frac{\partial^3 }{\partial x_1x_2x_2}+(x_2-1)^3\frac{\partial^3 }{\partial x_2x_2x_2}  \bigg)\, f(-1,1)\\
+        &= 1+2(x_1+1)+3(x_2-1) \\
+        &\quad+\frac{1}{2}\left( -8(x_1+1)^2 -24 (x_1+1)(x_2-1)-18(x_2-1)^2\right) \\
+        &\quad+\frac{1}{6}\bigg( 48(x_1+1)^3+3\cdot 108(x_1+1)^2(x_2-1) \\&\quad+3\cdot 72(x_1+1)(x_2-1)^2 +162(x_2-1)^3 \bigg)\\
+        &= 2x_1-3x_2 -4(x_1+1)^2 -12 (x_1+1)(x_2-1)-9(x_2-1)^2 \\
+        &\quad+ 8(x_1+1)^3+54(x_1+1)^2(x_2-1) \\&\quad+36(x_1+1)(x_2-1)^2 +27(x_2-1)^3 
+    .\end{align*}
+    %TODO how much to simplify??
+\item Consider the function $f:\mathbb{R}^3\rightarrow \mathbb{R}^3$, defined by
+$f(x,y,z) = (x^3-y-z, 2x+y+z, x+y-z)$
+
+\begin{enumerate}[label= (\alph*)] 
+\item Compute $Jf(x,y,z)$ and show that $\partial f_{(x,y,z)}$ is invertible for any $(x,y,z)\in\mathbb{R}^3$.
+
+\item Find the largest open $U\subset \mathbb{R}^3$ where $f$ has a continuously differentiable inverse function $g$.
+\end{enumerate}
+
+\item Consider the system of equations:
+$\left(\mathcal{S}\right) \quad 
+\begin{cases}
+x - y - u^2 + v^2 &= 0 \\
+x + y - 2uv &= 0
+\end{cases}$
+
+\begin{enumerate}[label= (\alph*)] 
+\item Show that the system $(\mathcal{S})$ can be solved for $u,v$ in term of $(x,y)$ near the point $(x,y,u,v)=(1,1,1,1)$.
+
+\item Compute $\partial_x u(1,1)+\partial_y v(1,1)$
+\end{enumerate}
+
+\item Let $f:\mathbb{R}\to\mathbb{R}$ and $g:\mathbb{R}\to\mathbb{R}$ be such that $f(1)=g(1)=0$, and consider the system \begin{equation*}
+\begin{cases}
+f(xy)+g(yz) & = 0 \\
+g(xy)+f(yz) & = 0
+\end{cases}
+\end{equation*}
+Find conditions on $f$ and $g$ that guarantee the system $(S)$ can be uniquely solved for $y$ and $z$ as functions of $x$ near the point $(x,y,z)=(1,1,1)$.
+
+\item Let $A$ be a positive definite $n\times n$ matrix. Interpreting $x\in\mathbb{R}^n$ as a column matrix, show that $\|.\|:\mathbb{R}^n\to\mathbb{R}$ defined by $\|x\|^2=x^tAx$ is a norm on $\mathbb{R}^n.$
+
     \paragraph{Solution: }
+    Non-negativity follows from the positive semi-definite condition; since $x^{T}Ax>0,$ we must have $\|x\|=\sqrt{x^{T}Ax} >0$ whenever $x\neq 0$.
+
+    For non-degeneracy; 
+
+    Scalar linearity is quick; $\|\alpha x\|=\sqrt{(\alpha x)^{T}A(\alpha x)}=\sqrt{\alpha^2 x^{T}Ax} =|\alpha|\sqrt{x^{T}Ax} =|\alpha|\|x\| $.
+
+    Finally, the triangle inequality. 
 \end{enumerate}
 \end{document}

@@ -19,7 +19,12 @@ Let $f:\mathbb{R}^{n}\to \mathbb{R}$ defined in $E\subseteq \mathbb{R}^{n}.$ We 
 ### Theorem
 If $f:\mathbb{R}^{n}\to \mathbb{R}$ is continuous in a compact set $E\subseteq \mathbb{R}^{n}$, then $f$ is uniformly continuous in $E$.
 ## Differentiability
-Let $f:\mathbb{R}^{n}\to \mathbb{R}$ defined in a neighborhood of $c\in\mathbb{R}^{n}$. We say that $f$ is differentiable at $c$ if there exists a [[Linear Operators|Linear Transformation]] $T:\mathbb{R}^{n}\to\mathbb{R}$ such that for $h$ small, $f(c+h)=f(c)+T(h)+\| h \|\alpha_c(h)$, where $\lim\limits_{h\to{0}}\alpha_c(h)=0$
+Let $f:\mathbb{R}^{n}\to \mathbb{R}$ defined in a neighborhood of $c\in\mathbb{R}^{n}$. We say that $f$ is differentiable at $c$ if there exists a [[Linear Operators|Linear Transformation]] $T:\mathbb{R}^{n}\to\mathbb{R}$ such that for $h$ small, $f(c+h)=f(c)+T(h)+\| h \|\alpha_c(h)$, where $\lim\limits_{h\to{0}}\alpha_c(h)=0$. Or,
+$\exists T:\lim\limits_{ h \to 0 } \frac{f(x+h)-f(x)-T(h)}{h}=0$
+In this case, $T=df_c$ is the derivative of $f$ at $c$, and we can write
+$$
+T=\sum\limits_{i=1}^{n}\frac{ \partial f }{ \partial x_i } h_i
+$$
 ### The Gradient - $\nabla$
 If $f$ is a scalar function, $\nabla f=(f_x, f_y, f_z)$ (or more in higher dimension).
 We think of this symbol as a linear operator taking scalar functions to vector fields.
@@ -28,5 +33,12 @@ $\nabla f$ gives a vector field which points to the direction of greatest rate o
 Let $f:\mathbb{R}^{n}\to \mathbb{R}$ defined in a neighborhood of $c\in\mathbb{R}^{n}$. If $f$ is differentiable at $c$, then 
 - $T=df_c(h)=\partial x_{1}h_{1}+\dots+\partial_{x_n}f(c)h_n=\nabla f\cdot h$
 - $f$ is continuous at $c$.
-### Equivalent (more helpful definition)
-Let $f:\mathbb{R}^{n}\to \mathbb{R}$ defined in a neighborhood of $c\in\mathbb{R}^{n}$. We say that $f$ is differentiable at $c$ if 
+### Differentiability by partials
+For $f:\mathbb{R}^n\to \mathbb{R}$ defined in a neighborhood of $c\in\mathbb{R}^n$, if $\frac{ \partial f }{ \partial x_{i} }$ are continuous at $c$ then $f$ is differentiable at $c$.
+### Operations on differentiable functions
+If $f,g:\mathbb{R}^n\to\mathbb{R}$ are differentiable at $c$, then:
+- $d(f+g)_c=df_c+dg_c$ is differentiable
+- $d(fg)_c=df_c\cdot g+f\cdot dg_c$ is differentiable
+- $d(\alpha f)_c=\alpha df_c$ is differentiable
+- $d\left( \frac{f}{g} \right)_c= \frac{df_c\cdot g - f dg_c}{g^{2}}$
+- 

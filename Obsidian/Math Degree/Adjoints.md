@@ -92,4 +92,17 @@ Suppose $A$ is self-adjoint
 - $A>0$ iff $\sigma(A)\subseteq(0,\infty)$
 If $A$ is positive semi-definite, 
 - There exists a unique positive semi-definite $B^{2}=A$, written $\sqrt{ A }$. (there may be more square roots)
-	- Such a root can be found with spectral theorem, unitarily diagonalize $A$ and square root the diagonal entries blah blah.
+	- Such a root can be found with spectral theorem, unitarily diagonalize $A$ and square root the positive diagonal entries blah blah.
+## Matrix Modulus
+Given $A:V\to W$, define the modulus of $A$ as the operator:
+$$ |A|:V\to V, \quad |A|=\sqrt{ A^{*}A } $$
+We know this to exist, since $A^{*}A$ is self-adjoint and non-negative
+As well, $|A|$ is self-adjoint.
+### Properties
+- Diagonal matrices have $|D|=\sqrt{ D^{*}D }=\text{diag}\{ |\lambda_{1}|^{2},\dots,|\lambda_n|^{2} \}$
+- Normal matrices have $|N|=U|D|U^{*}$, for $D$ the diagonal which $U$ is unitarily diagonalizable to.
+### Proposition
+Let $A:V\to W$.
+- $\| |A|v \|=\| Av \|\forall v\in V$
+- $\ker A=\ker|A|$
+- $\ker A=(\text{ran}|A|)^{\perp}$

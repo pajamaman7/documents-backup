@@ -12,7 +12,6 @@
 \item Let $S$ be a subset (not necessarily a subspace) of a finite dimensional inner product space $V$. Show that $(S^\perp)^\perp = \text{span } S$, where
 $$\text{span } S := \left\{\sum_{j=1}^m \alpha_j s_j : \alpha_j \in \mathbb{C}, s_j \in S, m \in \mathbb{N}\right\}$$
 is the smallest subspace of $V$ containing $S$ (think of this as the set of all possible linear combinations of vectors from $S$).
-% TODO span S perp = S perp?
 \paragraph{Lemma:} To prove the following fact we use the following:
 
 For any subset $S$ of a finite dimensional inner product space $V$, $(\text{span }S)^{\perp}=S^{\perp}$.
@@ -74,7 +73,7 @@ HINT: The inner product on $\mathbb{C}$ is assumed to be $\langle z, w\rangle = 
         \begin{align*}
             y^* (v)=\left<v,y \right>_V=\left<v,T^* (1) \right>_V = \left<Tv,1 \right>_{\mathbb{C}}=Tv
         .\end{align*}
-        And therefore $T$ is induced by $y=T^* (1)$
+        And $y^* =T$.
 \end{enumerate}
 
 \item Let $V$ and $W$ be finite dimensional vector spaces. You may find problem 3 useful here. \begin{enumerate}[label= (\alph*)] 
@@ -92,7 +91,7 @@ HINT: The inner product on $\mathbb{C}$ is assumed to be $\langle z, w\rangle = 
         \[
             \sum_{j=1}^{k} T_k v=\sum_{j=1}^{k} P_{b_j}(Tv)=\sum_{j=1}^{k} \frac{\left<Tv,b_j \right>}{\|b_j\|}b_j=Tv
         .\] 
-        Note the last equality comes from the orthogonal expansion of a vector discussed in class.%TODO
+        The final equality is simply the projection of $Tv$ onto its range, which is $Tv$ itself.
 \end{enumerate}
 \newpage
 

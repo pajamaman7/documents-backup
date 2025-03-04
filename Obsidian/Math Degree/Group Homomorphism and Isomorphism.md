@@ -3,6 +3,7 @@ aliases:
   - Isomorphic
   - Isomorphism
   - Homomorphism
+  - Group Homomorphism
 ---
 Now we study the structure of groups in relation to each other.
 ## Homomorphism
