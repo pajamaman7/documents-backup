@@ -1,3 +1,6 @@
+---
+aliases: []
+---
 Let $E\subseteq \mathbb{R}^n$. A function $f:\mathbb{R}^n\to \mathbb{R}^p$ is a vector function of several variables. We may also write 
 $$
 f(x)=f(x_{1},\dots,x_n)=\begin{pmatrix}
@@ -15,5 +18,7 @@ Thanks to the equivalence of norms in vector spaces, we typically use $\| x \|_\
 $f:\mathbb{R}^n\to \mathbb{R}^m$ is continuous in a closed and bounded set $E$, then:
 - $f(E)$ is bounded and closed.
 - $f$ is uniformly continuous on $E$.
+### Linear Transformations
+See [[Linear Operators|Linear Map]]. Any linear transformation from $\mathbb{R}^n\to\mathbb{R}^m$ is uniformly continuous, [[Limits and Continuity in Metric Spaces|Continuous]], and Lipschitz.
 ## Differentiation
-Let $f:\mathbb{R}^{n}\to\mathbb{R}^m$.
+See [[Jacobian]]

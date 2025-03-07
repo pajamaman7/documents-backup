@@ -87,6 +87,8 @@ Non-negativity: Suppose $x\in \mathbb{R}^{n}$. Then $\phi(-x)=|-1|\phi(x)=\phi(x
         &\quad+ 8(x_1+1)^3+54(x_1+1)^2(x_2-1) \\&\quad+36(x_1+1)(x_2-1)^2 +27(x_2-1)^3 
     .\end{align*}
     %TODO how much to simplify??
+
+\iffalse
 \item Consider the function $f:\mathbb{R}^3\rightarrow \mathbb{R}^3$, defined by
 $f(x,y,z) = (x^3-y-z, 2x+y+z, x+y-z)$
 
@@ -119,13 +121,22 @@ Find conditions on $f$ and $g$ that guarantee the system $(S)$ can be uniquely s
 
 \item Let $A$ be a positive definite $n\times n$ matrix. Interpreting $x\in\mathbb{R}^n$ as a column matrix, show that $\|.\|:\mathbb{R}^n\to\mathbb{R}$ defined by $\|x\|^2=x^tAx$ is a norm on $\mathbb{R}^n.$
 
-    \paragraph{Solution: }
+    \paragraph{Solution: } %TODO psd may be defined differently
     Non-negativity follows from the positive semi-definite condition; since $x^{T}Ax>0,$ we must have $\|x\|=\sqrt{x^{T}Ax} >0$ whenever $x\neq 0$.
 
-    For non-degeneracy; 
+    Non-degeneracy follows from the same condition, $x^{T}Ax=0\iff \sqrt{x^{T}Ax} =0\iff x=0$.
 
     Scalar linearity is quick; $\|\alpha x\|=\sqrt{(\alpha x)^{T}A(\alpha x)}=\sqrt{\alpha^2 x^{T}Ax} =|\alpha|\sqrt{x^{T}Ax} =|\alpha|\|x\| $.
 
     Finally, the triangle inequality. 
+
+    \begin{align*}
+        \|x+y\|^2&= (x+y)^{T}A(x+y)\\
+                 &=(x^{T}+y^{T})(Ax+Ay) \\
+                 &= x^{T}Ax+y^{T}Ax+x^{T}Ay+y^{T}Ay \\
+                 &= \|x\|^2+\|y\|^2+x^{T}Ay+y^{T}Ax \\
+    .\end{align*}
+\fi
+
 \end{enumerate}
 \end{document}

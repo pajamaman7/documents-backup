@@ -54,23 +54,26 @@ class BinarySearchTree {
     // Helper function to recursively insert a word into the BST
     private TreeNode insertRecursive(TreeNode node, String word) {
         // **BST Property**: Smaller words go to the left subtree, larger words go to the right.
-
         // (1) If the current node is null, insert a new node with the word
         if (node==null) {
             node=new TreeNode(word);
             // (2) Increase the unique word count
             uniqueWords++;
+            mostFrequentNode=node;
             // (3) Return the updated node
+            if (mostFrequentNode == null || node.frequency > mostFrequentNode.frequency) {
+                mostFrequentNode = node; 
+            }
             return node;
         }
 
         // (4) If word is smaller, insert into left subtree
         if (word.compareTo(node.data)>0){
-            insertRecursive(node.right,word);
+            node=insertRecursive(node.right,word);
         }
         // (5) Else if word is larger, insert into right subtree
         else if (word.compareTo(node.data)<0) {
-            insertRecursive(node.left,word);
+            node=insertRecursive(node.left,word);
         }
         // (6) Else the word already exists, so increase its frequency
         else if (word==node.data) {

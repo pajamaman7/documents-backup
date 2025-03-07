@@ -64,8 +64,8 @@
     // fonts what not
 	{trigger: "tt", replacement: "\\text{$0}", options: "mA"},
 	{trigger: "mbf", replacement: "\\mathbf{$0}", options: "mA"},
-	{trigger: "mbb", replacement: "\\mathbb{$0}", options: "mA"},
-	{trigger: "mcal", replacement: "\\mathcal{$0}$1", options: "mA"},
+	{trigger: "bb", replacement: "\\mathbb{$0}", options: "mA"},
+	{trigger: "cal", replacement: "\\mathcal{$0}$1", options: "mA"},
 	{trigger: "mrm", replacement: "\\mathrm{$0}$1", options: "mA"},
 
 	// Operations
@@ -169,7 +169,6 @@
 	{trigger: "yii", replacement: "y_{i}", options: "mA"},
 	{trigger: "yjj", replacement: "y_{j}", options: "mA"},
 
-	{trigger: "mbb", replacement: "\\mathbb{$0}$1", options: "mA"},
 	{trigger: "ell", replacement: "\\ell", options: "mA"},
 	{trigger: "lll", replacement: "\\ell", options: "mA"},
 	{trigger: "LL", replacement: "\\mathcal{L}", options: "mA"},

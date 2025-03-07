@@ -1,0 +1,43 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $3$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+
+\item An $m \times n$ matrix is said to be a queen if the restriction of A to the orthogonal complement of its kernel is an isometry.
+
+\begin{enumerate}[label= (\alph*)] 
+\item Show that $A$ is a queen if and only if $A^* A$ is an orthogonal projection.
+    \paragraph{Solution: }
+
+\item Show that $A$ is a queen if and only if $AA*$ is an orthogonal projection.
+    \paragraph{Solution: }
+
+\item Show that a queen A is an isometry if and only if $\ker A = {0}$.
+
+    \paragraph{Solution: }If $\ker A=\{0\} $, then $(\ker A)^{\perp}=V$, so the restriction of $A$ to the orthogonal complement of its kernel is $A$ restricted to its domain. Then $A$ is an isometry on any vector.
+
+\item Find an example of a $4 \times  2$ queen that has non-zero kernel. Be sure to prove it's a queen!
+    \paragraph{Solution: }
+\end{enumerate}
+\item \begin{enumerate}[label= (\alph*)] 
+\item Given a singular value decomposition $A = W \Sigma V^* $ of a square matrix $A$, construct a polar decomposition of $A$ using $W,V,\Sigma$.
+
+\item Using the method above, compute a polar decomposition for
+\[
+    A=\begin{bmatrix} 1&3\\2&6 \end{bmatrix} 
+.\] 
+\end{enumerate}
+
+\item Find your favorite $4 \times  2$ matrix A of rank 2 and compute a singular value decomposition for A. All of the entries of A must be nonzero.
+
+\item For an $m \times  n$ matrix $A$, show that the set of nonzero eigenvalues for $A^*  A$ coincide with that of $AA^* $.
+
+\item Suppose $A = W \Sigma V^* $ is a singular value decomposition for $A$. Show that the columns of $W$ are eigenvectors for $AA^* $.
+
+\end{enumerate}
+\end{document}
