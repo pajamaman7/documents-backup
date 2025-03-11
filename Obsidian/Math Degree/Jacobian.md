@@ -5,9 +5,12 @@ $$
 where $\alpha_c:\mathbb{R}^n\to\mathbb{R}^m$ satisfies $\lim\limits_{h\to_{0}}\alpha_c(h)=0$. The linear transformation $T$ is called the differential of $f$ at $c$ and may be denoted $df_c$ or $Df$.
 $$Df(x)=\begin{bmatrix}\frac{\partial f_1}{\partial x_1}(x)&\frac{\partial f_1}{\partial x_2}(x)&\cdots&\frac{\partial f_1}{\partial x_p}(x)\\\frac{\partial f_2}{\partial x_1}(x)&\frac{\partial f_2}{\partial x_2}(x)&\cdots&\frac{\partial f_2}{\partial x_p}(x)\\\vdots&\vdots&\cdots&\vdots\\\frac{\partial f_q}{\partial x_1}(x)&\frac{\partial f_q}{\partial x_2}(x)&\cdots&\frac{\partial f_q}{\partial x_p}(x)\end{bmatrix}$$
 ## Properties
-If $f,g:\mathbb{R}^n\to\mathbb{R}^m$, $u:\mathbb{R}^n\to\mathbb{R}$ are differentiable at the same point $c\in\mathbb{R}^n$, the following are differentiable and satisfy:
+If $f,g:\mathbb{R}^n\to\mathbb{R}^m$, $\varphi:\mathbb{R}^n\to\mathbb{R}$ are differentiable at the same point $c\in\mathbb{R}^n$, and $\alpha \in\mathbb{R}$, the following are differentiable and satisfy:
 - $D(f\pm g)=Df\pm Dg$ 
-- $D(uf)=Du\cdot f+uDf$
+- $D(uf)=D\varphi \cdot f+\varphi Df$
+- $D(\alpha f)=\alpha Df$
+If $f:\mathbb{R}^n\to \mathbb{R}^m$, $g:\mathbb{R}^m\to \mathbb{R}^p$ are differentiable, $gf:\mathbb{R}^n\to\mathbb{R}^p$ is differentiable and:
+$$ D(gf(x))=Dg(f(x)) Df(x) $$
 ## Tangent plane
 The tangent plane for a point above is given by: 
 $$ L( x)= f( x_0)+D f( x_0)( x- x_0)$$

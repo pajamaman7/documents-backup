@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jacobian.md",
+                "file": "Multivariable Chain Rule.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Jacobian"
+              "title": "Multivariable Chain Rule"
             }
           },
           {
@@ -47,6 +47,20 @@
               },
               "icon": "lucide-file",
               "title": "Singular Value Decomposition"
+            }
+          },
+          {
+            "id": "7ad8166ac7373dd1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Jacobian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Jacobian"
             }
           },
           {
@@ -104,23 +118,9 @@
               "icon": "lucide-file",
               "title": "Polar Decomposition"
             }
-          },
-          {
-            "id": "665a17dad36b990e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Fundamental Theorem of Calculus.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Fundamental Theorem of Calculus"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -263,16 +263,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "60118a5036aa01c9",
+  "active": "7ad8166ac7373dd1",
   "lastOpenFiles": [
-    "Schmidt Decomposition.md",
     "Singular Value Decomposition.md",
+    "Multivariable Chain Rule.md",
+    "Jacobian.md",
+    "Vector Functions of Several Variables.md",
+    "Polar Decomposition.md",
+    "Fundamental Theorem of Calculus.md",
+    "Schmidt Decomposition.md",
     "Adjoints.md",
     "Normal Operators.md",
     "Matrix Norm.md",
-    "Jacobian.md",
     "Matrix Representations of Linear Maps.md",
-    "Fundamental Theorem of Calculus.md",
     "Improper Integrals.md",
     "Multiple Integrals.md",
     "Antidifferentiation.md",
@@ -288,9 +291,6 @@
     "Complex Numbers.md",
     "Spherical Coordinates.md",
     "Set.md",
-    "Well-Defined.md",
-    "Topology of R^n.md",
-    "Spectral Theorem for Normal Operators.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Pasted image 20240119100450.png",

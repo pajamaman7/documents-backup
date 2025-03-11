@@ -11,28 +11,34 @@
 \item Let $\phi : \mathbb{R}^n \to \mathbb{R}$ be such that $\phi(x) = 0 \Leftrightarrow x = 0$ and $\phi(\lambda x) = |\lambda| \phi(x), \forall x \in \mathbb{R}^n, \forall \lambda \in \mathbb{R}$  Show that if the set $B = \left\{x \in \mathbb{R}^n | \phi(x) \leq 1 \right\}$ is convex, then $\phi$ defines a norm on $\mathbb{R}^n$. 
 \paragraph{Solution: }Non-degeneracy and scalar linearity are given from the definition of $\phi$. So all that is left to prove is the triangle inequality and non-negativity.
 
-Triangle inequality: Let $x,y\in \mathbb{R}^{n},$ and take $r=\max \{\phi(x),\phi(y)\} $. %TODO
+Non-negativity: For the sake of contradiction, suppose that there exists some $x\in \mathbb{R}^{n}$ so that $\phi(x)<0$. Then let $n\in \mathbb{N}$. Take $\phi(nx)=n\phi(x)<0\leq 1$. So if we take the set $\{nx:n\in \mathbb{N}\} $, which is clearly unbounded, we see that it is contained in $B$. However this is a contradiction since $B$ is bounded. So $\phi(x)>0\forall x\neq 0$.
 
-Non-negativity: Suppose $x\in \mathbb{R}^{n}$. Then $\phi(-x)=|-1|\phi(x)=\phi(x)$, and:
+Triangle inequality: Let $x,y\in \mathbb{R}^{n}$, and take $\lambda= \frac{\phi(x)}{\phi(x)+\phi(y)}\leq 1$. Note that $\phi\left( \frac{x}{\phi(x)} \right) =\frac{\phi (x)}{\phi(x)}=1$, and likewise for $y$, so we may take
 \begin{align*}
-    \phi(x+(-x))&\leq \phi(x)+\phi(-x)&\text{By Triangle Inequality}\\
-    \phi(0)&\leq 2\phi(x)\\
-    0&\leq\phi(x)
+    \phi\left( \lambda \frac{x}{\phi(x)}+(1-\lambda) \frac{y}{\phi(y)} \right) 
+    &= \phi\left(  \frac{x\phi(x)}{\phi(x)(\phi(x)+\phi(y))}+ \frac{y\phi(y)}{\phi(y)(\phi(x)+\phi(y))}\right)  \\
+    &= \phi\left( \frac{x+y}{\phi(x)+\phi(y)} \right)  \\
+    &= \frac{\phi(x+y)}{|\phi(x)+\phi(y)|}\leq 1 \\
+    \phi(x+y)&\leq\phi(x)+\phi(y)
 .\end{align*}
+And so the triangle inequality is satisfied.
 
 \item Let E be a compact set in $\mathbb{R}^n$ and let F be a closed set in $\mathbb{R}^n$ such that $E \cap F = \emptyset$.  
 
 \begin{enumerate}[label= (\alph*)] 
-    \item Show that there exists d > 0 such that $\|x - y\| > d$, $\forall x \in E$ and $\forall y \in F$.  
-        \paragraph{Solution: }Take $d=\inf_{x\in E,y\in F}\|x-y\|$. Clearly this is less than any $\|x-y\|$ for $x\in E$, $y\in F$, and it cannot be negative since the norm is positive. So then $d\geq 0$.For contradiction suppose $d=0$. %TODO
+    \item Show that there exists $d > 0$ such that $\|x - y\| > d$, $\forall x \in E$ and $\forall y \in F$.  
+        \paragraph{Solution: }Take $d=\inf_{x\in E,y\in F}\|x-y\|$. Clearly this is less than or equal to any $\|x-y\|$ for $x\in E$, $y\in F$, and it cannot be negative since the norm is positive. So then $d\geq 0$.For contradiction suppose $d=0$. 
+
+        Since this is an $\inf$, we can find a sequence $\{x_n-y_n\} _{n\ge 1}$, with $x_{i}\in E,y_{i}\in F$. Since $\{x_{n}\} _{n\ge 1}$ is a sequence in the bounded set $E$, we can find a convergent subsequence, say $x_{n_k}\to x$, with $x\in E$ by closure of $E$. But since $\|x_{n_k}-y_{n_k}\|\to 0$, we must have $y_{n_k}\to x$, meaning $x\in F$, giving us the contradiction we sought ($E\cap F=\varnothing$).
+
     \item  Does the result you proved in the previous question remain true if $E$ and $F$ are closed, but neither is compact? Justify your answer.  
-        \paragraph{Solution: }This does not remain true. Take the sequence $\{e_n\}_{n\geq 2}$ given by $e_n=n$, and $E$ as its image. Take $\{f_n\}_{n\geq 2} :f_n=e_n+\frac{1}{n}$ and $F$ as its image (These sets contain only isolated points, and are closed). Then for any $d>0$, we can pick $N\in \mathbb{N}:\frac{1}{N}<d$; and the points $e_N$ and $f_N$ will have $|e_N-f_N|=\frac{1}{N}<d$, meaning we can have arbitrarily close points between the closed sets $E,F$.
+        \paragraph{Solution: }This does not remain true. Take the sequence $\{e_n\}_{n\geq 2}$ given by $e_n=n$, and $E$ as its image. Take $\{f_n\}_{n\geq 2} :f_n=e_n+\frac{1}{n}$ and $F$ as its image (These sets contain only isolated points, and are closed). Then for any $d>0$, we can pick $N\in \mathbb{N}:\frac{1}{N}<d$; and the points $e_N$ and $f_N$ will have $|e_N-f_N|=\frac{1}{N}<d$, meaning we can have arbitrarily close points between the closed sets $E,F$, and no such $d$ can exist.
 \end{enumerate}
 \item Let $E = \left\{(x,y) | y = \sin\left( \frac{1}{x} \right), x > 0 \right\}$. Is E open? Is it closed? What are the accumulation points of E?  
 
     \paragraph{Solution: }This set is not open. Take an arbitrary ball of radius $r$ about the point $p=\left(\frac{1}{\pi},0\right)\in E$. Then the point $q=\left(\frac{1}{\pi},\frac{r}{2}\right)\in B_r(p)$, but $q\not\in E$ since $\sin$ is well-defined. So any ball about $p$ contains points not in $E$, and $E$ is not open.
 
-    By continuity of $\sin$ and $\frac{1}{x}$, all points of $E$ are accumulation points. %TODO better justification needed for points of E
+    Clearly each point of $E$ is an accumulation point.
 
     The accumulation points of $E$ not contained in $E$ are of the form $(0,a)$ for $a\in [-1,1]$. Take one such point, and some $r>0$, and consider the $r$-ball about $(0,a)$. Choose $k\in \mathbb{N}$ so that $\frac{1}{2\pi k}<r$, and let $x=\frac{1}{2\pi k+\arcsin a}\leq \frac{1}{2\pi k}<r$. Then: 
     \begin{align*}
