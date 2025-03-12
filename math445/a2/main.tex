@@ -53,10 +53,44 @@ And so the triangle inequality is satisfied.
     Clearly none of these accumulation points can be in $E$ thanks to the condition $x>0$, so $E$ does not contain all its limit points and is not closed.
 
 \item Let $f : \mathbb{R}^n \to \mathbb{R}$ be a function in $C^1(\mathbb{R}^n)$, i.e., $f, \partial_{x_1} f, ..., \partial_{x_n} f$ are continuous in $\mathbb{R}^n$. Suppose  $f(tx) = t f(x), \forall x \in \mathbb{R}^n, \forall t \in \mathbb{R}$  Show that f is a linear function.  
-    \paragraph{Solution: }
+    \paragraph{Solution: }Take the partial derivative with respect to $x_{i}$ for some $1\leq i\leq n$.
+    \begin{align*}
+        f(tx)&= tf(x) \\
+        \partial_if(tx)&=\partial_i tf(x) \\
+        tf_{x_i}(tx)&= tf_{x_{i}}(x) \\
+        f_{x_i}(tx)&= f_{x_{i}}(x)
+    .\end{align*}
+    But this must mean any partial $f_{x_{i}}$ is constant, and combined with $f(0)=f(0x)=0f(x)=0$, we can write that:
+    \[
+    f(x_1,\dots,x_n)=a_1x_1+\dots+a_nx_n
+    .\] For real constants $a_1,\dots,a_n$, so $f$ is linear.
 
-\item Given $u : \mathbb{R} \to \mathbb{R}$ a function in $C^2(\mathbb{R})$, define $f : \mathbb{R}^2 \to \mathbb{R}$ by  $f(x,y) = \begin{cases} u(y) - u(x) & \text{if } y \neq x \\ u'(x) & \text{if } y = x \end{cases}$  Show that f is differentiable at any point $(a,a)$.  
-    \paragraph{Solution: } %TODO yucky!
+\item Given $u : \mathbb{R} \to \mathbb{R}$ a function in $C^2(\mathbb{R})$, define $f : \mathbb{R}^2 \to \mathbb{R}$ by  $f(x,y) = \begin{cases} \frac{u(y) - u(x)}{y-x} & \text{if } y \neq x \\ u'(x) & \text{if } y = x \end{cases}$  Show that f is differentiable at any point $(a,a)$.  
+    \paragraph{Solution: }Take the partial derivative with respect to $y$ ($\partial x$ is done identically).
+    \begin{align*}
+        \frac{\partial f}{\partial y}(a,a) &= \lim_{h \to 0} \frac{f(a,a+h)-f(a,a)  }{h} \\
+        &= \lim_{h \to 0} \frac{ \frac{u(a+h)-u(a)}{a+h-a}-u'(a)}{h} \\
+        &= \lim_{h \to 0} \frac{ \frac{u(a+h)-u(a)}{h}-u'(a)}{h} \\
+        &= \lim_{h \to 0} \frac{ \frac{u(a+h)-u(a)}{h}-u'(a)}{h}
+    .\end{align*}
+    Now we apply l'hopital in $h$, noticing that the first term on the numerator tends to $u'(a)$:
+    \begin{align*}
+        \lim_{h \to 0} \frac{ \frac{u(a+h)-u(a)}{h}-u'(a)}{h}
+        &=\lim_{h \to 0} \frac{hu'(a+h)-u(a+h)+u(a)}{h^2}
+    .\end{align*}
+    And again,
+    \begin{align*}
+        \lim_{h \to 0} \frac{hu'(a+h)-u(a+h)+u(a)}{h^2}&=\lim_{h \to 0} \frac{hu''(a+h)+u'(a+h)-u'(a+h)}{2h}\\
+        &= \lim_{h \to 0}  \frac{u''(a+h)}{2} \\
+        &= \frac{u''(a)}{2}
+    .\end{align*}
+    And by symmetry of $f$, we find:
+    \begin{align*}
+        \frac{\partial f}{\partial x}(a,a) &= \frac{-u''(a)}{2}\\
+        \frac{\partial f}{\partial y}(a,a) &= \frac{u''(a)}{2}
+    .\end{align*}
+    And thanks to $u\in C^2(\mathbb{R})$, both our partials are continuous at any $(a,a)$ and therefore $f$ is differentiable at any $(a,a)$.
+    
 
 \item Let $f : \mathbb{R}^2 \to \mathbb{R}$ be a function that is defined in an open set $\Omega$ in $\mathbb{R}^2$.  Show that if $\partial_x f(x,y), \partial_y f(x,y)$ and $\partial_{xy} f(x,y)$ are continuous in $\Omega$, then $\partial_{yx} f(x,y)$ exists in $\Omega$ and we have  $\partial_{yx} f(x,y) = \partial_{xy} f(x,y), \forall (x,y) \in \Omega$  Hint: Consider the expression $\Delta(s,t) = f(a+s,b+t) - f(a+s,b) - f(a,b+t) + f(a,b)$.  
     \paragraph{Solution: } %TODO yuckey!
