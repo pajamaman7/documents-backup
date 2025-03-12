@@ -1,3 +1,9 @@
+---
+aliases:
+  - Null Hypothesis
+  - Hypothesis
+  - Alternative Hypothesis
+---
 ## Null and Alternative Hypothesis
 Hypotheses are statements about population parameters. The null hypothesis $H_0$ is assumed to be true, and is a statement that would be most commonly true without some outside information.
 By disproving the null hypothesis, we prove the alternative hypothesis $H_a$, the negation of the null.
@@ -10,7 +16,7 @@ We put our available information into a Test Statistic, which must follow some k
 We choose a level of significance $\alpha$, usually $\alpha=.05$. If:
 - $p\geq\alpha$ we fail to reject $H_{0}$.
 - $p<\alpha$ we reject $H_{0}$.
-The $p$-value is calculated as the area under our pdf, more extreme than our critical value.
+The $p$-value is calculated as the area under our pdf, more extreme than our critical value. 
 ### Rejection Region
 We can calculate a critical value $X_{crit}$ corresponding to $\alpha$. Our rejection region is the set of values more extreme than our critical value.
 ## Errors

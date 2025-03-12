@@ -1,4 +1,4 @@
-A sequence $\{ z_n \}$ is a function from $\mathbb{N}\to \mathbb{C}$. 
+A [[Sequences and Series|Sequence]] of complex numbers $\{ z_n \}$ is a function from $\mathbb{N}\to \mathbb{C}$. 
 ## Limits
 We say this sequence $\{ z_n \}$ has limit $l\in \overline{\mathbb{C}}$ if there exists $n^{*}$ so that for all $n>n^{*}$, $z_n$ is in any [[Neighbourhood]] of $l$.
 ### Properties

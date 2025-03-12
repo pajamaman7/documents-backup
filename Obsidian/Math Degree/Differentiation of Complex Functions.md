@@ -16,7 +16,7 @@ $$f'(z)=\lim\limits_{ h \to 0 }\frac{(f(z+h)-f(z))}{h} $$
 - $f(z)=c$ for some constant $c\in \mathbb{C}$, then $f'(z)=0$
 - If $g(t)=f(\gamma(t))$, $g'(t)=f'(\gamma(t))\gamma'(t)$.
 - $f'(c)$ exists $\implies$ $f$ is continuous at $c$
-- $f$ is not continuous at $c\implies$ $f$ is not differentiable at $c$.
+- $f$ is not [[Limits and Continuity in Metric Spaces|Continuous]] at $c\implies$ $f$ is not differentiable at $c$.
 ## Cauchy-Riemann Equation
 Rather than checking restrictions on the limit, we can check:
 $$\frac{ \partial f }{ \partial x } =-i\frac{ \partial f }{ \partial y } $$

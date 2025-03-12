@@ -1,3 +1,8 @@
+---
+aliases:
+  - Biased Estimator
+  - Unbiased Estimator
+---
 ## Point Estimation vs Interval
 Examples of point estimates: $\bar{X},S^{2},\hat{p}$.
 Interval estimates are a range we believe captures the true value of a parameter.

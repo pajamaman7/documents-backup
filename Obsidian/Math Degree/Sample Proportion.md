@@ -6,6 +6,8 @@ We can also say $\hat{p}\sim N\left( p,\sigma^{2}=\frac{p(1-p)}{n} \right)$.
 Sample proportion converges slower than sample mean.
 
 To use CLT, we should have at least 10 successes and 10 failures.
+## Unbiased
+Sample Proportion is an [[Parameter Estimation|Unbiased Estimator]] for proportion.
 
 ## Continuity Correction
 When approximating $\hat{p}$ with a continuous distribution, we must adjust probability bounds. We adjust $P(a<\hat{p}<b)$to $P\left( a-\frac{1}{2n}<\hat{p}<b+\frac{1}{2n} \right)$.

@@ -1,6 +1,7 @@
 The formula for sample variance is given by:
 $$S^{2}=\frac{\sum_{i=1 }^{n}(X_i-\bar{X})^{2}}{n-1}$$
-The distribution of $\frac{(n-1)S^{2}}{\sigma^{2}}$ is $\chi ^{2}$ with $n-1$ degrees of freedom. (when $X_i$ is exactly normal or the sample size is big enough for [[Central Limit Theorem]]).
+The distribution of $\frac{(n-1)S^{2}}{\sigma^{2}}$ is $\chi ^{2}$ with $n-1$ degrees of freedom. (when $X_i$ is exactly normal or the sample size is big enough for [[Central Limit Theorem]]). 
+Sample variance is an [[Parameter Estimation|Unbiased Estimator]] for [[Variance and Standard Deviation]].
 ## Theorem 7.2 
 The distribution of the sum of $n$ squared independent Standard Normal random variables is Chi-Square with the degree of freedom $n.$
 $$
