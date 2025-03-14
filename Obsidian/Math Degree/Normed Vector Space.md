@@ -1,3 +1,9 @@
+---
+aliases:
+  - norm
+  - Norm
+  - Normed Vector Spaces
+---
 A $\mathbb{C}$-[[Vector Spaces|Vector Space]] together with a norm, which is a $\|\cdot\|:V\to\mathbb{R}$ satisfying:
 - $\|v\|\geq 0$ and $\|v\|=0\iff v=0$
 - $\|\alpha v\|=|\alpha|\|v\|$ for any $\alpha \in\mathbb{C}$

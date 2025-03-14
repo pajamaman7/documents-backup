@@ -3,8 +3,7 @@ $$|x|=\begin{cases}
 x &x\geq 0 \\
 -x &x<0
 \end{cases}$$
-Or, $|x|$ is the distance between $0$ and $x$.
-
+Or, $|x|$ is a [[Normed Vector Space|norm]] on $\mathbb{R}$.
 ## Properties
 From the definition, the following can be shown:
 - $|x|=0$

@@ -2,6 +2,7 @@
 tags:
   - NumThry
 ---
+[[Number Theory]] [[Modular Arithmetic]]
 Cryptography refers to techniques of sharing secret messages. Messages are encoded in a certain way and then communicated publicly but no one except for the recipient can decipher it. 
 The principle requires three steps:
 - Encryption: Reconfigure the message so that it cannot be understood except by the intended recipient.
@@ -10,8 +11,6 @@ The principle requires three steps:
 ## Types of Ciphers
 ### Caesar Cipher
 In this cipher each letter is replaced by the letter down $n$ indices from the letter.
-
-
 ### Permutation ciphers
 Divide the alphabet into groups of fixed size:
 ABCDE|FGHIJ|KLMNO|$\dots$

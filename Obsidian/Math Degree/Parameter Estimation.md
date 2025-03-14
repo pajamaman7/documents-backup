@@ -2,6 +2,7 @@
 aliases:
   - Biased Estimator
   - Unbiased Estimator
+  - Estimator
 ---
 ## Point Estimation vs Interval
 Examples of point estimates: $\bar{X},S^{2},\hat{p}$.

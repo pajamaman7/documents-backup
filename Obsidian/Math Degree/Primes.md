@@ -1,6 +1,8 @@
 ---
 tags:
   - NumThry
+aliases:
+  - Prime
 ---
 A prime is an integer greater than $1$ with the property that if some $d|p$ then $d=1$ or $d=p$.
 ## Properties

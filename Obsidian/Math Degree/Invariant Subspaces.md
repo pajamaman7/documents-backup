@@ -1,0 +1,1 @@
+A subspace $S$ of a [[Vector Spaces|Vector Space]] $V$ is said to be invariant under a [[Linear Operators|Linear Transformation]] $T$ if $T(S)=S$, or if $S$ is mapped to itself under $T$.

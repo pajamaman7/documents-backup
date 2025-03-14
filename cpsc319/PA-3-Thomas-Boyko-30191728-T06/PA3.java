@@ -21,8 +21,8 @@ class TreeNode {
     // (2) Count of occurrences of the word
     int frequency;
     // (3) Pointers to left and right children
-    TreeNode left=null;
-    TreeNode right=null;
+    TreeNode left;
+    TreeNode right;
 
     // Constructor initializes a new node with the given word
     public TreeNode(String word) {
@@ -31,13 +31,15 @@ class TreeNode {
         // (2) New word starts with frequency of 1
         this.frequency=1;
         // (3) Initially, no children
+        this.left=null;
+        this.right=null;
     }
 }
 
 // Binary Search Tree implementation for storing and analyzing words
 class BinarySearchTree {
     // (1) Root of the BST
-    TreeNode root;
+    TreeNode root=null;
     // (2) Total words inserted (including duplicates)
     int totalWords;
     // (3) Count of unique words
@@ -50,8 +52,7 @@ class BinarySearchTree {
         // (1) Calls the recursive function to insert the word, starting from the root node
         root=insertRecursive(root,word);
     }
-
-    // Helper function to recursively insert a word into the BST
+// Helper function to recursively insert a word into the BST
     private TreeNode insertRecursive(TreeNode node, String word) {
         // **BST Property**: Smaller words go to the left subtree, larger words go to the right.
         // (1) If the current node is null, insert a new node with the word
@@ -59,28 +60,27 @@ class BinarySearchTree {
             node=new TreeNode(word);
             // (2) Increase the unique word count
             uniqueWords++;
-            mostFrequentNode=node;
             // (3) Return the updated node
-            if (mostFrequentNode == null || node.frequency > mostFrequentNode.frequency) {
-                mostFrequentNode = node; 
-            }
             return node;
         }
 
         // (4) If word is smaller, insert into left subtree
-        if (word.compareTo(node.data)>0){
-            node=insertRecursive(node.right,word);
+        if (word.compareTo(node.data)<0) {
+            node.left=insertRecursive(node.left,word);
         }
         // (5) Else if word is larger, insert into right subtree
-        else if (word.compareTo(node.data)<0) {
-            node=insertRecursive(node.left,word);
+        else if (word.compareTo(node.data)>0){
+            node.right=insertRecursive(node.right,word);
         }
         // (6) Else the word already exists, so increase its frequency
-        else if (word==node.data) {
+        else {
             node.frequency++;
         }
 
         // (7) Update most frequent word tracking
+        if (mostFrequentNode==null){
+            mostFrequentNode=root;
+        }
         if (node.frequency>mostFrequentNode.frequency) {
             mostFrequentNode=node;
         }
@@ -121,7 +121,7 @@ class BinarySearchTree {
         // (2) Recursively traverse the left subtree (Left)
         traverseInOrder(node.left, result);
         // (3) Append the current node's word to the result (Root)
-        result.append(node.data);
+        result.append(node.data+ " ");
         // (4) Recursively traverse the right subtree (Right)
         traverseInOrder(node.right,result);
     }
@@ -133,7 +133,7 @@ class BinarySearchTree {
             return;
         }
         // (2) Append the current node's word to the result (Root)
-        result.append(node.data);
+        result.append(node.data+ " ");
         // (3) Recursively traverse the left subtree (Left)
         traversePreOrder(node.left,result);
         // (4) Recursively traverse the right subtree (Right)
@@ -151,7 +151,7 @@ class BinarySearchTree {
         // (3) Recursively traverse the right subtree (Right)
         traversePostOrder(node.right,result);
         // (4) Append the current node's word to the result (Root)
-        result.append(node.data);
+        result.append(node.data+ " ");
     }
 
     // Computes and returns the total number of words in the BST, including duplicates
@@ -189,7 +189,7 @@ class BinarySearchTree {
         // (1) Retrieve the word stored in mostFrequentNode
         String word = mostFrequentNode.data;
         // (2) Append the frequency count in the format "word (X times)"
-        return word + " " + mostFrequentNode.frequency + " times"; //TODO tostring?
+        return word + " " + mostFrequentNode.frequency + " times"; 
     }
 
     // Computes and returns the height of the BST
@@ -228,21 +228,21 @@ class BinarySearchTree {
     private int searchWordRecursive(TreeNode node, String word) {
         // (1) Base case: If node is null, the word is not in the BST
         if (node==null) {
+            System.out.println("Null Node!");
             return 0;
-        }
-        // (2) If word matches current node, return its frequency
-        if (node.data==word){
-            return node.frequency;
         }
         // (3) If word is smaller, search left subtree
         if (word.compareTo(node.data)<0) {
             return searchWordRecursive(node.left,word);
         }
         // (4) If word is larger, search right subtree
-        if (word.compareTo(node.data)>0) {
+        else if (word.compareTo(node.data)>0) {
             return searchWordRecursive(node.right,word);
         }
-        return 0;
+        // (2) If word matches current node, return its frequency
+        else {
+            return node.frequency;
+        }
     }
 }
 
@@ -250,7 +250,9 @@ public class PA3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter input file name: ");
+
         String filename = scanner.nextLine(); // Read file name from user input
+        //String filename = "example01.txt";
 
         BinarySearchTree bst = new BinarySearchTree(); // Create BST instance
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {

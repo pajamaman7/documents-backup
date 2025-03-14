@@ -34,6 +34,7 @@ And so the triangle inequality is satisfied.
     \item  Does the result you proved in the previous question remain true if $E$ and $F$ are closed, but neither is compact? Justify your answer.  
         \paragraph{Solution: }This does not remain true. Take the sequence $\{e_n\}_{n\geq 2}$ given by $e_n=n$, and $E$ as its image. Take $\{f_n\}_{n\geq 2} :f_n=e_n+\frac{1}{n}$ and $F$ as its image (These sets contain only isolated points, and are closed). Then for any $d>0$, we can pick $N\in \mathbb{N}:\frac{1}{N}<d$; and the points $e_N$ and $f_N$ will have $|e_N-f_N|=\frac{1}{N}<d$, meaning we can have arbitrarily close points between the closed sets $E,F$, and no such $d$ can exist.
 \end{enumerate}
+\newpage
 \item Let $E = \left\{(x,y) | y = \sin\left( \frac{1}{x} \right), x > 0 \right\}$. Is E open? Is it closed? What are the accumulation points of E?  
 
     \paragraph{Solution: }This set is not open. Take an arbitrary ball of radius $r$ about the point $p=\left(\frac{1}{\pi},0\right)\in E$. Then the point $q=\left(\frac{1}{\pi},\frac{r}{2}\right)\in B_r(p)$, but $q\not\in E$ since $\sin$ is well-defined. So any ball about $p$ contains points not in $E$, and $E$ is not open.
@@ -65,6 +66,8 @@ And so the triangle inequality is satisfied.
     f(x_1,\dots,x_n)=a_1x_1+\dots+a_nx_n
     .\] For real constants $a_1,\dots,a_n$, so $f$ is linear.
 
+\newpage
+
 \item Given $u : \mathbb{R} \to \mathbb{R}$ a function in $C^2(\mathbb{R})$, define $f : \mathbb{R}^2 \to \mathbb{R}$ by  $f(x,y) = \begin{cases} \frac{u(y) - u(x)}{y-x} & \text{if } y \neq x \\ u'(x) & \text{if } y = x \end{cases}$  Show that f is differentiable at any point $(a,a)$.  
     \paragraph{Solution: }Take the partial derivative with respect to $y$ ($\partial x$ is done identically).
     \begin{align*}
@@ -73,7 +76,7 @@ And so the triangle inequality is satisfied.
         &= \lim_{h \to 0} \frac{ \frac{u(a+h)-u(a)}{h}-u'(a)}{h} \\
         &= \lim_{h \to 0} \frac{ \frac{u(a+h)-u(a)}{h}-u'(a)}{h}
     .\end{align*}
-    Now we apply l'hopital in $h$, noticing that the first term on the numerator tends to $u'(a)$:
+    Now we apply l'Hopital in $h$, noticing that the first term on the numerator tends to $u'(a)$:
     \begin{align*}
         \lim_{h \to 0} \frac{ \frac{u(a+h)-u(a)}{h}-u'(a)}{h}
         &=\lim_{h \to 0} \frac{hu'(a+h)-u(a+h)+u(a)}{h^2}
@@ -92,6 +95,7 @@ And so the triangle inequality is satisfied.
     And thanks to $u\in C^2(\mathbb{R})$, both our partials are continuous at any $(a,a)$ and therefore $f$ is differentiable at any $(a,a)$.
     
 
+\newpage
 \item Let $f : \mathbb{R}^2 \to \mathbb{R}$ be a function that is defined in an open set $\Omega$ in $\mathbb{R}^2$.  Show that if $\partial_x f(x,y), \partial_y f(x,y)$ and $\partial_{xy} f(x,y)$ are continuous in $\Omega$, then $\partial_{yx} f(x,y)$ exists in $\Omega$ and we have  $\partial_{yx} f(x,y) = \partial_{xy} f(x,y), \forall (x,y) \in \Omega$  Hint: Consider the expression $\Delta(s,t) = f(a+s,b+t) - f(a+s,b) - f(a,b+t) + f(a,b)$.  
     \paragraph{Solution: } %TODO yuckey!
 

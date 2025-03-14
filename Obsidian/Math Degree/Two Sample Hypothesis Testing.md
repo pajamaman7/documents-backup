@@ -1,3 +1,4 @@
+With two-sample hypothesis testing we attempt to create cases in order to use a single [[t Distribution]] or [[Normal Distribution]], etc...
 ## Testing $\sigma_{1}=\sigma_{2}$
 When testing equal variances we let $H_{0}$ be $\sigma_{1}=\sigma_{2}$.
 $$F_{calc}=\frac{S_1^2}{S_2^2}\sim F_{n_1-1,n_2-1}$$

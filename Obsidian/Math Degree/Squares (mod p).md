@@ -2,8 +2,8 @@
 tags:
   - NumThry
 ---
-A *square root* of $a\pmod{m}$ is the solution(s) to $x^{2}\equiv a\pmod{m}$. We have strong techniques to solve for $x$ when $m$ is a prime exponent. 
-
+[[Modular Arithmetic]]
+A *square root* of $a\pmod{m}$ is the solution(s) to $x^{2}\equiv a\pmod{m}$. We have strong techniques to solve for $x$ when $m$ is a [[Primes|Prime]] exponent. 
 ## Roots of 1 $\pmod{p^{e}}$
 Roots of $1$ are critical in order to solve for roots of any other number. We have a few cases.
 1. $p^{e}=2$: If this is the case, we have only one root, $1$. 

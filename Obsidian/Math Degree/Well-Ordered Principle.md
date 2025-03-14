@@ -1,1 +1,1 @@
-$\mathbb{Z}$ is a well-ordered set, meaning every subset $A\subseteq \mathbb{Z}$ bounded below has a minimal element.
+$\mathbb{Z}$ is a well-[[Ordered Set]], meaning every subset $A\subseteq \mathbb{Z}$ bounded below has a minimal element.

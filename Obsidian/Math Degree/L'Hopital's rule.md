@@ -1,1 +1,1 @@
-If $f,g$ are real and differentiable in an open interval $(a,b)$, with $x \in(a,b)$, $g(x)\neq x$$-\infty \leq a<b\leq \infty$. Suppose $\frac{f'(x)}{g'(x)}\to A$ as $x\to a$. Then if $f(x)\to{0}$,$g(x)\to{0}$  at $a$, $\frac{f(x)}{g(x)}\to A$ at $a$.
+If $f,g$ are real and [[Differentiation|Differentiable]] in an open interval $(a,b)$, with $x \in(a,b)$, $g(x)\neq x$$-\infty \leq a<b\leq \infty$. Suppose $\frac{f'(x)}{g'(x)}\to A$ as $x\to a$. Then if $f(x)\to{0}$,$g(x)\to{0}$  at $a$, $\frac{f(x)}{g(x)}\to A$ at $a$.

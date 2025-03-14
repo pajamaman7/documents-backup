@@ -1,3 +1,7 @@
+---
+aliases:
+  - Normal Subgroup
+---
 A [[Groups|Subgroup]] $N\subseteq G$ is called normal if for every $g\in G$ and $n\in N$,
 $$gng^{-1}\in N$$
 And we write $N\trianglelefteq G$.

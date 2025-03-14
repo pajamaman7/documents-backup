@@ -12,17 +12,54 @@
 
 \begin{enumerate}[label= (\alph*)] 
 \item Show that $A$ is a queen if and only if $A^* A$ is an orthogonal projection.
+    \paragraph{Solution: } We know already that $(A^* A)^* =A^* A$, so me need only prove that $(A^* A)^2=A^* A$.
+
+    Suppose that $A$ is a queen. Then for any $v\in (\ker A)^{\perp}=\text{ran }A^* $, $Av=v$. But since  $v\in \text{ran }A^* $, there exists some $w$ so that $A^* w=v$.
+
+
+
+\item Show that $A$ is a queen if and only if $AA^*$ is an orthogonal projection.
     \paragraph{Solution: }
 
-\item Show that $A$ is a queen if and only if $AA*$ is an orthogonal projection.
-    \paragraph{Solution: }
-
+    Conversely, suppose that $A^* A$ is an orthogonal projection. Choose $v\in (\ker A)^{\perp}=\text{ran }A^{*},$ so that we have some $w$, where  $A^* w=v$.
+    \begin{align*}
+        \|Av\|^2&=\langle Av,Av \rangle\\
+                &=\langle A^* Av,v \rangle\\
+                &=\langle A^* A A^* w,A^* w \rangle\\
+                &=\langle AA^* A A^* w, w \rangle\\
+                &=\langle AA^*w, w \rangle\\
+                &=\langle A^*w, A^* w \rangle\\
+                &=\langle v,v\rangle\\
+                &= \|v\|^2 \\
+        \|Av\|&=\|v\|
+    .\end{align*}
 \item Show that a queen A is an isometry if and only if $\ker A = {0}$.
 
     \paragraph{Solution: }If $\ker A=\{0\} $, then $(\ker A)^{\perp}=V$, so the restriction of $A$ to the orthogonal complement of its kernel is $A$ restricted to its domain. Then $A$ is an isometry on any vector.
 
+    Conversely, suppose $A$ is an isometry. Then:
+    \begin{align*}
+        v\in \ker A&\iff Av=0\\
+                   &\iff \|Av\|=\|v\|=0\\
+                   &\iff v=0
+    .\end{align*}
+    Therefore $\ker A=\{0\} $. 
+
 \item Find an example of a $4 \times  2$ queen that has non-zero kernel. Be sure to prove it's a queen!
-    \paragraph{Solution: }
+    \paragraph{Solution: }Take the matrix:
+    \[
+        A=\begin{bmatrix} 0&1\\0&0\\ 0&0\\0&0  \end{bmatrix} 
+    .\] 
+    Then clearly $A\begin{bmatrix} t\\0 \end{bmatrix} =0$ for any $t\in \mathbb{C}$, so $A$ has nonzero kernel, and all we must show is that $A$ is a queen.
+
+    Begin by observing that since $\ker A=\text{span} \left\{ \begin{bmatrix} 1\\0 \end{bmatrix}  \right\} $
+    , we can find:
+
+    $\left( \ker A \right) ^{\perp}=\text{span}\left\{ \begin{bmatrix} 0\\1 \end{bmatrix}  \right\}  $. Then let $v=\begin{bmatrix} 0\\t \end{bmatrix} \in (\ker A)^{\perp}$. Computing both $\|v\|,\|Av\|,$ we see:
+    \[
+    \|Av\|=\Vert \begin{bmatrix} 0&1\\0&0\\ 0&0\\0&0  \end{bmatrix} \begin{bmatrix} 0\\t \end{bmatrix} \Vert=\|\begin{bmatrix} t\\0\\0\\0  \end{bmatrix} \|=|t|=\|\begin{bmatrix} 0\\t \end{bmatrix} \|=\|v\|
+    .\] 
+    So the restriction of $A$ to the orthogonal complement of its kernel is an isometry, and $A$ is a queen.
 \end{enumerate}
 \item \begin{enumerate}[label= (\alph*)] 
 \item Given a singular value decomposition $A = W \Sigma V^* $ of a square matrix $A$, construct a polar decomposition of $A$ using $W,V,\Sigma$.

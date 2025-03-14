@@ -1,2 +1,0 @@
-The total differential of a function $F(t,x)$ of the two independent variables $t,x$ is denoted and defined by:$$dF=\frac{\partial F}{\partial x}dt+\frac{\partial F}{\partial t}dx$$
-provided the partial derivatives exist on some $D\subset\mathbb{R}^2$.

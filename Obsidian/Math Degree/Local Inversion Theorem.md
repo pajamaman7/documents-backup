@@ -1,0 +1,1 @@
+If $f:\mathbb{R}\to \mathbb{R}$ is continuously differentiable in $(a,b)$, and $f'(c)\neq 0$ for some $c\in(a,b)$,  

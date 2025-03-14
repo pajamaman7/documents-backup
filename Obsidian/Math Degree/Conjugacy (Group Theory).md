@@ -1,5 +1,5 @@
 $a,b\in G$, a group, are conjugates if there exists $g\in G$, where $g^{-1}bg=a$.
-Conjugacy is an equivalence relation, and so it partitions $G$.
+Conjugacy is an [[Relation|Equivalence Relation]], and so it partitions $G$.
 ## Conjugacy Classes
 The conjugacy class of $a$ is denoted and defined by:
 $$cl(a)=\{ gag^{-1},g\in G \}$$

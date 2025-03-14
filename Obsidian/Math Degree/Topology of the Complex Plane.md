@@ -4,7 +4,15 @@ tags:
   - ComplexAnalysis
 al:
 ---
-Consider the following for some $z\in \mathbb{C}$, $z=x+iy$. Hence the real part of $z$ is $\mathrm{Re}(z)=x$ and the imaginary part is $\mathrm{Im}(z)=b$.
+This whole page is made irrelevant by [[Topology of R^n]], [[Topology]] or [[Normed Topological Space]], save for the section on complex infinity.
+## Neighbourhood of Infinity
+$\infty_ \mathbb{C}$ is not a number, and is not in the set $\mathbb{C}$. Think of it as a circle with infinite radius about the plane.
+We write $\bar{\mathbb{C}}=\mathbb{C}\cup \{ \infty _\mathbb{C} \}$
+A *Basic Neighbourhood of Infinity* is:
+$$U=\{ z\in\mathbb{C}:\lvert z \rvert>M \}$$
+For $M>0$. This is also the complement of a closed disc centered at the origin.
+A neighbourhood of $\infty_{\mathbb{C}}$ is any set that contains a basic neighbourhood of infinity.
+$\infty _\mathbb{C}$ is a cluster point of $A\subseteq \mathbb{C}$ if for all basic neighbourhoods of $\infty_ \mathbb{C}$ we can find points of $A$. Hence, $A$ is unbounded.
 ## Open Disc
 The open disc of center $z_{0}\in\mathbb{C}$ and radius $r>0$ is denoted and defined by:
 $$D(z_{0},r)=\{ z\in\mathbb{C}: |z-z_{0}|<r \}$$
@@ -35,11 +43,3 @@ $\infty_\mathbb{C}$ can be ignored when checking if a set is closed. Though it m
 A set $A\subseteq \mathbb{C}$ is bounded if there exists some $M>0$ so that for all $z\in A$, $\lvert z \rvert<M$.
 ## Compact Set
 A bounded and closed set is called Compact.
-## Neighbourhood of Infinity
-$\infty_ \mathbb{C}$ is not a number, and is not in the set $\mathbb{C}$. Think of it as a circle with infinite radius about the plane.
-We write $\bar{\mathbb{C}}=\mathbb{C}\cup \{ \infty _\mathbb{C} \}$
-A *Basic Neighbourhood of Infinity* is:
-$$U=\{ z\in\mathbb{C}:\lvert z \rvert>M \}$$
-For $M>0$. This is also the complement of a closed disc centered at the origin.
-A neighbourhood of $\infty_{\mathbb{C}}$ is any set that contains a basic neighbourhood of infinity.
-$\infty _\mathbb{C}$ is a cluster point of $A\subseteq \mathbb{C}$ if for all basic neighbourhoods of $\infty_ \mathbb{C}$ we can find points of $A$. Hence, $A$ is unbounded.

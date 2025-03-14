@@ -1,0 +1,55 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{The Zarski Topology}
+\rhead{Thomas Boyko}
+\chead{}
+
+\usepackage{thmbox}
+\hfuzz=8pt
+
+\theoremstyle{plain}% default
+\newtheorem[L]{thm}{Theorem}[section]
+\newtheorem[L]{lem}[thm]{Lemma}
+\newtheorem[L]{prop}[thm]{Proposition}
+%\newtheorem*{cor}{Corollary}
+\theoremstyle{definition}
+\newtheorem[M]{defn}{Definition}[section]
+\newtheorem[M]{exmp}{Example}[section]
+\theoremstyle{remark}
+%\newtheorem*{rem}{Remark}
+%\newtheorem*{note}{Note}
+\newtheorem{case}{Case}
+
+\begin{document}
+\section{The Spectrum and its Topology}
+\begin{defn}[Spectrum of a Ring]
+Let $R$ be a ring. Define the spectrum of $R$,
+\[Spec(R)=\{\mathfrak{p}\trianglelefteq R: \mathfrak{p} \text{ is prime}\} .\] 
+\end{defn}
+\begin{defn}
+    Upon $Spec(R)$ we define a topology by:
+    \[ \mathcal{T}=V(I)=\{\mathfrak{p}\in Spec(R):I\subseteq \mathfrak{p}\} .\] 
+\end{defn}
+\begin{prop}
+    $V(I)$ induces a topology on $Spec(R)$, define:
+    \[
+    \mathcal{T}=\{V(I):I\trianglelefteq R\} 
+    .\] 
+    \begin{enumerate}
+        \item $\varnothing,Spec(R)\in \mathcal{T}$
+        \item $\bigcup_{i=1}^{n}V(I_i)\in \mathcal{T}$
+        \item $\bigcap_{\alpha}^{}V(I_i)\in \mathcal{T}$
+    \end{enumerate}
+\end{prop}
+\begin{proof} 
+\begin{enumerate}
+\item Take $V(\{0\} )=\{\mathfrak{p}\trianglelefteq R \text{ prime}: \{0\} \subseteq \mathfrak{p}\} $. But naturally, the additive identity is contained within every prime ideal (which must be an abelian group w.r.t $+$), so we have  $V(\{0\} )=Spec(R)$, and $Spec(R)\in \mathcal{T}$
+
+Now take $V(R)=\{\mathfrak{p}\trianglelefteq R \text{ prime}: R\subseteq \mathfrak{p}\} $. But by definition, no prime ideal can contain $R$, so $V(R)=\varnothing$ and $\varnothing\in \mathcal{T}$
+\item It is sufficient to show that $V(I)\cup V(J)\in \mathcal{T}$ for any $V(I),V(J)\in \mathcal{T}$. Any finite union can be proven inductively using this result.
+
+\item Take 
+\end{enumerate}
+\end{proof}
+\end{document}
