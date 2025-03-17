@@ -2,6 +2,7 @@
 tags:
   - NumThry
 ---
+[[Factorials]]
 The number of zeroes at the end of some $N!$ is given by the sum of the highest power of $5$ that divides each term in the expansion: $N(N-1)(N-2)\dots 2\cdot 1$.
 This works since, if a term $k$ which is divisible by 5, is not already divisible by 10, the term $k-1$ will be divisible by $2$.
 ### Ex:

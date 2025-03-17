@@ -28,18 +28,16 @@ Let $R$ be a ring. Define the spectrum of $R$,
 \[Spec(R)=\{\mathfrak{p}\trianglelefteq R: \mathfrak{p} \text{ is prime}\} .\] 
 \end{defn}
 \begin{defn}
-    Upon $Spec(R)$ we define a topology by:
-    \[ \mathcal{T}=V(I)=\{\mathfrak{p}\in Spec(R):I\subseteq \mathfrak{p}\} .\] 
+    Upon $Spec(R)$ we define a topology by letting our closed sets be of the form:
+    \[ V(I)=\{\mathfrak{p}\in Spec(R):I\subseteq \mathfrak{p}\} .\] 
+    For an ideal $I$.
 \end{defn}
 \begin{prop}
-    $V(I)$ induces a topology on $Spec(R)$, define:
-    \[
-    \mathcal{T}=\{V(I):I\trianglelefteq R\} 
-    .\] 
+    $V(I)$ induces a topology on $Spec(R)$.
     \begin{enumerate}
-        \item $\varnothing,Spec(R)\in \mathcal{T}$
-        \item $\bigcup_{i=1}^{n}V(I_i)\in \mathcal{T}$
-        \item $\bigcap_{\alpha}^{}V(I_i)\in \mathcal{T}$
+        \item $\varnothing,Spec(R)$ are closed.
+        \item $\bigcup_{i=1}^{n}V(I_i)$ is closed for any $n\in \mathbb{N}$.
+        \item $\bigcap_{\alpha}^{}V(I_i)$ for any $\alpha\in \Delta$, some indexing set.
     \end{enumerate}
 \end{prop}
 \begin{proof} 
@@ -47,9 +45,30 @@ Let $R$ be a ring. Define the spectrum of $R$,
 \item Take $V(\{0\} )=\{\mathfrak{p}\trianglelefteq R \text{ prime}: \{0\} \subseteq \mathfrak{p}\} $. But naturally, the additive identity is contained within every prime ideal (which must be an abelian group w.r.t $+$), so we have  $V(\{0\} )=Spec(R)$, and $Spec(R)\in \mathcal{T}$
 
 Now take $V(R)=\{\mathfrak{p}\trianglelefteq R \text{ prime}: R\subseteq \mathfrak{p}\} $. But by definition, no prime ideal can contain $R$, so $V(R)=\varnothing$ and $\varnothing\in \mathcal{T}$
-\item It is sufficient to show that $V(I)\cup V(J)\in \mathcal{T}$ for any $V(I),V(J)\in \mathcal{T}$. Any finite union can be proven inductively using this result.
+\item It is sufficient to show that $V(I)\cup V(J)\in \mathcal{T}$ for any $V(I),V(J)\in \mathcal{T}$. Any finite union can be proven inductively using this result. We claim that $V(I)\cup V(J)=V(IJ)$.
 
-\item Take 
+    Suppose $\mathfrak{p}\in V(I)$ without loss of generality. Then $\mathfrak{p}$ is a prime ideal containing $I$. But we have $IJ\subseteq I\cap J\subseteq I\subseteq \mathfrak{p}$, so $\mathfrak{p}\in V(IJ)$.
+
+    Conversely, suppose $\mathfrak{p}\in V(IJ)$. Then $\mathfrak{p}$ is a prime ideal containing $IJ$. If $J\subseteq \mathfrak{p}$, we are done, so suppose that $J\not\subseteq \mathfrak{p}$. Then take $i\in I,j\in J\setminus \mathfrak{p}$. We know that $ij\in IJ\subseteq \mathfrak{p}$, and then since $\mathfrak{p}$ is a prime ideal, either $i$ or $j$ must be in $\mathfrak{p}$. Since we supposed it was not $j$, we know it must be $i$. Therefore, $I\subseteq \mathfrak{p}$, and $\mathfrak{p}\in V(I)$.
+
+\item We claim that $\bigcap_{\alpha} V(I_{\alpha})=V\left(\sum_{\alpha}^{} I_\alpha\right)$.
+
+    If $\mathfrak{p}\in \bigcap_{\alpha} V(I_\alpha)$, then $P\supseteq I_\alpha$ for all our $\alpha$. But $\sum_{\alpha}^{} I_\alpha\supseteq I_\alpha$ for any fixed $\alpha$, so $P\supseteq \sum_{\alpha}^{} I_\alpha\supseteq I\alpha$, and $\mathfrak{p}\in V\left( \sum_{\alpha}^{} I_\alpha \right) $.
+
+    Conversely, if $\mathfrak{p}\in V\left( \sum_{\alpha}^{} I_\alpha \right), \mathfrak{p} \supseteq \sum_{\alpha}^{} I_\alpha$. Fix some  $\beta$ arbitrary in $\Delta$, then we know already $\mathfrak{p}\supseteq \sum_{\alpha}^{} I_\beta\supseteq I_\beta $. So $\mathfrak{p}\in V(I_\beta)$ for any $\beta$, and $\mathfrak{p}\in \bigcap_{\alpha}V(I_\alpha) $.
+
 \end{enumerate}
 \end{proof}
+\begin{prop}
+    If $R$ is a ring, then the closed points of $Spec(R)$ correspond to $V(M)=\{M\} $, for the ideals of $R$.
+\end{prop}
+\begin{proof} 
+    Recall closed points in $\mathfrak{p}\in Spec(R)$ are those for which $\{\mathfrak{p}\}$ is closed.
+
+    Suppose $M$ is some such point. Then for some $I\trianglelefteq R$, we have $V(I)=\{M\} $, and $I\subseteq M\subseteq R$. Suppose we have some $J\trianglelefteq R$ so that $M\subseteq J\subseteq R$. Then $I\subseteq J$, and we would have to have  $J\in \{M\} $. Therefore $M$ is maximal. 
+    %TODO more needed i think
+\end{proof}
+\begin{prop}
+    For any $I\trianglelefteq R$, $V(\sqrt{I} )=V(I)$
+\end{prop}
 \end{document}

@@ -6,3 +6,10 @@ $L(X,Y)$ is a [[Normed Vector Space]] under $\| \cdot \|_{op}$. It satisfies the
 - $\| Av \|\leq \| A \|_{op}\| v \|$
 - The norm is sub-multiplicative, $\| AB \|\leq\| A \|\| B \|$ ($\| \cdot \|_{op}$ is a [[Banach Norm]])
 - $\| A^{*}A \|=\| A \|^{2}=\| A^{*} \|^{2}$, $L(X)$ is a [[C*-algebra]]
+## Hilbert-Schmidt Norm
+(In this case we discuss $M_n(\mathbb{C})$)
+Define the norm 
+$$
+\| A \| _2=\sqrt{ tr(AA^{*}) }=\sqrt{ tr(A^{*}A) }=\sqrt{ \sum\limits_{}^{}\sigma_i }
+$$
+Where $\sigma_i$ are singular values of $A$.

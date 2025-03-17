@@ -7,3 +7,5 @@ $$U(P,f)=\sum\limits_{i=1 }^{n}M_i \Delta x_i$$
 Where $M_i=\sup f(x)$ on $[x_{i-1},x_i]$
 $$L(P,f)=\sum\limits_{i=1 }^{n}m_i \Delta x_i$$
 Where $M_i=\inf f(x)$ on $[x_{i-1},x_i]$
+## Theorem
+If $f$ is [[Limits and Continuity in Metric Spaces|Continuous]] on $[a,b]$, $f$ is Reimann integrable over $[a,b]$

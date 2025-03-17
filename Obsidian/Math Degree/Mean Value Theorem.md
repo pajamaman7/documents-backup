@@ -1,1 +1,1 @@
-Let $f:[a,b]\to\mathbb{R}$ be continuous and differentiable on $[a,b]$.
+Let $f:[a,b]\to\mathbb{R}$ be [[Limits and Continuity in Metric Spaces|Continuous]] and [[Differentiation|Differentiable]] on $[a,b]$. Then there exists some $c\in (a,b)$ so that $f'(c)(b-a)=f(b)-f(a)$.
