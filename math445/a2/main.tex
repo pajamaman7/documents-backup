@@ -13,7 +13,7 @@
 
 Non-negativity: For the sake of contradiction, suppose that there exists some $x\in \mathbb{R}^{n}$ so that $\phi(x)<0$. Then let $n\in \mathbb{N}$. Take $\phi(nx)=n\phi(x)<0\leq 1$. So if we take the set $\{nx:n\in \mathbb{N}\} $, which is clearly unbounded, we see that it is contained in $B$. However this is a contradiction since $B$ is bounded. So $\phi(x)>0\forall x\neq 0$.
 
-Triangle inequality: Let $x,y\in \mathbb{R}^{n}$, and take $\lambda= \frac{\phi(x)}{\phi(x)+\phi(y)}\leq 1$. Note that $\phi\left( \frac{x}{\phi(x)} \right) =\frac{\phi (x)}{\phi(x)}=1$, and likewise for $y$, so we may take
+Triangle inequality: Let $x,y\in \mathbb{R}^{n}$, and take $\lambda= \frac{\phi(x)}{\phi(x)+\phi(y)}\leq 1$. Note that $\phi\left( \frac{x}{\phi(x)} \right) =\frac{\phi (x)}{\phi(x)}=1$, and likewise for $y$, so we have $\frac{x}{\phi(x)},\frac{y}{\phi(y)}\in B$ and may take:
 \begin{align*}
     \phi\left( \lambda \frac{x}{\phi(x)}+(1-\lambda) \frac{y}{\phi(y)} \right) 
     &= \phi\left(  \frac{x\phi(x)}{\phi(x)(\phi(x)+\phi(y))}+ \frac{y\phi(y)}{\phi(y)(\phi(x)+\phi(y))}\right)  \\

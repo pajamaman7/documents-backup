@@ -1,3 +1,8 @@
+---
+aliases:
+  - Measureable Space
+  - Measurable
+---
 Given a set $X$, a collection of subsets $\mathfrak{R}$ is said to be an Algebra on $X$ if:
 - $X\in\mathfrak{R}$
 - For any $A\in\mathfrak{R}$, $A^{c}\in\mathfrak{R}$

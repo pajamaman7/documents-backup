@@ -16,7 +16,7 @@ $$
 And the matrix norm gives us $|A|\sim_Udiag\{ \sigma_{1},\dots,\sigma_r,0,\dots,0 \}$. Then we take the unitary $U$ so that $\sigma_{i}>\sigma_{i+1}$, and then take $\{ v_{1},\dots,v_r,v_{r+1},\dots,v_n \}$ for the columns of the unitary. Then
 $$
 \begin{align}
-A^{*}Av_j&=\sigma j^{2}v_j& \\
+A^{*}Av_j&=\sigma _j^{2}v_j& \\
 |A|v_j&=\sigma_jv_j \\
 |A|v_j&=0&j=1,\dots
 \end{align}
