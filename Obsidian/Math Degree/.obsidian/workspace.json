@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -235,8 +235,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c8ff36b2fc871a32",
+  "active": "e4d7cdbe72de5930",
   "lastOpenFiles": [
+    "Adjoints.md",
+    "Orthogonality.md",
+    "Vector Functions of Several Variables.md",
     "Inverse Function Theorem.md",
     "Implicit Function Theorem.md",
     "Inner Product Space.md",
@@ -244,9 +247,6 @@
     "Two Sample CIs.md",
     "F Distribution.md",
     "Random Variable.md",
-    "Vector Functions of Several Variables.md",
-    "Adjoints.md",
-    "Orthogonality.md",
     "Singular Value Decomposition.md",
     "Spectral Mapping Theorem.md",
     "Topology.md",
