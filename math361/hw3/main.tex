@@ -13,6 +13,7 @@
 \begin{enumerate}[label= (\alph*)] 
 \item Show that $A$ is a queen if and only if $A^* A$ is an orthogonal projection.
     \paragraph{Solution: }
+    %Note: it would be an orth. proj onto ran (A*A) or a smaller subspce
 Suppose that $A$ is a queen. We know already that $(A^* A)^* =A^* A$, so me need only prove that $(A^* A)^2=A^* A$. Let $v\in \mathbb{C}^{n}$ Then $v=x+y$ for some $x\in \ker A,y\in (\ker A)^{\perp}=\text{ran }A^* $.
     \begin{align*}
         A^* A A^* A v &=A^* A A^* A (x+y)\\
@@ -21,18 +22,15 @@ Suppose that $A$ is a queen. We know already that $(A^* A)^* =A^* A$, so me need
 
     Conversely, suppose that $A^* A$ is an orthogonal projection. Choose $v\in (\ker A)^{\perp}=\text{ran }A^{*},$ so that we have some $w$, where  $A^* w=v$.
     \begin{align*}
-        \|Av\|^2&=\langle Av,Av \rangle\\
-                &=\langle A^* Av,v \rangle\\
-                &=\langle A^* A A^* w,A^* w \rangle\\
-                &=\langle AA^* A A^* w, w \rangle\\
-                &=\langle AA^*w, w \rangle\\
-                &=\langle A^*w, A^* w \rangle\\
-                &=\langle v,v\rangle\\
-                &= \|v\|^2 \\
+        \|Av\|^2&= \langle Av,Av \rangle \\
+        &= \langle A^* Av,v \rangle \\
+        &= \langle A A^* w,w \rangle \\
+        &= \langle A^* w,A^* w \rangle \\
+        &= \langle v,v \rangle \\
         \|Av\|&=\|v\|
     .\end{align*}
 \item Show that $A$ is a queen if and only if $AA^*$ is an orthogonal projection.
-    \paragraph{Solution: }%TODO
+    \paragraph{Solution: }Suppose that $A$ is a queen. %TODO
 
     Conversely, suppose that $AA^*$ is an orthogonal projection. Then let $v\in (\ker A)^{\perp}$. So we have some $w$, where  $A^* w=v$.
     \begin{align*}
@@ -49,7 +47,7 @@ Suppose that $A$ is a queen. We know already that $(A^* A)^* =A^* A$, so me need
 
 \item Show that a queen A is an isometry if and only if $\ker A = {0}$.
 
-    \paragraph{Solution: }If $\ker A=\{0\} $, then $(\ker A)^{\perp}=V$, so the restriction of $A$ to the orthogonal complement of its kernel is $A$ restricted to its domain. Then $A$ is an isometry on any vector.
+    \paragraph{Solution: }If $\ker A=\{0\} $, then $(\ker A)^{\perp}=V$, so the restriction of $A$ to the orthogonal complement of its kernel is $A$ restricted to all of $V$. Then $A$ is an isometry on any vector.
 
     Conversely, suppose $A$ is an isometry. Then:
     \begin{align*}
@@ -141,7 +139,9 @@ And find the characteristic polynomial:
 
 \item Find your favorite $4 \times  2$ matrix A of rank 2 and compute a singular value decomposition for A. All of the entries of A must be nonzero.
 
-    \paragraph{Solution: }%TODO
+    \paragraph{Solution: }
+
+    %TODO
 
 \item For an $m \times  n$ matrix $A$, show that the set of nonzero eigenvalues for $A^*  A$ coincide with that of $AA^* $.
     \paragraph{Solution: }Let $0\neq \lambda\in \sigma(A^* A)$, with an associated eigenvector $v$.

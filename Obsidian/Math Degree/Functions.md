@@ -15,7 +15,6 @@ aliases:
   - Image
   - Function
 ---
-
 Suppose $A, B$ are sets. A function $f$ from $A$ to $B$ ($f:A\to B$), is a subset of the [[Cartesian Product]] $A\times B$ and for all $x\in A$, there exists a unique $y\in B$ so that $(x,y)\in f$. 
 $A$ is called the Domain of $f$ and $B$ is the Codomain of $f$.
 ## Image

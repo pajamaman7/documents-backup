@@ -1,12 +1,11 @@
-For any differentiable function $F:U\to\mathbb{R}$ with $F(x_1,\ldots,x_n)=0$, we have $\frac{\partial x_i}{\partial x_j}=\frac{-F_{x_j}}{F_{x_i}}$  
-
-Suppose $f_1,\ldots,f_n$ are differentiable scalar functions in the variables $y_1\ldots y_n,x_1\ldots x_n$ and consider the equations:
-$$\begin{align*} f_1(b_1,\ldots,b_n,a_1,\ldots,a_m)&=c_1\\
-\vdots\\
-f_w(b_1,\ldots,b_n,a_1,\ldots,a_m)&=c_n
-\end{align*}$$
-Write $\vec F=\begin{pmatrix}f_1&\ldots&f_n\end{pmatrix}^T$ 
-and $DF(b_1,\ldots,b_n,a_1,\ldots,a_m)=\begin{bmatrix} B&|&A \end{bmatrix}$
-If $B$ is invertible then we can locally solve for $y_1,\ldots,y_n$ in terms of $x_1,\ldots,x_m$ as 
-$$\vec g(x_1,\ldots,x_m)=\begin{pmatrix}y_1&\ldots&y_n\end{pmatrix}^T$$
-and $D\vec g(a_1,\ldots, a_m)= -B^{-1}A$.
+Let $f:\mathbb{R}^{n+p}\to \mathbb{R}^{p}$ in $C^{1}(E)$ for $E\subseteq \mathbb{R}^{n+p}$ open. Write $f=(f_{1},\dots,f_p)$. Consider the system $f(x,y)=0$ If $(a,b)\in E$ is such that $f(a,b)=0$ and $\partial_yf(a,b)$ is invertible, then there exists $\Omega_a\subseteq \mathbb{R}^{n}$ an open neighborhood of $a$, $W_b\subseteq \mathbb{R}^{p}$ an open neighborhood of $b$, and a unique function $\varphi:\mathbb{R}^{n}\to\mathbb{R}^{p}$ in $C^{1}(\Omega_a)$ so that $\varphi(a)=b$, $f(x,\varphi(x))=0$, $\forall x\in\Omega_a$, 
+$$\partial_x\varphi(x)=-\left( \partial_yf(x,\varphi(x)) \right)^{-1}\partial_xf(x,\varphi(x)),\forall x\in\Omega_a$$ 
+$$
+Jf(x,y)=\begin{bmatrix}
+\frac{ \partial f_{1} }{ \partial x_{1}} & \dots & \frac{ \partial f_{1} }{ \partial x_n } &\frac{ \partial f_{1} }{ \partial y_{1} } & \dots & \frac{ \partial f_{1} }{ \partial y_p } \\  
+\vdots &  & \vdots & \vdots &  & \vdots \\
+\frac{ \partial f_{q} }{ \partial x_{1}} & \dots & \frac{ \partial f_{q} }{ \partial x_n } &\frac{ \partial f_{q} }{ \partial y_{1} } & \dots & \frac{ \partial f_{q} }{ \partial y_p } 
+\end{bmatrix}=\begin{bmatrix}
+\partial_xf&\partial_yf
+\end{bmatrix}
+$$

@@ -1,4 +1,4 @@
-Let $X\perp Y$ be independent $\chi^{2}$ distributed random variables with $\nu,\delta$ degrees of freedom respectively. Then:
+Let $X\perp Y$ be independent $\chi^{2}$ distributed [[Random Variable|Random Variables]]with $\nu,\delta$ degrees of freedom respectively. Then:
 $$F=\frac{\frac{X}{\nu}}{\frac{Y}{\delta}}$$
 And we have 
 $$E[F]=\frac{\delta}{\delta-2}$$

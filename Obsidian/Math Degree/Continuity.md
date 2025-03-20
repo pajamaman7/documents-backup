@@ -1,10 +1,11 @@
 ---
 aliases:
-  - Continuity
+  - Continuous
   - Limit
   - Limits
-  - Continuous
 ---
+A function on [[Topology|Topological Spaces]] $f:X\to Y$ is said to be continuous if, for every $V$ open in $Y$, the preimage $f^{-1}(V)$ is open in $X$.
+# Metric Spaces
 ## Limits
 Let $$
 \begin{CD}
