@@ -12,26 +12,39 @@
 
 \begin{enumerate}[label= (\alph*)] 
 \item Show that $A$ is a queen if and only if $A^* A$ is an orthogonal projection.
-    \paragraph{Solution: }Suppose that $A$ is a queen, and let  $x,y\in (\ker A)^{\perp}$ be nonzero. Then since $A$ is an isometry on $(\ker A)^{\perp}$, we have:
-    \begin{align*}
-        \langle x,y \rangle&= \langle Ax,Ay \rangle \\
-        &= \langle A^* Ax,y \rangle \\
-        0&= \langle x,y \rangle-\langle A^* Ax,y \rangle\\
-        &= \langle x-A^* Ax,y \rangle
-    .\end{align*}
-    But this is true if and only if $y=0$ or $x=A^* Ax$. But we supposed $y\neq 0$, and then $A^* Ax=(A^* A)^2x$, so $A^* A$ is an orthogonal projection %TODO What if the vectors are orthogonal within the range
+    \paragraph{Solution: }Suppose $A$ is a queen. Then $A$ is an isometry on 
 
-    Let $v\in (\ker A)^{\perp}=(\ker(A^* A))^{\perp}=\text{ran}(A^* A)$. But we know that $A^* A$ acts as identity on its range. So $A^* Av=v$, and
+    $(\ker A)^{\perp}=(\ker A^* A)^{\perp}=\text{ran} A^* A$. Take any $v\in \mathbb{C}^{n}$, which can be decomposed as $v=x+y$ with $x\in (\ker A^* A)^\perp$ and $y\in \ker A^* A$. Then:
+    \begin{align*}
+        (A^* A)^2v&= (A^* A)^2(x+y) \\
+            &= (A^* A)^2x +(A^* A)^2y\\
+            &= (A^* A)^2x \\
+    .\end{align*}
+    But since $A$ is an isometry on $(\ker A^* A)^{\perp}$, which contains $x,$ we must have $A^* Ax=x$. Then
+    \begin{align*}
+        (A^* A)^2v &= (A^* A)^2x \\
+        &= A^* Ax \\
+        &= A^* Ax +0\\
+        &= A^* Ax +A^* Ay\\
+        &= A^* Av
+    .\end{align*}
+    And therefore $(A^* A)^2=A^* A$, and $A^* A$ is an orthogonal projection.
+
+    Conversely, let $A^* A$ be an orthogonal projection, and $v\in (\ker A)^{\perp}=\text{ran}(A^* A)$. But we know that $A^* A$ acts as identity on its range. So $A^* Av=v$, and
     \begin{align*}
        \langle A^* Av,v \rangle&= \langle v,v \rangle \\
        \langle Av,Av \rangle&= \langle v,v \rangle \\
        \|Av\|^2&= \|v\|^2 \\
        \|Av\|&= \|v\|
     .\end{align*}
-    And so $A$ is an isometry on the orthogonal complement of its kernel. %I think this is the most complete one 
-\item Show that $A$ is a queen if and only if $AA^*$ is an orthogonal projection.
-    \paragraph{Solution: }Suppose that $A$ is a queen. %TODO
+    And so $A$ is an isometry on the orthogonal complement of its kernel, and $A$ is a queen.
+    %Deepseek wants clarity on isometry implying A*A=I for x, and more clarity on equality of kernels and ranges.
 
+\item Show that $A$ is a queen if and only if $AA^*$ is an orthogonal projection.
+    \paragraph{Solution: }%TODO is it as easy as replacing A with A*? perhaps its enough to justify that A*A o.p iff AA* o.p.
+
+    \iffalse
+    Suppose that $A$ is a queen. 
     Conversely, suppose that $AA^*$ is an orthogonal projection. Then let $v\in (\ker A)^{\perp}$. So we have some $w$, where  $A^* w=v$.
     \begin{align*}
         \|Av\|^2&= \langle Av,Av \rangle \\
@@ -72,6 +85,7 @@
     \|Av\|=\Vert \begin{bmatrix} 0&1\\0&0\\ 0&0\\0&0  \end{bmatrix} \begin{bmatrix} 0\\t \end{bmatrix} \Vert=\|\begin{bmatrix} t\\0\\0\\0  \end{bmatrix} \|=|t|=\|\begin{bmatrix} 0\\t \end{bmatrix} \|=\|v\|
     .\] 
     So the restriction of $A$ to the orthogonal complement of its kernel is an isometry, and $A$ is a queen.
+\fi
 \end{enumerate}
 \item \begin{enumerate}[label= (\alph*)] 
 \item Given a singular value decomposition $A = W \Sigma V^* $ of a square matrix $A$, construct a polar decomposition of $A$ using $W,V,\Sigma$.
