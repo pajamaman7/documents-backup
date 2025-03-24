@@ -12,5 +12,10 @@ $$E_\lambda=\bigcup_{k=1}^{\infty}\ker(A-\lambda I)^{k}=\ker(A-\lambda I)\cup\ke
 - $E_\lambda$ is invariant for $A$.
 - $(A-\lambda I)^{d(\lambda)}|_{E_\lambda}=0$.
 - $\sigma(A|_{E_\lambda})=\{ \lambda \}.$
+## Theorem
+There is a diagonalizable $D$ and a nilpotent $N$ so that:
+$$ A=D+N; \quad DN=ND $$
+### Structure of nilpotent part
+
 # Decomposition
 See [[Block Diagonalization]] 

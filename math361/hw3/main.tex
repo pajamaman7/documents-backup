@@ -57,6 +57,7 @@
         &= \|v\|^2\\
         \|Av\|&=\|v\|
     .\end{align*}%This is complete but could maybe be simpler
+\fi
 
 \item Show that a queen A is an isometry if and only if $\ker A = {0}$.
 
@@ -85,7 +86,6 @@
     \|Av\|=\Vert \begin{bmatrix} 0&1\\0&0\\ 0&0\\0&0  \end{bmatrix} \begin{bmatrix} 0\\t \end{bmatrix} \Vert=\|\begin{bmatrix} t\\0\\0\\0  \end{bmatrix} \|=|t|=\|\begin{bmatrix} 0\\t \end{bmatrix} \|=\|v\|
     .\] 
     So the restriction of $A$ to the orthogonal complement of its kernel is an isometry, and $A$ is a queen.
-\fi
 \end{enumerate}
 \item \begin{enumerate}[label= (\alph*)] 
 \item Given a singular value decomposition $A = W \Sigma V^* $ of a square matrix $A$, construct a polar decomposition of $A$ using $W,V,\Sigma$.
@@ -162,7 +162,9 @@ And find the characteristic polynomial:
 
     Then $A^* Av=\lambda v$. Applying $A$ on both sides, we have $A A^*  Av=A\lambda v=\lambda Av$, and so $Av$ is an eigenvector for $A A^* $ associated with $\lambda$.
 
-    Then suppose $A A^*v=\lambda v$. Applying $A^* $ on both sides, we have $A ^*A  Av^*=A\lambda v=\lambda Av$, and so $A^*v$ is an eigenvector for $A ^*A$ associated with $\lambda$.
+    Now let $0~=\lambda\in \sigma(A A^* )$
+
+    Then suppose $A A^*v=\lambda v$. Applying $A^* $ on both sides, we have $A ^*A  A^* v=A^* \lambda v=\lambda A^* v$, and so $A^*v$ is an eigenvector for $A ^*A$ associated with $\lambda$.
 
 \item Suppose $A = W \Sigma V^* $ is a singular value decomposition for $A$. Show that the columns of $W$ are eigenvectors for $AA^* $.
     \paragraph{Solution: }Let $1\leq i \leq n$, and take:
