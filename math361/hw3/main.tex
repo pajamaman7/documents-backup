@@ -18,7 +18,7 @@
     \begin{align*}
         (A^* A)^2v&= (A^* A)^2(x+y) \\
             &= (A^* A)^2x +(A^* A)^2y\\
-            &= (A^* A)^2x \\
+            &= (A^* A)^2x
     .\end{align*}
     But since $A$ is an isometry on $(\ker A^* A)^{\perp}$, which contains $x,$ we must have $A^* Ax=x$. Then
     \begin{align*}
@@ -26,6 +26,7 @@
         &= A^* Ax \\
         &= A^* Ax +0\\
         &= A^* Ax +A^* Ay\\
+        &= A^* A(x+y)\\
         &= A^* Av
     .\end{align*}
     And therefore $(A^* A)^2=A^* A$, and $A^* A$ is an orthogonal projection.
@@ -38,27 +39,23 @@
        \|Av\|&= \|v\|
     .\end{align*}
     And so $A$ is an isometry on the orthogonal complement of its kernel, and $A$ is a queen.
-    %Deepseek wants clarity on isometry implying A*A=I for x, and more clarity on equality of kernels and ranges.
 
 \item Show that $A$ is a queen if and only if $AA^*$ is an orthogonal projection.
-    \paragraph{Solution: }%TODO is it as easy as replacing A with A*? perhaps its enough to justify that A*A o.p iff AA* o.p.
+    \paragraph{Solution: }
+    We already have that $A$ is a queen $\iff $ $A^* A$ is an orthogonal projection. Rather than repeat the previous argument with $A A^* $, we show that $A^* A$ is an orthogonal projection $\iff  A A^* $ is an orthogonal projection.
 
-    \iffalse
-    Suppose that $A$ is a queen. 
-    Conversely, suppose that $AA^*$ is an orthogonal projection. Then let $v\in (\ker A)^{\perp}$. So we have some $w$, where  $A^* w=v$.
-    \begin{align*}
-        \|Av\|^2&= \langle Av,Av \rangle \\
-        &= \langle A A^* w,A A^* w \rangle \\
-        &= \langle A^* A A^* w, A^* w \rangle \\
-        &= \langle AA^* A A^* w,  w \rangle \\
-        &= \langle  A A^* w,  w \rangle \\
-        &= \langle   A^* w,  A^* w \rangle \\
-        &= \langle   v, v \rangle \\
-        &= \|v\|^2\\
-        \|Av\|&=\|v\|
-    .\end{align*}%This is complete but could maybe be simpler
-\fi
+    $\implies:$ Let $A^* A$ be an orthogonal projection. Then take $v\in \mathbb{C}^{n}$, and since $\text{ran}A^* A=(\ker A^* A)^{\perp}=(\ker A)^{\perp}=\text{ran}A^*$, we know that $A^* v\in \text{ran}A^* A$. Then since $A^* A$ acts as identity on its range, we have:
+    \[ (A A^* )^2v=A(A^* A) (A^* v)=A A^* v .\] 
+    And so $A A^* $ is an orthogonal projection.
 
+    $\impliedby:$ Let $A A^* $ be an orthogonal projection. Then take $w\in \mathbb{C}^{m}$, and since
+    $\text{ran}A A^* =(\ker A A^* )^{\perp}= (\ker A^* )^{\perp}=\text{ran}A$, we know that $Aw\in \text{ran}A^* A$. Then since $A A^* $ acts as identity on its range,
+    \[ (A^* A)^2w=A^* (A A^* )(Aw)=A^* Aw .\] 
+    And therefore $A^* A$ is an orthogonal projection.
+
+    Now we have: $A$ is a queen $\iff A^* A$ is an orthogonal projection $\iff$  $AA ^*$ is an orthogonal projection.
+
+\newpage
 \item Show that a queen A is an isometry if and only if $\ker A = {0}$.
 
     \paragraph{Solution: }If $\ker A=\{0\} $, then $(\ker A)^{\perp}=V$, so the restriction of $A$ to the orthogonal complement of its kernel is $A$ restricted to all of $V$. Then $A$ is an isometry on any vector.
@@ -102,6 +99,7 @@
     U|A|=(WV^* )(V\Sigma V^* )=W\Sigma V^* =A
     .\] 
 
+    \newpage
 \item Using the method above, compute a polar decomposition for
 \[
     A=\begin{bmatrix} 1&3\\2&6 \end{bmatrix} 
@@ -123,15 +121,15 @@ And find the characteristic polynomial:
                         &\implies v_1=t\begin{bmatrix} 1\\-3 \end{bmatrix} \\
                         &\implies v_1=\frac{1}{\sqrt{10} }\begin{bmatrix} 1\\-3 \end{bmatrix} 
     .\end{align*}
-    Now that we have $v_1,$ we need only pick $v_2$ so that $V$ is unitary, so by inspection take $v_2=\frac{1}{\sqrt{10} }\begin{bmatrix} 3\\-1 \end{bmatrix} $, which is normal, and orthogonal to $v_1$. And so we have our matrix $V=\frac{1}{\sqrt{10} }\begin{bmatrix} 1&3\\3&-1 \end{bmatrix} $.
+    Now that we have $v_1,$ we need only pick $v_2$ so that $V$ is unitary, so by inspection take $v_2=\frac{1}{\sqrt{10} }\begin{bmatrix} 3\\-1 \end{bmatrix} $, which already has norm $1$, and is orthogonal to $v_1$. And so we have our matrix $V=\frac{1}{\sqrt{10} }\begin{bmatrix} 1&3\\3&-1 \end{bmatrix} $.
 
     Now we find $W$. Begin by computing: 
     \[
-        w_1=\frac{1}{\sigma_1}Av_1=\frac{1}{5\sqrt{2} }\frac{1}{\sqrt{10} }\begin{bmatrix} 1&3\\2&6 \end{bmatrix} \begin{bmatrix} 1\\3 \end{bmatrix} =\frac{1}{\sqrt{20} }\begin{bmatrix} 2\\4 \end{bmatrix} 
+        w_1=\frac{1}{\sigma_1}Av_1=\frac{1}{5\sqrt{2} }\frac{1}{\sqrt{10} }\begin{bmatrix} 1&3\\2&6 \end{bmatrix} \begin{bmatrix} 1\\3 \end{bmatrix} =\frac{1}{\sqrt{5} }\begin{bmatrix} 1\\2 \end{bmatrix} 
     .\] 
-        And again by inspection, $w_2=\frac{1}{\sqrt{20} }\begin{bmatrix} -4\\2 \end{bmatrix} $, and $W^* =\frac{1}{\sqrt{20} }\begin{bmatrix} 2&4\\-4&2 \end{bmatrix} $. So then we have our SVD:
+        And again by inspection, $w_2=\frac{1}{\sqrt{5} }\begin{bmatrix} -2\\1 \end{bmatrix} $, and $W^* =\frac{1}{\sqrt{5} }\begin{bmatrix} 1&2\\-2&1 \end{bmatrix} $. So then we have our SVD:
     \[
-        A=\frac{1}{\sqrt{10} }\begin{bmatrix} 1&3\\3&-1 \end{bmatrix} \begin{bmatrix} 5\sqrt{2} &0\\0&0 \end{bmatrix} \frac{1}{\sqrt{20} }\begin{bmatrix} 2&4\\-4&2 \end{bmatrix} 
+        A=\frac{1}{\sqrt{10} }\begin{bmatrix} 1&3\\3&-1 \end{bmatrix} \begin{bmatrix} 5\sqrt{2} &0\\0&0 \end{bmatrix} \frac{1}{\sqrt{5} }\begin{bmatrix} 1&2\\-2&1 \end{bmatrix} 
     .\] 
     After a quick sanity check that all our matrix multiplication gives us back $A$, we just need to find $|A|=V\Sigma V^* $ and $U=WV^* $.
     \begin{align*}
@@ -153,10 +151,64 @@ And find the characteristic polynomial:
 
 \item Find your favorite $4 \times  2$ matrix A of rank 2 and compute a singular value decomposition for A. All of the entries of A must be nonzero.
 
-    \paragraph{Solution: }
+    \paragraph{Solution: }Take the matrix:
+    \[ A=\begin{bmatrix} 2&1\\1&2\\2&1\\1&2\end{bmatrix};\quad
+    A^* A=\begin{bmatrix} 2&1&2&1\\1&2&1&2 \end{bmatrix}
+    \begin{bmatrix} 2&1\\1&2\\2&1\\1&2\end{bmatrix}=
+    \begin{bmatrix} 10&8\\8&10 \end{bmatrix} 
+.\]
+    And compute $C_{A^* A}(z)=(z-10)^2-64=z^2-20z-36=(z-18)(z-2)$.
+    So now we have our $\Sigma$:
+     \[ \Sigma=\begin{bmatrix} 3\sqrt{2} &0\\0&\sqrt{2}  \end{bmatrix} .\]
+    And singular values: $\sigma_1=3\sqrt{2},\sigma_2=\sqrt{2} $. Now compute eigenvectors for $\sigma_1^2,\sigma_2^2$ :
+    \begin{align*}
+        (A^* A-18I)v_1&= \begin{bmatrix} -8&8\\8&-8 \end{bmatrix}  \\
+        v_1&=\frac{1}{\sqrt{2} } \begin{bmatrix} 1\\1 \end{bmatrix}  \\
+        (A^* A-2I)v_2&= \begin{bmatrix} 8&8\\8&8 \end{bmatrix}  \\
+        v_1&=\frac{1}{\sqrt{2} } \begin{bmatrix} 1\\-1 \end{bmatrix} 
+    .\end{align*}
+    So we have our $V$:
+    \[ V=\frac{1}{\sqrt{2} }\begin{bmatrix} 1&1\\1&-1 \end{bmatrix} .\] 
+    And we are free to compute $w_1,w_2$ from $v_1,v_2$:
+    \begin{align*}
+        w_1&= \frac{1}{\sigma_1}Av_1 \\
+        &= \frac{1}{3\sqrt{2} } \\
+        &=\frac{1}{3\sqrt{2} }\begin{bmatrix} 2&1\\1&2\\2&1\\1&2\end{bmatrix}\frac{1}{\sqrt{2} }\begin{bmatrix} 1\\1 \end{bmatrix} \\
+        &= \frac{1}{6}\begin{bmatrix} 3\\3\\3\\3 \end{bmatrix}  \\
+        &= \frac{1}{2}\begin{bmatrix} 1\\1\\1\\1 \end{bmatrix}  \\
+        w_2&= \frac{1}{\sigma_2}Av_2 \\
+        &= \frac{1}{\sqrt{2} } \\
+        &=\frac{1}{\sqrt{2} }\begin{bmatrix} 2&1\\1&2\\2&1\\1&2\end{bmatrix}\frac{1}{\sqrt{2} }\begin{bmatrix} 1\\-1 \end{bmatrix} \\
+        &= \frac{1}{2}\begin{bmatrix} 1\\-1\\1\\-1 \end{bmatrix}
+    .\end{align*}
+    Now we must extend $w_1,w_2$ to an orthonormal basis of $\mathbb{C}^{4}$. We could do this with Gram-Schmidt, or we could be brave and move negative signs around until all our inner products turn out to be zero. Opt for the second option, and find:
+    \[
+    w_3=\frac{1}{2}\begin{bmatrix} 1\\1\\-1\\-1 \end{bmatrix},\quad w_4=\frac{1}{2}\begin{bmatrix} -1\\1\\1\\-1 \end{bmatrix} 
+    .\] 
 
-    %TODO
+    Then we take the transpose of all our $w_i$'s, and get our $W$:
+    \[
+    W^* =\frac{1}{2}
+    \begin{bmatrix} 1&1&1&1\\
+    1&-1&-1&1\\
+    1&1&-1&-1\\
+    -1&1&1&-1
+    \end{bmatrix}
+    .\] 
+    And therefore we have our SVD:
+     \[
+    A=\frac{1}{2}
+    \begin{bmatrix} 1&1&1&1\\
+    1&-1&-1&1\\
+    1&1&-1&-1\\
+    -1&1&1&-1
+\end{bmatrix}
+\begin{bmatrix} 3\sqrt{2} &0\\0&\sqrt{2}  \end{bmatrix} 
+\frac{1}{\sqrt{2} }\begin{bmatrix} 1&1\\1&-1 \end{bmatrix} 
+=\begin{bmatrix} 2&1\\1&2\\2&1\\1&2\end{bmatrix}
+    .\] 
 
+    \newpage
 \item For an $m \times  n$ matrix $A$, show that the set of nonzero eigenvalues for $A^*  A$ coincide with that of $AA^* $.
     \paragraph{Solution: }Let $0\neq \lambda\in \sigma(A^* A)$, with an associated eigenvector $v$.
 
@@ -185,9 +237,10 @@ And find the characteristic polynomial:
                  &= W\Sigma^2\begin{bmatrix} 0\\ \vdots\\ \langle w_i,w_i \rangle\\ \vdots \\ 0 \end{bmatrix}&\text{Since $w_i$ form an o.n.b.}\\
                  &= W\Sigma^2\begin{bmatrix} 0\\ \vdots\\ \|w_i\|^2\\ \vdots \\ 0 \end{bmatrix}
     .\end{align*}
-    Now we split by cases. If $i>r$, then the  $i$-th column of $\Sigma$ will be exactly zero, and we will have $A A^* w_i=W0=0$, and $w_i\in \ker A A^* $%TODO is it a zero eigenvector?
+    Now we split by cases. If $i>r$, then the  $i$-th column of $\Sigma$ will be exactly zero, and we will have $A A^* w_i=W0=0=0w_i$, and $w_i$ is an eigenvector associated with $0$.
 
     But if $i\leq r$, then the $i$-th column of $\Sigma^2$ will be of the form $\Sigma^2=\begin{bmatrix} 0& \dots& \sigma_i^2& \dots & 0 \end{bmatrix}^{T}$ 
+
     Then our equation becomes
     \begin{align*}
         A A^* w_i&=  W\sigma_i^2\begin{bmatrix} 0\\ \vdots\\ \|w_i\|^2\\ \vdots \\ 0 \end{bmatrix}\\
