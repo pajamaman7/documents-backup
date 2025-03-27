@@ -1,3 +1,7 @@
+---
+aliases:
+  - Generalized Eigenvectors
+---
 Motivation: Find a subspace that includes the eigenspace, behaves like one, and has dimension equal to the algebraic multiplicity of the eigenvalue.
 
 Let $\dim V=n,$ $A:V\to V$ is a [[Linear Operators|Linear Operator]]. Write $\sigma(A)=\{ \lambda_{1},\dots,\lambda_m \}$ for some $m\leq n$. 

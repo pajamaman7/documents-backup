@@ -1,3 +1,7 @@
+---
+aliases:
+  - Matrix Representation
+---
 ## Basis Coordinates
 Suppose $\dim V=n$ and $\dim W=m$ and let $\beta=\{ b_{1},\dots,b_n \}$ a [[Vector Spaces|Basis]] for $V$, $\Delta=\{ d_{1},\dots,d_m \}$ a basis for $W$. If $V=\alpha_{1}b_{1}+\dots+\alpha_nb_n$, then we write:
 $$
