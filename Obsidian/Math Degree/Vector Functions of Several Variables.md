@@ -19,6 +19,6 @@ $f:\mathbb{R}^n\to \mathbb{R}^m$ is continuous in a closed and bounded set $E$, 
 - $f(E)$ is bounded and closed.
 - $f$ is uniformly continuous on $E$.
 ### Linear Transformations
-See [[Linear Operators|Linear Map]]. Any linear transformation from $\mathbb{R}^n\to\mathbb{R}^m$ is uniformly continuous, [[Limits and Continuity in Metric Spaces|Continuous]], and Lipschitz.
+See [[Linear Operators|Linear Map]]. Any linear transformation from $\mathbb{R}^n\to\mathbb{R}^m$ is uniformly continuous, [[Continuity|Continuous]], and Lipschitz.
 ## Differentiation
 See [[Jacobian]]

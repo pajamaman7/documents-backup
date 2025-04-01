@@ -8,8 +8,7 @@ $$
 \begin{align}
 Nv_{1}&=0 \\
 Nv_{2}&=v_{1} \\
-&\vdots \\
-Nv_k&=v_{k-1}
+&\vdots \\ Nv_k&=v_{k-1}
 \end{align}
 $$
 A basis of cycles is called a Jordan Basis for $N$.
@@ -45,3 +44,7 @@ For $A:V\to V$
 	- Method 1 (always works): Find $\ker(A-\lambda_jI),\ker(A-\lambda_jI)^{2},\dots$ until they stop getting bigger.
 	- Method 2 (sometimes works): If $(A-\lambda_jI)v_{1}=0$, try solving $(A-\lambda_jI)v_{2}=v_{1}$ to generate a cycle.
 - Pray this gives a cycle basis for $E_{\lambda_j}$
+## Theorem
+$A$ and $B$ are similar iff they have the same Jordan form. (Up to reordering of blocks).
+## Minimal Polynomial
+A minimal polynomial for a [[Linear Operators|Linear Operator]] $A:V\to V$ is a monic polynomial $p(z)$ of minimal degree so that $p(A)=0$.

@@ -1,0 +1,88 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $3$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+\item Consider the function $f:\mathbb{R}^3\to\mathbb{R}^3$, defined by  
+$f(x,y,z)=\begin{pmatrix}
+x^3-y-z\\2x+y+z\\x+y-z
+\end{pmatrix}$  
+\begin{enumerate}[label= (\alph*)] 
+    \item Compute $Jf(x,y,z)$ and show that $\mathrm{d}f_{(x,y,z)}$ is invertible for any $(x,y,z)\in\mathbb{R}^3$.  
+    \paragraph{Solution: } Compute:
+    \[
+     Jf(x,y,z)=\begin{bmatrix}\frac{\partial f_1}{\partial x}&\frac{\partial f_1}{\partial y}&\frac{\partial f_1}{\partial z}\\\frac{\partial f_2}{\partial x}&\frac{\partial f_2}{\partial y}&\frac{\partial f_2}{\partial z}\\ \frac{\partial f_3}{\partial x}&\frac{\partial f_3}{\partial y}&\frac{\partial f_3}{\partial z}\end{bmatrix}
+     =\begin{bmatrix} 3x^2&-1&-1\\
+     2&1&1\\
+     1&1&-1 \end{bmatrix} 
+    .\] 
+    Then we take the determinant;
+    \[
+        \det Jf(x,y,z)=3x^2\begin{vmatrix} 1&1\\1&-1 \end{vmatrix} -2\begin{vmatrix} -1&-1\\1&-1 \end{vmatrix} +\begin{vmatrix} -1&-1\\1&1 \end{vmatrix} =-6x^2-4+0
+    .\] 
+    And we can see that since this determinant has no real roots, it must be nonzero for any $(x,y,z)\in \mathbb{R}^3$, and so $Jf$, as well as $df$ are both invertible in $\mathbb{R}^3$.
+
+    \item Find the largest open $U\subset\mathbb{R}^3$ where $f$ has a continuously differentiable inverse function $g.$  
+        %TODO is this just $U=\mathbb{R}^3$? Maybe, $f$ is injective in $\mathbb{R}^3$. Or check out global inversion
+\end{enumerate}
+
+\item Consider the system of equations:
+$(S) \left\{\begin{array}{l}
+x - y - u^2 + v^2 = 0 \\
+x + y - 2uv = 0
+\end{array}\right.$  
+\begin{enumerate}[label= (\alph*)] 
+    \item Show that the system $(S)$ can be solved for $u,v$ in term of $(x,y)$ near the point $(x,y,u,v)=(1,1,1,1).$  
+        \paragraph{Solution: }We solve for the Jacobian about $(1,1,1,1)$.
+         \[ Jf(x,y,u,v)=\begin{bmatrix} 
+        1&-1&-2u&2v\\
+        1&1&-2v&-2u \end{bmatrix} \]
+        \[
+        Jf(1,1,1,1)=\begin{bmatrix} 
+        1&-1&-2&2\\
+        1&1&-2&-2 \end{bmatrix}
+        .\] 
+        And if we break $Jf$ into block matrices, we get the invertible right half of $Jf$ as $\begin{bmatrix} -2&2\\-2&-2 \end{bmatrix} $ which has nonzero determinant and must be invertible. So $u,v$ can be implicitly defined about $(1,1,1,1)$by the Implicit Function theorem. %TODO more precision? 
+    \item Compute $\partial_x u(1,1)+\partial_y v(1,1)$.
+
+        \paragraph{Solution: }Begin with the identity from the Implicit Function Theorem:
+        \begin{align*}
+            \begin{bmatrix}  \partial_x u&\partial_y u\\\partial_x v&\partial_y v\end{bmatrix} 
+            &= \begin{bmatrix}  \partial_u f_1&\partial_v f_1\\\partial_u f_2&\partial_v f_2\end{bmatrix}^{-1}
+            \begin{bmatrix}  \partial_x f_1&\partial_y f_1\\\partial_x f_2&\partial_y f_2\end{bmatrix}\\
+               &=\left(\det\begin{bmatrix} -2u&2v\\-2v&-2u\end{bmatrix}\right)^{-1}  \begin{bmatrix} -2u&-2v\\2v&-2u\end{bmatrix}
+            \begin{bmatrix} 1&-1\\1&1 \end{bmatrix} \\
+            &= \frac{1}{2(u^2+v^2)} \begin{bmatrix} -u&-v\\v&-u\end{bmatrix}
+            \begin{bmatrix} 1&-1\\1&1 \end{bmatrix} \\
+                 &= \frac{1}{2(u^2+v^2)} \begin{bmatrix} -u-v&u-v\\v-u&-v-u \end{bmatrix}
+        .\end{align*}
+        And so if we want the sum $\partial_x u(1,1)+\partial_y v(1,1)$ we need only take the trace of this matrix and evaluate at $(1,1)$.
+        \begin{align*}
+             \partial_x u(1,1)+\partial_y v(1,1)&= \frac{1}{2(u^2+v^2)} \bigg|_{(1,1)}\\
+             &= -2\frac{u+v}{2(u^2+v^2)} \bigg|_{(1,1)}\\
+             &= -1 
+        .\end{align*}
+\end{enumerate}
+
+\item  Let $f:\mathbb{R}^2\to\mathbb{R}:(x,y)\to f(x,y).$ Show that if $f\in C^1(\mathbb{R}^2,\mathbb{R}),$ then $f$ can't be injective on $\mathbb{R}^2.$ Hint: Use the implicit functions theorem.
+
+\item  Let $E=C([a,b],\mathbb{R})$ equipped with the norm of uniform convergence, let $u\in C(\mathbb{R},\mathbb{R}),$ and consider the mapping $\phi:E\to E,$ defined by $\phi(v)=u\circ v.$ Is $\phi$ continuous? Make sure to justify your answer.
+    %TODO i think it is but idk how to prove. Think it follows from compactness \implies uniform cont \implies bounded??
+
+\item  Find in $C([0,1],\mathbb{R})$ the distance from the function $u(t)=t$ to the subspace $\mathbb{P}_0$ of polynomials of degree $0.$ Make sure to justify your answer.
+    \paragraph{Solution: }Let $u(t)=t$, and take the distance:
+    \begin{align*}
+        d(u,\mathbb{P}_0)&=\inf_{p\in \mathbb{P}_0}d(u,p)\\
+        &= \inf_{c\in \mathbb{R}}\|u-c\| &\text{$p$ is simply a real constant}\\
+        &= \inf_{c\in \mathbb{R}}\sup_{t\in [0,1]}|u(t)-c|\\
+        &= \inf_{c\in \mathbb{R}}\sup_{t\in [0,1]}|t-c|\\
+    .\end{align*}
+
+\item  Let $f\in C([a,b],\mathbb{R})$ be such that $\int_a^b f(x)x^n\operatorname{dx}=0,\quad\forall n\in\mathbb{N}$ Show that $f$ is identically zero. Hint: Use Weierstrass Theorem.
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,1 @@
+A [[Topology|Topological Space]] $X$ is called a Hausdorff space if every distinct pair of points in $X$, there exist disjoint neighborhoods of the two points.
