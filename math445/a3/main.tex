@@ -27,7 +27,15 @@ x^3-y-z\\2x+y+z\\x+y-z
     And we can see that since this determinant has no real roots, it must be nonzero for any $(x,y,z)\in \mathbb{R}^3$, and so $Jf$, as well as $df$ are both invertible in $\mathbb{R}^3$.
 
     \item Find the largest open $U\subset\mathbb{R}^3$ where $f$ has a continuously differentiable inverse function $g.$  
-        %TODO is this just $U=\mathbb{R}^3$? Maybe, $f$ is injective in $\mathbb{R}^3$. Or check out global inversion
+        %TODO is this just $U=\mathbb{R}^3$? Maybe, $f$ is injective in $\mathbb{R}^3$. Or check out global inversion? Or both...
+        \paragraph{Solution: }Begin by showing that $f$ is injective in $\mathbb{R}^3$. Suppose:
+        \begin{align*}
+            x_1^3-y_1-z_1&=x_2^3-y_2-z_2\tag{1}\\
+            2x_1+y_1+z_1&=2x_2+y_2+z_2\tag{2}\\
+            x_1+y_1-z_1&=x_2+y_2-z_2\tag{3}
+        .\end{align*}
+        However, if we add $(1)+(2)$, we get $x_1^3+2x_1=x_1(x_1^2+2)=x_2(x_2^2+2)=x_2^3+2x_2$
+
 \end{enumerate}
 
 \item Consider the system of equations:
@@ -69,9 +77,26 @@ x + y - 2uv = 0
 \end{enumerate}
 
 \item  Let $f:\mathbb{R}^2\to\mathbb{R}:(x,y)\to f(x,y).$ Show that if $f\in C^1(\mathbb{R}^2,\mathbb{R}),$ then $f$ can't be injective on $\mathbb{R}^2.$ Hint: Use the implicit functions theorem.
+    %TODO do this idk how.jj
 
 \item  Let $E=C([a,b],\mathbb{R})$ equipped with the norm of uniform convergence, let $u\in C(\mathbb{R},\mathbb{R}),$ and consider the mapping $\phi:E\to E,$ defined by $\phi(v)=u\circ v.$ Is $\phi$ continuous? Make sure to justify your answer.
-    %TODO i think it is but idk how to prove. Think it follows from compactness \implies uniform cont \implies bounded??
+
+    \paragraph{Solution: } Let $\varepsilon>0$, and $v,w\in E$. Recall that the image of compact sets under continuous functions is compact, and the union of compact sets is compact. Then since continuous functions are uniformly continuous on compact sets, $u$ must be uniformly continuous on $v([a,b])\cup w([a,b])$. Let $x\in [a,b]$, and let $\delta$ be chosen so that $|w(x)-v(x)|<\delta\implies|u(w(x))-u(v(x))|<\varepsilon$. 
+    %TODO ??? idk anymore
+    Suppose
+    \[
+        \|w-v\|= \sup_{x\in [a,b]}|w(x)-v(x)| <\delta \tag{$*$}
+    .\] 
+    Then we must have $|w(x)-v(x)|<\delta$ for any $x\in [a,b]$. But by continuity of $u$, we have 
+    \[ |\phi(w)-\phi(v)|=|u(w(x))-u(v(x))|<\varepsilon .\] 
+    for any $x\in [a,b]$. Then recall that since $u,v,w\in E$ are continuous, the composition, difference and absolute value $|u\circ w-u\circ v|$ is continuous. Therefore the supremum of this function is attained in the compact set $[a,b]$, and when we take the supremum $\sup_{x\in [a,b]}|u(w(x))-u(v(x))|$, we can say that it is attained for some $x_0\in [a,b]$. And from ($*$), we have:
+    \begin{align*}
+        \|\phi(w)-\phi(v)\|&=\|u\circ w-u\circ v\|\\
+                           &=\sup_{x\in [a,b]}|u(w(x))-u(v(x))|\\
+                           &=|u(w(x_0))-u(v(x_0))|\\
+                           &<\varepsilon
+    .\end{align*}
+    And $\phi$ is continuous as desired.
 
 \item  Find in $C([0,1],\mathbb{R})$ the distance from the function $u(t)=t$ to the subspace $\mathbb{P}_0$ of polynomials of degree $0.$ Make sure to justify your answer.
     \paragraph{Solution: }Let $u(t)=t$, and take the distance:
@@ -81,8 +106,22 @@ x + y - 2uv = 0
         &= \inf_{c\in \mathbb{R}}\sup_{t\in [0,1]}|u(t)-c|\\
         &= \inf_{c\in \mathbb{R}}\sup_{t\in [0,1]}|t-c|\\
     .\end{align*}
+    %TODO this inf should be 1/2 but why??
 
 \item  Let $f\in C([a,b],\mathbb{R})$ be such that $\int_a^b f(x)x^n\operatorname{dx}=0,\quad\forall n\in\mathbb{N}$ Show that $f$ is identically zero. Hint: Use Weierstrass Theorem.
+    \paragraph{Solution: }First, we claim that if $p$ is any real polynomial, then $\int_{a}^{b} f(x)p(x) \, d x =0$. Write $p=\sum_{i=0}^{n} a_ix^{i}$. Then:
+    \begin{align*}
+    \int_{a}^{b} f(x)p(x) \, d x &=\int_{a}^{b} f(x)\sum_{i=0}^{n} a_ix^{i} \, d x \\&=\sum_{i=0}^{n} \int_{a}^{b} a_ix^{i}f(x) \, d x \\&=\sum_{i=0}^{n}a_i \int_{a}^{b} x^{i}f(x) \, d x \\&=\sum_{i=1}^{n} a_i \cdot 0\\&=0
+    .\end{align*}
+    By Weierstrass, there exists a sequence of real polynomials convergent to $f$. Let $\{p_n\}$ be such a sequence, and take:
+    \begin{align*}
+        \int_{a}^{b} f^2(x) \, d x &= \int_{a}^{b} \lim_{n \to \infty} p_n(x) f(x)\, d x  \\
+           &= \lim_{n \to \infty} \int_{a}^{b} f(x)p_n(x) \, d x  &\text{$fp_n\in C([a,b])$ }\\
+        &= \lim_{n \to \infty} 0 \\
+        &= 0 
+    .\end{align*}
+    And if we recall that $\langle f,g \rangle=\int_{a}^{b} f(x)g(x) \, d x $ is an inner product on $C([a,b])$, we know that $\langle f,f \rangle=0\iff f\equiv 0$, so $f$ must be identically zero.
+    %TODO maybe not right to use linear algebra technology for this
 
 \end{enumerate}
 \end{document}

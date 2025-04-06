@@ -1,0 +1,1 @@
+The evaluation map is defined for $a$ in a [[Rings|Ring]] $R$; $ev_a:R[x]\to R$. Given a polynomial $p\in R[x]$ we define $ev_a(p)=p(a)$.
