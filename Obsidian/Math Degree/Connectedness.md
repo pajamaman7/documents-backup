@@ -1,6 +1,7 @@
 ---
 aliases:
   - Separated
+  - Separable
 ---
 Let $X$ be a [[Topology|Topological Space]]. A separation of $X$ is a pair of disjoint nonempty open sets in $X$, whose union is $X$. If no such separation exists, $X$ is said to be connected.
 ## Metric Spaces

@@ -19,7 +19,5 @@ $$E_\lambda=\bigcup_{k=1}^{\infty}\ker(A-\lambda I)^{k}=\ker(A-\lambda I)\cup\ke
 ## Theorem
 There is a diagonalizable $D$ and a nilpotent $N$ so that:
 $$ A=D+N; \quad DN=ND $$
-### Structure of nilpotent part
-
 # Decomposition
 See [[Block Diagonalization]] 

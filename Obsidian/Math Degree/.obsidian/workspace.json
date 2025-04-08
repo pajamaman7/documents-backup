@@ -8,48 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ee9896334bbf22a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Singular Value Decomposition.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Singular Value Decomposition"
-            }
-          },
-          {
-            "id": "e6a923c46f595f47",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Generalized Eigenspace.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Generalized Eigenspace"
-            }
-          },
-          {
-            "id": "260bf3fa5d6e1ee8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Inner Product Space.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Inner Product Space"
-            }
-          },
-          {
             "id": "11a72ef3f72f5b6b",
             "type": "leaf",
             "state": {
@@ -64,49 +22,35 @@
             }
           },
           {
-            "id": "b8c4abb908c85dff",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Group Actions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Group Actions"
-            }
-          },
-          {
-            "id": "122aab7f9bd4196b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lagrange Interpolation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lagrange Interpolation"
-            }
-          },
-          {
             "id": "1b492499d7492c16",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dual Space.md",
+                "file": "Tensor Product.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dual Space"
+              "title": "Tensor Product"
+            }
+          },
+          {
+            "id": "d1f8854b8350f3cd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Stone-Weierstrass.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Stone-Weierstrass"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -249,34 +193,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1b492499d7492c16",
+  "active": "d1f8854b8350f3cd",
   "lastOpenFiles": [
+    "Connectedness.md",
+    "Stone-Weierstrass.md",
+    "Quotient Space.md",
+    "Tensor Product.md",
+    "Implicit Function Theorem.md",
+    "Singular Value Decomposition.md",
+    "Generalized Eigenspace.md",
+    "Inner Product Space.md",
+    "Group Actions.md",
+    "Well-Defined.md",
+    "Kronecker Product.md",
+    "Lagrange Interpolation.md",
     "Dual Space.md",
     "Evaluation Map.md",
-    "Lagrange Interpolation.md",
     "Inverse Function Theorem.md",
-    "Group Actions.md",
     "Sylow Theorems.md",
     "Global Inversion Theorem.md",
-    "Implicit Function Theorem.md",
-    "Inner Product Space.md",
     "Adjoints.md",
     "Rings.md",
     "Categories.md",
     "Real Function of Several Variables.md",
     "Jordan Form.md",
     "Jacobian.md",
-    "Generalized Eigenspace.md",
-    "Singular Value Decomposition.md",
     "Metric Spaces.md",
     "Schmidt Decomposition.md",
     "Function Spaces for Math 445.md",
-    "Series of Subgroups.md",
-    "Jordan-Holder Theorem.md",
-    "Vector Functions of Several Variables.md",
-    "Field Extensions.md",
-    "Riemann Integral.md",
-    "Best Approximation.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Pasted image 20240119100450.png",

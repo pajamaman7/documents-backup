@@ -127,10 +127,6 @@ class Graph {
 
         // Set the starting node's distance to 0, because the shortest path from the start to itself is zero.
         // All other nodes will initially be set to "infinity" (Integer.MAX_VALUE), but the start is known.
-        // PSEUDOCODE:
-        //      Set the distance from the start node to itself as 0.
-        //      (All other nodes have already been initialized to infinity.)
-
         // Set the distance from the start node to itself as 0.
         distances.replace(start,0);
         
