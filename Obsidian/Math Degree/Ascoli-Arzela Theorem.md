@@ -1,0 +1,1 @@
+Consider a sequence $\{ f_n \}$ defined on [[Compactness|Compact]] interval $[a,b]$. If this sequence is [[Pointwise Boundedness|Uniformly Bounded]] and [[Pointwise Boundedness|Uniformly Equicontinuous]], it contains a [[Sequences in Metric Spaces|Subsequence]] $\{ f_{n_k} \}$ which converges uniformly.

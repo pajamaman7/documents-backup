@@ -81,7 +81,6 @@ x + y - 2uv = 0
     \paragraph{Solution: }
 
 \item  Let $E=C([a,b],\mathbb{R})$ equipped with the norm of uniform convergence, let $u\in C(\mathbb{R},\mathbb{R}),$ and consider the mapping $\phi:E\to E,$ defined by $\phi(v)=u\circ v.$ Is $\phi$ continuous? Make sure to justify your answer.
-
     \paragraph{Solution: } Let $\varepsilon>0$, and $v,w\in E$. Recall that the image of compact sets under continuous functions is compact, and the union of compact sets is compact. Then since continuous functions are uniformly continuous on compact sets, $u$ must be uniformly continuous on $v([a,b])\cup w([a,b])$. Let $x\in [a,b]$, and let $\delta$ be chosen so that $|w(x)-v(x)|<\delta\implies|u(w(x))-u(v(x))|<\varepsilon$. 
     %TODO ??? idk anymore
     Suppose
@@ -105,12 +104,36 @@ x + y - 2uv = 0
         d(u,\mathbb{P}_0)&=\inf_{p\in \mathbb{P}_0}d(u,p)\\
         &= \inf_{c\in \mathbb{R}}\|u-c\| &\text{$p$ is simply a real constant}\\
         &= \inf_{c\in \mathbb{R}}\sup_{t\in [0,1]}|u(t)-c|\\
-        &= \inf_{c\in \mathbb{R}}\sup_{t\in [0,1]}|t-c|\\
-        %
-        &= \frac{1}{2}
+        &= \inf_{c\in \mathbb{R}}\sup_{t\in [0,1]}|t-c|
     .\end{align*}
     %TODO this inf should be 1/2 but why??
 
+    \begin{multicols}{3}
+
+    \begin{tikzpicture}
+    \tzaxes(-1,-1)(3,3){$t$}{}
+    \tzcdot*(0,1.5){c}[ar]
+    \tzfn[thick]{abs(\x-1.5)}[-1:3]{$|t-c|$}[al]
+    \tzvfnat[dotted,thick]{1}[0:3]
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+    \tzcdot*(0,.75){c}[ar]
+    \tzaxes(-1,-1)(3,3){$t$}{}
+    \tzfn[thick]{abs(\x-.75)}[-1:2]{$|t-c|$}[br]
+    \tzvfnat[dotted,thick]{1}[0:3]
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+    \tzaxes(-2,-1)(2,3){$t$}{}
+    \tzcdot*(1,2.5){c}[al]
+    \tzfn[thick]{abs(\x+1.5)}[-2:1.5]{$|t-c|$}[br]
+    \tzvfnat[dotted,thick]{1}[0:3]
+    \end{tikzpicture}
+    \end{multicols}
+So $\sup _{t\in [0,1]}|t-c|=\max \{|c|,|1-c|\} $, and we claim that $\frac{1}{2}$ is the greatest lower bound for all values of $c$.
+
+To show this, suppose that $\alpha$ is a greater lower bound; that %TODO
 \item  Let $f\in C([a,b],\mathbb{R})$ be such that $\int_a^b f(x)x^n\operatorname{dx}=0,\quad\forall n\in\mathbb{N}$ Show that $f$ is identically zero. Hint: Use Weierstrass Theorem.
     \paragraph{Solution: }First, we claim that if $p$ is any real polynomial, then $\int_{a}^{b} f(x)p(x) \, d x =0$. Write $p=\sum_{i=0}^{n} c_ix^{i}$. Then:
     \begin{align*}
