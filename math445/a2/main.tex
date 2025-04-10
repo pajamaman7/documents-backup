@@ -160,55 +160,6 @@ And so the triangle inequality is satisfied.
     .\end{align*}
     %TODO how much to simplify??
 
-\iffalse
-\item Consider the function $f:\mathbb{R}^3\rightarrow \mathbb{R}^3$, defined by
-$f(x,y,z) = (x^3-y-z, 2x+y+z, x+y-z)$
-
-\begin{enumerate}[label= (\alph*)] 
-\item Compute $Jf(x,y,z)$ and show that $\partial f_{(x,y,z)}$ is invertible for any $(x,y,z)\in\mathbb{R}^3$.
-
-\item Find the largest open $U\subset \mathbb{R}^3$ where $f$ has a continuously differentiable inverse function $g$.
-\end{enumerate}
-
-\item Consider the system of equations:
-$\left(\mathcal{S}\right) \quad 
-\begin{cases}
-x - y - u^2 + v^2 &= 0 \\
-x + y - 2uv &= 0
-\end{cases}$
-
-\begin{enumerate}[label= (\alph*)] 
-\item Show that the system $(\mathcal{S})$ can be solved for $u,v$ in term of $(x,y)$ near the point $(x,y,u,v)=(1,1,1,1)$.
-
-\item Compute $\partial_x u(1,1)+\partial_y v(1,1)$
-\end{enumerate}
-
-\item Let $f:\mathbb{R}\to\mathbb{R}$ and $g:\mathbb{R}\to\mathbb{R}$ be such that $f(1)=g(1)=0$, and consider the system \begin{equation*}
-\begin{cases}
-f(xy)+g(yz) & = 0 \\
-g(xy)+f(yz) & = 0
-\end{cases}
-\end{equation*}
-Find conditions on $f$ and $g$ that guarantee the system $(S)$ can be uniquely solved for $y$ and $z$ as functions of $x$ near the point $(x,y,z)=(1,1,1)$.
-
-\item Let $A$ be a positive definite $n\times n$ matrix. Interpreting $x\in\mathbb{R}^n$ as a column matrix, show that $\|.\|:\mathbb{R}^n\to\mathbb{R}$ defined by $\|x\|^2=x^tAx$ is a norm on $\mathbb{R}^n.$
-
-    \paragraph{Solution: } %
-    Non-negativity follows from the positive semi-definite condition; since $x^{T}Ax>0,$ we must have $\|x\|=\sqrt{x^{T}Ax} >0$ whenever $x\neq 0$.
-
-    Non-degeneracy follows from the same condition, $x^{T}Ax=0\iff \sqrt{x^{T}Ax} =0\iff x=0$.
-
-    Scalar linearity is quick; $\|\alpha x\|=\sqrt{(\alpha x)^{T}A(\alpha x)}=\sqrt{\alpha^2 x^{T}Ax} =|\alpha|\sqrt{x^{T}Ax} =|\alpha|\|x\| $.
-
-    Finally, the triangle inequality. 
-
-    \begin{align*}
-        \|x+y\|^2&= (x+y)^{T}A(x+y)\\
-                 &=(x^{T}+y^{T})(Ax+Ay) \\
-                 &= x^{T}Ax+y^{T}Ax+x^{T}Ay+y^{T}Ay \\
-                 &= \|x\|^2+\|y\|^2+x^{T}Ay+y^{T}Ax \\
-    .\end{align*}
-\fi
 
 \end{enumerate}
 \end{document}

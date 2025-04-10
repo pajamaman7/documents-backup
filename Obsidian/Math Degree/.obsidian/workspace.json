@@ -13,30 +13,86 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tensor Product.md",
+                "file": "Jordan Form.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tensor Product"
+              "title": "Jordan Form"
             }
           },
           {
-            "id": "e4a5aa55a5e58603",
+            "id": "2c11263c52e3f467",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spectral Theorem for Self-Adjoints.md",
+                "file": "Spectral Mapping Theorem.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spectral Theorem for Self-Adjoints"
+              "title": "Spectral Mapping Theorem"
+            }
+          },
+          {
+            "id": "09578422e2be7912",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spectral Theorem for Normal Operators.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Spectral Theorem for Normal Operators"
+            }
+          },
+          {
+            "id": "626879eaa388a988",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ascoli-Arzela Theorem.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ascoli-Arzela Theorem"
+            }
+          },
+          {
+            "id": "fedbef861bad315b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Implicit Function Theorem.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Implicit Function Theorem"
+            }
+          },
+          {
+            "id": "3511e7e2456e904e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Global Inversion Theorem.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Global Inversion Theorem"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -179,18 +235,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e4a5aa55a5e58603",
+  "active": "3511e7e2456e904e",
   "lastOpenFiles": [
-    "Spectral Theorem for Self-Adjoints.md",
-    "Tensor Product.md",
+    "Implicit Function Theorem.md",
     "Ascoli-Arzela Theorem.md",
+    "Spectral Theorem for Normal Operators.md",
+    "Directional Derivative.md",
+    "Partial Differentiation.md",
+    "Inverse Function Theorem.md",
+    "Spectral Mapping Theorem.md",
+    "Jordan Form.md",
+    "Sylow Theorems.md",
+    "Math 361 Exam Review.md",
+    "Tensor Product.md",
+    "Spectral Theorem for Self-Adjoints.md",
+    "Groups.md",
     "Cayley's Theorem.md",
     "Central Series.md",
     "Nilpotent Groups.md",
     "Matrix Representations of Linear Maps.md",
     "Pointwise Boundedness.md",
     "Function Spaces for Math 445.md",
-    "Implicit Function Theorem.md",
     "Stone-Weierstrass Theorem.md",
     "Associative.md",
     "Connectedness.md",
@@ -198,15 +263,6 @@
     "Singular Value Decomposition.md",
     "Generalized Eigenspace.md",
     "Inner Product Space.md",
-    "Group Actions.md",
-    "Well-Defined.md",
-    "Kronecker Product.md",
-    "Lagrange Interpolation.md",
-    "Dual Space.md",
-    "Evaluation Map.md",
-    "Inverse Function Theorem.md",
-    "Sylow Theorems.md",
-    "Global Inversion Theorem.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Pasted image 20240119100450.png",

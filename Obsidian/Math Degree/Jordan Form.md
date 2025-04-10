@@ -48,5 +48,10 @@ For $A:V\to V$
 $A$ and $B$ are similar iff they have the same Jordan form. (Up to reordering of blocks).
 ## Minimal Polynomial
 A minimal polynomial for a [[Linear Operators|Linear Operator]] $A:V\to V$ is a monic polynomial $p(z)$ of minimal degree so that $p(A)=0$.
+### Minimal polynomials for Jordan Forms
+If we have found a Jordan form for a polynomial with eigenvalues $\lambda_{1},\dots,\lambda _n$, we have a minimal polynomial:
+$$
+m(z)=(z-\lambda_{1})^{d(\lambda_{1})}\dots(z-\lambda_n)^{d(\lambda_n)}
+$$
 ### Theorem
 $A$ is [[Adjoints|Unitarily Diagonalizable]]  if and only if $d(\lambda)=1$, for every eigenvalue $\lambda$.
