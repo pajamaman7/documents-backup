@@ -8,48 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0e90ac9283d60b4c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Jordan Form.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Jordan Form"
-            }
-          },
-          {
-            "id": "2c11263c52e3f467",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spectral Mapping Theorem.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Spectral Mapping Theorem"
-            }
-          },
-          {
-            "id": "09578422e2be7912",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spectral Theorem for Normal Operators.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Spectral Theorem for Normal Operators"
-            }
-          },
-          {
             "id": "626879eaa388a988",
             "type": "leaf",
             "state": {
@@ -83,26 +41,68 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pointwise Boundedness.md",
+                "file": "Series of Functions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Pointwise Boundedness"
+              "title": "Series of Functions"
             }
           },
           {
-            "id": "3511e7e2456e904e",
+            "id": "75a09f0594e83908",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Global Inversion Theorem.md",
+                "file": "Multivariable Taylor's Theorem.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Global Inversion Theorem"
+              "title": "Multivariable Taylor's Theorem"
+            }
+          },
+          {
+            "id": "75c83b6eb254fbbd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Implicit Function Theorem.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Implicit Function Theorem"
+            }
+          },
+          {
+            "id": "d5f844bb0e0e87ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Jacobian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Jacobian"
+            }
+          },
+          {
+            "id": "a428f3d5537fcef3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Jacobian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Jacobian"
             }
           }
         ],
@@ -249,34 +249,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "925e372dcf955329",
+  "active": "d5f844bb0e0e87ca",
   "lastOpenFiles": [
+    "Vector Functions of Several Variables.md",
+    "Real Function of Several Variables.md",
+    "Implicit Function Theorem.md",
     "Ascoli-Arzela Theorem.md",
+    "Multivariable Taylor's Theorem.md",
+    "Series of Functions.md",
     "Stone-Weierstrass Theorem.md",
+    "Jacobian.md",
+    "Spectral Theorem for Normal Operators.md",
+    "Jordan Form.md",
+    "Spectral Mapping Theorem.md",
+    "Global Inversion Theorem.md",
+    "Partial Differentiation.md",
+    "Minkowski Inequality.md",
+    "p-norm.md",
+    "Holder Inequality.md",
+    "Pointwise Boundedness.md",
     "Function Spaces for Math 445.md",
     "Associative Algebra.md",
     "Algebra.md",
-    "Implicit Function Theorem.md",
-    "Global Inversion Theorem.md",
-    "Spectral Theorem for Normal Operators.md",
     "Directional Derivative.md",
-    "Partial Differentiation.md",
     "Inverse Function Theorem.md",
-    "Spectral Mapping Theorem.md",
-    "Jordan Form.md",
     "Sylow Theorems.md",
     "Math 361 Exam Review.md",
     "Tensor Product.md",
     "Spectral Theorem for Self-Adjoints.md",
-    "Groups.md",
-    "Cayley's Theorem.md",
-    "Central Series.md",
-    "Nilpotent Groups.md",
-    "Matrix Representations of Linear Maps.md",
-    "Pointwise Boundedness.md",
-    "Associative.md",
-    "Connectedness.md",
-    "Quotient Space.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Pasted image 20240119100450.png",

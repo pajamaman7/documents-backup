@@ -41,4 +41,3 @@ If $f,g:\mathbb{R}^n\to\mathbb{R}$ are differentiable at $c$, then:
 - $d(fg)_c=df_c\cdot g+f\cdot dg_c$ is differentiable
 - $d(\alpha f)_c=\alpha df_c$ is differentiable
 - $d\left( \frac{f}{g} \right)_c= \frac{df_c\cdot g - f dg_c}{g^{2}}$
-- 

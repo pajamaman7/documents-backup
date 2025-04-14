@@ -18,7 +18,5 @@ Thanks to the equivalence of norms in vector spaces, we typically use $\| x \|_\
 $f:\mathbb{R}^n\to \mathbb{R}^m$ is continuous in a closed and bounded set $E$, then:
 - $f(E)$ is bounded and closed.
 - $f$ is uniformly continuous on $E$.
-### Linear Transformations
-See [[Linear Operators|Linear Map]]. Any linear transformation from $\mathbb{R}^n\to\mathbb{R}^m$ is uniformly continuous, [[Continuity|Continuous]], and Lipschitz.
 ## Differentiation
 See [[Jacobian]]

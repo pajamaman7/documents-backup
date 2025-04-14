@@ -4,7 +4,7 @@ aliases:
   - Partial Derivative
   - Partials
 ---
-- [ ] Let $f:\mathbb{R}^{n}\to \mathbb{R}$ defined in an open $\Omega \subseteq \mathbb{R}^{n}$, and $c\in\Omega$.
+Let $f:\mathbb{R}^{n}\to \mathbb{R}$ defined in an open $\Omega \subseteq \mathbb{R}^{n}$, and $c\in\Omega$.
 The $i$-th partial derivative of $f$ is given by $$\partial_{x_j}f(c)=\lim\limits_{ t \to 0 } \frac{f(c+te_j)-f(c)}{t}$$ 
 If this limit exists.
 We may denote:
