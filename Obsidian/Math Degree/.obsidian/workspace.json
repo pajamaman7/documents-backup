@@ -13,82 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ascoli-Arzela Theorem.md",
+                "file": "Adjoints.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ascoli-Arzela Theorem"
-            }
-          },
-          {
-            "id": "fedbef861bad315b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Stone-Weierstrass Theorem.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Stone-Weierstrass Theorem"
-            }
-          },
-          {
-            "id": "925e372dcf955329",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Series of Functions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Series of Functions"
-            }
-          },
-          {
-            "id": "75a09f0594e83908",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Multivariable Taylor's Theorem.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Multivariable Taylor's Theorem"
-            }
-          },
-          {
-            "id": "75c83b6eb254fbbd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Implicit Function Theorem.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Implicit Function Theorem"
-            }
-          },
-          {
-            "id": "d5f844bb0e0e87ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Jacobian.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Jacobian"
+              "title": "Adjoints"
             }
           },
           {
@@ -105,8 +35,7 @@
               "title": "Jacobian"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -249,16 +178,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d5f844bb0e0e87ca",
+  "active": "626879eaa388a988",
   "lastOpenFiles": [
+    "Ascoli-Arzela Theorem.md",
+    "Stone-Weierstrass Theorem.md",
+    "Series of Functions.md",
+    "Multivariable Taylor's Theorem.md",
+    "Implicit Function Theorem.md",
+    "Jacobian.md",
     "Vector Functions of Several Variables.md",
     "Real Function of Several Variables.md",
-    "Implicit Function Theorem.md",
-    "Ascoli-Arzela Theorem.md",
-    "Multivariable Taylor's Theorem.md",
-    "Series of Functions.md",
-    "Stone-Weierstrass Theorem.md",
-    "Jacobian.md",
     "Spectral Theorem for Normal Operators.md",
     "Jordan Form.md",
     "Spectral Mapping Theorem.md",
