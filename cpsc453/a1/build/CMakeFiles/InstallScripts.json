@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/tbuckets/doc/cpsc453/a1/build/cmake_install.cmake",
+		"/home/tbuckets/doc/cpsc453/a1/build/thirdparty/glad-opengl-3.3-core/cmake_install.cmake",
+		"/home/tbuckets/doc/cpsc453/a1/build/thirdparty/glfw-3.4/cmake_install.cmake",
+		"/home/tbuckets/doc/cpsc453/a1/build/thirdparty/glfw-3.4/src/cmake_install.cmake",
+		"/home/tbuckets/doc/cpsc453/a1/build/thirdparty/fmt-11.0.2/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
