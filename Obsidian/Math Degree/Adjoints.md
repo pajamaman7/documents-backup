@@ -31,7 +31,7 @@ Let $T:V\to W$. Then:
 - If $ran T=W$, $T$ is right invertible
 ## Isometry
 An isometry is a linear transformation $U:V\to W$ that preserves the [[norm]]; $\| Uv \|_W=\| v \|_V$
-A operator is an isometry if and only if we have $TT^{*}=I$
+A operator is an isometry if and only if we have $T^{*}T=I$
 ### Polarization Identity
 $$
 \left< v_{1},v_{2} \right> =\frac{1}{4}\left( \| v_{1}+v_{2} \| ^{2}-\| v_{1}-v_{2} \| ^{2}+i\| v_{1}+iv_{2} \| ^{2}-i\| v_{1}-iv_{2} \| ^{2} \right) 
@@ -97,7 +97,6 @@ If $A$ is positive semi-definite,
 Given $A:V\to W$, define the modulus of $A$ as the operator:
 $$ |A|:V\to V, \quad |A|=\sqrt{ A^{*}A } $$
 We know this to exist, since $A^{*}A$ is self-adjoint and non-negative
-As well, $|A|$ is self-adjoint.
 ### Properties
 - Diagonal matrices have $|D|=\sqrt{ D^{*}D }=\text{diag}\{ |\lambda_{1}|^{2},\dots,|\lambda_n|^{2} \}$
 - Normal matrices have $|N|=U|D|U^{*}$, for $D$ the diagonal which $U$ is unitarily diagonalizable to.
