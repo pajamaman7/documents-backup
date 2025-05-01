@@ -37,7 +37,7 @@ struct GameObject {
 	float theta; // Object's rotation
 	// Alternatively, you could represent rotation via a normalized heading vec:
 	// glm::vec3 heading;
-	float scale; // Or, alternatively, a glm::vec2 scale;
+	glm::vec2 scale; // Or, alternatively, a glm::vec2 scale;
 	glm::mat4 transformationMatrix;
 };
 
