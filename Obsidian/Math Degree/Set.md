@@ -18,4 +18,3 @@ For some sets $A,B,C\subset X$:
 - Set difference: $A-B=\{x:x\in A\land x\not\in B\}$
 - [[Cartesian Product]]: $A\times B=\{(x,y):x\in A, y\in B\}$
 - Power set: $\mathcal{P}(A)=\{X:X\subset A\}$
-

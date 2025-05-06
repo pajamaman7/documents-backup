@@ -1,0 +1,1 @@
+Let $X$ be a [[Topology|Topological Space]], and $\mathcal{B}$ the smallest $\sigma$-[[Algebra]] in $X$, where every open set of $X$ belongs to $X$. The members of $\mathcal{B}$ are called Borel sets.

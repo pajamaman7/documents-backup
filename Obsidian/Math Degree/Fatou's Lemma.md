@@ -1,0 +1,2 @@
+If $f_n:X\to[0,\infty]$ is a [[Sequences and Series|Sequence]] of [[Measure|Measurable]] functions,
+$$ \int_{X}^{} \liminf\limits_{ n \to \infty } f_n \, d\mu \leq \liminf\limits_{ n \to \infty } \int_{X}^{} f_n \, d\mu $$

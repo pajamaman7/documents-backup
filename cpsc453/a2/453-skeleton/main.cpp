@@ -57,10 +57,10 @@ public:
 		if (key == GLFW_KEY_DOWN && action == GLFW_PRESS) { // Down key
 
 		}
-		if (key == GLFW_KEY_RIGHT&& action == GLFW_PRESS && type < 6) { // Right key
+		if (key == GLFW_KEY_RIGHT&& action == GLFW_PRESS) { // Right key
 
 		}
-		if (key == GLFW_KEY_LEFT && action == GLFW_PRESS && type > 0) { // Left key
+		if (key == GLFW_KEY_LEFT && action == GLFW_PRESS) { // Left key
 
 		}
 	}
