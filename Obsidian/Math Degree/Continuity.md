@@ -5,18 +5,9 @@ aliases:
   - Limits
 ---
 A function on [[Topology|Topological Spaces]] $f:X\to Y$ is said to be continuous if, for every $V$ open in $Y$, the preimage $f^{-1}(V)$ is open in $X$.
-# Metric Spaces
+# In Metric Spaces
 ## Limits
-Let $$
-\begin{CD}
-X @>f>> Y\\
-|& & |\\
-d_x & & d_y
-\end{CD}
-$$
-We say that $\lim\limits_{ x\to p }f(x)=q\iff \forall\epsilon>0 \quad\exists\delta>0$ so that $d_x(x,p)<\delta\implies d_y(f(x),q)<\epsilon$.
-### As sequences
-
+Let $f:X\to Y$ a function between metric spaces. We say that $\lim\limits_{ x\to p }f(x)=q\iff \forall\epsilon>0 \quad\exists\delta>0$ so that $d_x(x,p)<\delta\implies d_y(f(x),q)<\epsilon$.
 ### Theorem
 Sums, products, and quotients are preserved by limits.
 ### In $\mathbb{R}$
@@ -27,13 +18,7 @@ $d_x(x,p)<\delta\implies d_y(f(x),f(p))<\epsilon$
 Note that if $p$ is isolated, $f$ is continuous at $p$.
 We say $f$ is continuous in its domain if $f$ is continuous at every point in its domain.
 ### Theorem
-Let $$
-\begin{CD}
-X @>f>> Y\\
-|& & |\\
-d_x & & d_y
-\end{CD}
-$$
+Let $f:X\to Y$ a function between metric spaces.
 Then $f$ is continuous if and only if $f^{-1}(V)$ is open in $X$ for all $V\subseteq Y$ open.
 #### Corollary
 For the above function $f$, $f$ is continuous in $X \iff f^{-1}(F)$ is closed in $X$ for any closed set $F$ in $Y$.
@@ -52,26 +37,7 @@ $f$ is bounded $\iff \exists  M>0$ so that $f(X)\subseteq B_Y(f(x),M)$  for some
 $f$ is continuous from $X\to \mathbb{R}^{k}$. Then if $X$ is compact, $f(X)$ is closed and bounded.
 ## Uniform Continuity
 $f$ is uniformly continuous on $E\subset X$ if and only if $\forall\varepsilon>0$, $\exists \delta>0$, $d(x,y)<\delta\implies d(f(x),f(y))<\varepsilon$
-### Counterexample
-$\sin \left( \frac{1}{x} \right)$ is continuous in $(0,\infty)$ but not uniformly continuous.
-#### Proof outline
-(slope goes crazy near $\pi k$. To show this it is necessary to show that every $\delta$ fails at some point $p \in\mathbb{R}$. Take $\varepsilon=\frac{1}{2}$, then since $\sin2\pi k=0$ for all $k\in\mathbb{Z}$, $\sin\left( 2 \pi\left( k+\frac{1}{2} \right) \right)=1$. Use this.
-
-This proof also works for $x\sin \left( \frac{1}{x} \right)$, and to show $x^{2}\sin\left( \frac{1}{x} \right)$ *is* uniformly continuous.
 ### On Compact Sets
 Continuous functions on compact sets are uniformly continuous
 ### Easy check
 Differentiable functions are continuous when the derivatives are bounded.
-## Monotonic Functions
-A function is monotonically increasing if $x<y\implies f(x)<f(y)$
-A function is monotonically decreasing if $x<y\implies f(x)>f(y)$
-A function is called monotonic if it is either monotonically increasing or decreasing.
-### Theorem
-If $f$ is monotonic on $(a,b)$, then $f(x+)$ and $f(x-)$ exist for all $x \in(a,b)$.
-#### Corollary
-- Monotonic functions can only have discontinuities of the first kind (jump)
-### Theorem 
-If $f$ is monotone on $(a,b)$, then the points of discontinuity of $f$ in $(a,b)$ are [[Countable and Uncountable sets|At most Countable]].
-#### Example
-Let $\sum_{n=1}^\infty c_n <\infty$ of positive terms. Let $\{ x_{1},x_{2},\dots \}\subset(a,b)$
-and $f(x)=\sum_{n:x_{n}<x}c_{n}$. Then $f$ has infinitely many discontinuities.

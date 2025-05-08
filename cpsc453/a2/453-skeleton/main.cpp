@@ -103,6 +103,30 @@ CPU_Geometry shipGeom(float width, float height) {
 	return retGeom;
 }
 
+CPU_Geometry prizeGeom(float width, float height) {
+	CPU_Geometry retGeom;
+
+	// For full marks (Part IV), you'll need to use the following vertex coordinates instead.
+	// Then, you'd get the correct scale/translation/rotation by passing in uniforms into
+	// the vertex shader.
+	retGeom.verts.push_back(glm::vec3(-1.f, 1.f, 0.f));
+	retGeom.verts.push_back(glm::vec3(-1.f, -1.f, 0.f));
+	retGeom.verts.push_back(glm::vec3(1.f, -1.f, 0.f));
+	retGeom.verts.push_back(glm::vec3(-1.f, 1.f, 0.f));
+	retGeom.verts.push_back(glm::vec3(1.f, -1.f, 0.f));
+	retGeom.verts.push_back(glm::vec3(1.f, 1.f, 0.f));
+
+
+
+	// texture coordinates
+	retGeom.texCoords.push_back(glm::vec2(0.f, 1.f));
+	retGeom.texCoords.push_back(glm::vec2(0.f, 0.f));
+	retGeom.texCoords.push_back(glm::vec2(1.f, 0.f));
+	retGeom.texCoords.push_back(glm::vec2(0.f, 1.f));
+	retGeom.texCoords.push_back(glm::vec2(1.f, 0.f));
+	retGeom.texCoords.push_back(glm::vec2(1.f, 1.f));
+	return retGeom;
+}
 // END EXAMPLES
 
 int main() {
@@ -111,7 +135,6 @@ int main() {
 	// WINDOW
 	glfwInit();
 	Window window(800, 800, "CPSC 453"); // can set callbacks at construction if desired
-
 
 	GLDebug::enable();
 
@@ -130,6 +153,14 @@ int main() {
 	ship.ggeom.setVerts(ship.cgeom.verts);
 	ship.ggeom.setTexCoords(ship.cgeom.texCoords);
 
+	// Make the diamond
+	GameObject prize("textures/diamond.png", GL_NEAREST);
+
+	prize.cgeom = prizeGeom(.1f,.1f);
+
+	prize.ggeom.setVerts(prize.cgeom.verts);
+	prize.ggeom.setTexCoords(prize.cgeom.texCoords);
+
 	// RENDER LOOP
 	while (!window.shouldClose()) {
 		int score;
@@ -137,12 +168,15 @@ int main() {
 
 		shader.use();
 		ship.ggeom.bind();
+		prize.ggeom.bind();
 
 		glEnable(GL_FRAMEBUFFER_SRGB);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		ship.texture.bind();
+		//prize.texture.bind();
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 		ship.texture.unbind();
+		//prize.texture.unbind();
 		glDisable(GL_FRAMEBUFFER_SRGB); // disable sRGB for things like imgui
 
 		// Starting the new ImGui frame

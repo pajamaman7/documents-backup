@@ -28,7 +28,7 @@ public:
 		if (key == GLFW_KEY_UP && action == GLFW_PRESS) { // Up key increases depth
             depth++;
 		}
-		if (key == GLFW_KEY_DOWN && action == GLFW_PRESS) { // Down decreases depth
+		if (key == GLFW_KEY_DOWN && action == GLFW_PRESS && depth > 0) { // Down decreases depth (min 0)
             depth--;
 		}
 		if (key == GLFW_KEY_RIGHT&& action == GLFW_PRESS && type < 6) { // Right key changes type (max 7)

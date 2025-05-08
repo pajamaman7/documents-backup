@@ -3,6 +3,8 @@ aliases:
   - Supremum
   - Bounded
   - Infimum
+  - Order
+  - Partial Order
 ---
 Let $S$ be a set. A total order $<$ is a [[Relation]] on $S$ with the properties:
 - If $x,y\in S$, either $x<y,y<x$, or $x=y$.

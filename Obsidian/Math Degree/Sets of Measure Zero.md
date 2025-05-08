@@ -2,6 +2,7 @@
 aliases:
   - Set of Measure Zero
   - Measure Zero
+  - Almost Everywhere
 ---
 If $N\subseteq X$ is a subset of a [[Measure|Measurable Space]] , with $\mu(N)=0$, $N$ is said to be a set of measure zero.
 ## "Almost Everywhere"
