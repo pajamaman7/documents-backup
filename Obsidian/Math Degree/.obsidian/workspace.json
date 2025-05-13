@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Borel Sets.md",
+                "file": "Discrete Probability Distributions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Borel Sets"
+              "title": "Discrete Probability Distributions"
             }
           },
           {
@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,12 +193,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8e51518e57ab1ccc",
+  "active": "c04b93c8e5635cdb",
   "lastOpenFiles": [
+    "Semicontinuous.md",
+    "Continuity.md",
     "Borel Sets.md",
     "Sets of Measure Zero.md",
     "Simple Functions.md",
-    "Continuity.md",
     "Real Numbers.md",
     "Monotonic Functions.md",
     "Probability Space.md",
@@ -220,7 +221,6 @@
     "Measure.md",
     "Lebesgue Integral.md",
     "Connectedness.md",
-    "Adjoints.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Pasted image 20240119100450.png",

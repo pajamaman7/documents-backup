@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage{textcomp}
+\newcommand{\cent}{\ensuremath{\,\not\!\!c\,\,}}
 \input{preamble.tex}
 \pagestyle{fancy}
 \lhead{Assignment \# $1$}
@@ -7,8 +9,147 @@
 
 \begin{document}
 \begin{enumerate} 
+    \item  An office building has 6 floors, numbered 0 through 5. 3 people enter the elevator on the ground floor. Each person independently selects a destination floor, choosing uniformly at random from floors 1 through 5.
+        \begin{enumerate}
+            \item Describe the sample space $\Omega$ for this situation. What is the total number of possible outcomes?
+                \paragraph{Solution: }The sample space is $\Omega=\{1,2,3,4,5\}\times \{1,2,3,4,5\}\times \{1,2,3,4,5\}$, since three people choose a floor from 1-5 separately. We have $|\Omega|=5^3=125$ as the total number of outcomes.
+            \item Define the following events and compute their probabilities: %TODO rewrite defining ABC properly?
+                \begin{enumerate}
+                    \item All three people get off at different floors ($A$).
+                        \paragraph{Solution: }Describe the set $A=\{(a,b,c)\in \Omega:a\neq b,a\neq c,b\neq c\} $, then count the number of outcomes that satisfy $A$ by considering an arbitrary $(a,b,c)\in a$. $a$ can be chosen arbitrarily, giving us 5 choices. Then $b$ must be chosen differently from $a$, giving us 4 choices. Finally $c$ is chosen differently from $a,b$, giving us $3$ choices. Then combining all possibilities, $|a|=3\cdot 4\cdot 5=60$, and our probability becomes:
+                        \[
+                        P(A)=\frac{|A|}{|\Omega|}=\frac{60}{125}=\frac{12}{25}
+                        .\] 
+                    \item At least two people get off at the same floor ($B$).
+                        \paragraph{Solution: }Describe the set $B=\{(a,b,c)\in \Omega:a=b \text{ or } b=c \text{ or }a=c\} $
 
-    \item
+                        Count the number of outcomes satisfying $B$. The first person can get off at any floor, so there are 5 possibilities for them. Then we split into two cases, $C_1$ and $C_2$. If the second person gets off at the same floor as the first $(C_1)$, they have only one choice, and the third person can choose any floor since there are already two people on the same floor. So in this choice we have $1\cdot 5\cdot 5=25$ choices.
 
+                        Then in the other case ($C_2$), we suppose the second person gets off at a different floor from the first. So they have four choices. Then the third person must be on the same floor as one of the first two, and they have two choices, whether to join the first or the second person. So in this case we have $5\cdot 4\cdot 2=40$ choices.
+
+                        Thanks to our disjoint events (in the first case, every event has person 1 and 2 on the same floor, and in case two they must always be on different floors) we can have:
+                         \[
+                        P(B)=P(C_1\cup C_2)=P(C_1)+P(C_2)=\frac{25}{125}+\frac{40}{125}=\frac{65}{125}=\frac{13}{60}
+                        .\] 
+                    \item They get off at 3 consecutive floors ($C$).
+                        \paragraph{Solution: }First we note that the lowest of the three floors must be at most 3. For if the lowest floor were greater than 3, we would have the highest floor greater than 5, more than the number of floors in the building. 
+
+                        So denote the lowest floor as $l$. There are three choices for $l$, and three choices for which person will go to floor $l$. Then for floor $l+1$, there are $2$ people who could go to that floor, and one person is left to go to floor $l+2$.
+
+                        So the set $C$ has $|C|=3\cdot 3\cdot 2=18$, and we get a probability $P(C)=\frac{18}{125}$
+                \end{enumerate}
+            \item Find the probability of event B in terms of a complement.
+                \paragraph{Solution: }Begin by finding the set: 
+
+                $B^{c}=\{\text{No two people get off at different floors}\} $. 
+                Observe that this is simply the probability we found in part (a), so $P(B)=1-P(A)=1-\frac{12}{25}=\frac{13}{25}$
+            \item Let E be the event that at least one person gets off at floor 2, and F the event that at least one person gets off at floor 3. Use the inequality of union to find an upper bound for the probability that at least one person gets off at floor 2 or floor 3.
+                \paragraph{Solution: }First describe $E$
+        \end{enumerate}
+\item Alice and Bob are taking turns doing somersaults. Every time they try, they can either succeed (complete the move correctly) or fail. They take two turns each - Alice tries, then Bob tries, then Alice tries again, then Bob tries again.
+\begin{enumerate}
+    \item Describe how to model this situation using a simple sample space. Suppose that Alice and Bob are equally skilled, and they don't get very tired or hurt during this exercise. They also don't get very encouraged or discouraged about past attempts - so that, every time each one of them attempts a somersault, they are just as likely to succeed as they are to fail.
+        \paragraph{Solution: }Model a single trial as a bit string, with 0 representing a fail and 1 representing a success. Then order the string Alice, Bob, Alice, Bob. Then we have $\Omega=\{\{ 0,1\}^{4}\} $.
+    \item Give a probability distribution for your sample space, assuming each somersault succeeds with probability 0.5. When they start, they each have two pieces of candy. Every time that Alice succeeds, Bob gives Alice a piece of candy. Every time that Bob succeeds, Alice gives Bob a piece of candy. No candy is exchanged when someone fails. There are no ways to get more candy, and no one eats any candy during this process.
+        \paragraph{Solution: }We can model our candy situation by simply counting who has more ones in the bit string, Alice or Bob. So if we had the bit string $0101$, we see that both Alice's bits are 0, and both Bob's are 1, so Alice will have to give him candy both times he succeeds, and Bob will have four candies. Let $b$ denote the number of candies Bob has after the trial (Alice's candy will just be $4-b$).
+
+        Start with $P(b=0)$. Of course, this must mean that Bob must lose both his candies, and cannot win any candy from Alice. So the unique bit string representing this event, is 1010, and we have $P(b=0)=P(\{0101\} )=\frac{1}{16}$.
+
+        Then consider $P(b=1)$. We split into smaller cases. If Alice wins the first trial, then Bob will give her a candy and will be at $b=1$. Then Bob must win as much as Alice does in the remaining trials, giving us the bit strings 1011 and 1110.
+
+        If Alice loses the first trial, we will have $b=2$ and Bob must lose a candy in the remaining trials without winning any back. This gives the bit string 0010, and $P\left( b=1 \right) =P(\{1011,1110,0010\} )=\frac{3}{|\Omega|}=\frac{3}{16}$.
+
+        Now consider $P(b=2)$. To maintain the starting orientation, with Bob having two candies and Alice having the same, we must have Alice and Bob winning the exact same amount.
+
+        For  $P(b=3),P(b=4)$, we need simply observe that the probability of Bob having a certain amount of candy is identical to the probability of Alice having 1 minus that amount. Then we can switch the roles of Alice and Bob in the $b=0$ and $b=1$ cases to see $P(b=3)=P(b=1)=\frac{3}{16}$ and that $P(b=0)=P(b=4)=\frac{1}{16}$.
+    \item What is the probability of Alice ending up with more candies than Bob?
+        \paragraph{Solution: }We computed all our probabilities above, and the two cases where Alice has more candies are the cases where $b=0$ or $b=1$. Since these are disjoint (Bob cannot have 0 and 1 candies), we can say:
+          \[
+            P(b=0 \text{ or }b=1)=P(b=1)+P(b=0)=\frac{1}{16}+\frac{3}{16}=\frac{1}{4}
+          .\] 
+    \item If Alice completes her first round successfully, what is the probability of her ending up with more candies?
+
+        \paragraph{Solution: }
+        \[
+        P(b=0 \text{ or }b=1|1\dots) %TODO maybe its just best write out sample space
+        .\] 
+    \item A fortune teller says that Alice will end up with more candies, what is the probability that Alice finishes her first round successfully?
+        \paragraph{Solution: }Suppose the fortune teller can actually predict the future.
+\end{enumerate}
+\item  A man plays roulette and believes that the numbers 7, 13, and 21 are his ”lucky numbers.” He always bets on all three of these numbers in every round. The roulette wheel has 38 equally likely outcomes, numbered 1 through 36, plus 0 and 00.
+\begin{enumerate}
+    \item What is the probability that he wins on any given spin (i.e., that the ball lands on one of his lucky numbers)?
+        \paragraph{Solution: } Take the probability:
+        \begin{align*}
+            P(\{7,13,21\})&= P(\{7\} \cup \{13\} \cup \{21\} ) \\
+            &= P(7)+P(13)+P(21)&\text{Since all the events are disjoint} \\
+            &= \frac{1}{38}+ \frac{1}{38}+\frac{1}{38}\\
+            &=\frac{3}{38}
+        .\end{align*}
+
+    \item Suppose he can afford to play the game 10 times. What is the probability that he never wins?
+        \paragraph{Solution: }Model with a Binomial distribution, with $p=\frac{3}{38}$ and $n=10$. Then our probability is given by: % TODO binomial not mentioned in course notes
+        \begin{align*}
+            P(0)&=\binom{10}{0}\left( \frac{3}{38} \right)^0\left( 1-\frac{3}{38} \right)^{10-0}\\
+            &= 1\cdot 1\cdot \left( \frac{35}{38} \right) ^{10} \\
+            &\approx 0.43938 
+        .\end{align*}
+        So there is approximately a $43.9\%$ chance the man will lose ten times consecutively.
+
+    \item Let the random variable $X$ represent the number of spins he plays until he wins for the first time. What is the expected value $E[X]$?
+        \paragraph{Solution: }
+    \item Let $X_1,\dots X_{10}$ be independent random variables, each representing whether he wins (1) or loses (0) on spin $i$. Let $Y=\sum_{n=1}^{10} X_i$ be the total number of wins in 10 spins.
+        \paragraph{Solution: }Let $p=\frac{3}{38}$ %TODO 
+        be the probability the man wins a given trial. Take:
+        \begin{align*}
+            E[Y]&=E\left[ \sum_{i=1}^{10} X_i \right] \\
+                &= \sum_{i=1}^{10} E[X_i]&\text{By independence of }X_i \\
+                &= \sum_{i=1}^{10} p \\
+                &= 10p \\
+                &= \frac{30}{38}\\
+                &= \frac{15}{19} 
+        .\end{align*}
+\end{enumerate}
+\item A sack contains a large number of 5\cent, 10\cent and 25\cent coins. In each experiment, you reach in and randomly pull out a fistful of coins, where each fistful contains a mix of these coins. The exact number of coins and their types vary from sample to sample.
+    \begin{enumerate}
+    \item Describe a suitable sample space $\Omega$ for this experiment. Be precise about what each element of $\Omega$ represents.
+        \paragraph{Solution: }Denote the coins, $N$ for the number of nickels, $D$ for dimes, and $Q $ for quarters. Then our sample space is:
+        \[
+        \Omega=\{(N,D,Q):N,D,Q\in \mathbb{Z}_{\ge 0}\} 
+        .\] 
+    \item Define a random variable $X$ that represents the total monetary value (in cents) of the coins in a sample.
+        \paragraph{Solution: }Define $X:\Omega\to V\subseteq \mathbb{R},$ where $X(N,D,Q)=5N+10D+25Q$ cents.
+    \item Suppose a new discovery reveals that mixing the metal from any 5\cent and 10\cent coin together produces a valuable alloy. Define a random variable Y that represents the maximum number of 5\cent/10\cent pairs that can be formed from a given sample.
+        \paragraph{Solution: }Define $Y:\Omega\to V\subseteq \mathbb{R}, Y(N,D,Q)=\min \{N,D\} $.
+    \item Describe the events corresponding to:
+        \begin{enumerate}
+            \item $X=30$
+            \item $X \leq 30$
+            \item $Y = 0$
+            \item $Y = 1$
+        \end{enumerate}
+        \paragraph{Solution: }
+        \begin{enumerate}
+            \item If $X=30$, we must have $30=5N+10D+25Q$. Clearly  $Q\leq 1$, otherwise we would have more than fifty cents. If $Q=1$, then $N=1$ is the only completion to $30$.
+
+                Then consider $Q=0$. We could have $(0,3,0),(2,2,0),(4,1,0),$ or $(6,0,0)$.
+                So the events corresponding to  $X= 30$ is:
+                \[
+                \{(1,0,1),(0,3,0),(2,2,0),(4,1,0),(6,0,0)\} 
+                .\] 
+            \item We can find the events corresponding to $X\leq 30$ by simply describing the set:
+                 \[
+                \{(N,D,Q)\in \Omega: 5N+10D+25Q\leq30\} 
+                .\] %TODO do we need more? can this set be more easily described?
+            \item If $0=Y=\min \{N,D\} $, then either we have no dimes, or we have no nickels:
+                \[
+                    \{(0,D,Q):D,Q\in \mathbb{Z}_{\ge 0}\} \cup \{N,0,Q:N,Q\in \mathbb{Z}_{\ge 0}\} 
+                .\] 
+            \item If $1=Y=\min \{N,D\} $, then we have either $N$ or $D$ equal to $1$, but neither is zero: % TODO 
+                \[
+                    \{(1,D,Q):D,Q\in \mathbb{Z}_{\ge 0}\text{ and }D>0\} \cup \{N,1,Q:N,Q\in \mathbb{Z}_{\ge 0}\text{ and }N>0\} 
+                .\] 
+        \end{enumerate}
+    \end{enumerate}
 \end{enumerate}
 \end{document}
