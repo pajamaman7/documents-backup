@@ -44,24 +44,46 @@
                 $B^{c}=\{\text{No two people get off at different floors}\} $. 
                 Observe that this is simply the probability we found in part (a), so $P(B)=1-P(A)=1-\frac{12}{25}=\frac{13}{25}$
             \item Let E be the event that at least one person gets off at floor 2, and F the event that at least one person gets off at floor 3. Use the inequality of union to find an upper bound for the probability that at least one person gets off at floor 2 or floor 3.
-                \paragraph{Solution: }First describe $E$
+                \paragraph{Solution: }First describe $E$. Rather than describing the events where somebody is on floor three, it may be simpler to describe those where nobody is on floor three. So, for an arbitrary event in $E^{c}$, each person has four choices of which floor to choose, and $|E^{c}|=4^3=64$, and $|E|=61$. The same reasoning clearly works for $F$, all that changes is the floor which our people cannot land on. Then we use the union inequality:
+                    \[
+                        P(E\cup F)\leq P(E)+P(F)=\frac{61}{125}+\frac{61}{125}=\frac{122}{125}
+                    .\] 
+                    Therefore the probability of at least one person landing on either floor 2 or 3 is bounded above by $\frac{122}{125}$.
         \end{enumerate}
 \item Alice and Bob are taking turns doing somersaults. Every time they try, they can either succeed (complete the move correctly) or fail. They take two turns each - Alice tries, then Bob tries, then Alice tries again, then Bob tries again.
 \begin{enumerate}
     \item Describe how to model this situation using a simple sample space. Suppose that Alice and Bob are equally skilled, and they don't get very tired or hurt during this exercise. They also don't get very encouraged or discouraged about past attempts - so that, every time each one of them attempts a somersault, they are just as likely to succeed as they are to fail.
         \paragraph{Solution: }Model a single trial as a bit string, with 0 representing a fail and 1 representing a success. Then order the string Alice, Bob, Alice, Bob. Then we have $\Omega=\{\{ 0,1\}^{4}\} $.
     \item Give a probability distribution for your sample space, assuming each somersault succeeds with probability 0.5. When they start, they each have two pieces of candy. Every time that Alice succeeds, Bob gives Alice a piece of candy. Every time that Bob succeeds, Alice gives Bob a piece of candy. No candy is exchanged when someone fails. There are no ways to get more candy, and no one eats any candy during this process.
-        \paragraph{Solution: }We can model our candy situation by simply counting who has more ones in the bit string, Alice or Bob. So if we had the bit string $0101$, we see that both Alice's bits are 0, and both Bob's are 1, so Alice will have to give him candy both times he succeeds, and Bob will have four candies. Let $b$ denote the number of candies Bob has after the trial (Alice's candy will just be $4-b$).
+        \paragraph{Solution: }
 
-        Start with $P(b=0)$. Of course, this must mean that Bob must lose both his candies, and cannot win any candy from Alice. So the unique bit string representing this event, is 1010, and we have $P(b=0)=P(\{0101\} )=\frac{1}{16}$.
-
-        Then consider $P(b=1)$. We split into smaller cases. If Alice wins the first trial, then Bob will give her a candy and will be at $b=1$. Then Bob must win as much as Alice does in the remaining trials, giving us the bit strings 1011 and 1110.
-
-        If Alice loses the first trial, we will have $b=2$ and Bob must lose a candy in the remaining trials without winning any back. This gives the bit string 0010, and $P\left( b=1 \right) =P(\{1011,1110,0010\} )=\frac{3}{|\Omega|}=\frac{3}{16}$.
-
-        Now consider $P(b=2)$. To maintain the starting orientation, with Bob having two candies and Alice having the same, we must have Alice and Bob winning the exact same amount.
-
-        For  $P(b=3),P(b=4)$, we need simply observe that the probability of Bob having a certain amount of candy is identical to the probability of Alice having 1 minus that amount. Then we can switch the roles of Alice and Bob in the $b=0$ and $b=1$ cases to see $P(b=3)=P(b=1)=\frac{3}{16}$ and that $P(b=0)=P(b=4)=\frac{1}{16}$.
+    Write out our list of bit strings, and the number of candies we will expect Bob to have at the end of the trials. 
+        \begin{align*}
+            &0000,  &b=2\\
+            &0001,  &b=3\\
+            &0010,  &b=1\\
+            &0011,  &b=2\\
+            &0100,  &b=3\\
+            &0101,  &b=4\\
+            &0110,  &b=2\\
+            &0111,  &b=3\\
+            &1000,  &b=1\\
+            &1001,  &b=2\\
+            &1010,  &b=0\\
+            &1011,  &b=1\\
+            &1100,  &b=2\\
+            &1101,  &b=3\\
+            &1110,  &b=1\\
+            &1111,  &b=2
+        \end{align*}
+    From this we need simply count the number of times each outcome appears, giving us the probability distribution:
+    \begin{align*}
+        P(b=0)&=\frac{1}{16}\\
+        P(b=1)&=\frac{4}{16}\\
+        P(b=2)&=\frac{6}{16}\\
+        P(b=3)&=\frac{4}{16}\\
+        P(b=4)&=\frac{1}{16}
+    .\end{align*}
     \item What is the probability of Alice ending up with more candies than Bob?
         \paragraph{Solution: }We computed all our probabilities above, and the two cases where Alice has more candies are the cases where $b=0$ or $b=1$. Since these are disjoint (Bob cannot have 0 and 1 candies), we can say:
           \[
@@ -69,12 +91,18 @@
           .\] 
     \item If Alice completes her first round successfully, what is the probability of her ending up with more candies?
 
-        \paragraph{Solution: }
+        \paragraph{Solution: } For this example, we refer back to the table created in (a), and use our formula for conditional probability. Recall that any bit string representing Alice winning first will begin with 1 (Denote this event $A$), and that for Alice to have more candies, Bob must be finishing a trial with 0 or 1 candies.
         \[
-        P(b=0 \text{ or }b=1|1\dots) %TODO maybe its just best write out sample space
+        P(b\in \{0,1\} |A)=\frac{P(A\cap b\in \{0,1\} )}{P(A)}=\frac{5/16}{1 /2}=\frac{5}{8}
         .\] 
+        So the probability that Alice ends with more candies, given she wins her first round, is $\frac{5}{8}$.
     \item A fortune teller says that Alice will end up with more candies, what is the probability that Alice finishes her first round successfully?
-        \paragraph{Solution: }Suppose the fortune teller can actually predict the future.
+        \paragraph{Solution: }Suppose the fortune teller can actually predict the future. We use the same notation as $(d)$.
+         \[
+        P(A|b\in \{0,1\} )=\frac{P(A\cap b\in \{0,1\} )}{P(b\in \{0,1\} )}=\frac{3/16}{5 /16}=\frac{3}{5}
+        .\] 
+        If the fortune teller cannot predict the future, Alice's chances are 1 in 2 as always.
+
 \end{enumerate}
 \item  A man plays roulette and believes that the numbers 7, 13, and 21 are his ”lucky numbers.” He always bets on all three of these numbers in every round. The roulette wheel has 38 equally likely outcomes, numbered 1 through 36, plus 0 and 00.
 \begin{enumerate}
