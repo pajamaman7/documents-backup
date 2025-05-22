@@ -13,7 +13,7 @@
         \begin{enumerate}
             \item Describe the sample space $\Omega$ for this situation. What is the total number of possible outcomes?
                 \paragraph{Solution: }The sample space is $\Omega=\{1,2,3,4,5\}\times \{1,2,3,4,5\}\times \{1,2,3,4,5\}$, since three people choose a floor from 1-5 separately. We have $|\Omega|=5^3=125$ as the total number of outcomes.
-            \item Define the following events and compute their probabilities: %TODO rewrite defining ABC properly?
+            \item Define the following events and compute their probabilities: 
                 \begin{enumerate}
                     \item All three people get off at different floors ($A$).
                         \paragraph{Solution: }Describe the set $A=\{(a,b,c)\in \Omega:a\neq b,a\neq c,b\neq c\} $, then count the number of outcomes that satisfy $A$ by considering an arbitrary $(a,b,c)\in a$. $a$ can be chosen arbitrarily, giving us 5 choices. Then $b$ must be chosen differently from $a$, giving us 4 choices. Finally $c$ is chosen differently from $a,b$, giving us $3$ choices. Then combining all possibilities, $|a|=3\cdot 4\cdot 5=60$, and our probability becomes:
@@ -50,10 +50,11 @@
                     .\] 
                     Therefore the probability of at least one person landing on either floor 2 or 3 is bounded above by $\frac{122}{125}$.
         \end{enumerate}
+        \newpage
 \item Alice and Bob are taking turns doing somersaults. Every time they try, they can either succeed (complete the move correctly) or fail. They take two turns each - Alice tries, then Bob tries, then Alice tries again, then Bob tries again.
 \begin{enumerate}
     \item Describe how to model this situation using a simple sample space. Suppose that Alice and Bob are equally skilled, and they don't get very tired or hurt during this exercise. They also don't get very encouraged or discouraged about past attempts - so that, every time each one of them attempts a somersault, they are just as likely to succeed as they are to fail.
-        \paragraph{Solution: }Model a single trial as a bit string, with 0 representing a fail and 1 representing a success. Then order the string Alice, Bob, Alice, Bob. Then we have $\Omega=\{\{ 0,1\}^{4}\} $.
+        \paragraph{Solution: }Model a single trial as a bit string, with 0 representing a fail and 1 representing a success. Then order the trials: Alice, Bob, Alice, Bob. Then we have $\Omega=\{\{ 0,1\}^{4}\} $.
     \item Give a probability distribution for your sample space, assuming each somersault succeeds with probability 0.5. When they start, they each have two pieces of candy. Every time that Alice succeeds, Bob gives Alice a piece of candy. Every time that Bob succeeds, Alice gives Bob a piece of candy. No candy is exchanged when someone fails. There are no ways to get more candy, and no one eats any candy during this process.
         \paragraph{Solution: }
 
@@ -116,22 +117,28 @@
         .\end{align*}
 
     \item Suppose he can afford to play the game 10 times. What is the probability that he never wins?
-        \paragraph{Solution: }Model with a Binomial distribution, with $p=\frac{3}{38}$ and $n=10$. Then our probability is given by: % TODO binomial not mentioned in course notes
+    \paragraph{Solution: }We seek the probability of a $\frac{3}{38}$ probability event fails 10 times consecutively. Since the spins are independent, we simply multiply the probability of a fail $\frac{35}{38}$ by itself 10 times, giving a probability of 10 losses in a row; $\left( \frac{35}{38} \right) ^{10}\approx 0.43938$.
+
+
+        \iffalse
+        Model with a Binomial distribution, with $p=\frac{3}{38}$ and $n=10$. Then our probability is given by: 
         \begin{align*}
             P(0)&=\binom{10}{0}\left( \frac{3}{38} \right)^0\left( 1-\frac{3}{38} \right)^{10-0}\\
             &= 1\cdot 1\cdot \left( \frac{35}{38} \right) ^{10} \\
             &\approx 0.43938 
         .\end{align*}
         So there is approximately a $43.9\%$ chance the man will lose ten times consecutively.
+    \fi
 
     \item Let the random variable $X$ represent the number of spins he plays until he wins for the first time. What is the expected value $E[X]$?
-        \paragraph{Solution: }
+        \paragraph{Solution: } 
+        We use our geometric distribution, with a probability of success $q=\frac{3}{38}$, and take $E[X]$, which we know for a geometric distribution to be $\frac{1}{q}$, in this case $\frac{38}{3},$ meaning on average the man will have to play $12$ and $\frac{2}{3}$ spins to win.
     \item Let $X_1,\dots X_{10}$ be independent random variables, each representing whether he wins (1) or loses (0) on spin $i$. Let $Y=\sum_{n=1}^{10} X_i$ be the total number of wins in 10 spins.
-        \paragraph{Solution: }Let $p=\frac{3}{38}$ %TODO 
+        \paragraph{Solution: }Let $p=\frac{3}{38}$ 
         be the probability the man wins a given trial. Take:
         \begin{align*}
             E[Y]&=E\left[ \sum_{i=1}^{10} X_i \right] \\
-                &= \sum_{i=1}^{10} E[X_i]&\text{By independence of }X_i \\
+                &= \sum_{i=1}^{10} E[X_i]&\text{By linearity of expectation} \\
                 &= \sum_{i=1}^{10} p \\
                 &= 10p \\
                 &= \frac{30}{38}\\
@@ -158,24 +165,36 @@
         \end{enumerate}
         \paragraph{Solution: }
         \begin{enumerate}
-            \item If $X=30$, we must have $30=5N+10D+25Q$. Clearly  $Q\leq 1$, otherwise we would have more than fifty cents. If $Q=1$, then $N=1$ is the only completion to $30$.
+            \item Describe the set with $X=30:$
+                \[
+                \{(N,D,Q)\in \Omega:5N+10D+25Q=30\}
+                .\] 
+                There are few enough elements that we are able to explicitly describe the set. If $X=30$, we must have $30=5N+10D+25Q$. Clearly  $Q\leq 1$, otherwise we would have more than fifty cents. If $Q=1$, then $N=1$ is the only completion to $30$.
 
                 Then consider $Q=0$. We could have $(0,3,0),(2,2,0),(4,1,0),$ or $(6,0,0)$.
                 So the events corresponding to  $X= 30$ is:
                 \[
-                \{(1,0,1),(0,3,0),(2,2,0),(4,1,0),(6,0,0)\} 
+                    \{(1,0,1),(0,3,0),(2,2,0),(4,1,0),(6,0,0)\} 
                 .\] 
             \item We can find the events corresponding to $X\leq 30$ by simply describing the set:
                  \[
                 \{(N,D,Q)\in \Omega: 5N+10D+25Q\leq30\} 
-                .\] %TODO do we need more? can this set be more easily described?
+                .\] 
             \item If $0=Y=\min \{N,D\} $, then either we have no dimes, or we have no nickels:
                 \[
-                    \{(0,D,Q):D,Q\in \mathbb{Z}_{\ge 0}\} \cup \{N,0,Q:N,Q\in \mathbb{Z}_{\ge 0}\} 
+                    \{(0,D,Q)\in \Omega:D,Q\in \mathbb{Z}_{\ge 0}\} \cup \{N,0,Q:N,Q\in \mathbb{Z}_{\ge 0}\} 
                 .\] 
-            \item If $1=Y=\min \{N,D\} $, then we have either $N$ or $D$ equal to $1$, but neither is zero: % TODO 
+                Or equivalently,
                 \[
-                    \{(1,D,Q):D,Q\in \mathbb{Z}_{\ge 0}\text{ and }D>0\} \cup \{N,1,Q:N,Q\in \mathbb{Z}_{\ge 0}\text{ and }N>0\} 
+                \{(N,D,Q)\in \Omega:\min \{N,D\} =0\} 
+                .\] 
+            \item If $1=Y=\min \{N,D\} $, then we have either $N$ or $D$ equal to $1$, but neither is zero: % 
+                \[
+                    \{(1,D,Q)\in \Omega:D,Q\in \mathbb{Z}_{\ge 0}\text{ and }D>0\} \cup \{N,1,Q:N,Q\in \mathbb{Z}_{\ge 0}\text{ and }N>0\} 
+                .\] 
+                Or equivalently,
+                \[
+                \{(N,D,Q)\in \Omega:\min \{N,D\} =1\} 
                 .\] 
         \end{enumerate}
     \end{enumerate}
