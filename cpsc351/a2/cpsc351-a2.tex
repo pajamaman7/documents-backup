@@ -1,0 +1,73 @@
+\documentclass{article}
+\input{preamble.tex}
+\usetikzlibrary{automata, positioning, arrows}
+\usepackage{commutative-diagrams}
+\pagestyle{fancy}
+\lhead{Assignment \#$2$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+
+    \item Given all the recent hype about ChatGPT, you have decided to start doing work in natural language processing. But before trying to make a high-powered LLM, you've decided to see what you can do with some simpler tools: regular languages and NFAs. Consider the following input alphabet: \{the, salty, pirate, pirates, plunder, plunders, ship\}.
+
+    \begin{enumerate}
+        \item Construct a DFA which accepts the following language:
+            \{the pirate plunders the ship, the pirates plunder the ship\}
+
+        \item Construct a DFA accepting the language 
+            \{the pirate plunders the ship, the pirates plunder the ship, the salty pirate plunders the ship, the salty pirates plunder the ship, the salty salty pirate plunders the ship, the salty salty pirates plunder the ship,\dots\}
+
+        \item Construct an NFA accepting the sentences accepted by the automaton in (b) plus those formed by conjoining such sentences with and, e.g. the salty pirate plunders the ship and the salty salty pirates plunder the ship and the pirate plunders the ship
+
+        \item Construct regular expressions for the automata in (a), (b), (c).
+            \paragraph{Solution: }
+            \begin{enumerate}[label= (\alph*)] 
+                \item (the pirate plunders the ship+the pirates plunder the ship) %TODO ???
+                \item the (salty)$^*$ pirate($\lambda$+ s) plunder($\lambda+$ s) the ship %TODO
+            \end{enumerate}
+
+        \item Suppose our alphabet is \{the, pirate, pirates, admiral, admirals, sailor, sailors, plunder, plunders, pursue, pursues, hate, hates, ship\}
+
+        Consider sentences like the following:
+
+        \begin{itemize}
+            \item[] the pirate plunders the ship
+
+            \item[] the pirate the admiral pursues plunders the ship
+
+            \item[] the pirate the admiral the sailor hates pursues plunders the ship (i.e. the sailor hates the admiral who pursues the pirate who plunders the ship)
+
+            \item[] the pirate plunders the ship
+
+            \item[] the pirates the admirals hunt plunders the ship
+
+            \item[] the pirates the admirals the sailors hate hunt plunders the ship
+
+            \item[] the admirals the sailors pursue
+        \end{itemize}
+        i.e. sentences of the form (the + [Noun])n + [Transitive Verb]n + the ship
+
+        Is the language that accepts these sentence regular? Why or why not?
+    \end{enumerate}
+
+    \item Prove that $L(r^{**})=L(r^* )$
+        \begin{proof} 
+            
+        \end{proof}
+
+    \item Show how, given any NFA, you can construct an equivalent one which has no transition arrows into the original state
+    \item Construct DFAs for the following regular languages over $\{0,1\} $. Use as few states a possible.
+    \begin{enumerate}
+        \item The set of all strings containing a total of $n$ 1's where $n\equiv 1\pmod{3} $.
+        \item The set of all strings containing exactly two 1's.
+        \item The set of all strings containing a block of at least three consecutive ones: 
+            %010111001 001111100 1101110111
+            % but not
+            %0101011011 0011011000 1101100101
+        \item $1(010^*1)(0|1)^*$
+
+    \end{enumerate} 
+\end{enumerate}
+\end{document}
