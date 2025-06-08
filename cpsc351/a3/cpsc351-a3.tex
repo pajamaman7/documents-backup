@@ -1,0 +1,59 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $3$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+
+    \item Let $M=(Q,\Sigma,T,\delta,q_0,q_{\text{accept}}$ be a Turing machine, where:
+        \begin{itemize}
+            \item[] $Q=\{q_0,q_1,q_2,q_3,q_{\text{accept}}\} $,
+            \item[] $\Sigma=\{0,1\} $ is the input alphabet
+            \item[] $T=\{0,1,\perp \} $ is the tape alphabet (with $\perp $ denoting the blank symbol).
+            \item[] The transition function $\delta$ is defined by the following table:
+                \begin{table}[htpb]
+                    \centering
+                    \begin{tabular}{c|c|c|c}
+                    $\delta$ & 0 & 1 & $\perp $ \\
+                    \hline
+                    $q_1$ &$(q_1,0,R)$ &$(q_1,0,R)$ &$(q_3,\perp ,R)$ \\
+                    $q_1$ &$(q_1,0,R)$ &$(q_2,1,R)$ &$(q_3,\perp ,R)$ \\
+                    $q_1$ &$(q_2,0,R)$ &$(q_0,1,R)$ &$(q_3,\perp ,R)$ \\
+                    $q_1$ &$-$ &$-$ &$-$ \\
+                    \end{tabular}
+                \end{table}
+                
+        \end{itemize}
+
+        \begin{enumerate}
+            \item Simulate the behavior of the Turing machine M on the following inputs. For each case, provide the final tape content and the halting state:
+            \begin{enumerate}
+                \item  1011
+                \item  111
+                \item 010
+            \end{enumerate}
+        \item Describe the general behavior of $M$ when the input is of the form $1^{k}$ for some $k\in \mathbb{N}$.
+        \item Construct a Turing machine $M'=(Q',\Sigma,T,\delta',q_0',q_{\text{accept}}')$, where $T=\{0,1,\perp \} $, that satisfies each of the following:
+            \begin{enumerate}
+                \item Replaces the first occurrence of the substring 01 in the input with 10, and leaves the rest unchanged.
+                \item Accepts if and only if the input contains the substring 010. 
+            \end{enumerate}
+        Specify only the state transitions relevant to this task (you may assume the rest lead to a rejecting state or halt).
+        \end{enumerate}
+
+    \item Let $\Sigma=\{0,1\} .$ Define the language:
+        \[
+        L'=\{0^{n}1^{n}0^{n}1^{n}|n\in \mathbb{N}_0\} 
+        .\] 
+        \begin{enumerate}[label= (\alph*)] 
+            \item Design a Turing machine that accepts the language $L'$.
+            \item Prove that if the Turing machine accepts a string $x$, then $x\in L'$.
+            \item Modify the Turing machine so that it replaces the input $x\in L'$ with the string $xx$ (i.e.,
+            it duplicates the input).
+            \item Prove that the modified machine correctly duplicates the input only if $x\in L'$.
+        \end{enumerate}
+\end{enumerate}
+\end{document}

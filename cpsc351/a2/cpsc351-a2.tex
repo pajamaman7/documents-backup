@@ -8,24 +8,130 @@
 \chead{}
 
 \begin{document}
+    \paragraph{Student's note:} In the process of typesetting this assignment, some DFA diagrams became incredibly convoluted and unreadable. For this reason, I've made the convention that the initial node will always be $q_0$, and whenever there is a node missing a path, it should be mapped to the trash node $t$.
 \begin{enumerate} 
 
     \item Given all the recent hype about ChatGPT, you have decided to start doing work in natural language processing. But before trying to make a high-powered LLM, you've decided to see what you can do with some simpler tools: regular languages and NFAs. Consider the following input alphabet: \{the, salty, pirate, pirates, plunder, plunders, ship\}.
 
     \begin{enumerate}
         \item Construct a DFA which accepts the following language:
-            \{the pirate plunders the ship, the pirates plunder the ship\}
+            \paragraph{Solution: }Please refer to student's note at the top of the first page.
+            \[ \begin{codi}
+                \obj{&&q_2\\q_0&q_1&&q_4&q_5&q_6\\&&q_3\\&&t\\};
+                \draw (t) circle (1.3ex);
+                \draw (q_0) circle (1.3ex);
+                \draw (q_1) circle (1.3ex);
+                \draw (q_2) circle (1.3ex);
+                \draw (q_3) circle (1.3ex);
+                \draw (q_4) circle (1.3ex);
+                \draw (q_5) circle (1.3ex);
+                \draw (q_6) circle (1.3ex);
+                \draw (q_6) circle (1.5ex);
+
+                \mor t \Sigma:[loop left] t; 
+
+                \mor q_0 the:-> q_1; 
+                \mor q_1 {pirate}:-> q_2 {plunders}:-> q_4;
+                \mor :[swap] q_1 {pirates}:-> q_3 {plunder}:-> q_4 {the}:-> q_5 ship:-> q_6; 
+            \end{codi} \] 
+
 
         \item Construct a DFA accepting the language 
             \{the pirate plunders the ship, the pirates plunder the ship, the salty pirate plunders the ship, the salty pirates plunder the ship, the salty salty pirate plunders the ship, the salty salty pirates plunder the ship,\dots\}
+            \paragraph{Solution: } Please refer to student's note at the top of the first page.
 
+            \[ \begin{codi}
+                \obj{&&&q_3\\q_0&q_1&q_2&&q_5&q_6&q_7\\&&&q_4\\&&&t\\};
+                \draw (t) circle (1.3ex);
+                \draw (q_0) circle (1.3ex);
+                \draw (q_1) circle (1.3ex);
+                \draw (q_2) circle (1.3ex);
+                \draw (q_3) circle (1.3ex);
+                \draw (q_4) circle (1.3ex);
+                \draw (q_5) circle (1.3ex);
+                \draw (q_6) circle (1.3ex);
+                \draw (q_7) circle (1.3ex);
+                \draw (q_7) circle (1.5ex);
+
+                \mor t \Sigma:[loop left] t; 
+
+                \mor q_0 the:-> q_1; 
+                \mor q_1 salty:-> q_2; 
+                \mor q_2 salty:[loop below] q_2; 
+                \mor :[bend left] q_1 pirate:-> q_3; 
+                \mor :[bend right,swap] q_1 pirates:-> q_4; 
+                \mor :[swap] q_2 pirate:-> q_3; 
+                \mor :[] q_2 pirates:-> q_4; 
+
+                \mor q_3 plunders:-> q_5; 
+                \mor :[swap] q_4 plunder:-> q_5; 
+
+                \mor q_5 the:-> q_6 ship:-> q_7; 
+            \end{codi} \] 
+
+            \newpage
         \item Construct an NFA accepting the sentences accepted by the automaton in (b) plus those formed by conjoining such sentences with and, e.g. the salty pirate plunders the ship and the salty salty pirates plunder the ship and the pirate plunders the ship
+            \paragraph{Solution: } Please refer to student's note at the top of the first page.
 
+            \iffalse 
+            \[ \begin{codi}
+                \obj{&&&q_3\\q_0&q_1&q_2&&q_5&q_6&q_7\\&&&q_4\\};
+                \draw (q_0) circle (1.3ex);
+                \draw (q_1) circle (1.3ex);
+                \draw (q_2) circle (1.3ex);
+                \draw (q_3) circle (1.3ex);
+                \draw (q_4) circle (1.3ex);
+                \draw (q_5) circle (1.3ex);
+                \draw (q_6) circle (1.3ex);
+                \draw (q_7) circle (1.3ex);
+                \draw (q_7) circle (1.5ex);
+
+                \mor q_0 the:-> q_1; 
+                \mor q_1 salty:-> q_2; 
+                \mor q_2 salty:[loop below] q_2; 
+                \mor :[bend left] q_1 pirate:-> q_3; 
+                \mor :[bend right,swap] q_1 pirates:-> q_4; 
+                \mor :[swap] q_2 pirate:-> q_3; 
+                \mor :[] q_2 pirates:-> q_4; 
+
+                \mor q_3 plunders:-> q_5; 
+                \mor :[swap] q_4 plunder:-> q_5; 
+
+                \mor :[bend right=90,swap] q_7 and:-> q_0; 
+
+                \mor q_5 the:-> q_6 ship:-> q_7; 
+            \end{codi} \] 
+        \fi
+            \[ \begin{codi}
+                \obj{&&q_2\\q_0&q_1&&q_4&q_5&q_6\\&&q_3\\};
+
+                \draw (q_0) circle (1.3ex);
+                \draw (q_1) circle (1.3ex);
+                \draw (q_2) circle (1.3ex);
+                \draw (q_3) circle (1.3ex);
+                \draw (q_4) circle (1.3ex);
+                \draw (q_5) circle (1.3ex);
+                \draw (q_6) circle (1.3ex);
+                \draw (q_6) circle (1.5ex);
+                
+                \mor q_0 the:-> q_1; 
+                \mor q_1 salty:[loop below] q_1; 
+
+                \mor :[swap] q_1 pirate:-> q_2; 
+                \mor :[] q_1 pirates:-> q_3; 
+
+                \mor q_2 plunders:-> q_4; 
+                \mor :[swap] q_3 plunder:-> q_4; 
+                \mor q_4 the:-> q_5; 
+                \mor q_5 ship:-> q_6; 
+                \mor :[bend right=90,swap] q_6 and:-> q_0; 
+            \end{codi} \] 
         \item Construct regular expressions for the automata in (a), (b), (c).
             \paragraph{Solution: }
             \begin{enumerate}[label= (\alph*)] 
-                \item (the pirate plunders the ship+the pirates plunder the ship) %TODO ???
-                \item the (salty)$^*$ pirate($\lambda$+ s) plunder($\lambda+$ s) the ship %TODO
+                \item the (pirate plunders + pirates plunder) the ship
+                \item the (salty)$^*$ (pirate plunders + pirates plunder) the ship
+                \item the (salty)$^*$ (pirate plunders + pirates plunder) the ship (and the (salty)$^*$ (pirate plunders + pirates plunder) the ship)$^{*}$
             \end{enumerate}
 
         \item Suppose our alphabet is \{the, pirate, pirates, admiral, admirals, sailor, sailors, plunder, plunders, pursue, pursues, hate, hates, ship\}
@@ -47,27 +153,111 @@
 
             \item[] the admirals the sailors pursue
         \end{itemize}
-        i.e. sentences of the form (the + [Noun])n + [Transitive Verb]n + the ship
+        i.e. sentences of the form (the + [Noun])$^{n}$ + [Transitive Verb]$^{n}$ + the ship
 
-        Is the language that accepts these sentence regular? Why or why not?
+        Is the language that accepts these sentence regular? Why or why not? 
+        \paragraph{Solution: } 
+        The regular expression: "(the  [Noun])$^{n}$ [Transitive Verb]$^{n}$ the ship" generates the language, and since the language is generated by a regular expression it must itself be regular.
+
     \end{enumerate}
 
     \item Prove that $L(r^{**})=L(r^* )$
         \begin{proof} 
-            
+            Let $s \in L(r^{* *})$. Then $s$ is some repetition of a string of the form $r^* $, $s=(r^*)^{k}$ for $k\geq 0$, which can be again rewritten $s=(r^{l})^{k}$ for nonnegative $l$, and if we concatenate a string matching $r$ $l$ times, and then concatenate that $k$ times, we will be concatenating some string $kl$ times. So $s=r^{kl}$, a nonnegative repetition of $r$. So $s\in L(R^* )$.
+
+            Then let $s\in L(r^* )$. Then $s=r^{k}$ for some $k\geq 0$. But $k=1k$, so write $s=r^{1k}=(r^{1})^{k}$.
+            So $s\in L(r^{* *})$.
+
+            And so we have shown $L(r^* )\subseteq L(r^{* *})$, and $L(r^* )\supseteq L(r^{* *})$, so  $L(r^* )=L(r^{* *})$ 
         \end{proof}
 
     \item Show how, given any NFA, you can construct an equivalent one which has no transition arrows into the original state
+        \paragraph{Solution: }Let $N=(Q,\Sigma,\delta,q_0,A)$ be a nondeterministic finite automata. We follow the typical power set conversion to a DFA. Let $D=(Q',\Sigma',\delta',q_0',A)$ be given by: $q_0'=\{q_0\}^{\lambda} $. Then, we construct $Q'$ as per usual, adding subsets of $Q$ to $Q'$ and adjusting the maps of $\delta'$ accordingly. However, in the case that we are about to map something to $q_0'$ (i.e. there exists some  $q'\in Q',a\in \Sigma$ so that $\delta'(q',a)$ would be $q_0'$), we must instead create a new $p\in Q'$, and have $\delta'(q',a)=p$. Then for any other element that would map to $q_0'$, we also map it to $p'$. Finally we adjust $p$ to have all the characteristics of $q_0'$, having all outgoing maps identical ($\delta'(p',a)=\delta'(q_0',a)\forall a\in \Sigma$), and setting $p'$ to an accepting state exactly if  $q_0'$ is an accepting state.
     \item Construct DFAs for the following regular languages over $\{0,1\} $. Use as few states a possible.
     \begin{enumerate}
         \item The set of all strings containing a total of $n$ 1's where $n\equiv 1\pmod{3} $.
+            \paragraph{Solution: }
+
+            \[ \begin{codi}
+                \obj{q_0&q_1\\q_2\\};
+                \draw (q_0) circle (1.3ex);
+                \draw (q_1) circle (1.3ex);
+                \draw (q_1) circle (1.5ex);
+                \draw (q_2) circle (1.3ex);
+                \mor :[loop above] q_0 0:-> q_0 ; 
+                \mor :[loop above] q_1 0:-> q_1 ; 
+                \mor :[loop below] q_2 0:-> q_2 ; 
+                \mor q_0 1:-> q_1; 
+                \mor q_1 1:-> q_2; 
+                \mor q_2 1:-> q_0; 
+            \end{codi} \] 
         \item The set of all strings containing exactly two 1's.
+            \paragraph{Solution: }
+
+            \[ \begin{codi}
+                \obj{q_0&q_1&q_2&q_3\\};
+                \draw (q_0) circle (1.3ex);
+                \draw (q_1) circle (1.3ex);
+                \draw (q_2) circle (1.3ex);
+                \draw (q_3) circle (1.3ex);
+                \draw (q_2) circle (1.5ex);
+
+                \mor q_1 1:-> q_2 1:-> q_3; 
+                \mor q_0 1:-> q_1;
+
+                \mor :[loop above] q_0 0:-> q_0; 
+                \mor :[loop above] q_1 0:-> q_0; 
+                \mor :[loop above] q_2 0:-> q_3; 
+                \mor :[loop above] q_3 \Sigma:-> q_3; 
+                
+            \end{codi} \] 
         \item The set of all strings containing a block of at least three consecutive ones: 
             %010111001 001111100 1101110111
             % but not
             %0101011011 0011011000 1101100101
-        \item $1(010^*1)(0|1)^*$
+            \paragraph{Solution: } 
 
+            \[ \begin{codi}
+                \obj{q_0&q_1&q_2&q_3\\};
+                \draw (q_0) circle (1.3ex);
+                \draw (q_1) circle (1.3ex);
+                \draw (q_2) circle (1.3ex);
+                \draw (q_3) circle (1.3ex);
+                \draw (q_3) circle (1.5ex);
+
+                \mor q_1 1:-> q_2 1:-> q_3; 
+                \mor :[shove=-1ex] q_0 1:-> q_1;
+                \mor  q_1 0:-> q_0; 
+
+                \mor :[loop above] q_0 0:-> q_0; 
+                \mor :[loop above] q_3 \Sigma:-> q_3; 
+                \mor :[bend left, near start] q_2 0:-> q_0; 
+                %\mor :[bend left, near start] q_3 0:-> q_0; 
+                
+            \end{codi} \] 
+            \newpage
+        \item $1(010^*1)(0|1)^*$
+            \paragraph{Solution: }
+
+            \[ \begin{codi}
+                \obj{q_0&q_1&q_2&q_3&q_4\\t\\};
+
+                \draw (q_0) circle (1.3ex);
+                \draw (q_1) circle (1.3ex);
+                \draw (q_2) circle (1.3ex);
+                \draw (q_3) circle (1.3ex);
+                \draw (q_4) circle (1.3ex);
+                \draw (q_4) circle (1.5ex);
+                \draw (t) circle (1.3ex);
+                
+                \mor q_0 1:-> q_1 0:-> q_2 1:-> q_3 1:-> q_4; 
+                \mor :[loop above] q_4 \Sigma:-> q_4; 
+                \mor :[loop above] q_3 0:-> q_3; 
+                \mor :[loop below] t \Sigma:-> t; 
+                \mor q_0 0:-> t; 
+                \mor :[near start] q_1 1:-> t; 
+                \mor :[near start] q_2 0:-> t; 
+            \end{codi} \] 
     \end{enumerate} 
 \end{enumerate}
 \end{document}

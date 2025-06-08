@@ -1,0 +1,44 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Week \# $3$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+    \item Find three examples of adjoint functors not mentioned above. Do the same for initial and terminal objects.
+        \begin{enumerate}
+            \item Let $\mathbb{E}$ be a field extension of another field $\mathbb{F}$. Let $G$ be the Galois group $G=\mathrm{Gal}(\mathbb{E}:\mathbb{F})$ and take the category $\mathcal{E}$, with objects being intermediate field extensions between $\mathbb{E}$ and $\mathbb{F}$, and morphisms as inclusions. Take $\mathcal{G}$, with objects being subgroups, and morphisms $\mathrm{Hom}(H,H')=\{\leq |H\leq H'\} $.
+                
+                Then, for $\mathbb{k}\in \mathcal{E}$, we define the map:
+                \[
+                \phi:\mathcal{E}\to \mathcal{G}^{op},\quad\phi(\mathbb{k})= \mathrm{Gal}(\mathbb{E}:\mathbb{k})
+                .\] 
+                And for $H\in \mathcal{G}$, define:
+                \[
+                \phi:\mathcal{G}^{op}\to \mathcal{E},\quad\psi(H)=\{x\in \mathbb{E}:\alpha(x)=x\forall \alpha\in H\} 
+                .\] 
+                (Recalling that elements of $H$ are automorphisms of $\mathbb{E}$).
+                Recalling from Galois theory that these maps produce a bijective correspondence of field extensions and subgroups, we see that they are functors which are both adjoint to each other.
+            \item 
+            \item 
+        \end{enumerate}
+    \item 2.1.14 (may be hard)
+
+    \item Let $G$ be a group.
+        \begin{enumerate}
+            \item What interesting functors are there (in either direction) between $\mathrm{Set}$ and the category $[G, \mathrm{Set} ]$ of left $G$-sets? Which of those functors are adjoint to which?
+            \item Similarly, what interesting functors are there between $\mathrm{Vect}_k$ and the category $[G, \mathrm{Vect}_k]$ of $k$-linear representations of $G$, and what adjunctions are there between those functors?
+        \end{enumerate}
+    \item Let $f:A\to B$ and $g:B\to A$ be order-preserving operations between ordered sets. Prove TFAE:
+        \begin{enumerate}
+            \item For any $a\in A,b\in B$, 
+                \[
+                f(a)\leq b\iff a\leq f(b)
+                .\] 
+            \item $a\leq g(f(a))$ for any $a\in A$ and $f(g(b))\leq b$ for any $b\in B$
+        \end{enumerate}
+    \item Show that for any adjunction, the right adjoint is full and faithful if and only if the counit is an isomorphism
+\end{enumerate}
+\end{document}
