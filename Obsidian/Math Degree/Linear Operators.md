@@ -9,7 +9,7 @@ A mapping $T$ from [[Vector Spaces|Vector Spaces]] $V\to W$ is called a linear o
 - $T(v_{1}+v_{2})=T(v_{1})+T(v_{2})$
 - $T(av)=aT(v)$
 ## Image
-The image (Range so as not to be confused with Im, the imaginary part), $ran T=\{ Tv|v\in V \}$. This is a subspace of $W$
+The image (Range so as not to be confused with $\mathrm{Im}$, the imaginary part), $ran T=\{ Tv|v\in V \}$. This is a subspace of $W$
 ## Kernel
 The kernel of a linear transformation $\ker T=\{ v|Tv=0 \}$ which is a subspace of $V$.
 # Linear Operators in Real and Complex Spaces

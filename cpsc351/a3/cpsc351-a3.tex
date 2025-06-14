@@ -8,48 +8,332 @@
 \begin{document}
 \begin{enumerate} 
 
-    \item Let $M=(Q,\Sigma,T,\delta,q_0,q_{\text{accept}}$ be a Turing machine, where:
+    \item Let $M=(Q,\Sigma,T,\delta,q_0,q_{\text{accept}})$ be a Turing machine, where:
         \begin{itemize}
             \item[] $Q=\{q_0,q_1,q_2,q_3,q_{\text{accept}}\} $,
             \item[] $\Sigma=\{0,1\} $ is the input alphabet
             \item[] $T=\{0,1,\perp \} $ is the tape alphabet (with $\perp $ denoting the blank symbol).
             \item[] The transition function $\delta$ is defined by the following table:
-                \begin{table}[htpb]
                     \centering
                     \begin{tabular}{c|c|c|c}
                     $\delta$ & 0 & 1 & $\perp $ \\
                     \hline
-                    $q_1$ &$(q_1,0,R)$ &$(q_1,0,R)$ &$(q_3,\perp ,R)$ \\
+                    $q_0$ &$(q_1,0,R)$ &$(q_1,0,R)$ &$(q_3,\perp ,R)$ \\
                     $q_1$ &$(q_1,0,R)$ &$(q_2,1,R)$ &$(q_3,\perp ,R)$ \\
-                    $q_1$ &$(q_2,0,R)$ &$(q_0,1,R)$ &$(q_3,\perp ,R)$ \\
-                    $q_1$ &$-$ &$-$ &$-$ \\
+                    $q_2$ &$(q_2,0,R)$ &$(q_0,1,R)$ &$(q_3,\perp ,R)$ \\
+                    $q_3$ &$-$ &$-$ &$-$ \\
                     \end{tabular}
-                \end{table}
-                
         \end{itemize}
 
         \begin{enumerate}
             \item Simulate the behavior of the Turing machine M on the following inputs. For each case, provide the final tape content and the halting state:
             \begin{enumerate}
                 \item  1011
+                    \paragraph{Solution: } Begin with the input string and the state $q_0$. 
+
+                    \begin{center}
+                        \centering
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {1};
+                       \node (C) [right=of B] {0};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\perp $};
+                       \node (G) [above =of B,] {$q_0$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (F.north east) -- ++(1cm,0) (F.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {0};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\perp $};
+                       \node (G) [above =of C,] {$q_1$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (F.north east) -- ++(1cm,0) (F.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {0};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\perp $};
+                       \node (G) [above =of D,] {$q_1$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (F.north east) -- ++(1cm,0) (F.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {0};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\perp $};
+                       \node (G) [above =of E,] {$q_2$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (F.north east) -- ++(1cm,0) (F.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {0};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\perp $};
+                       \node (G) [above =of F,] {$q_0$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (F.north east) -- ++(1cm,0) (F.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+                    \end{center}
+                    And at this point we transition to $q_3$ which is a halting state. We are left with the final tape content:
+
+                    \begin{center}
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {0};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\perp $};
+                    \end{tikzpicture}
+                    \end{center}
                 \item  111
+                    \paragraph{Solution: }
+
+                    \begin{center}
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {1};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {$\perp $};
+                       \node (G) [above =of B,] {$q_0$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (E.north east) -- ++(1cm,0) (E.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {$\perp $};
+                       \node (G) [above =of C,] {$q_1$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (E.north east) -- ++(1cm,0) (E.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {$\perp $};
+                       \node (G) [above =of D,] {$q_2$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (E.north east) -- ++(1cm,0) (E.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {$\perp $};
+                       \node (G) [above =of E,] {$q_0$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (E.north east) -- ++(1cm,0) (E.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+                    \end{center}
+                    And again, we will switch states to $q_3$ and halt, leaving us with the final tape:
+                    \begin{center}
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (F) [right=of D] {$\perp $};
+                    \end{tikzpicture}
+                    \end{center}
+                    \newpage
                 \item 010
+                    \paragraph{Solution: }
+                    \begin{center}
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {0};
+                       \node (E) [right=of D] {$\perp $};
+                       \node (G) [above =of B,] {$q_0$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (E.north east) -- ++(1cm,0) (E.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {0};
+                       \node (E) [right=of D] {$\perp $};
+                       \node (G) [above =of C,] {$q_1$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (E.north east) -- ++(1cm,0) (E.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {0};
+                       \node (E) [right=of D] {$\perp $};
+                       \node (G) [above =of D,] {$q_2$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (E.north east) -- ++(1cm,0) (E.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {0};
+                       \node (E) [right=of D] {$\perp $};
+                       \node (G) [above =of E,] {$q_2$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (E.north east) -- ++(1cm,0) (E.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+                    \end{center}
+                    And again, we will switch states to $q_3$ and halt, leaving us with the final tape:
+                    \begin{center}
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {0};
+                       \node (F) [right=of D] {$\perp $};
+                    \end{tikzpicture}
+                    \end{center}
             \end{enumerate}
         \item Describe the general behavior of $M$ when the input is of the form $1^{k}$ for some $k\in \mathbb{N}$.
-        \item Construct a Turing machine $M'=(Q',\Sigma,T,\delta',q_0',q_{\text{accept}}')$, where $T=\{0,1,\perp \} $, that satisfies each of the following:
+            \paragraph{Solution: }
+                    \begin{center}
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {1};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\dots$};
+                       \node (G) [right=of F] {$\perp $};
+                       \node (H) [above =of B,] {$q_0$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (G.north east) -- ++(1cm,0) (G.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\dots$};
+                       \node (G) [right=of F] {$\perp $};
+                       \node (H) [above =of C,] {$q_1$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (G.north east) -- ++(1cm,0) (G.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\dots$};
+                       \node (G) [right=of F] {$\perp $};
+                       \node (H) [above =of D,] {$q_2$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (G.north east) -- ++(1cm,0) (G.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+
+                    \begin{tikzpicture}[every node/.style={block},
+                            block/.style={minimum height=1.5em,outer sep=0pt,draw,rectangle,node distance=0pt}]
+                       \node (A) {$\perp $};
+                       \node (B) [right=of A] {0};
+                       \node (C) [right=of B] {1};
+                       \node (D) [right=of C] {1};
+                       \node (E) [right=of D] {1};
+                       \node (F) [right=of E] {$\dots$};
+                       \node (G) [right=of F] {$\perp $};
+                       \node (H) [above =of E,] {$q_0$};
+                       \draw (A.north west) -- ++(-1cm,0) (A.south west) -- ++ (-1cm,0) 
+                                     (G.north east) -- ++(1cm,0) (G.south east) -- ++ (1cm,0);
+                    \end{tikzpicture}
+                    \end{center}
+                    Now, we can see that we are in the same starting state, only now we are working with the string $1^{k-3}$. So we repeat the above process on this substring, and continue until we find the character $\perp $, at which point we will be stuck in $q_3$, and halt. So we can say that the machine takes a string $1^{k}$ and converts every third $1$ to a zero, starting with the first $1$.
+        \item Construct a Turing machine $M'=(Q',\Sigma,T,\delta',q_0',q_{\text{accept}}')$, where $T=\{0,1,\perp \} $, that satisfies each of the following: 
             \begin{enumerate}
                 \item Replaces the first occurrence of the substring 01 in the input with 10, and leaves the rest unchanged.
                 \item Accepts if and only if the input contains the substring 010. 
             \end{enumerate}
         Specify only the state transitions relevant to this task (you may assume the rest lead to a rejecting state or halt).
+            \paragraph{Solution: }%TODO
         \end{enumerate}
 
     \item Let $\Sigma=\{0,1\} .$ Define the language:
-        \[
-        L'=\{0^{n}1^{n}0^{n}1^{n}|n\in \mathbb{N}_0\} 
-        .\] 
+        \[ L'=\{0^{n}1^{n}0^{n}1^{n}|n\in \mathbb{N}_0\} .\]  %TODO
         \begin{enumerate}[label= (\alph*)] 
             \item Design a Turing machine that accepts the language $L'$.
+                \paragraph{Solution: } Let $M=(Q,\Sigma,T,\delta,q_0,q_{\text{accept}})$ be a Turing machine, where:
+                \begin{itemize}
+                    \item[] $Q=\{q_0,q_1,q_2,q_3,q_{\text{accept}}\} $,
+                    \item[] $\Sigma=\{0,1\} $ is the input alphabet
+                    \item[] $T=\{0,1,\perp \} $ is the tape alphabet (with $\perp $ denoting the blank symbol).
+                    \item[] The transition function $\delta$ is defined by the following table:
+                        \begin{table}[htpb]
+                            \centering
+                            \begin{tabular}{c|c|c|c}
+                            $\delta$ & 0 & 1 & $\perp $ \\
+                            \hline
+                            $q_0$ &$(q_1,0,R)$ &$(q_1,0,R)$ &$(q_3,\perp ,R)$ \\
+                            $q_A$ &$-$ &$-$ &$-$ \\
+                            \end{tabular}
+                        \end{table}
+                \end{itemize}
+                Provided for readability is a summary of each state and its purpose:
+                \begin{enumerate}%TODO numbres ?
+                    \setcounter{enumi}{0}
+                    \item Initial state. As well, this state scans right until it finds $\perp $, then moves to the left and switches to state 1.
+                    \item When this state is reached, the position on the tape should be on the furthest left 0 or 1. If it's a 1, we switch to state 2. If it's a 0 or $\perp $ we halt.
+                    \item This state scans left until it finds $\perp $, then moves to the right and switches to state 3.
+                \end{enumerate}
             \item Prove that if the Turing machine accepts a string $x$, then $x\in L'$.
             \item Modify the Turing machine so that it replaces the input $x\in L'$ with the string $xx$ (i.e.,
             it duplicates the input).

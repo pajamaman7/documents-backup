@@ -27,3 +27,6 @@ $\alpha$ is a infimum for a set $E$ which is bounded below, or $\alpha=\inf E$ i
 Note that infimums and supremums may or may not be contained in $E$.
 ## Least upper bound property
 A set $S$ is said to have the least upper bound property if: For any nonempty $E\subseteq S$ that is bounded above, $\sup E\in S$.
+$$
+
+$$

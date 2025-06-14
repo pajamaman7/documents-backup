@@ -22,7 +22,7 @@
                 .\] 
                 (Recalling that elements of $H$ are automorphisms of $\mathbb{E}$).
                 A study of Galois theory tells us that these maps produce a bijective correspondence of field extensions and subgroups, we see that they are functors which are both adjoint to each other.
-            \item 
+            \item In the category of fields of characteristic  $p$, for some fixed $p$, the field $\mathbb{F}_p$ is initial.
             \item 
         \end{enumerate}
     \item 2.1.14 (may be hard)
@@ -32,16 +32,15 @@
             \item What interesting functors are there (in either direction) between $\mathrm{Set}$ and the category $[G, \mathrm{Set} ]$ of left $G$-sets? Which of those functors are adjoint to which?
                 \paragraph{Solution: } Consider $F$, the forgetful functor from $[G,\mathrm{Set}]\to \mathrm{Set}$, which takes an action and maps it to the set it acts on.
 
-                Then take $L:\mathrm{Set}\to [G,\mathrm{Set}]$, which takes a set $X$ in $\mathrm{Set}$ and maps it to an action $G\times X$, defined by $h(g,x)=(hg,x)$.
+                Then take $L:\mathrm{Set}\to [G,\mathrm{Set}]$, which takes a set $X$ in $\mathrm{Set}$ and maps it to an action $G\times X$, defined by $h(g,x)=(hg,x)$. For a functor in $\mathrm{Set}$, we map $L(f(x))=(g,f(x))$
 
-                No take $R:\mathrm{Set}\to [G,\mathrm{Set}]$ defined by $R(X)=\mathrm{Map}(G,X)=\{f:G\to X\} $. We equip $\mathrm{Map}(G,X)$ with an action, $g\phi(h)=\phi(gh)$.
+                No take $R:\mathrm{Set}\to [G,\mathrm{Set}]$ defined by $R(X)=\mathrm{Map}(G,X)=\{f:G\to X\} $. We equip $\mathrm{Map}(G,X)$ with an action, $g\phi(h)=\phi(gh)$. For a functor $g$ in $\mathrm{Set}$, we map $R(g)=$
 
                 Finally we claim that these are adjoint:
                 \[\xymatrix{
                         [G,\mathrm{Set}]\ar[d]|F\\
                         \mathrm{Set}\ar@<2.5ex>[u]_{\dashv}^{L}\ar@<-2.5ex>[u]^{\dashv}_{R}
                 }\]
-            \item Similarly, what interesting functors are there between $\mathrm{Vect}_k$ and the category $[G, \mathrm{Vect}_k]$ of $k$-linear representations of $G$, and what adjunctions are there between those functors?
         \end{enumerate}
     \item Let $f:A\to B$ and $g:B\to A$ be order-preserving operations between ordered sets. Prove TFAE:
         \begin{enumerate}
