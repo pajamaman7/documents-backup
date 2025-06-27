@@ -58,10 +58,6 @@ The order of a group is notated $|G|$ and is the number of elements in the group
 $o(a)$ or the order of an element $a\in G$ for some finite group $G$ is defined as the least positive integer $k$ so that $a^{k}=e$. 
 If we cannot find a nonzero $k$ which satisifies this, we say that $a$ has infinite order ($o(a)=\infty$).
 The order of an element divides the order of the group. This result can be shown with [[Lagrange's Theorem]].
-### Fundamental theorem of Finite cyclic groups
-Let $G=\left< g \right>$ be a cyclic group and $o(g)=n$.
-1. If $H$ is a subgroup of $G$ then $H=\left< g^{d} \right>$ for some $d|n$. In fact, $|H|\big| |G|$
-2. Conversely, if $k|n$, there exists a unique subgroup $H$ of order $k$.
 ### Finding Generators
 Let $G=\left< g \right>$, and $o(g)=n$. Then $G=\left< g^{k} \right>\iff \gcd(k,n)=1$. So powers of a generator that are coprime with the order of that generator, will also generate the group.
 #### Properties 

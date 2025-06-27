@@ -30,11 +30,14 @@
     \item Let $G$ be a group.
         \begin{enumerate}
             \item What interesting functors are there (in either direction) between $\mathrm{Set}$ and the category $[G, \mathrm{Set} ]$ of left $G$-sets? Which of those functors are adjoint to which?
-                \paragraph{Solution: } Consider $F$, the forgetful functor from $[G,\mathrm{Set}]\to \mathrm{Set}$, which takes an action and maps it to the set it acts on.
+                \paragraph{Solution: } Consider $F$, the forgetful functor from $[G,\mathrm{Set}]\to \mathrm{Set}$, which takes an action and maps it to the set it acts on. A morphism in $[G,\mathrm{Set}]$ is a natural transformation, which is a single map in $\mathrm{Set}.$ Map this to the same set function.
 
-                Then take $L:\mathrm{Set}\to [G,\mathrm{Set}]$, which takes a set $X$ in $\mathrm{Set}$ and maps it to an action $G\times X$, defined by $h(g,x)=(hg,x)$. For a functor in $\mathrm{Set}$, we map $L(f(x))=(g,f(x))$
+                %Then take $L:\mathrm{Set}\to [G,\mathrm{Set}]$, which takes a set $X$ in $\mathrm{Set}$ and maps it to an action $G\times X$, defined by $h(g,x)=(hg,x)$. TODO what does this do on morphisms etc?
+                Define $L:\mathrm{Set}\to [G,\mathrm{Set}], $ with $L(X)=G\times X$, and for $f:X\to Y,$ take $Lf(g,x)=(g,f(x))$
 
-                No take $R:\mathrm{Set}\to [G,\mathrm{Set}]$ defined by $R(X)=\mathrm{Map}(G,X)=\{f:G\to X\} $. We equip $\mathrm{Map}(G,X)$ with an action, $g\phi(h)=\phi(gh)$. For a functor $g$ in $\mathrm{Set}$, we map $R(g)=$
+
+
+                No take $R:\mathrm{Set}\to [G,\mathrm{Set}]$ defined by $R(X)=\mathrm{Map}(G,X)=\{f:G\to X\} $. We equip $\mathrm{Map}(G,X)$ with an action, $g\phi(h)=\phi(gh)$. For a morphism $g$ in $\mathrm{Set}$, we map $R(g(x))=$
 
                 Finally we claim that these are adjoint:
                 \[\xymatrix{

@@ -1,6 +1,6 @@
 {
   "theme": "obsidian",
-  "cssTheme": "Everforest",
+  "cssTheme": "Obsidian gruvbox",
   "baseFontSize": 20,
   "enabledCssSnippets": [
     "largertikz"

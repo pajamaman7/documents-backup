@@ -12,7 +12,7 @@
         \begin{itemize}
             \item[] $Q=\{q_0,q_1,q_2,q_3,q_{\text{accept}}\} $,
             \item[] $\Sigma=\{0,1\} $ is the input alphabet
-            \item[] $T=\{0,1,\perp \} $ is the tape alphabet (with $\perp $ denoting the blank symbol).
+            \item[] $T=\{0,1,W,X,Y,Z,\perp \} $ is the tape alphabet (with $\perp $ denoting the blank symbol).
             \item[] The transition function $\delta$ is defined by the following table:
                     \centering
                     \begin{tabular}{c|c|c|c}
@@ -298,46 +298,136 @@
                     \end{tikzpicture}
                     \end{center}
                     Now, we can see that we are in the same starting state, only now we are working with the string $1^{k-3}$. So we repeat the above process on this substring, and continue until we find the character $\perp $, at which point we will be stuck in $q_3$, and halt. So we can say that the machine takes a string $1^{k}$ and converts every third $1$ to a zero, starting with the first $1$.
+                    \newpage
         \item Construct a Turing machine $M'=(Q',\Sigma,T,\delta',q_0',q_{\text{accept}}')$, where $T=\{0,1,\perp \} $, that satisfies each of the following: 
             \begin{enumerate}
                 \item Replaces the first occurrence of the substring 01 in the input with 10, and leaves the rest unchanged.
                 \item Accepts if and only if the input contains the substring 010. 
             \end{enumerate}
         Specify only the state transitions relevant to this task (you may assume the rest lead to a rejecting state or halt).
-            \paragraph{Solution: }%TODO
+            \paragraph{Solution: }
+                Let $M=(Q,\Sigma,T,\delta,q_0,q_{\text{accept}})$ be a Turing machine, where:
+                \begin{itemize}
+                    \item[] $Q=\{q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_{\text{accept}},q_{\text{reject}}\} $,
+                    \item[] $\Sigma=\{0,1\} $ is the input alphabet
+                    \item[] $T=\{0,1,\perp \} $ is the tape alphabet (with $\perp $ denoting the blank symbol).
+                    \item[] The transition function $\delta$ is defined by the following table 
+                \end{itemize}
+                \begin{center}
+                    \begin{tabular}{c|c|c|c}
+                    $\delta$ & 0 & 1 & $\perp $ \\
+                    \hline
+                    $q_0$ &$(q_1,0,R)$&$(q_0,1,R)$&$(q_7,\perp ,L)$ \\ 
+                    $q_1$ &$(q_1,0,R)$&$(q_2,1,R)$&$(q_7,\perp ,L)$ \\ 
+                    $q_2$ &$(q_3,0,L)$&$(q_0,1,R)$&$(q_7,\perp ,L)$\\ 
+                    $q_3$ &$(q_3,0,L)$&$(q_0,1,L)$& $(q_4,\perp ,R)$\\ 
+                    $q_4$ &$(q_5,0,R)$&$(q_4,1,R)$& $(q_A,\perp ,R)$\\ 
+                    $q_5$ &$(q_5,0,R)$&$(q_6,0,L)$& $(q_A,\perp ,R)$\\ 
+                    $q_6$ &$(q_A,1,R)$&$-$& $-$\\ 
+                    $q_7$ &$(q_7,0,L)$&$(q_7,1,L)$& $-$\\ 
+                    $q_8$ &$(q_9,0,R)$&$(q_8,1,R)$& $-$\\ 
+                    $q_9$ &$(q_9,0,R)$&$(q_{10},0,L)$& $-$\\ 
+                    $q_{10}$ &$(q_A,1,R)$&$-$& $-$\\ 
+                    \end{tabular}
+                \end{center}
+                Summary: $q_0$ to $q_2$ will search for the 010 in the input tape.
+
+                If 010 is found, $q_3$ will loop back to the start, and $q_4$ to $q_6$ will scan for $01$ and replace it with $10$ and accept.
+
+                If 010 is not found, we are at the right end of the tape, and we go to  $q_7$. $q_7$ scans back to the start of the tape, and moves to $q_8$ through $q_{10}$ which perform identically to $q_4$ through $q_6$, however these will reject after completion (or if a blank space is found while scanning).
+
         \end{enumerate}
 
     \item Let $\Sigma=\{0,1\} .$ Define the language:
-        \[ L'=\{0^{n}1^{n}0^{n}1^{n}|n\in \mathbb{N}_0\} .\]  %TODO
+        \[ L'=\{0^{n}1^{n}0^{n}1^{n}|n\in \mathbb{N}_0\} .\]  
         \begin{enumerate}[label= (\alph*)] 
             \item Design a Turing machine that accepts the language $L'$.
                 \paragraph{Solution: } Let $M=(Q,\Sigma,T,\delta,q_0,q_{\text{accept}})$ be a Turing machine, where:
                 \begin{itemize}
-                    \item[] $Q=\{q_0,q_1,q_2,q_3,q_{\text{accept}}\} $,
+                    \item[] $Q=\{q_0,q_1,q_2,q_3,q_4,q_5,q_6,q_{\text{accept}},q_{\text{reject}}\} $,
                     \item[] $\Sigma=\{0,1\} $ is the input alphabet
-                    \item[] $T=\{0,1,\perp \} $ is the tape alphabet (with $\perp $ denoting the blank symbol).
-                    \item[] The transition function $\delta$ is defined by the following table:
-                        \begin{table}[htpb]
-                            \centering
-                            \begin{tabular}{c|c|c|c}
-                            $\delta$ & 0 & 1 & $\perp $ \\
-                            \hline
-                            $q_0$ &$(q_1,0,R)$ &$(q_1,0,R)$ &$(q_3,\perp ,R)$ \\
-                            $q_A$ &$-$ &$-$ &$-$ \\
-                            \end{tabular}
-                        \end{table}
+                    \item[] $T=\{0,1,X,Y,\perp \} $ is the tape alphabet (with $\perp $ denoting the blank symbol).
+                    \item[] The transition function $\delta$ is defined by the following (it is understood that "search right for \_" means to move right and leave characters unchanged until the specified character is found):
                 \end{itemize}
-                Provided for readability is a summary of each state and its purpose:
-                \begin{enumerate}%TODO numbres ?
-                    \setcounter{enumi}{0}
-                    \item Initial state. As well, this state scans right until it finds $\perp $, then moves to the left and switches to state 1.
-                    \item When this state is reached, the position on the tape should be on the furthest left 0 or 1. If it's a 1, we switch to state 2. If it's a 0 or $\perp $ we halt.
-                    \item This state scans left until it finds $\perp $, then moves to the right and switches to state 3.
-                \end{enumerate}
-            \item Prove that if the Turing machine accepts a string $x$, then $x\in L'$.
-            \item Modify the Turing machine so that it replaces the input $x\in L'$ with the string $xx$ (i.e.,
-            it duplicates the input).
+                \begin{itemize}
+                    \item[] $q_0$: Search right for a 0. When one is found, mark it $X$ and go to $q_1$. If $\perp $ is found, go to $q_5$.
+                    \item[] $q_1$: Search for $1$. When one is found, mark it $Y$ and go to $q_2$. Reject if $\perp $ is found.
+                    \item[] $q_2$: Search right for a 0. When one is found, mark it $X$ and go to $q_3$. If $\perp $ is found, reject.
+                    \item[] $q_3$: Search for $1$. When one is found, mark it $Y$ and go to $q_4$. Reject if $\perp $ is found.
+                    \item[] $q_4:$ Search left for $\perp $. Then move right and go to $q_0$.
+                    \item[] $q_5$: The final check. Search left. If a $0$ or $1$ is found, reject. If a $\perp$ is found, accept.
+                \end{itemize}
+            \item Prove that if the Turing machine accepts a string $x$, then $x\in L'$. 
+
+                Could not finish this :(
+                \begin{proof} 
+                    Suppose that $M$ accepts $x$. Then after $q_0$ through $q_4$ have finished processing, there will be no $0,1$ on the tape (In order for $M$ to accept a string, it must have reached $q_5$ at the right end of the tape and $q_5$ must find no 0,1 in the tape).
+                    \iffalse  
+                    First observe the design of the machine is such that we iterate over $q_1$, to $q_4$, so that a valid string will have the following structure after $k$ iterations:
+                    \begin{itemize}
+                        \item  $X^k$ followed by $0^{n-k}$ (first block of 0s).
+                        \item  $Y^k$ followed by $1^{n-k}$ (second block of 1s).
+                        \item  $X^k$ followed by $0^{n-k}$ (third block of 0s).
+                        \item  $Y^k$ followed by $1^{n-k}$ (fourth block of 1s).
+                    \end{itemize}
+                    Proceed by induction on $n$. If $n=0$, the tape is empty, and $q_0$ will move to $q_5$, which will search left, find a 
+                    \fi
+                \end{proof}
+            \item Modify the Turing machine so that it replaces the input $x\in L'$ with the string $xx$ (i.e., it duplicates the input).
+                \paragraph{Solution: }Leave the machine $M$ unchanged, however add states, and change $q_5:$ 
+                \begin{itemize}
+                    \item[] $q_5:$ Sweep left until $\perp $, then switch to $q_6$. If  a 0 or 1 is found, reject.
+                    \item[] $q_6$: Switch an $X$ to a 0 and switch to $q_7$. Or, switch a $Y$ to a 1 and switch to $q_8$. If $\perp $ is found, accept.
+                    \item[] Search right for $\perp $, then change it to $0$ and switch to $q_9$.
+                    \item[] Search right for $\perp $, then change it to $1$ and switch to $q_9$.
+                    \item[] Search left for a 0 or 1. Leave it unchanged, then move right and switch to  $q_6$
+                \end{itemize}
             \item Prove that the modified machine correctly duplicates the input only if $x\in L'$.
+
+                Could not finish this :(
+
+        \end{enumerate}
+    \item Consider an infinite collection of mirrors $\{M_i\} _{i\in \mathbb{N}}$ in an art gallery. Each mirror $M_i$ displays a unique digital artwork titled $\mathrm{Art}_i$, generated by a python function $P_i$. The artwork may or may not visually include the string "Art\_i" within its display. Define the language: 
+        \[ L=\{i\in \mathbb{N}|\text{Python function } P_i \text{ does not include the string Art\_i in its output}\} .\] 
+        \begin{enumerate}[label= (\alph*)] 
+            \item Is the language L Python recognizable? Justify your answer.
+
+                Could not finish this :(
+                \paragraph{Solution: }This language is not recognizable. 
+
+            \item Is $L_{\text{Halting}}$ Python reducable to $L$? Justify your answer.
+
+                Could not finish this :(
+        \end{enumerate}
+    \item Let us define four new languages over Python functions. Determine whether they are Python- decidable.
+        \begin{enumerate}[label= (\alph*)] 
+            \item Let $L_\text{SyntaxCheck}$ contains all strings that define a syntactically correct Python function.
+                \[
+                    L_\text{SyntaxCheck} =\{\verb|code|\, | \verb|code| \text{ is a syntactically valid Python function definition}\} .\] 
+                    \paragraph{Solution: }Since the Python interpreter can detect syntax errors, it recognizes $L_{\text{SyntaxCheck}}$, and the language is Python decidable. (In fact, there is a Python interpreter Byterun, written only in Python).
+            \item Let $L_\text{EventuallyTrue}$ be the set of all Python functions \verb|func| such that for at least one argument \verb|arg|, \verb|func(arg)| returns \verb|true|. Hence,
+                \[
+                    L_\text{EventuallyTrue} =\{\verb|func| | \exists \verb|arg|, \verb|func(arg) = True|\} .\] 
+                    \paragraph{Solution: }
+
+                    
+
+                    Could not finish this :(
+                    \newpage
+                \item Let $L_\text{FalseOnSelf}$ be the set of all Python functions \verb|func| such that \verb|func(func)| returns \verb|False|. Hence,
+                \[
+                L_\text{FalseOnSelf} = \{\verb|func|| \verb|func(func) = False|\} 
+                .\] 
+                
+                \paragraph{Solution: } Let $D$ be a decider, for the sake of contradiction. Consider $D(D)$. If $D(D)$ is true, then $D\in L_{\text{FalseOnSelf}}$, and therefore $D(D)$ must be false. A contradiction!
+
+                On the other hand, if $D(D)$ is false, then $D\not\in L_{\text{FalseOnSelf}}$, and therefore $D(D)$ must be true. A contradiction! Therefore no such decider can exist and $L_\text{FalseOnSelf}$ cannot be decidable.
+
+            \item Let $L_\text{HaltOnEmpty}$ contains all Python functions that halt when run with no arguments.
+                \[
+                L_\text{HaltOnEmpty} = \{\verb |func| | \verb|func()| \text{halts (terminates execution)}\} 
+                .\] 
+                \paragraph{Solution: }The halting problem reduces to $L_\text{HaltOnEmpty}$, and is as such undecidable.
         \end{enumerate}
 \end{enumerate}
 \end{document}
