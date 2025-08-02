@@ -14,10 +14,29 @@ This assignment requests questions 3-12 from Papa Rudin be done
     \item  Let $\{a_n\}$ and $\{b_n\}$ be sequences in $[-\infty, \infty]$, and prove the following assertions:
 \begin{enumerate}
     \item $$\limsup_{n \to \infty} (-a_n) = -\liminf_{n \to \infty} a_n.$$
+        \begin{proof} 
+            
+        We first begin by showing that $\sup -a_n = -\inf a_n$. The result follows from properties of limits, namely $\lim\limits_{n \to \infty} -a_n=-\lim\limits_{n \to \infty} a_n$ provided the limit exists.
+
+        Let $\beta=\inf\limits_{m>n}a_n$. Then for any $m>n$, we have $\beta<a_m$, and therefore $-\beta>-a_m$. So $-\beta$ is an upper bound for $-a_m$.
+
+        Since is the greatest lower bound for $A=\{ a_m :m>n\}$, we have that if $\gamma>\beta$ is a lower bound for $A$, then necessarily $\gamma=\beta$.
+
+        Suppose that $\alpha$ is a lesser upper bound for %TODO idk
+        \end{proof}
     \item $$ \limsup_{n \to \infty} (a_n + b_n) \leq \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n$$ provided none of the sums is of the form $\infty - \infty$.
+        \begin{proof} 
+            Suppose that $a_n,b_n$ are as above.
+
+            \begin{align*}
+                \limsup_{n \to \infty} (a_n + b_n) &= \lim_{n \to \infty} \sup_{m>n}(a_n+b_n) \\
+            .\end{align*}
+
+        \end{proof}
+
+        One needs only to choose constant sequences (or one constant and one non-constant), in order for strict equality to hold.
     \item If $a_n \leq b_n$ for all $n$, then
     $$\liminf_{n \to \infty} a_n \leq \liminf_{n \to \infty} b_n.$$
-    Show by an example that strict inequality can hold in (b).
 \end{enumerate}
 
 \end{enumerate}

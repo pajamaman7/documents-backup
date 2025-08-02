@@ -1,3 +1,4 @@
+(See [[Taylor Series]])
 Let $f:\mathbb{R}^n\to \mathbb{R}$, so that $f$ has $p$ continuous derivatives, and the $p+1$th derivative of $f$ exists.
 $\forall x\in\Omega,h\in\mathbb{R}^n$. If the line segment from $x$ to $x+h$ is contained in $\Omega$, then $\exists\theta \in(0,1)$ so that:
 $$

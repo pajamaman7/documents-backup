@@ -35,7 +35,7 @@ $$\oint_\gamma f(z)dz$$
 - $\int_{\gamma\delta}^{} f(z) \, dz=\int_{\gamma}^{} f(z) \, dz+\int_{\delta}^{} f(z) \, dz$
 - If we have a constant contour, the integral becomes 0
 ### Cauchy Theorem
-If $f$ is holomorphic, and $\gamma, \delta$ are closed and homotopic, then
+If $f$ is [[Differentiation of Complex Functions|Holomorphic]], and $\gamma, \delta$ are closed and homotopic, then
 $$\oint_{\delta}^{} f(z) \, dz=\oint_{\gamma}^{} f(z) \, dz  $$
 In particular, if $D$ is simply-connected, every contour is homotopic to a constant contour, and every integral becomes zero.
 ### Equivalent for open contours
@@ -70,4 +70,4 @@ It follows with a change of variable;
 $$f(z)=\frac{1}{2\pi i}\oint \frac{f(w)}{w-z}$$
 And a property of differentiation:
 $$f^{(n)}(a)=\frac{n!}{2\pi i}\oint_{\gamma} \frac{f(z)}{(z-a)^{n+1}}dz$$
-Which implies that all complex holomorphic functions are infinitely differentiable.
+Which implies that all [[Complex Numbers|Complex]] holomorphic functions are infinitely differentiable.

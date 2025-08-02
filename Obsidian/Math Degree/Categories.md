@@ -1,3 +1,8 @@
+---
+aliases:
+  - Category
+---
+
 A category $C$ is a collection of objects, along with a collection of **morphisms** satisfying:
 - Each morphism has domain and codomain objects, denoted as typical; $f:x\to y$.
 - Identity: For any object $x,$ there exists a morphism $1_x:x\to x$. This introduces the condition that $1_yf=f,f {1}_x=f$

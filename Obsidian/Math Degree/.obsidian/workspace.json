@@ -41,43 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Functors.md",
+                "file": "Representable Functors.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Functors"
-            }
-          },
-          {
-            "id": "194c1076d7ce8a00",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Improper Integrals.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Improper Integrals"
-            }
-          },
-          {
-            "id": "b87df595bba6590d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Natural Transformation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Natural Transformation"
+              "title": "Representable Functors"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -220,15 +193,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4f759c3c0e29bc49",
+  "active": "055b69f4be888adf",
   "lastOpenFiles": [
+    "Categories.md",
+    "Representable Functors.md",
+    "Functors.md",
     "Groups.md",
     "Fundamental Theorem of Finite Cyclic Groups.md",
+    "Improper Integrals.md",
+    "Two Sample CIs.md",
+    "Multivariable Taylor's Theorem.md",
+    "Baire Category Theorem.md",
+    "Elementary Functions on Complex Variables.md",
+    "Untitled 3.md",
+    "Pivotal Quantity Method.md",
+    "Integration of Functions of Complex Variable.md",
+    "Diophantine Approximation.md",
+    "Natural Transformation.md",
     "Monoid.md",
     "Monte Carlo Algorithms.md",
-    "Functors.md",
-    "Natural Transformation.md",
-    "Improper Integrals.md",
     "Ordered Set.md",
     "Systems of First Order Linear DEs.md",
     "Linear Operators.md",
@@ -238,16 +221,6 @@
     "Set.md",
     "Series of Subgroups.md",
     "Central Series.md",
-    "Integers.md",
-    "Turing Machines.md",
-    "Regular Expressions.md",
-    "Group Actions.md",
-    "Galois Theory.md",
-    "Real Function of Several Variables.md",
-    "Finite Automata.md",
-    "Formal Language.md",
-    "Categories.md",
-    "Regular Languages.md",
     "preamble.sty",
     "Untitled.canvas",
     "Untitled 1.canvas",

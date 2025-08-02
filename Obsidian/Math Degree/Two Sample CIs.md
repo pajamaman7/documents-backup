@@ -1,3 +1,4 @@
+(See [[Confidence Intervals]])
 ## $\sigma^{2}$
 A $1-\alpha$ CI for the ratio of variances:
 $$\frac{S_1^2}{F_{1-\alpha/2,(n_1-1,n_2-1)}\cdot S_2^2}\leq\frac{\sigma_1^2}{\sigma_2^2}\leq\frac{S_1^2}{F_{\alpha/2,(n_1-1,n_2-1)}\cdot S_2^2}$$
