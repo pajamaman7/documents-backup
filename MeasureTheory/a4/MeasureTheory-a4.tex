@@ -1,0 +1,56 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $4$}
+\rhead{Thomas Boyko}
+\chead{}
+\newtheorem[M]{exe}{Exercise}
+
+\begin{document}
+\begin{exe}
+    Compute the Lebesgue integrals of the following functions:
+    \[
+    f_1(x)=x^2,\qquad f_2(x)=\frac{1}{1+x^2},\qquad f_3(x)=e^{-|x|}
+    .\] 
+\end{exe}
+As suggested, we use the property:
+\[
+    \int f(x)\mathbb{1}_{[a,b]} \, d\lambda= \int_{a}^{b} f(x) \, d x 
+.\] 
+Along with the convergent increasing sequence of real functions:
+\[
+    \lim_{n \to \infty} \mathbb{1}_{[-n,n]}=1
+.\] 
+Starting with $f_1$:
+\begin{align*}
+    \int f_1(x) \, d\lambda&= \int \lim_{n \to \infty} f_1(x)\mathbb{1}_{[-n,n]} \, d\lambda  \\ 
+                           &= \lim_{n \to \infty} \int x^2\mathbb{1}_{[-n,n]} \, d\lambda &\text{By Monotone convergence}  \\
+                           &= \lim_{n \to \infty} {\mathcal{R}}\int_{-n}^{n} x^2 \, d x \\
+                           &= \lim_{n \to \infty} \left( \frac{x^3}{3} \right) ^{n}_{-n} \\
+                           &= \lim_{n \to \infty} \left( \frac{n^3}{3}- \frac{-n^3}{3} \right)  \\
+                           &= \infty+\infty \\
+                           &=\infty
+.\end{align*}
+And for $f_2$:
+\begin{align*}
+    \int f_2(x) \, d\lambda&= \int \lim_{n \to \infty} \frac{1}{1+x^2} \mathbb{1}_{[-n,n]}\, d\lambda  \\ 
+                           &= \lim_{n \to \infty} \int \frac{1}{1+x^2}\mathbb{1}_{[-n,n]} \, d\lambda &\text{By Monotone Convergence} \\
+                           &= \lim_{n \to \infty} \mathcal{R}\int_{-n}^{n} \frac{1}{1+x^2} \, d x  \\
+                           &= \lim_{n \to \infty} \left( \arctan x \right) ^{n}_{-n} \\
+                           &= lim\left( \arctan n - \arctan -n \right)  \\
+                           &= \frac{\pi}{2} - \left( -\frac{\pi}{2} \right)  \\
+                           &=\pi
+.\end{align*}
+Finally for $f_3$
+\begin{align*}
+    \int f_3(x) \, d\lambda&= \int \lim_{n \to \infty} e^{-|x|}\mathbb{1}_{[-n,n]} \, d\lambda  \\ 
+                           &= \lim_{n\to\infty} \int e^{-|x|}\mathbb{1}_{[-n,n]} \, d\lambda&\text{By Monotone Convergence}  \\
+                           &= \lim_{n\to\infty} \mathcal{R}\int_{-n}^{n} e^{-|x|} \, d x  \\
+                           &= \lim_{n\to\infty} \left( \mathcal{R}\int_{-n}^{0} e^{x} \, d x +\mathcal{R}\int_{0}^{n} e^{-x} \, d x   \right)  \\
+                           &= \lim_{n\to\infty} \left( e^{x} \right) _{-n}^{0}+\left( -e^{-x} \right) _0^{n} \\
+                           &= \lim_{n\to\infty} e^{0}-e^{-n}-e^{-n}+e^{0} \\
+                           &= 1-0-0+1 \\
+                           &=2
+.\end{align*}
+
+\end{document}

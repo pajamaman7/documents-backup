@@ -1,0 +1,47 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $2$}
+\rhead{Thomas Boyko}
+\chead{}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{exe}
+    
+    In the surface $M_g$ of genus $g$, let $C$ be a circle that separates $G_g$ into two compact subsurfaces $M'_h$ and $M_k'$ obtained from the closed surfaces $M_h$ and $M_k$ by deleting an open disk from each. Show that $M'_h$ does not retract onto its boundary circle $C$ and hence $M_g$ does not retract onto $C$. [Hint: abelianize $\pi_1$.] But show that $M_g$ does retract onto the nonseparating circle $C'$ in the figure (Hatcher).
+\end{exe}
+\paragraph{Solution: }
+% These Mhk are subcomplexes with boundary on one of the 1-cells
+
+%Build Mg differently as a cw complex by adding a 1-cell loop?
+
+Begin with a quick computation of the fundamental group of the punctured surface of genus $g$, $M_g$. Recall the construction of $M_g$ consisted of a single $0$-cell, $2g$ $1$-cells, and a single $2$-cell. Puncturing the $2$-cell with a hole or by removing a single point allows us to retract the hole onto the boundary of the cell. After gluing the boundary to the 1-cells, we will just be left with the $1$-cells, and we will have a retract onto $\bigvee^{2g}S^{1}$. And since we know the fundamental group of the wedge sum, we are left with: \[
+    \pi_1(S^{1})=\overbrace{\pi_1(S^{1})*\dots*\pi_1(S^{1})}^{2g\text{ times}}=\overbrace{\mathbb{Z}*\dots* \mathbb{Z} }^{2g\text{ times}}
+.\] 
+Now suppose for the sake of contradiction that $M_h'$ did retract onto the boundary circle $C\simeq S^{1}$, for some retraction $r$. Then the homomorphism induced by the inclusion $\iota_*:\pi_1(S_1)\to \pi_1(M_h')$ would be injective, and the composition $r_*\iota_*$ would be identity. Then, applying $\pi_1$ and then $ab$,
+\[\xymatrix{
+        \pi_1(S_1)\ar@/_1pc/[rr]_{id_*}\ar@{->>}[r]^{\iota_*}&\pi_1(M_h')\ar@{->}[r]^{r_*}&\pi_1(S^{1})\\
+    \mathbb{Z}\ar@/_1.5pc/[rr]_{id_*^{ab}}\ar@{->>}[r]^{\iota_*^{ab}}&\mathbb{Z}^{2g} \ar@{->}[r]^{r_*^{ab}}&\mathbb{Z}
+}\]
+
+However, since $\iota_*$ maps the generator of $\mathbb{Z}$ to some commutator $aba^{-1}b^{-1}$, and abelianization kills all the commutators through the quotient, we must have $\iota_*^{ab}$ identically zero (homomorphisms from a cyclic group are determined by their evaluation on generator). This contradicts $r_*^{ab}\iota_*^{ab}=id_*^{ab}$, and so $M_k'$ cannot retract onto $C$.
+
+
+Now for $C'$. Early in Hatcher we identified $M_g$ as a $4g$ sided polygon, with sides 
+\[
+a_1b_1a^{-1}_1b^{-1}_1\dots a_gb_ga_g^{-1}b_g^{-1}
+.\] 
+(in that order). Take the quotient $M_g / \sim $, where $~$ is defined by $a_i\sim a_1$ and $b_i\sim b_1$ for all $i$. The quotient map  $q:M_g\to M_g /\sim =M_1$ then gives a retract of $M_g$ to $M_1$, the torus.
+
+We further retract onto the circle $C'$, by viewing $M_1$ as the typical square with sides $aba^{-1}b^{-1}.$ Construct this retract $r$ by retracting a point in the square to the closest point in $a$. This is clearly continuous except perhaps at the line $a^{-1}$. However this is not a problem since $a^{-1}$ is identified with $a$ in the construction of the torus.
+
+By composing the retracts,
+\[\xymatrix{
+        M_g\ar@/_1pc/[rr]_{rq}\ar@{->}[r]^{q}&M_1\ar@{->}[r]^{r}&C'
+}\]
+We have our retract $M_g\to C'$
+
+\end{document}

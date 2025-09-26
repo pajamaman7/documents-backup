@@ -1,0 +1,29 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $1$}
+\rhead{Name: Thomas Boyko; UCID: 30191728}
+\chead{}
+
+\begin{document}
+
+\begin{exmp}
+
+    Let $X\neq \varnothing$, and $B\subseteq X$ be given. Show that the set:
+    \[
+    \mathcal{E}_B=\{A\subseteq X:B\subseteq A \text{ or }B\subseteq A^{c}\} 
+    .\] 
+    Is a $\sigma$-algebra in $X$.
+    
+\end{exmp}
+
+\paragraph{$\sigma 1$:} $X\in \mathcal{E}_B$ since $B\subseteq X$ by assumption.
+\paragraph{$\sigma 2$:} If $A\in \mathcal{E}_B$, then either $B\subseteq A$ or $B\subseteq A^{c}$. If the first holds, then clearly $B\subseteq (A^{c})^{c}=A$, and $A^{c}\in \mathcal{E}_B$. On the other hand, if $B\subseteq A^{c}$, then $A^{c}\in \mathcal{E}_B$. Therefore $\mathcal{E}_B$ is closed under complements.
+
+\paragraph{$\sigma 3$:} Suppose $\{A_n\} _{n\in \mathbb{N}}$ is a sequence of elements in $\mathcal{E}_B$. Partition $\mathbb{N}$ into disjoint subsets $I,J$ so that $B\subseteq A_i$ for $ i\in I$, and $B\subseteq A_j^{c}, $ for $ j\in J$. The $A_j$ require some consideration. By $\sigma2$, we know that each $A_j$ must also be in $\mathcal{E}_B$. Then $B\subseteq A_i$, for all $i$, and $B\subseteq J$ for all $j$. Since $I\cup J=\mathbb{N}  ,$ we have
+\[
+B\subseteq \bigcup_{i \in  I} A_i\cup \bigcup_{j\in J} A_j  =\bigcup_{n\in \mathbb{N}} A_n
+.\] 
+So $\mathcal{E}_B$ is closed under countable union, and is therefore a $\sigma$-algebra.
+
+\end{document}

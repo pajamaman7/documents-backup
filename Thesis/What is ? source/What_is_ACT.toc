@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Two Themes}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Functorial Semantics}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Compositionality}{11}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Further Reading}{12}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Two Constructions}{13}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Monoidal Categories}{13}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Decorated Cospans}{29}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Further Reading}{30}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Two Examples}{31}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Chemical Reaction Networks}{31}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Natural Language Processing}{36}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Further Reading}{49}{subsection.3.3}%
+\contentsline {section}{\numberline {4}But Wait! There's More...}{51}{section.4}%
+\contentsfinish 

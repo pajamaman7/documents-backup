@@ -1,0 +1,24 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $N$}
+\rhead{Thomas Boyko}
+\chead{}
+
+\begin{document}
+
+\begin{exe}
+    Show that if $(X,\mathcal{E})$ is a measurable space and $f:X\to \mathbb{R}$ is a measurable function, then $|f|$ is measurable. Show that the converse does not hold.
+\end{exe}
+\paragraph{Solution: } Recall that the absolute value function is continuous, and that continuous functions are measurable on their respective spaces. Then thanks to the result 4.1.6 (v), we know that the composition of measurable functions $|f|=|\cdot |\circ f$ is measurable.
+
+For the converse, let $A$ be a non Borel measurable set in $\mathbb{R}$. Define the function $f:\mathbb{R}\to \mathbb{R}:$
+\[
+f(x)=\begin{cases}
+    1&\text{if }x\in A\\
+    -1&\text{if }x\not\in A
+\end{cases}
+.\] 
+Then we have $|f(x)|$ is simply the constant function $1$, which is continuous and therefore measurable. But $f$ is not measurable itself, take the preimage of the measurable closed set $\{1\} $, $f_A^{-1}(\{1\} )=A\not\in \mathcal{B}(\mathbb{R})$. Therefore $|f|\in \mathcal{M}(\mathcal{E})$ but $f\not\in \mathcal{M}(\mathcal{E})$
+
+\end{document}

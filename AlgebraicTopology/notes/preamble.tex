@@ -1,0 +1,78 @@
+%Essential ams packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+%Page layout etc
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, portrait, margin = 1in]{geometry}
+
+%Color text
+\usepackage{xcolor}
+
+% Custom fonts
+% Newpx pair
+%\usepackage{newpxmath}
+%\usepackage{newpxtext}
+% Euler and computer modern typewriter
+%\usepackage{euler}
+%\usepackage{beton}
+% \usepackage[OT1]{fontenc}
+% Arev sans serif font
+\usepackage{arev}
+\usepackage[T1]{fontenc}
+
+%Fix for wrong math sizes
+\DeclareMathSizes{10}{10}{7}{5} 
+
+%Allows photos
+\usepackage[]{graphicx}
+
+%Enumeration
+\usepackage{enumitem}
+%Snowman - comment out if no snowman wanted
+\usepackage{scsnowman}
+%\scsnowmandefault{nose=orange,arms,broom=brown,hat=red,buttons,muffler}
+
+%Nice title bar
+\usepackage{fancyhdr}
+
+% tikz
+\usepackage{tikz}
+
+%Diagrams - TODO make better snips
+\usepackage{commutative-diagrams}
+\usepackage{tikz-cd}
+%Provides tikz arrows to codi
+\pgfqkeys{/codi}{
+every arrow/.append style={
+/ektropi/add=/tikz/commutative diagrams
+}
+}
+
+%Multiple columns:
+\usepackage{multicol}
+
+%Thmbox and theorem environments - TODO anti-numbering does notwork
+\usepackage{thmbox}
+\hfuzz=8pt
+
+\theoremstyle{plain}% default
+\newtheorem[L]{thm}{Theorem}[section]
+\newtheorem[L]{lem}[thm]{Lemma}
+\newtheorem[L]{prop}[thm]{Proposition}
+\newtheorem{cor}{Corollary}
+\theoremstyle{definition}
+\newtheorem[M]{defn}{Definition}[section]
+\newtheorem[M]{exmp}{Example}[section]
+\theoremstyle{remark}
+%\newtheorem*{rem}{Remark}
+%\newtheorem*{note}{Note}
+\newtheorem{case}{Case}
+
+
+% Coffeestain package and sample stains
+% \usepackage{coffeestains}
+% \coffeestainB{0.7}{1}{-30}{18 pt}{-135 pt}
+% \coffeestainA{0.9}{0.85}{-25}{5cm}{1.3cm}

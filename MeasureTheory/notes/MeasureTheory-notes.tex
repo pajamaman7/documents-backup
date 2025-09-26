@@ -1,0 +1,86 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Measure and Integration}
+\rhead{Thomas Boyko}
+\chead{}
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\section{$\sigma$-algebras and Measures}
+
+We begin by discussing the concept of a measure, or how to 'measure' space on the real line, and in $\mathbb{R}^{n} $. Then we extend the concept, to allow measuring of non-Euclidean space. 
+\begin{defn}[Area in $\mathbb{R}^2$]
+    Consider a set function $\lambda_2:\mathcal{P}(\mathbb{R}^2)\to [0,\infty]$ satisfying:
+    \begin{enumerate}
+        \item $\lambda_2(\varnothing)=0$
+        \item  $\lambda_2\left(\bigcup_{i\in I} A_i\right)=\sum_{i\in I} \lambda_2(A_i)$ for disjoint $A_i$ and countable $I$.
+        \item $\lambda_2((a_1,b_1)\times (a_2,b_2))=(b_1-a_1)(b_2-a_2)$
+        \item Measure is invariant of translation and rotation.
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}[$\sigma$-algebra in $\mathbb{R}^2$]
+    A $\sigma$-algebra is a system $\mathcal{E}$ of subsets of $\mathbb{R}^2$ satisfying:
+    \begin{enumerate}
+        \item $\mathbb{R}^2\in \mathcal{E}$
+        \item If $A\in \mathcal{E}$, then $A^{c}\in \mathcal{E}$.
+        \item if $\{A_n\} _{n\in \mathbb{N}}$ is a sequence of sets in from $\mathcal{E}$, then $\bigcup_{n\in \mathbb{N}} A_n\in \mathcal{E}$
+    \end{enumerate}
+    The common choice for a $\sigma-$algebra in $\mathbb{R}^2$ is the Borel Algebra $\mathcal{B}(\mathbb{R}^2)$, which is the smallest $\sigma$-algebra containing all open rectangles $(a_1,b_1)\times (a_2,b_2)\subseteq \mathbb{R}^2$.
+\end{defn}
+
+\begin{defn}[$\sigma$-algebra]
+    A $\sigma$-algebra in a set $X$ is a nonempty collenction $\mathcal{E}$ of subsets of $X$ which contains $X$, and is closed under complement and countable union; if $A_1,A_2,\dots \in \mathcal{E}$; then
+    \begin{enumerate}
+        \item $X,\varnothing\in \mathcal{E}$
+        \item $A^{c}\in \mathcal{E}$
+        \item $\bigcup_{i=1}^\infty A_i\in \mathcal{E}$
+        %\item $\bigcap_{1\leq i} A_i\in \mathcal{E}$
+    \end{enumerate}
+    Elements of $\mathcal{E}$ are called measureable sets, or just measurable. $X$ is a measurable space.
+
+    We may consider only finite unions, in which case we call $\mathcal{E}$ just an Algebra (This is equivalent to only requiring $A\cup B\in \mathcal{E}$ when $A,B\in \mathcal{E}$).
+\end{defn}
+
+\begin{defn}[Measure]
+    Let $\mathcal{E} $ be a  $\sigma $-algebra in a set $X$. A measure on $\mathcal{E}$ is a set function $\mu:\mathcal{E}\to [0,\infty]$, satisfying the following:
+    \begin{enumerate}
+        \item $\mu(\varnothing)=0$
+        \item $\mu\left( \bigcup_{n=1} ^{\infty}A_n \right) =\sum_{n=1}^{\infty} \mu(A_n)$
+    \end{enumerate}
+    A measure satisfying $\mu(X)=1$ may be called a probability measure.
+\end{defn}
+
+\begin{prop}
+    Let $\mathcal{E}$ be an algebra on $X$. Then:
+    \begin{enumerate}
+        \item $\varnothing\in \mathcal{E}$.
+        \item If $A,B\in \mathcal{E}$, then $A\cup B\in \mathcal{E}$.
+        \item If $A,B\in \mathcal{E}$ then $A \setminus B\in \mathcal{E}$.
+        \item If $\mathcal{E}$ is a $\sigma$-algebra, and $A_1,A_2,\dots \in \mathcal{E}$, then $\bigcap_{i=1} ^{\infty}A_n\in \mathcal{E}$.
+    \end{enumerate}
+\end{prop}
+
+\begin{exmp}
+    Below are some examples of $\sigma$-algebras, for some set $X$
+    \begin{enumerate}
+        \item $\mathcal{E}_{min}=\{\varnothing,X\} $
+        \item $\mathcal{E}_{max}=\mathcal{P}(X)$
+        \item $\mathcal{E}=\{\varnothing,A,A^{c},X\} $
+        \item If $A_1,\dots,A_n$ are disjoint but cover $X,$ $\mathcal{E}=\left\{\bigcup\limits_{j\in I} A_j:I\subseteq \{1,\dots,n\} \right\} $
+    \end{enumerate}
+\end{exmp}
+
+\begin{thm}[Generated $\sigma$-algebras]
+    Let $\{\mathcal{E}_i\} _{i\in I}$ be a family of $\sigma$-algebras in $X$. Then the system:
+    \[
+    \bigcap_{i\in I} A_i=\{A\subseteq X:A\in \mathcal{E}_i\forall i\in I\} 
+    .\] 
+    Is a $\sigma$-algebra in $X$. In fact this is the smallest $\sigma$-algebra in $X$. Members of this $\sigma$-algebra are sometimes called Borel sets.
+\end{thm} 
+
+\end{document}

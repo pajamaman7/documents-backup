@@ -1,0 +1,33 @@
+We are given the ciphertext: 
+
+
+KQEREJEBCPPCJCRKIEACUZBKRVPKRBCIBQCARBJCVFCUPKRIOFKPACUZQEPBKRXPEIIEABDKPBCPFCDCCAFIEABDKPBCPFEQPKAZBKRHAIBKAPCCIBURCCDKDCCJCIDFUIXPAFFERBICZDFKABICBBENEFCUPJCVKABPCYDCCDPKBCOCPERKIVKSCPICBRKIJPKABI
+
+ocanadaterredenosaieuxtonfrontestceintdefleuronsglorieuxcartonbrassaitporterlepeeilsaitporterlacroixtonhistoireestuneepopeedesplusbrillantsexploitsettavaleurdefoitrempeeprotegeranosfoyersetnosdroits
+A quick internet tool gives us the letter distribution:
+
+C	32
+B	21
+K	20
+P	20
+I	16
+E	13
+A	13
+R	12
+F	10
+D	9
+J	6
+U	6
+Q	4
+Z	4
+V	4
+O	2
+X	2
+H	1
+N	1
+Y	1
+S	1
+
+We are instructed to follow the English distributions, so we suppose that the function $E_k$ maps E to C, and we must take a guess which of B,K,P is mapped to T. It
+
+ocanadaterredenosaieuxtonfrontestceintdefleuronsglorieuxcartonbrassaitporterlepeeilsaitporterlacroixtonhistoireestuneepopeedesplusbrillantsexploitsettavaleurdefoitrempeeprotegeranosfoyersetnosdroits

@@ -1,0 +1,132 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Algebraic Topology Notes}
+\rhead{Thomas Boyko}
+\chead{}
+
+\begin{document}
+\setcounter{section}{-1}
+
+\section{Homotopy and CW Complexes}
+
+    \begin{defn}[Homotopy of Paths]
+    $ f,g:X\to Y $ are homotopic if there exists some $ F:X\times I\to Y $, so that $ f(x)=F(x,0) $ and $ g(x)=F(x,1)  $. This induces an equivalence relation on the set of maps $ X\to Y $.
+    \begin{proof} 
+        Consider the following maps:
+        \begin{enumerate}
+            \item $ F:X\times I\to Y $, defined by 
+                \[
+                F(x,t)=f(x)
+                .\] 
+            \item Suppose $ f,g $ are homotopic by some $ F $, define $ \bar{F}:X\times I\to Y $ by 
+                \[
+                \bar{F}(x,t)=F(x,1-t)
+                .\] 
+            \item Suppose $ f\sim ^{F_1}g\sim ^{F_2} h$.
+        \end{enumerate}
+    \end{proof}
+\end{defn}
+\begin{defn}[Homotopy Equivalence]
+    $ f:X\to Y $ is a Homotopy equivalence if $ \exists g:Y\to X $:
+    \begin{enumerate}
+        \item $ fg $ is homotopic to $ \mathbb{1}_Y$ 
+        \item $ gf $ is homotopic to $ \mathbb{1}_Y $.
+    \end{enumerate}
+\end{defn}
+\begin{defn}
+    $ \iota:X\to Y $ is an inclusion of retraction if $\exists r:Y\to X $, so that $ \iota r=id_X $
+\end{defn}
+
+\begin{defn}
+    $ X $ is a Hausdorff space if $ \forall p\neq q\in X $, there exist disjoint open $ U,V $ containing $ p,q $
+\end{defn}
+\begin{defn}
+    $ X  $ is compact, if for every open cover $ \bigcup_{\alpha\in A} G_\alpha $ of $ X, $ there exists some finite subcover $ \bigcup_{i=1} ^{n}G_{\alpha_i} $.
+\end{defn}
+
+\begin{thm}
+    Recall the following:
+    \begin{enumerate}
+        \item If $ A\subseteq X $ is a closed subset of a compact space, then $ A  $ is compact.
+        \item If $ X $ is Hausdorff and $ A\subseteq X $ is compact then $ A $ is closed
+        \item The image of a compact set under a continuous map is compact.
+    \end{enumerate}
+
+\end{thm}
+    \begin{defn}
+        Let $ X  $ a space and $ \sim   $ and equivalence relation on $ X $. Define a topology on the set of equivalence classes $ X / \sim  $, by considering $ \pi $ the projection map. Say $ \pi^{-1}(U) $ open exactly when $ U $ is open.
+
+        For a subspace $ A \subseteq X $ we may define $ X / A $ by using the relation $ \sim _A $, by $ a\sim b $ if $ a=b $ or both $ a,b\in A $.
+    \end{defn}
+
+    \begin{lem}
+        Suppose $ X $ has a n equivalence relation $\sim$, and $ f:X\to Y  $ a continuous map.
+        \begin{enumerate}
+            \item The map $ f/ \sim :X / \sim \to Y $ is continuous
+            \item If $ X $ is compact and Hausdorff, and $ f/ \sim $ is bijective, then $ f/ \sim $ is a homeomorphism.
+        \end{enumerate}
+    \end{lem}
+
+    \newpage
+    \begin{exmp}
+        Take the compact Hausdorff space,space $ D^{n} $,  and identify the subspace $ S^{n-1} $. Define $ a\sim b $ if $ a=b $ or $ a,b \in S^{n-1}$.
+
+        Then define $ f: $
+    \end{exmp}
+
+    \begin{lem}
+        Let $ X $ be Hausdorff and $ A\subseteq X $ compact. Then $ X / A $ is Hausdorff.
+    \end{lem}
+    \begin{lem}
+        Let $ X $ be Hausdorff, $f:S^{n-1}\to X$ be continuous. Define $Y=X\cup_f D^{n}=X\sqcup D^{n} / S^{n-1}$. $Y$ is then Hausdorff.
+    \end{lem}
+    Next we discuss a couple of methods of constructing spaces which are simple to work with.
+    \begin{defn}
+        A Finite CW complex (cell complex) is defined inductively:
+        $X^{0}\subseteq X^{1}\subseteq \dots\subseteq X^{n}$
+        \begin{enumerate}
+            \item $X_0$ is a discrete set.
+            \item $X^1= X^{0}\sqcup D^1 / f_\alpha : S^{0}_\alpha=\partial D^{1}_\alpha \to X^{0}$ % TODO
+        \end{enumerate}
+    \end{defn}
+    \begin{thm}
+        Finite cell complexes are compact and Hausdorff.
+
+        Note: Many geomoetric spaces (compact manifolds) are homotopy equivalent to finite CW complexes.
+    \end{thm}
+
+    \begin{defn}
+        
+    Let $X,p$ be a topological space with chosen basepoint $p$. We define a wedge product
+    $(X,p)\lor (Y,q)=(X\sqcup Y) / p\sim q$ 
+    \end{defn}
+
+    \begin{defn}
+        The smash product is defined:
+        \[
+            (X,p)\land(Y,q) = (X\times Y) / X\lor Y
+        .\]  
+    \end{defn}
+    \begin{defn}
+        We define the join $X*Y=X\times Y\times I/\sim $ where $\sim $ identifies:
+        \begin{enumerate}
+            \item $(X,0,y)\sim (x',0,y)$
+            \item $(x,1,y)\sim (x,1,y')$
+        \end{enumerate}
+    \end{defn}
+    \begin{defn}
+        If $X$ is a cell complex, a subcomplex of $X$ is a closed union of cells.
+    \end{defn}
+    \subsection{Projective Space}
+    \begin{defn}
+        Real Projective Space $\mathbb{R}P^{n}=S^{n} / a \sim -a$
+    \end{defn}
+\section{The Fundamental Group}
+
+\section{Homology Groups}
+
+\section{Homotopy Groups}
+
+
+\end{document}

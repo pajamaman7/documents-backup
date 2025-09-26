@@ -1,0 +1,67 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $1$}
+\rhead{Thomas Boyko}
+\chead{}
+
+\begin{document}
+
+We are given the ciphertext: 
+
+
+\begin{verbatim}
+    
+KQEREJEBCPPCJCRKIEACUZBKRVPKRBCIBQCARBJCVFCUPKRIOFKPACUZQEPBKRXPEIIEAB
+DKPBCPFCDCCAFIEABDKPBCPFEQPKAZBKRHAIBKAPCCIBURCCDKDCCJCIDFUIXPAFFERBIC
+ZDFKABICBBENEFCUPJCVKABPCYDCCDPKBCOCPERKIVKSCPICBRKIJPKABI
+
+\end{verbatim}
+
+A simple internet tool gives us the letter distribution:
+
+\begin{verbatim}
+        C-32
+        B-21
+        K-20
+        P-20
+        I-16
+        E-13
+        A-13
+        R-12
+        F-10
+        D-9
+        J-6
+        U-6
+        Q-4
+        Z-4
+        V-4
+        O-2
+        X-2
+        H-1
+        N-1
+        Y-1
+        S-1
+\end{verbatim}
+
+We are instructed to follow the English distributions, so we suppose that the function $E_k$ maps E to C, and we must take a guess which of B,K,P is mapped to T. After trying to solve the associated systems of congruences, we find that only one system produces a valid plaintext:
+
+\begin{align*}
+    19a+b&\equiv 1\pmod{26}  \\
+    4a+b&\equiv 2\pmod{26}
+\end{align*}
+
+Subtracting the equivalences, we get:
+\[
+11a\equiv 1\pmod{26} 
+.\] 
+And we solve for $a\equiv 19\pmod{26} $ using the Extended Euclidean Algorithm. Substituting back into our original congruences, we find $b\equiv 4\pmod{26} $. Then we can use an online decryption tool to decrypt our ciphertext:
+
+\begin{verbatim}
+ocanadaterredenosaieuxtonfrontestceintdefleuronsglorieuxcartonbrassaitporter
+lepeeilsaitporterlacroixtonhistoireestuneepopeedesplusbrillantsexploitsettav
+aleurdefoitrempeeprotegeranosfoyersetnosdroits
+\end{verbatim}
+
+A Canadaian elementary student would be ashamed to not recognize the French national anthem!
+\end{document}

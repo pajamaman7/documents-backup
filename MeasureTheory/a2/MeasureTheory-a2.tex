@@ -1,0 +1,170 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $2$}
+\rhead{Thomas Boyko}
+\chead{}
+
+\begin{document}
+
+\begin{exe}
+    Consider the measure space $(\mathbb{R},\mathcal{B}(\mathbb{R}),\lambda)$, where $\lambda $ denotes Lebesgue measure on $\mathbb{R}$.
+    \begin{enumerate}
+        \item Show that $\lambda(\{a\})=0 $ for any $a\in \mathbb{R}.$  
+        \item Show that for any $a<b$ in $\mathbb{R}$, the follwing holds:
+            \[
+                \lambda((a,b))=\lambda((a,b])=\lambda([a,b))=\lambda([a,b])=b-a
+            .\] 
+        \item Show that for any $a$ in $\mathbb{R}$, the follwing holds:
+            \[
+                \lambda((-\infty,a))=\lambda((-\infty,a])=\lambda([a,\infty))=\lambda([a,\infty])=\infty
+            .\] 
+    \end{enumerate}
+\end{exe}
+
+\paragraph{Student's note} For this assignment we take the convention $0\not\in \mathbb{N}.$ I am not sure whether this is usual for the course (:
+\begin{enumerate}
+    \item Let $a\in \mathbb{R}$. Take the sequence of decreasing sets:
+        \[
+        \left(a-\frac{1}{n},a+\frac{1}{n}\right)
+        .\] 
+
+        So that:
+        \[
+            \{a\} =\bigcap_{n\in \mathbb{N}} \left(a-\frac{1}{n},a+\frac{1}{n}\right)
+        .\] 
+        Then we have:
+        \begin{align*}
+        \lambda(\{a\}) &=\lambda\left( \bigcap_{n\in \mathbb{N}}  \left(a-\frac{1}{n},a+\frac{1}{n}\right) \right)\\
+        &= \lim_{n \to \infty} \lambda\left( \left( a-\frac{1}{n},a+\frac{1}{n} \right) \right) &\text{ From prop. 1.3.4 (vi)}\\
+        &= \lim_{n \to \infty} a+\frac{1}{n}-\left( a-\frac{1}{n} \right)  \\
+        &= \lim_{n \to \infty} \frac{1}{2n} \\
+        &= 0
+        .\end{align*}
+    \item 
+        We split into 4 parts:
+        \begin{enumerate}[label= (\alph*)] 
+            \item $\lambda((a,b))=b-a$
+            \item $\lambda((a,b])=b-a$
+            \item $\lambda([a,b))=b-a$
+            \item $\lambda([a,b])=b-a$
+        \end{enumerate}
+        \paragraph{Solution:} 
+        \begin{enumerate}[label= (\alph*)] 
+            \item This is true by definition
+            \item Let $a<b$ be reals. We use the same strategy again. Take the sequence of decreasing sets:
+        \[
+        \left(a,b+\frac{1}{n}\right)
+        .\] 
+        So that:
+        \[
+            (a,b] =\bigcap_{n\in \mathbb{N}} \left(a,b+\frac{1}{n}\right)
+        .\] 
+        Then we have:
+        \begin{align*}
+            \lambda((a,b])&=\lambda\left( \bigcap_{n\in \mathbb{N}} \left(a,b+\frac{1}{n}\right) \right) \\
+            &= \lim_{n \to \infty} \lambda\left( \left( a,b+\frac{1}{n} \right)  \right)  &\text{ From prop. 1.3.4 (vi)}\\
+            &= \lim_{n \to \infty} b+\frac{1}{n}-a \\
+            &= b-a
+        .\end{align*}
+
+    \item Let $a<b$ be reals. We use the same strategy again. Take the sequence of decreasing sets:
+        \[
+        \left(a-\frac{1}{n},b\right)
+        .\] 
+        So that:
+        \[
+            [a,b) =\bigcap_{n\in \mathbb{N}} \left(a-\frac{1}{n},b\right)
+        .\] 
+        Then we have:
+        \begin{align*}
+            \lambda([a,b))&=\lambda\left( \bigcap_{n\in \mathbb{N}} \left(a-\frac{1}{n},b\right) \right) \\
+            &= \lim_{n \to \infty} \lambda\left( \left( a-\frac{1}{n},b \right)  \right)  &\text{ From prop. 1.3.4 (vi)}\\
+            &= \lim_{n \to \infty} b-\frac{1}{n}-a \\
+            &= b-a
+        .\end{align*}
+    \item Let $a<b$ be reals. We use the same strategy again. Take the sequence of decreasing sets:
+        \[
+        \left(a-\frac{1}{n},b\right]
+        .\] 
+        So that:
+        \[
+            [a,b] =\bigcap_{n\in \mathbb{N}} \left(a-\frac{1}{n},b\right]
+        .\] 
+        Then we have:
+        \begin{align*}
+            \lambda([a,b))&=\lambda\left( \bigcap_{n\in \mathbb{N}} \left(a-\frac{1}{n},b\right] \right) \\
+            &= \lim_{n \to \infty} \lambda\left( \left( a-\frac{1}{n},b \right]  \right)  &\text{ From prop. 1.3.4 (vi)}\\
+            &= \lim_{n \to \infty} b-\frac{1}{n}-a \\
+            &= b-a
+        .\end{align*}
+    \end{enumerate}
+    \newpage
+\item 
+        We split into 4 parts:
+        \begin{enumerate}[label= (\alph*)] 
+            \item $\lambda((-\infty,a))=\infty$
+            \item $\lambda((-\infty,a])=\infty$
+            \item $\lambda((a,\infty))=\infty$
+            \item $\lambda([a,\infty))=\infty$
+        \end{enumerate}
+        \paragraph{Solution: }
+        \begin{enumerate}
+            \item 
+    Rewrite:
+        \[
+            (-\infty,a)=\bigcup_{n\in \mathbb{N}} [a-n,a-n+1)
+        .\] 
+        Then since these are all disjoint subsets of $\mathbb{R}$, we have:
+        \begin{align*}
+            \lambda\left( (-\infty,a) \right) &= \lambda(\bigcup_{n\in \mathbb{N}} [a-n,a-n+1) \\
+            &= \sum_{n=1}^{\infty} \lambda([a-n,a-n+1)) \\
+            &= \sum_{n=1}^{\infty}(a-n+1)-(a-n)&\text{From 2.}\\
+            &= \sum_{n=1}^{\infty}1\\
+            &=\infty
+        .\end{align*}
+    \item Rewrite:
+        \[
+            (-\infty,a)=\bigcup_{n\in \mathbb{N}} [a-n,a-n+1)
+        .\] 
+        Then since these are all disjoint subsets of $\mathbb{R}$, we have:
+        \begin{align*}
+            \lambda\left( (-\infty,a) \right) &= \lambda(\bigcup_{n\in \mathbb{N}} [a-n,a-n+1) \\
+            &= \sum_{n=1}^{\infty} \lambda([a-n,a-n+1)) \\
+            &= \sum_{n=1}^{\infty}(a-n+1)-(a-n)&\text{From 2.}\\
+            &= \sum_{n=1}^{\infty}1\\
+            &=\infty
+        .\end{align*}
+
+        \newpage
+            \item 
+    Rewrite:
+    \[
+        (a,\infty)=\bigcup_{n\in \mathbb{N}} (a+n-1,a+n]
+    .\] 
+    Then since these are all disjoint subsets of $\mathbb{R}$, we have:
+    \begin{align*}
+        \lambda\left( a,\infty \right) &= \lambda\left( \bigcup_{i \in  I} (a+n-1,a+n] \right)  \\
+                                       &= \sum_{n=1}^{\infty} \lambda\left(  (a+n-1,a+n] \right)  \\
+                                       &= \sum_{n=1}^{\infty} (a-n+1)-(a-n) &\text{From 2.}\\
+                                       &= \sum_{n=1}^{\infty} 1 \\
+                                       &= \infty 
+    .\end{align*}
+
+        \item Rewrite:
+    \[
+        (a,\infty)=\bigcup_{n\in \mathbb{N}} (a+n-1,a+n]
+    .\] 
+    Then since these are all disjoint subsets of $\mathbb{R}$, we have:
+    \begin{align*}
+        \lambda\left[ a,\infty \right) &= \lambda\left( \bigcup_{i \in  I} [a+n-1,a+n) \right)  \\
+                                       &= \sum_{n=1}^{\infty} \lambda\left(  [a+n-1,a+n) \right)  \\
+                                       &= \sum_{n=1}^{\infty} (a-n+1)-(a-n) &\text{From 2.}\\
+                                       &= \sum_{n=1}^{\infty} 1 \\
+                                       &= \infty 
+    .\end{align*}
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}

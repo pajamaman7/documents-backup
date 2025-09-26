@@ -1,0 +1,98 @@
+\documentclass{article}
+\input{preamble.tex}
+\usepackage[all]{xy}
+\pagestyle{fancy}
+\lhead{Assignment \# $1$}
+\rhead{Name: Thomas Boyko}
+\chead{}
+
+\begin{document}
+\begin{exmp}
+    Show that $ S^{1}* S^{1}= S^{3}, $ and more generally, $ S^{m}* S^{n}= S^{m+n+1} $.
+\end{exmp}
+
+\paragraph{Solution:} 
+
+\iffalse
+On page 9, Hatcher provides an example, that $S^{0}*\dots*S^{0}$ joined $n$ times, is homeomorphic to $S^{n-1}$.  Thanks to associativity of $*$, this gives the desired result:
+\[
+    S^{m}*S^{n}=\underbrace{S^0*\dots*S^0}_{m+1 \text{ times}} * \underbrace{S^0*\dots*S^0}_{n+1 \text{ times}}
+    =\underbrace{S^0*\dots*S^0}_{m+n+2 \text{ times}} =S^{m+n+1}
+.\] 
+\fi
+
+%\iffalse 
+    We consider first the space $I\times S^{m}\times S^{n}$. This is compact and Hausdorff since all of its components are. Then we take the equivalence relation $\sim $ by 
+ $(x, 0, y) \sim (x', 0, y)$, and $(x, 1, y) \sim (x, 1, y')$
+
+
+Define a function $f:I\times S^{m}\times S^{n} \to S^{m+n+1}$; for $x=(x_1,\dots,x_{m+1})\in S^{m}\subseteq \mathbb{R}^{m+1}$ and $y=(y_1,\dots,y_{n+1})\in S^{n}\subseteq \mathbb{R}^{n+1}$, let
+\[
+f(t,x,y)=
+\sqrt{t} \begin{pmatrix} x_1\\\vdots \\x_{m+1}\\0\\ \vdots \\ 0 \end{pmatrix} +\sqrt{1-t} \begin{pmatrix} 0\\ \vdots \\ 0\\ y_1\\\vdots \\y_{n+1} \end{pmatrix} 
+.\] 
+
+First we write a diagram and state our goals.
+\[\xymatrix{
+        I\times S^{m}\times S^{n}\ar@{->}[rr]^{f}    
+        \ar@{->}[rd]^{\pi}
+        &&S^{m+n+1}\\
+        &S^{m}*S^{n}\ar@{->}[ur]^{f / \sim }%=I\times S^{m}\times S^{n} / \sim 
+}\]
+We  need to show that $f$ respects equivalence classes, that it is continuous and that $f/\sim $ is a bijection. By showing all this we will know that $f / \sim $ is a homeomorphism and $S^{m}*S^{n}\cong S^{m+n+1}$
+
+First take a moment to confirm that $|f(t,x,y)|=1$:
+
+\begin{align*}
+    |f(t,x,y)|&= \left|  
+\sqrt{t} \begin{pmatrix} x_1\\\vdots \\x_{m+1}\\0\\ \vdots \\ 0 \end{pmatrix} 
++\sqrt{1-t} \begin{pmatrix} 0\\ \vdots \\ 0\\ y_1\\\vdots \\y_{n+1} \end{pmatrix} 
+\right|  \\
+&= \left( \sum_{i=1}^{m+1} (\sqrt{t} x_{i})^2 + \sum_{i=1}^{n+1} (\sqrt{1-t} y_{i})^2 \right)^{\frac{1}{2}}  \\
+&= \left( \sum_{i=1}^{m+1} {t} x_{i}^2 + \sum_{i=1}^{n+1} (1-t) y_{i}^2 \right)^{\frac{1}{2}}  \\
+&= \left(t|x|+(1-t)|y|\right)^{\frac{1}{2}}  \\
+&= 1 
+.\end{align*}
+
+And check that $f$ respects the equivalence classes, for $t=1$:
+\[
+f(1,x,y)=
+\sqrt{1} \begin{pmatrix} x_1\\\vdots \\x_{m+1}\\0\\ \vdots \\ 0 \end{pmatrix} +\sqrt{1-1} \begin{pmatrix} 0\\ \vdots \\ 0\\ y_1\\\vdots \\y_{n+1} \end{pmatrix} 
+=
+\begin{pmatrix} x_1\\\vdots \\x_{m+1}\\0\\ \vdots \\ 0 \end{pmatrix} 
+.\] 
+Clearly independent of $y$, so $f$ respects the class $(1,x,y)\sim (1,x,y')$. The same holds for $(0,x,y)\sim (0,x',y)$
+
+Then we wish to show continuity of $f$. Clearly its components are continuous and so $f$ must be too. Since $f$ is continuous, we know the induced map $f / \sim $ is continuous.
+
+Then so long as $f /\sim $ is bijective, it is a homeomorphism and we will have our desired result.
+
+We construct an inverse for $f / \sim $; let $g:S^{m+n+1}\to S^{m}*S^{n}$, where for $x\in S^{m+1},y\in S^{n+1}$, we set:
+\[
+t(x)=\sum_{i=1}^{m+1} x_{i}^2=\|x\|^2
+.\] 
+Then define $g$ by cases; if $0<t<1$;
+\[
+    g(x,y)
+    =\begin{pmatrix} 
+        t(x)\\
+        \frac{x_1}{\sqrt{t(x)} }\\
+        \vdots\\
+        \frac{x_{m+1}}{\sqrt{t(x)} }\\
+        \frac{y_1}{\sqrt{1-t(x)} }\\
+        \vdots\\
+        \frac{y_{n+1}}{\sqrt{1-t(x)} }\\
+    \end{pmatrix} 
+.\] 
+If $t=1$, we choose a basepoint $y_0\in S^{n+1}$, and take:
+\[
+g(x,y)=(t,x,y_0)
+.\] 
+If $t=0$, we choose a basepoint $x_0\in S^{m+1}$, and take:
+\[
+g(x,y)=(t,x_0,y)
+.\] 
+It is not hard to see that $f,g$ compose to identity both ways. %TODO actually one way is not true
+
+%\fi
+\end{document}

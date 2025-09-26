@@ -1,0 +1,54 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $1$}
+\rhead{Name: Thomas Boyko}
+\chead{}
+
+\begin{document}
+\begin{enumerate} 
+    \item Construct an explicit deformation retraction of the torus with one point deleted
+onto a graph consisting of two circles intersecting in a point, namely, longitude and
+meridian circles of the torus.
+    \item Construct an explicit deformation retraction of $\mathbb{R}^{n}- \{0\}$ onto $S^{n-1}$.
+        \paragraph{Solution: }Let $ n\in \mathbb{N} $, and take the map:
+        \[
+        f_t(x)=\frac{tx}{|x|}+(1-t)x
+        .\] 
+        Then clearly $ f_0(x)=x\forall x\in \mathbb{R}^{n} $, and $ f_1(x)=\frac{x}{|x|}\in S^{n-1} $ (justified since $ \frac{x}{|x|} $ has norm $ 1 $).
+
+    \item \begin{enumerate}
+        \item Show that the composition of homotopy equivalences $X\to Y $ and $Y\to  Z$ is a homotopy equivalence $X\to  Z$. Deduce that homotopy equivalence is an equivalence relation.
+            \paragraph{Solution: }If 
+
+            For reflexivity, we need only consider the identity on $ X $, which is clearly continuously invertible function.
+        \item Show that the relation of homotopy among maps $X\to Y$ is an equivalence relation.
+        \item Show that a map homotopic to a homotopy equivalence is a homotopy equivalence.
+    \end{enumerate}
+
+    \item Show that a space $X $ is contractible iff every map $f:X\to Y$, for arbitrary $Y$, is nullhomotopic. Similarly, show  $X$ is contractible iff every map $f:X\to Y$ is nullhomotopic.
+        \paragraph{$ \implies $}: Suppose that $ X $ is contractible. Then there exists some family $ g_t:X\times I\to X $, so that:
+        \begin{enumerate}
+            \item $ g_0(x)=x\forall x\in X $
+            \item $ g_1(x)=c\forall x\in X $
+            \item The mapping $ (x,t)\mapsto g_t(x)  $ is continuous.
+        \end{enumerate}
+        Then, given some $ f:X\to Y $ for some arbitrary topological space $ Y $, we can construct the family of maps $ f_t(x):X\times I\to Y $;
+        \[\xymatrix{
+                X\times I\ar[r]^{g_t}\ar@{-->}[dr]_{\exists f_t}&X\ar[d]^{f} \\
+                                                    &Y
+        }\]
+        So that the diagram commutes; $ f_t(x)=f(g_t(x)) $
+        \paragraph{$ \impliedby $}: Suppose that, for any $ Y $, every map $ f:X\to Y $ is nullhomotopic. Then choose $ Y=X $ and $ f $ the identity on $ X $. Then there exist a family of maps $ f_t:I\times X\to X $ so that, for some $ c\in X $:
+        \begin{enumerate}
+            \item $ f_0(x)=x\forall x\in X $
+            \item $ f_1(x)=c \forall x\in X $
+            \item The map $ (x,t)\mapsto f_t(x) $ is continuous.
+        \end{enumerate}
+
+        This satisfies the conditions for a contractible space (save for $ f_t(c)=c$ for any $ c $).
+
+    \item Show that $f:X\to Y$ is a homotopy equivalence if there exist maps $g,h:Y\to X$ such that $fg\simeq \mathbb{1}$ and $hf\simeq \mathbb{1}$. More generally, show that $f$ is a homotopy equivalence if $fg$ and $hf$ are homotopy equivalences.   
+
+\end{enumerate}
+\end{document}
