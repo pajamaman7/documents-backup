@@ -1,0 +1,34 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $6$}
+\rhead{Thomas Boyko}
+\chead{}
+
+\begin{document}
+\begin{exe}
+    Assume that $\mu$ is a measure on $(\mathbb{R},\mathcal{B}(\mathbb{R}))$, which satisfies that 
+    \[
+        \mu((-\infty,x])=\mu([x,\infty))<\infty\quad \text{for all }x\in \mathbb{R}
+    .\] 
+    Show then that $\mu(B)=\mu(-B)$ for any Borel set $B$.
+\end{exe}
+\paragraph{Solution: }Suppose $\mu$ is a measure as above. Define a new measure $\nu$ by $\nu(B)=\mu(-B)$.
+
+We wish to apply Theorem 2.2.2 on the system $\mathcal{S}$
+\[
+    \mathcal{S}=\{(-\infty,x]:x\in \mathbb{R}\}
+.\] 
+It's discussed in the textbook that the system is $\cap $-stable, and that the system generates $\mathcal{B}(\mathbb{R})$.
+
+From the assumption we have:
+\[
+    \mu((-\infty,x])=\mu([x,\infty))=\mu(-(-\infty,x])=\nu((-\infty,x])
+.\] 
+So $\mu,\nu$ agree on $\mathcal{S}$ (and are finite), as well as the sequence $A_n=(-\infty,n]$ in $\mathcal{S}$, which has $\bigcup_{n\in \mathbb{N}} A_n=\mathbb{R}$.
+
+Since all the conditions in 2.2.2 are satisfied, we have:
+\[
+    \mu(B)=\nu(B)=\mu(-B)
+.\] 
+\end{document}

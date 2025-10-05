@@ -43,6 +43,7 @@
 	{trigger: "phi", replacement: "\\varphi", options: "mA"},
 	{trigger: "Phi", replacement: "\\Phi", options: "mA"},
 	{trigger: "tau", replacement: "\\tau", options: "mA"},
+	{trigger: "pi", replacement: "\\pi", options: "mA"},
 	//{trigger: "([^\\\\])(${GREEK}|${SYMBOL})", replacement: "[[0]]\\[[1]]", options: "rmA", description: "Add backslash before greek letters and symbols"},
 
 
@@ -152,6 +153,7 @@
 	{trigger: "set", replacement: "\\{ $0 \\}$1", options: "mA"},
 	{trigger: "cap", replacement: "\\cap $0", options: "mA"},
 	{trigger: "cup", replacement: "\\cup $0", options: "mA"},
+	{trigger: "scup", replacement: "\\sqcup $0", options: "mA"},
 	{trigger: "=>", replacement: "\\implies ", options: "mA"},
 	{trigger: "=<", replacement: "\\impliedby ", options: "mA"},
 	{trigger: "iff", replacement: "\\iff ", options: "mA"},
@@ -160,6 +162,7 @@
 	{trigger: ">=", replacement: "\\geq ", options: "mA"},
 	{trigger: "<=", replacement: "\\leq ", options: "mA"},
 	{trigger: "~~", replacement: "\\sim", options: "mA"},
+	{trigger: "~=", replacement: "\\simeq", options: "mA"},
 	{trigger: "\\sim ~", replacement: "\\approx", options: "mA"},
 	{trigger: "prop", replacement: "\\propto", options: "mA"},
 	{trigger: "nabl", replacement: "\\nabla", options: "mA"},

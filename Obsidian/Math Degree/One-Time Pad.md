@@ -1,0 +1,1 @@
+Suppose we have a plaintext $x\in\{ 0,1 \}^{n}$. Choose $k\in\{ 0,1 \}^{n}$. It turns out that XORing the bits of $x,k$ is a [[Symmetric Cryptosystems|Symmetric Cryptosystem]], where encryption and decryption are identical functions. This turns out to just be the [[Shift Cipher]].

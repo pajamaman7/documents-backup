@@ -18,13 +18,14 @@
 
 %Build Mg differently as a cw complex by adding a 1-cell loop?
 
-Begin with a quick computation of the fundamental group of the punctured surface of genus $g$, $M_g$. Recall the construction of $M_g$ consisted of a single $0$-cell, $2g$ $1$-cells, and a single $2$-cell. Puncturing the $2$-cell with a hole or by removing a single point allows us to retract the hole onto the boundary of the cell. After gluing the boundary to the 1-cells, we will just be left with the $1$-cells, and we will have a retract onto $\bigvee^{2g}S^{1}$. And since we know the fundamental group of the wedge sum, we are left with: \[
-    \pi_1(S^{1})=\overbrace{\pi_1(S^{1})*\dots*\pi_1(S^{1})}^{2g\text{ times}}=\overbrace{\mathbb{Z}*\dots* \mathbb{Z} }^{2g\text{ times}}
+Begin with the computation of the fundamental group of the punctured surface of genus $h$, $M_h'$. Recall the construction of $M_h$ consisted of a single $0$-cell, $2h$ $1$-cells, and a single $2$-cell. Puncturing the $2$-cell with a hole allows a retract to the boundary of the cell. After gluing the boundary to the 1-cells, we will just be left with the $1$-cells, and we will have a retract onto $\bigvee^{2h}S^{1}$. And since we know the fundamental group of the wedge sum, we are left with: 
+\[
+    \pi_1(S^{1})=\overbrace{\pi_1(S^{1})*\dots*\pi_1(S^{1})}^{2h\text{ times}}=\overbrace{\mathbb{Z}*\dots* \mathbb{Z} }^{2h\text{ times}}
 .\] 
-Now suppose for the sake of contradiction that $M_h'$ did retract onto the boundary circle $C\simeq S^{1}$, for some retraction $r$. Then the homomorphism induced by the inclusion $\iota_*:\pi_1(S_1)\to \pi_1(M_h')$ would be injective, and the composition $r_*\iota_*$ would be identity. Then, applying $\pi_1$ and then $ab$,
+Now suppose for the sake of contradiction that $M_h'$ did retract onto the boundary circle $C\simeq S^{1}$, for some retraction $r$. Then the homomorphism induced by the inclusion $\iota_*:\pi_1(S^1)\to \pi_1(M_h')$ would be injective, and the composition $r_*\iota_*$ would be identity. Then, applying $\pi_1$ and then $ab$,
 \[\xymatrix{
-        \pi_1(S_1)\ar@/_1pc/[rr]_{id_*}\ar@{->>}[r]^{\iota_*}&\pi_1(M_h')\ar@{->}[r]^{r_*}&\pi_1(S^{1})\\
-    \mathbb{Z}\ar@/_1.5pc/[rr]_{id_*^{ab}}\ar@{->>}[r]^{\iota_*^{ab}}&\mathbb{Z}^{2g} \ar@{->}[r]^{r_*^{ab}}&\mathbb{Z}
+        \pi_1(S^1)\ar@/_1pc/[rr]_{id_*}\ar@{->>}[r]^{\iota_*}&\pi_1(M_h')\ar@{->}[r]^{r_*}&\pi_1(S^{1})\\
+    \mathbb{Z}\ar@/_1.5pc/[rr]_{id_*^{ab}}\ar@{->>}[r]^{\iota_*^{ab}}&\mathbb{Z}^{2h} \ar@{->}[r]^{r_*^{ab}}&\mathbb{Z}
 }\]
 
 However, since $\iota_*$ maps the generator of $\mathbb{Z}$ to some commutator $aba^{-1}b^{-1}$, and abelianization kills all the commutators through the quotient, we must have $\iota_*^{ab}$ identically zero (homomorphisms from a cyclic group are determined by their evaluation on generator). This contradicts $r_*^{ab}\iota_*^{ab}=id_*^{ab}$, and so $M_k'$ cannot retract onto $C$.

@@ -1,0 +1,95 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\lhead{Assignment \# $5$}
+\rhead{Thomas Boyko}
+\chead{}
+
+\begin{document}
+\begin{exe}
+    Let $K\in (0,\infty),\alpha\in \mathbb{R}$. Show that:
+    \[
+    \int_{0}^{K} x^{\alpha}\,\lambda(  d x )=
+    \begin{cases}
+        \infty&\text{if }\alpha\leq -1\\
+        (\alpha+1)^{-1}K^{\alpha+1}&\text{if }\alpha> -1\\
+    \end{cases}
+    .\] 
+
+\end{exe}
+\paragraph{Solution: }
+Use the relationship between the Lebesgue and Riemann integral again.
+\[
+    I_\alpha=R \int_{0}^{K}x^{\alpha}  \, d x 
+.\] 
+Then proceed by cases. If $\alpha=-1$, we integrate as if it were high school.
+\begin{align*}
+    I_{-1}&=\lim_{n\to\infty}R \int_{\frac{1}{n}}^{K}x^{-1}  \, d x \\
+    &= \lim_{n\to\infty} \left( \ln x \right) _{\frac{1}{n}}^{K} \\
+    &= \lim_{n\to\infty} \ln K-\ln \frac{1}{n} \\
+    &=\infty
+.\end{align*}
+
+If $\alpha\neq -1,$ use the usual power rule:
+\begin{align*}
+    I_\alpha&=\lim_{n\to\infty} R \int_{\frac{1}{n}}^{K} x^{\alpha} \, d x \\
+    &=\lim_{n\to\infty}  \left(\left( \alpha+1 \right) ^{-1}x^{\alpha+1} \right)_{\frac{1}{n}}^{K}\\
+    &=(\alpha+1)^{-1}\lim_{n\to\infty} \left( x^{\alpha+1} \right) ^{K}_{\frac{1}{n}}\\
+    &=\lim_{n\to\infty} (\alpha+1)^{-1}\left( K^{\alpha+1}-\frac{1}{n^{\alpha+1}} \right) 
+.\end{align*}
+Now we must again split into cases. If $\alpha<-1$, then $\alpha+1$ is negative and we will have the limit:
+\[
+    \lim_{n\to\infty} \frac{1}{n^{\alpha+1}}=\infty
+.\] 
+And $I_\alpha=\infty$.
+
+If $\alpha>-1, $ then $\alpha+1$ is positive;
+\[
+    \lim_{n\to\infty} \frac{1}{n^{\alpha+1}}=0
+.\] 
+And $I_\alpha=\frac{K^{\alpha+1}}{\alpha+1}$
+
+\newpage
+\begin{exe}
+
+    Let $K\in (0,\infty),\alpha\in \mathbb{R}$. Show that:
+    \[
+    \int_{K}^{\infty} x^{\alpha}\,\lambda(  d x )=
+    \begin{cases}
+        \infty&\text{if }\alpha\leq -1\\
+        -(\alpha+1)^{-1}&\text{if }\alpha> -1\\
+    \end{cases}
+    \] 
+
+
+\end{exe}
+
+\paragraph{Solution: } Rewrite as a Riemann integral again:
+\begin{align*}
+    I_\alpha&=  \int_{K}^{\infty} x^{\alpha} \, d \lambda\\
+            &= \lim_{n\to\infty} R \int_{K}^{n}x^{\alpha}  \, d \lambda
+.\end{align*}
+If $\alpha=-1,$ again we have:
+\begin{align*}
+    I_{-1}&=\lim_{n\to\infty}  \left( \ln x \right) ^{n}_{K} \\
+    &= \lim_{n\to\infty} \ln n-\ln K
+    &= \infty
+.\end{align*}
+Now if $\alpha\neq -1$, 
+\[
+I_\alpha=\lim_{n\to\infty} \left( \frac{x^{\alpha+1}}{\alpha+1} \right) ^{n}_{K}=\left( \alpha+1 \right) ^{-1}\lim_{n\to\infty} n^{\alpha+1}-K^{\alpha+1}
+.\] 
+If $\alpha<-1$, we have $\alpha+1$ negative, and 
+\[
+\lim_{n\to\infty} n^{\alpha+1}=0
+.\] 
+And in turn 
+\[
+I_\alpha=-\frac{K^{\alpha+1}}{\alpha+1}
+.\] 
+Now if $\alpha>-1$, then $\alpha+1$ is positive, and 
+\[
+\lim_{n\to\infty} n^{\alpha+1}=\infty
+.\] 
+
+\end{document}

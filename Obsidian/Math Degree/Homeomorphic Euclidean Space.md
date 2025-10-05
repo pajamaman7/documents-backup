@@ -1,0 +1,1 @@
+$\mathbb{R}^{n}$ is not [[homeomorphic]] to $\mathbb{R}^{2}$ if $n\neq 2$.

@@ -1,0 +1,39 @@
+\documentclass{article}
+\input{preamble.tex}
+\pagestyle{fancy}
+\renewcommand{\textbullet}{\ensuremath{\bullet}}
+\lhead{Category Theory Notes}
+\rhead{Thomas Boyko}
+\chead{}
+
+\begin{document}
+\section{Categories}
+\begin{defn}
+    A Category is a collection of objects, together with a collection of morphisms satisfying:
+    \begin{itemize}
+        \item Each morphism $f$ has domain and codomain objects, $f:x\to y$
+        \item For any object $x$, there exists an identity object $1_x$, satisfying $1_x x=x$.
+        \item For any pair of morphisms, $f:x\to y$, $g:y\to z,$ there exists a composite morphism, $gf:x\to z$. This also introduces a law of associativity, $g(fx)=(gf)x$.    
+    \end{itemize}
+\end{defn}
+\begin{exmp}
+    \begin{itemize}
+        \item $\mathrm{Set}$ forms a category, with its objects being sets, and morphisms being functions between sets.
+        \item  $\mathrm{Top}$ has topological spaces as its objects and continuous functions as its morphisms.
+        \item  $\mathrm{Group}$ has Groups as objects and Group Homomorphisms as morphisms. This example lent the general term “morphisms” to the data of an abstract category. The categories $\mathrm{Ring}$ of associative and unital Rings and Ring Homomorphisms and $\mathrm{Field}$ of Fields and field homomorphisms are defined similarly.
+    \end{itemize}
+\end{exmp}
+\begin{exmp}
+    Keep in mind that categories need not have objects as sets. Though many familiar categories will deal only with sets and functions, our only requirement for a category is that we have objects and morphisms.
+    \begin{itemize}
+        \item Take a poset $\mathrm{P}$. This forms a category, with objects of $P$ being objects in the category, and if $x\leq y$, we have a morphism $x\to y$. Transitivity allows for composition, and identity is guaranteed from reflexivity.
+        \item A group defines a category $\mathrm{B}G$, with a single object. Morphisms are the elements of $G$, which can be composed, are associative, and we have an identity in any group $G$, which becomes the identity morphism on our object.
+    \end{itemize}
+    \iffalse
+    \begin{rem}
+        It may assist the reader to consider the single object in the category of a group as an object invariant under the action of the group. So consider a square, under the action of $D_4$. Every morphism of $\mathrm{B}D_4$ (element of $D_4$) leaves the square as it is, 
+    \end{rem}
+    \fi
+\end{exmp}
+
+\end{document}

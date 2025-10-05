@@ -4,7 +4,7 @@ tags:
   - ComplexAnalysis
 al:
 ---
-This whole page is made irrelevant by [[Topology of R^n]], [[Topology]] or [[Normed Topological Space]], save for the section on complex infinity.
+This whole page is made irrelevant by [[Topology of R^n]], [[Topology]] or [[Normed Vector Space]], save for the section on complex infinity.
 ## Neighbourhood of Infinity
 $\infty_ \mathbb{C}$ is not a number, and is not in the set $\mathbb{C}$. Think of it as a circle with infinite radius about the plane.
 We write $\bar{\mathbb{C}}=\mathbb{C}\cup \{ \infty _\mathbb{C} \}$

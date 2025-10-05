@@ -1,0 +1,4 @@
+The free group $F_S$ over a given set $S$ consists of all words that can be built from members of $S$.
+We consider words to be different unless their equality follows from the group axioms (e.g. $st$ = $suu^{−1}t$ but $s \neq t^{-1}$ for $s,t,u\in S$). The members of $S$ are called generators of $F_S$, and the number of generators is the rank of the free group. 
+
+An arbitrary [[Groups|Group]] $G$ is called free if it is [[Group Homomorphism and Isomorphism|Isomorphic]] to $F_S$ for some [subset] $S$ of $G$, that is, if there is a subset $S$ of $G$ such that every element of $G$ can be written in exactly one way as a product of finitely many elements of $S$ and their inverses (disregarding trivial variations such as $st$ = $suu^{-1}t$).

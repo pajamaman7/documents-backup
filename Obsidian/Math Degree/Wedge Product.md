@@ -1,0 +1,1 @@
+Given two [[Topology|Topological Spaces]] $X,Y$, with respective basepoints $p,q$, define the wedge $X\lor Y = X\sqcup Y / p\sim q$. In a sense we can think that we are joining the spaces together at their basepoints.

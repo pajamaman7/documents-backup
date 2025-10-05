@@ -18,5 +18,3 @@ Let $X,Y,Z$ be [[Topology|Topological Spaces]], and $g:Y\to Z$ be [[Continuity|C
 # Positive Measure
 A positive measure is a function $\mu$ defined on a $\sigma$-algebra $\mathfrak{R}$, whose range is in $[0,\infty]$, and is countably additive; if $\{ A_i \}$ is a disjoint countable collection of members of $\mathfrak{R}$, then
 $$\mu \left(  \bigcup\limits_{i=1 }^{\infty}\right)=\sum\limits_{i=1}^{\infty}\mu(A_i)$$
-A measure space is a measurable space which has a positive measure defined on the $\sigma$-algebra of its measurable sets.
-A complex measure is a complex-valued countably additive function defined on a $\sigma-$algebra
