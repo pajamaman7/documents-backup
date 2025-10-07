@@ -15,7 +15,13 @@
 \end{exe}
 \paragraph{Solution: }Suppose $\mu$ is a measure as above. Define a new measure $\nu$ by $\nu(B)=\mu(-B)$.
 
-We wish to apply Theorem 2.2.2 on the system $\mathcal{S}$
+It is not too difficult to see $\nu$ is a measure; since $\nu(\varnothing)=\mu(-\varnothing)=\mu(\varnothing)=0$
+And, if $(A_n)_{n\in \mathbb{N}}$ is a sequence of subsets of $\mathbb{R}$, we have:
+\[
+\nu\left( \bigcup_{n\in \mathbb{N}} A_n \right) =\mu\left( -\bigcup_{n\in \mathbb{N}} A_n \right) = \mu\left( \bigcup_{n\in \mathbb{N}} -A_n \right) =\sum_{n\in \mathbb{N}}^{} \mu(-A_n)=\sum_{n\in \mathbb{N}}^{} \nu(A_n)
+.\] 
+So $\nu$ is a measure.
+We wish to apply Theorem 2.2.2 on the system $\mathcal{S}$:
 \[
     \mathcal{S}=\{(-\infty,x]:x\in \mathbb{R}\}
 .\] 
@@ -25,7 +31,7 @@ From the assumption we have:
 \[
     \mu((-\infty,x])=\mu([x,\infty))=\mu(-(-\infty,x])=\nu((-\infty,x])
 .\] 
-So $\mu,\nu$ agree on $\mathcal{S}$ (and are finite), as well as the sequence $A_n=(-\infty,n]$ in $\mathcal{S}$, which has $\bigcup_{n\in \mathbb{N}} A_n=\mathbb{R}$.
+So $\mu,\nu$ agree on $\mathcal{S}$ (and are finite). They also agree on the sequence $A_n=(-\infty,n]$ in $\mathcal{S}$, which has $\bigcup_{n\in \mathbb{N}} A_n=\mathbb{R}$.
 
 Since all the conditions in 2.2.2 are satisfied, we have:
 \[

@@ -1,7 +1,7 @@
 \documentclass{article}
 \input{preamble.tex}
 \pagestyle{fancy}
-\lhead{Assignment \# $N$}
+\lhead{Assignment \# $6$}
 \rhead{Thomas Boyko}
 \chead{}
 
@@ -13,22 +13,29 @@ Let $x\in \mathbb{Z}_n$. Then, as per the RSA specification, we have
 \[
 ed\equiv 1\pmod{\varphi(n)} 
 .\] 
-So there exists $k\in \mathbb{Z}$ so that:
+So:
+\[
+\phi(n)|ed-1
+.\] 
+And there exists $k\in \mathbb{Z}$ so that:
+\[
+k\phi(n)=ed-1
+,\] 
 \[
 k\phi(n)+1=ed
 .\] 
-By Fermat's little theorem (or Lagrange's theorem if you like),
+By Fermat's little theorem (or Lagrange theorem if you like),
 \begin{align*}
     x^{p-1}&\equiv 1\pmod{p} ,&
     x^{q-1}&\equiv 1\pmod{q} \\
     x^{(p-1)(q-1)}&\equiv 1\pmod{p} ,&
-    x^{(p-1)(q-1)}&\equiv 1\mod{q} \\
+    x^{(p-1)(q-1)}&\equiv 1\pmod{q} \\
     x^{k\varphi(n)}&\equiv 1\pmod{p} ,&
-    x^{k\varphi(n)}&\equiv 1\mod{q} \\
+    x^{k\varphi(n)}&\equiv 1\pmod{q} \\
     x^{k\varphi(n)+1}&\equiv 1\pmod{p} ,&
-    x^{k\varphi(n)+1}&\equiv 1\mod{q} \\
+    x^{k\varphi(n)+1}&\equiv 1\pmod{q} \\
     x^{ed}&\equiv x\pmod{p} ,&
-    x^{ed}&\equiv x\mod{q} 
+    x^{ed}&\equiv x\pmod{q} 
 .\end{align*}
 Then by the Chinese remainder theorem, we must have
 \[
